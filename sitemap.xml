@@ -21,12 +21,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Improved_data_management__efficient_use_of_NeSI_HPC_storage/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Improvements_to_Fair_Share_job_prioritisation_on_Maui/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Improvements_to_Fair_Share_job_prioritisation_on_Ma%CC%84ui/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Improvements_to_Fair_Share_job_prioritisation_on_M%C4%81ui/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Mahuika%27s_new_Milan_CPU_nodes_open_to_all_NeSI_users/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Mahuika-Core_Dumps_generation_now_disabled_as_default/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -41,12 +56,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Ma%CC%84ui_upgrade_is_complete/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Maui_upgrade_is_complete/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/M%C4%81ui_upgrade_is_complete/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Ma%CC%84ui_upgrade_is_complete/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -61,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Status_page_subscription_notification_changes/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Status_page_subscription_notification_changes%EF%BB%BF/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -71,12 +91,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/University_of_Auckland_-_ANSYS_users/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/University_of_Auckland_ANSYS_users/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/University_of_Auckland_ANSYS_users/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Upcoming_webinar-Tips_for_making_the_most_of_Mahuika%27s_new_Milan_nodes/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -111,17 +131,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Converting_from_Windowtyle_to_UNItyle_line_endings/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Core_Dumps/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/How_can_I_give_read-only_team_members_access_to_my_files/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/How_can_I_give_reanly_team_members_access_to_my_files/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -191,7 +216,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Mahuika_-_M%C4%81ui_Differences/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Mahuika_Maui_Differences/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -206,12 +231,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Skylake_warning_message_on_Ma%CC%84ui/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Skylake_warning_message_on_Maui/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Skylake_warning_message_on_M%C4%81ui/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/Skylake_warning_message_on_Ma%CC%84ui/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -221,12 +246,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/What_are_my-bashrc_-bash_profile_for/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/FAQs/What_are_my_-bashrc_%26_-bash_profile_for/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/What_does_oom-kill_mean/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/FAQs/What_does_ooill_mean/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -271,12 +301,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Account_Requests_for_non-Tuakiri_Members/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Account_Requests_for_nouakiri_Members/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/General/NeSI_Policies/Acknowledgement-Citation_and_Publication/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -356,7 +391,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/Setting_Up_Two-Factor_Authentication/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/Setting_Up_Twactor_Authentication/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -371,12 +406,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/X-Forwarding_using_the_Ubuntu_Terminal_on_Windows/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accessing_the_HPCs/orwarding_using_the_Ubuntu_Terminal_on_Windows/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/Quarterly_allocation_periods/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -411,7 +476,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Git-Reference_Sheet/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Git-_Reference_Sheet/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -421,7 +496,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Unix_Shell-Reference_Sheet/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Unix_Shell-_Reference_Sheet/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/tmux-Reference_sheet/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -466,22 +551,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/Job_Scaling_-_Ascertaining_job_dimensions/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/MPI_Scaling_Example/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/MPI_Scaling_Example_-_Duplicate/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -497,11 +572,6 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/Multithreading_Scaling_Example/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/OpenMP_Scaling_Example_-_Duplicate/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -527,106 +597,6 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Next_Steps/The_HPC_environment_/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-3/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-1-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-10-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-11-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-12-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-13-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-14-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-15-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-16-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-18-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-3-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-4-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-5-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-6-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-7-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-8-0/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-9-0/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -681,6 +651,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/NeSI_Service_Subscriptions/Contracts__billing_processes/Billing_process/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/NeSI_Service_Subscriptions/Contracts__billing_processes/Types_of_contracts/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/NeSI_Service_Subscriptions/Overview/Pricing/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -721,6 +701,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Ma%CC%84ui/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -731,7 +716,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Configuring_Dask-MPI_jobs/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Configuring_DasPI_jobs/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -776,11 +761,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP_/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/OpenMP_settings/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -811,22 +791,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_-_Manual_management/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_-_Tool-assisted_management/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Toossisted_management/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -871,27 +846,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Manuals_and_User_Guides_/Intel_Cluster_Toolkit_Compiler_Edition/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Manuals_and_User_Guides_/Manuals/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Manuals_and_User_Guides_/Troubleshooting_on_NeSI/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Manuals_and_User_Guides_/XC50_Aries_Network_Architecture/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Debugging/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-VTune/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -907,6 +872,11 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-_cProfile_Python/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-cProfile_Python/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -982,6 +952,96 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_31-03-2022/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Backfill_Scheduling/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Benchmarking_on_NeSI-Best_Practices/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_Checkpointing/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Extension/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/NetCDF-HDF5_file_locking/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Repeating_jobs/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Usage-A_Primer/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1076,96 +1136,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Backfill_Scheduling/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Benchmarking_on_NeSI_Best_Practices/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Checksums/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Fair_Share/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/GPU_use_on_NeSI/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Hyperthreading/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Job_Checkpointing/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Job_prioritisation/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Mahuika_Extension/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Mahuika_Slurm_Partitions/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Milan_Compute_Nodes/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/M%C4%81ui_Slurm_Partitions/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/NetCDF_-_HDF5_file_locking/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Repeating_jobs/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/SLURM-_Best_Practice/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Slurm_Interactive_Sessions/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Running_Jobs_on_M%C4%81ui_and_Mahuika/Slurm_Usage-_A_Primer/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1226,6 +1196,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Clair3%20/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Clair3/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1252,6 +1227,11 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/FDS/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Find%20execution%20hot%20spots%20with%20VTune/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1296,6 +1276,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Lambda%20Stack/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/Lambda_Stack/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1317,6 +1302,16 @@
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB%3A%20Introduction/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB%3A%20Parallel%20Operations/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1356,11 +1351,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Terminal_Setup/Recommend_CMDR_setup_/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1396,6 +1386,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/Maui/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/Ma%CC%84ui/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1406,22 +1406,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/M%C4%81ui/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/M%C4%81ui_Ancillary/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/The_NeSI_High_Performance_Computers/Overview/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/Training/Genomics_Aotearoa_-_Training_Partnership/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1456,7 +1441,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two-factor_authentication/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_twactor_authentication/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1471,17 +1456,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Globus_-_Basic_Use_within_NeSI/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Globus_Basic_Use_within_NeSI/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Globus_Quick_Start_Guide/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1496,17 +1481,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Globus_V5_endpoint_activation_/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Initial_Globus_Sign-Up_and_your_Globus_Identities/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Initial_Globus_Sign_Up_and_your_Globus_Identities/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Initial_Globus_Sigp-and_your_Globus_Identities/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1521,11 +1501,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Re-creating_Shared_Collections_and_Bookmarks_in_Globus_V5/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V5/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1536,12 +1511,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus-automate/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Rreating_Shared_Collections_and_Bookmarks_in_Globus_V5/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate/</loc>
+         <lastmod>2023-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globuutomate/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1571,22 +1551,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_long-term_storage/Nearline_Long-Term_Storage_Service/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_lonerm_storage/Nearline_Lonerm_Storage_Service/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_long-term_storage/Preparing_small_files_for_migration_to_Nearline_storage/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_lonerm_storage/Preparing_small_files_for_migration_to_Nearline_storage/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_long-term_storage/User_feedback_-_Nearline_Storage/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_lonerm_storage/User_feedback_Nearline_Storage/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_long-term_storage/Verifying_uploads_to_Nearline_storage/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Nearline_lonerm_storage/Verifying_uploads_to_Nearline_storage/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1611,32 +1591,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long-Term_Storage_-_Nearline_release_notes__v1-1-0-14/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Lonerm_Storage_Nearline_release_notes_v1-1-0-14/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long-term_Storage_-_Nearline_release_notes_v1-1-0-18/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Lonerm_Storage_Nearline_release_notes_v1-1-0-18/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long-term_Storage_-_Nearline_release_notes_v1-1-0-19/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Lonerm_Storage_Nearline_release_notes_v1-1-0-19/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long-term_Storage_-_Nearline_release_notes_v1-1-0-20/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long_Term_Storage_-_Nearline_release_notes_v1-1-0-21/</loc>
-         <lastmod>2023-11-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Long_Term_Storage_-_Nearline_release_notes_v1-1-0-22/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/Storage/Release_Notes_Nearline/Lonerm_Storage_Nearline_release_notes_v1-1-0-20/</loc>
          <lastmod>2023-11-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
