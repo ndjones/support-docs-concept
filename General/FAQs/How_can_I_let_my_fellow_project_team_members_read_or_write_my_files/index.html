@@ -513,6 +513,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1120,6 +1126,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Why_cant_I_log_in_using_MobaXTerm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why can't I log in using MobaXTerm?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Why_does_my_program_crash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why does my program crash?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Why_is_my_job_taking_a_long_time_to_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why is my job taking a long time to start?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1476,7 +1542,7 @@
                   
 
   
-    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1544,20 +1610,20 @@ though this may be masked at the destination."</p>
 <p>Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do
 this by means of the following commands.</p>
-<div class="highlight"><pre><span></span><code>## Replace nesi12345 with your desired project code
+<div class="highlight"><pre><span></span><code># Replace nesi12345 with your desired project code
 group=nesi12345
 startdir=$(pwd)
-## Replace /nesi/project with /nesi/nobackup if needed
+# Replace /nesi/project with /nesi/nobackup if needed
 cd /nesi/project/${group}
-## Move all files, directories, etc. owned by yourself into the project group
-## The --no-dereference option updates the group of symbolic links (where permitted)
+# Move all files, directories, etc. owned by yourself into the project group
+# The --no-dereference option updates the group of symbolic links (where permitted)
 find . -user $(whoami) -print0 | xargs -0 -I {} chgrp --no-dereference ${group} {}
-## Make all files owned by yourself readable and writable by the group
+# Make all files owned by yourself readable and writable by the group
 find . -user $(whoami) -and -type f -print0 | xargs -0 -I {} chmod g+rw {}
-## Make all directories owned by yourself readable, writable and executable by the group,
-## and set the setgid bit
+# Make all directories owned by yourself readable, writable and executable by the group,
+# and set the setgid bit
 find . -user $(whoami) -and -type d -print0 | xargs -0 -I {} chmod g+rwxs {}
-## Go back to the starting location
+# Go back to the starting location
 cd ${startdir}
 </code></pre></div>
 

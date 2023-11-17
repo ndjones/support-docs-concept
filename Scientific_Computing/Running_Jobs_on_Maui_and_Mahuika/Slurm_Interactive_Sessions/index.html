@@ -1254,6 +1254,48 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1676,7 +1718,7 @@
                   
 
   
-    <a href="https://github.com/nesi/support-docs-concept/edit/master/docs/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1853,12 +1895,14 @@ the earlier suggestion to something specific to interactive jobs in the
 job name.</p>
 <p>For example, if all your interactive job names start with the text "IJ",
 you could do this:</p>
-<div class="highlight"><pre><span></span><code>## -u $(whoami) restricts the search to my jobs only.
-## The --states=PD option restricts the search to pending jobs only.
-## ## Each &lt;tab&gt; string should be replaced with a literal tab character. If you
-## can&#39;t insert one by pressing the tab key on your keyboard, you should be
-## able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-## squeue -u $(whoami) --states=PD -o &quot;%A&lt;tab&gt;%j&quot; | grep &quot;&lt;tab&gt;IJ&quot;
+<div class="highlight"><pre><span></span><code># -u $(whoami) restricts the search to my jobs only.
+# The --states=PD option restricts the search to pending jobs only.
+#
+# Each &lt;tab&gt; string should be replaced with a literal tab character. If you
+# can&#39;t insert one by pressing the tab key on your keyboard, you should be
+# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
+#
+squeue -u $(whoami) --states=PD -o &quot;%A&lt;tab&gt;%j&quot; | grep &quot;&lt;tab&gt;IJ&quot;
 </code></pre></div>
 <p>The above command will return a list of your jobs whose names <em>start</em>
 with the text "IJ". In this respect, it's more flexible than the <code>-n</code>
