@@ -54,6 +54,8 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/custom_admonations.css">
     
+      <link rel="stylesheet" href="../../../assets/stylesheets/theme.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -71,7 +73,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
   
     
     
@@ -97,7 +99,7 @@
 #banner{
     font-size: larger;
     text-align: center;
-    background: lightgoldenrodyellow;
+    background:  var(--md-warning-bg-color);
 }
 #banner a:link {
     color: blue;
@@ -108,6 +110,9 @@
 #banner a:focus,
 #banner a:hover {
     border-bottom: 1px solid;
+}
+#banner p{
+    color: black;
 }
 </style>
 
@@ -155,7 +160,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
@@ -165,7 +170,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
@@ -432,12 +437,18 @@
     Web Browser
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Web Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#jupyterhub" class="md-nav__link">
     JupyterHub
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -446,12 +457,18 @@
     Linux or Mac OS
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Linux or Mac OS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#terminal" class="md-nav__link">
     Terminal
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -460,47 +477,53 @@
     Windows
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ubuntu-terminal-windows-10" class="md-nav__link">
     Ubuntu Terminal (Windows 10)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#mobaxterm" class="md-nav__link">
     MobaXterm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#using-a-virtual-machine" class="md-nav__link">
     Using a Virtual Machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#winscp" class="md-nav__link">
     WinSCP
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#git-bash" class="md-nav__link">
     Git Bash
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#windows-powershell" class="md-nav__link">
     Windows PowerShell
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1197,12 +1220,18 @@
     Web Browser
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Web Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#jupyterhub" class="md-nav__link">
     JupyterHub
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1211,12 +1240,18 @@
     Linux or Mac OS
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Linux or Mac OS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#terminal" class="md-nav__link">
     Terminal
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1225,47 +1260,53 @@
     Windows
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ubuntu-terminal-windows-10" class="md-nav__link">
     Ubuntu Terminal (Windows 10)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#mobaxterm" class="md-nav__link">
     MobaXterm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#using-a-virtual-machine" class="md-nav__link">
     Using a Virtual Machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#winscp" class="md-nav__link">
     WinSCP
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#git-bash" class="md-nav__link">
     Git Bash
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#windows-powershell" class="md-nav__link">
     Windows PowerShell
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1324,11 +1365,7 @@
 
   <h1>Choosing and Configuring Software for Connecting to the Clusters</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
 <li>Have an <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects">active account and
@@ -1347,127 +1384,119 @@ to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.</p>
 <h2 id="web-browser">Web Browser<a class="headerlink" href="#web-browser" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<h2 id="jupyterhub">JupyterHub<a class="headerlink" href="#jupyterhub" title="Permanent link">&para;</a></h2>
+<h3 id="jupyterhub">JupyterHub<a class="headerlink" href="#jupyterhub" title="Permanent link">&para;</a></h3>
 <p>JupyterHub is a service providing access to Jupyter Notebooks on
 NeSI. A terminal similar to the other setups describe below can be
-accessed through the Jupyter Launcher.<br />
-!!! prerequisite What next?
- -   More info on <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term">Jupyter
-     Terminal</a>
- -   Visit <a href="https://jupyter.nesi.org.nz/hub/">jupyter.nesi.org.nz</a>.</p>
-</li>
-</ul>
+accessed through the Jupyter Launcher.</p>
+<div class="admonition tip">
+<p class="admonition-title">What next?</p>
+<p>More info on <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term">Jupyter Terminal</a> Visit <a href="https://jupyter.nesi.org.nz/hub/">jupyter.nesi.org.nz</a>.</p>
+</div>
 <h2 id="linux-or-mac-os">Linux or Mac OS<a class="headerlink" href="#linux-or-mac-os" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<h2 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">&para;</a></h2>
-<p>On MacOS or Linux you will already have a terminal emulator
-installed, usually called, "Terminal." To find it, simply search for
-"terminal".<br />
+<h3 id="terminal">Terminal<a class="headerlink" href="#terminal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>On MacOS or Linux you will already have a terminal emulator
+installed, usually called, &quot;Terminal.&quot; To find it, simply search for
+&quot;terminal&quot;.  
 Congratulations! You are ready to move to the next step.
-!!! prerequisite What next?
- -   Setting up your <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000625535">Default
-     Terminal</a></p>
-</li>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">What next?</p>
+<ul>
+<li>Setting up your <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000625535">Default Terminal</a></li>
 </ul>
+</div>
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>As Windows is not a "Unix-Like" operating system, getting access to a
 functional terminal requires some additional steps. There are several
 different options, listed in order of preference.</p>
-<ul>
-<li>
-<h2 id="ubuntu-terminal-windows-10">Ubuntu Terminal (Windows 10)<a class="headerlink" href="#ubuntu-terminal-windows-10" title="Permanent link">&para;</a></h2>
-</li>
-</ul>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<h3 id="ubuntu-terminal-windows-10">Ubuntu Terminal (Windows 10)<a class="headerlink" href="#ubuntu-terminal-windows-10" title="Permanent link">&para;</a></h3>
 <p>The Ubuntu Terminal and Windows Subsystem for Linux require
- administrative privileges to enable and install them. If your
- institution has not given you such privileges, consider using
- another option such as MobaXTerm Portable Edition (see below).</p>
+administrative privileges to enable and install them. If your
+institution has not given you such privileges, consider using
+another option such as MobaXTerm Portable Edition (see below).</p>
 <p>This is the most functional replication of a Unix terminal available
 on Windows, and allows users to follow the same set of instructions
 given to Mac/Linux users. It may be necessary to enable Windows
 Subsystem for Linux (WSL) first.</p>
-</div>
-<p>!!! prerequisite What next?
-     -   Enabling
-         <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001075575">WSL</a>
-     -   Setting up the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001050575">Ubuntu
-         Terminal</a>
-     -   Setting up
-         <a href="https://support.nesi.org.nz/hc/en-gb/articles/4407442866703">X-Forwarding</a></p>
+<div class="admonition tip">
+<p class="admonition-title">What next?</p>
 <ul>
-<li>
-<h2 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h2>
-<p>In addition to being a terminal emulator, MobaXterm also includes
+<li>Enabling <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001075575">WSL</a>.</li>
+<li>Setting up the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001050575">UbuntuTerminal</a>.</li>
+<li>Setting up <a href="https://support.nesi.org.nz/hc/en-gb/articles/4407442866703">X-Forwarding</a>.</li>
+</ul>
+</div>
+<h3 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>In addition to being a terminal emulator, MobaXterm also includes
 several useful features like multiplexing, X11 forwarding and a file
-transfer GUI.</p>
-<p>MobaXterm can be downloaded from
-<a href="https://mobaxterm.mobatek.net/download-home-edition.html">here</a>.
+transfer GUI.
+
+MobaXterm can be downloaded from
+[here](https://mobaxterm.mobatek.net/download-home-edition.html).
 The portable edition will allow you to use MobaXterm without needing
 administrator privileges, however it introduces several bugs so we
-<em>highly</em> recommend using the installer edition if you have
+*highly* recommend using the installer edition if you have
 administrator privileges on your workstation or if your
-institution's IT team supports MobaXTerm.
-!!! prerequisite What next?
- -   Setting up
-     <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000624696">MobaXterm</a></p>
-</li>
-<li>
-<h2 id="using-a-virtual-machine">Using a Virtual Machine<a class="headerlink" href="#using-a-virtual-machine" title="Permanent link">&para;</a></h2>
-<p>In order to avoid the problems of using a Windows environment, it
+institution&#39;s IT team supports MobaXTerm.
+</code></pre></div>
+<div class="admonition tips">
+<p class="admonition-title">What next?</p>
+<p>Setting up <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000624696">MobaXterm</a></p>
+</div>
+<h3 id="using-a-virtual-machine">Using a Virtual Machine<a class="headerlink" href="#using-a-virtual-machine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>In order to avoid the problems of using a Windows environment, it
 may be advisable to install a Linux Virtual machine. This may be
 advantageous in other ways as many elements of scientific computing
 require a Linux environment, also it can provide a more user
-friendly place to become familiar with command line use.</p>
-<p>There are multiple free options when it comes to VM software. We
-recommend <a href="https://www.virtualbox.org/wiki/Downloads">Oracle
-VirtualBox</a>.</p>
-<p>Further instructions on how to set up a virtual machine can be found
-<a href="https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/">here</a>.</p>
-<p>Once you have a working VM you may continue following the
+friendly place to become familiar with command line use.
+
+There are multiple free options when it comes to VM software. We
+recommend [Oracle
+VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+Further instructions on how to set up a virtual machine can be found
+[here](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
+
+Once you have a working VM you may continue following the
 instructions as given for
-<a href="#h_c1bbd761-1133-499b-a61a-57b9c4320a1a">Linux/MacOS</a>.
-!!! prerequisite What next?
- -   Setting up a <a href="https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/">Virtual
-     Machine</a></p>
-</li>
-<li>
-<h2 id="winscp">WinSCP<a class="headerlink" href="#winscp" title="Permanent link">&para;</a></h2>
-<p>WinSCP has some advantages over MobaXterm (customisable, cleaner
+[Linux/MacOS](#h_c1bbd761-1133-499b-a61a-57b9c4320a1a).
+</code></pre></div>
+<div class="admonition tips">
+<p class="admonition-title">What next?</p>
+<p>Setting up a <a href="https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/">VirtualMachine</a></p>
+</div>
+<h3 id="winscp">WinSCP<a class="headerlink" href="#winscp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>WinSCP has some advantages over MobaXterm (customisable, cleaner
 interface, open source), and some disadvantages (no built in
 X-server, additional authentication step). However, WinSCP setup is
 more involved than with MobaXterm, therefore we do not recommend it
 for new users.
-!!! prerequisite What next?
- -   Setting up
-     <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000584256">WinSCP</a></p>
-</li>
-<li>
-<h2 id="git-bash">Git Bash<a class="headerlink" href="#git-bash" title="Permanent link">&para;</a></h2>
-<p>If you are using Git for version control you may already have Git
+</code></pre></div>
+<div class="admonition tips">
+<p class="admonition-title">What next?</p>
+<p>Setting up <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000584256">WinSCP</a></p>
+</div>
+<h3 id="git-bash">Git Bash<a class="headerlink" href="#git-bash" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>If you are using Git for version control you may already have Git
 Bash installed. If not it can be downloaded
-from <a href="https://git-scm.com/downloads">here</a>.</p>
-<p>Git Bash is perfectly adequate for testing your login or setting up
+from [here](https://git-scm.com/downloads).
+
+Git Bash is perfectly adequate for testing your login or setting up
 your password, but lacks many of the features of MobaXterm or a
 native Unix-Like terminal. Therefore we do not recommend it as your
-primary terminal.</p>
-</li>
-<li>
-<h2 id="windows-powershell">Windows PowerShell<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h2>
-<p>All Windows computers have PowerShell installed, however it will
+primary terminal.
+</code></pre></div>
+<h3 id="windows-powershell">Windows PowerShell<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
 enabled, instructions
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001075575">here</a>.</p>
-<p>Like Git Bash, PowerShell is perfectly adequate for testing your
+[here](https://support.nesi.org.nz/hc/en-gb/articles/360001075575).
+
+Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of
 MobaXterm or a native Unix-Like terminal. Therefore we do not
-recommend it as your primary terminal.</p>
-</li>
-</ul>
+recommend it as your primary terminal.
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -1493,7 +1522,7 @@ recommend it as your primary terminal.</p>
 
 <div class="md-source-date">
     <small>
-        Authors: <span class='git-page-authors git-authors'><a href='mailto:35017184+callumwalley@users.noreply.github.com'>Cal</a>, <a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a>, <a href='mailto:callumnmw@gmail.com'>CallumWalley</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:callum.walley@auckland.ac.nz'>Callum Walley</a>, <a href='mailto:callumnmw@gmail.com'>CallumWalley</a>, <a href='mailto:callum.walley@nesi.org.nz'>cal</a></span>
     </small>
 </div>
 

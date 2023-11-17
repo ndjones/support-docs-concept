@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/custom_admonations.css">
     
+      <link rel="stylesheet" href="../assets/stylesheets/theme.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -69,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
   
     
     
@@ -95,7 +97,7 @@
 #banner{
     font-size: larger;
     text-align: center;
-    background: lightgoldenrodyellow;
+    background:  var(--md-warning-bg-color);
 }
 #banner a:link {
     color: blue;
@@ -106,6 +108,9 @@
 #banner a:focus,
 #banner a:hover {
     border-bottom: 1px solid;
+}
+#banner p{
+    color: black;
 }
 </style>
 
@@ -153,7 +158,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
@@ -163,7 +168,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
@@ -699,7 +704,6 @@
 </code></pre></div>
 <p>Headers should have a blank line before and after.</p>
 <p>'H1' (<code>#</code>) is for the page title. Setting a title here will change it in the nav also.</p>
-<p>See <a href="#title">Title</a> for more info.</p>
 <h3 id="text-emphasis">Text Emphasis<a class="headerlink" href="#text-emphasis" title="Permanent link">&para;</a></h3>
 <p><strong>bold</strong>: <code>**bold**</code></p>
 <p><em>italic</em>: <code>_italic</code></p>
@@ -720,85 +724,216 @@
     something else
 </code></pre></div>
 <h3 id="admonations">Admonations<a class="headerlink" href="#admonations" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A warning.</p>
+</div>
+<div class="highlight"><pre><span></span><code>!!! warning
+    A warning.
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Optional title</p>
+<p>Admonation with optional title.</p>
+</div>
+<div class="highlight"><pre><span></span><code>!!! info &quot;Optional title&quot;
+    Admonation with optional title.
+</code></pre></div>
+<p>Any admonation can be made collapsable by replacing the <code>!!!</code> with <code>???</code> (closed), or <code>???+</code> (open)</p>
+<p><em>Note for future, once decided which of these we will use, remove the others. And give description of when to use.</em></p>
+<p>There are lots of different flavors.</p>
+<hr />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! note
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! tip
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! info
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! question
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! warning
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition failure">
 <p class="admonition-title">Failure</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! failure
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! danger
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! bug
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! example
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! quote
-    This is a test admonation.
-</code></pre></div>
 <div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <p>This is a test admonation.</p>
 </div>
-<div class="highlight"><pre><span></span><code>!!! prerequisite
-    This is a test admonation.
-</code></pre></div>
-<p>Any admonation can be made collapsable by replacing the <code>!!!</code> with <code>???</code> (closed), or <code>???+</code> (open)</p>
-<p><em>Note for future, once decided which of these we will use, remove the others. And give description of when to use.</em></p>
+<div class="admonition pied-piper">
+<p class="admonition-title">Pied-piper</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition desktop-download-24">
+<p class="admonition-title">Desktop-download-24</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition magnifying-glass">
+<p class="admonition-title">Magnifying-glass</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition microscope">
+<p class="admonition-title">Microscope</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition vial-virus">
+<p class="admonition-title">Vial-virus</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition database">
+<p class="admonition-title">Database</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition folder-open">
+<p class="admonition-title">Folder-open</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition backward">
+<p class="admonition-title">Backward</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition jupyter">
+<p class="admonition-title">Jupyter</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition terminal">
+<p class="admonition-title">Terminal</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition r-project">
+<p class="admonition-title">R-project</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition calendar-days">
+<p class="admonition-title">Calendar-days</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition bell">
+<p class="admonition-title">Bell</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition comment-dots">
+<p class="admonition-title">Comment-dots</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition check-to-slot">
+<p class="admonition-title">Check-to-slot</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition square-xmark">
+<p class="admonition-title">Square-xmark</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition rectangle-list">
+<p class="admonition-title">Rectangle-list</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition screwdriver-wrench">
+<p class="admonition-title">Screwdriver-wrench</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition linux">
+<p class="admonition-title">Linux</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition code-compare">
+<p class="admonition-title">Code-compare</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition heading">
+<p class="admonition-title">Heading</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition space-awesome">
+<p class="admonition-title">Space-awesome</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition stethoscope">
+<p class="admonition-title">Stethoscope</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition key">
+<p class="admonition-title">Key</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition users-line">
+<p class="admonition-title">Users-line</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition file-code">
+<p class="admonition-title">File-code</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition hand-holding-dollar">
+<p class="admonition-title">Hand-holding-dollar</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition circle-question">
+<p class="admonition-title">Circle-question</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition microphone">
+<p class="admonition-title">Microphone</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition tower-observation">
+<p class="admonition-title">Tower-observation</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition circle-info">
+<p class="admonition-title">Circle-info</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition icon--python">
+<p class="admonition-title">Icon--python</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition quote-right">
+<p class="admonition-title">Quote-right</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition image">
+<p class="admonition-title">Image</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition table">
+<p class="admonition-title">Table</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition glass-chart">
+<p class="admonition-title">Glass-chart</p>
+<p>this is a test admonation.</p>
+</div>
+<div class="admonition file-export">
+<p class="admonition-title">File-export</p>
+<p>this is a test admonation.</p>
+</div>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
 <p>Code blocks require a language lexxer in order to do syntax hilighting, e.g. <code>python</code> ,<code>slurm</code>, <code>cuda</code>, <code>json</code>, <code>md</code>.
 <a href="https://pygments.org/languages/">A full list of lexxers can be found in this list</a>.</p>
@@ -833,7 +968,7 @@ May want to add formatting to this later.</p>
 
 <h4 id="keyboard">Keyboard<a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h4>
 <p>Keyboard keys can be added using the <code>&lt;kbd&gt;</code> tag.</p>
-<p>Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.</p>
+<p>Press <code>&lt;kbd&gt;</code>ctrl<code>&lt;/kbd&gt;</code> + <code>&lt;kbd&gt;</code>c<code>&lt;/kbd&gt;</code> to copy text from terminal.</p>
 <div class="highlight"><pre><span></span><code>Press &lt;kbd&gt;ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt; to copy text from terminal.
 </code></pre></div>
 <p>Note the additional spacing around the <code>+</code> else it will appear cramped.</p>
@@ -845,7 +980,7 @@ May want to add formatting to this later.</p>
 <p><a href="" title="https://example.com">External Link</a></p>
 <div class="highlight"><pre><span></span><code>[<span class="nt">External Link</span>](<span class="na">&quot;https://example.com&quot;</span>)
 </code></pre></div>
-<p><a href="" title="General/Announcements">Internal Link</a></p>
+<p><a href="" title="https://example.com">Internal Link</a></p>
 <div class="highlight"><pre><span></span><code>[<span class="nt">Internal Link</span>](<span class="na">&quot;General/Announcements&quot;</span>)
 </code></pre></div>
 <p><a href="#links">Anchor Link</a></p>
@@ -883,12 +1018,10 @@ May want to add formatting to this later.</p>
    item
    with multiple
    lines</li>
-<li>nested<ol>
+<li>nested</li>
 <li>nested item 1</li>
 <li>nested item 2<ol>
 <li>even nesteder</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
@@ -965,7 +1098,7 @@ Leading and trailing <code>|</code> are optional.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
       
         <br>
         Created:
