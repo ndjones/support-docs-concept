@@ -917,8 +917,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Job Checkpointing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -929,6 +938,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#queueing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queueing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matlab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1491,8 +1550,47 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#queueing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queueing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matlab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1516,6 +1614,8 @@
   
 
 
+  <h1>Job Checkpointing</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1528,7 +1628,7 @@ running jobs.</p>
 <p>How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.</p>
-<h1 id="queueing">Queueing<a class="headerlink" href="#queueing" title="Permanent link">&para;</a></h1>
+<h2 id="queueing">Queueing<a class="headerlink" href="#queueing" title="Permanent link">&para;</a></h2>
 <p>Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
 faster. </p>
@@ -1556,8 +1656,8 @@ my-program --nfirst ${starting_step} --nlast ${ending_step}
 </code></pre></div>
 <p>The use of <code>--dependency</code> has the advantage of adding the next job to
 the queue <em>before</em> starting, saving queue time in between jobs.</p>
-<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
-<h2 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>% If checkpoint file, load from there.
 checkpoint=&#39;checkpoint_2020-03-09T0916.mat&#39;;
 if exist(checkpoint,&#39;file&#39;)==2, load(checkpoint);startindex=i;else startindex=1;end
@@ -1580,7 +1680,7 @@ end
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

@@ -419,8 +419,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -449,8 +447,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -459,9 +455,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#command-line-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command line (OpenSSH)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command line (OpenSSH)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-config-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Config (OpenSSH)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      MobaXterm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      sshuttle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwarding-to-compute-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forwarding to Compute Nodes
     </span>
   </a>
   
@@ -1128,8 +1175,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1138,9 +1183,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#command-line-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command line (OpenSSH)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command line (OpenSSH)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-config-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Config (OpenSSH)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      MobaXterm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      sshuttle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwarding-to-compute-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forwarding to Compute Nodes
     </span>
   </a>
   
@@ -1169,6 +1265,8 @@
   
   
 
+
+  <h1>Port Forwarding</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1205,13 +1303,13 @@ this case the NeSI cluster)</p>
  This allows the forwarding from your local machine to the NeSI
  cluster, without having to re-tunnel through the lander node.</p>
 </div>
-<h1 id="command-line-openssh">Command line (OpenSSH)<a class="headerlink" href="#command-line-openssh" title="Permanent link">&para;</a></h1>
+<h2 id="command-line-openssh">Command line (OpenSSH)<a class="headerlink" href="#command-line-openssh" title="Permanent link">&para;</a></h2>
 <p><em>Works for any Linux terminal, Mac terminal, or Windows with WSL
 enabled.</em></p>
 <p>The command for forwarding a port is</p>
 <div class="highlight"><pre><span></span><code>ssh -L &lt;local_port&gt;:&lt;destination_host&gt;:&lt;remote_port&gt; &lt;ssh_host&gt;
 </code></pre></div>
-<h2 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p>A client program on my local machine uses the port 5555 to communicate.
 I want to connect to a server running on mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:</p>
@@ -1227,7 +1325,7 @@ procedure. </p>
 <p>Your local port and remote port do not have to be different numbers.
  It is generally easier to use the same number for both.</p>
 </div>
-<h1 id="ssh-config-openssh">SSH Config (OpenSSH)<a class="headerlink" href="#ssh-config-openssh" title="Permanent link">&para;</a></h1>
+<h2 id="ssh-config-openssh">SSH Config (OpenSSH)<a class="headerlink" href="#ssh-config-openssh" title="Permanent link">&para;</a></h2>
 <p>If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
 forwarding line in your ssh config file ~/.ssh/config on your local
@@ -1267,7 +1365,7 @@ unix_listener: cannot bind to path:
 </code></pre></div></li>
 </ul>
 </div>
-<h1 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h1>
+<h2 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h2>
 <p>If you have Windows Subsystem for Linux installed, you can use the
 method described above. This is the recommended method.</p>
 <p>You can tell if MobaXterm is using WSL as it will appear in the banner
@@ -1285,7 +1383,7 @@ first two examples allows us to avoid).</p>
 ■ remote port<br />
 ■ must match<br />
 ■ doesn't matter</p>
-<h1 id="sshuttle">sshuttle<a class="headerlink" href="#sshuttle" title="Permanent link">&para;</a></h1>
+<h2 id="sshuttle">sshuttle<a class="headerlink" href="#sshuttle" title="Permanent link">&para;</a></h2>
 <p><a href="https://sshuttle.readthedocs.io/en/stable/">sshuttle</a> is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
 MacOS platforms (unfortunately Windows is not supported). <code>sshuttle</code>
@@ -1304,7 +1402,7 @@ node over to a specific virtual machine with IP address <code>192.168.90.5</code
 </code></pre></div>
 <p>which uses remote SSH host Mahuika to forward all traffic coming to
 <code>192.16.XXX.XXX</code> subnet through the port forwarder.</p>
-<h1 id="forwarding-to-compute-nodes">Forwarding to Compute Nodes<a class="headerlink" href="#forwarding-to-compute-nodes" title="Permanent link">&para;</a></h1>
+<h2 id="forwarding-to-compute-nodes">Forwarding to Compute Nodes<a class="headerlink" href="#forwarding-to-compute-nodes" title="Permanent link">&para;</a></h2>
 <p>Ports can also be forwarded from the login node to a compute node.</p>
 <p>The best way to do this is by creating a reverse tunnel <strong>from your
 slurm job</strong> (that way the tunnel doesn't depend on a separate shell, and
@@ -1337,7 +1435,7 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

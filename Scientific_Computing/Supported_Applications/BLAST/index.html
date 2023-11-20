@@ -1007,8 +1007,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    BLAST
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1019,6 +1028,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blast-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLAST Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Thread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-threads-and-local-database-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple threads and local database copy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2199,56 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blast-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLAST Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Thread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-threads-and-local-database-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple threads and local database copy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2173,6 +2289,8 @@
   
 
 
+  <h1>BLAST</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2180,7 +2298,7 @@
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-<h1 id="blast-databases">BLAST Databases<a class="headerlink" href="#blast-databases" title="Permanent link">&para;</a></h1>
+<h2 id="blast-databases">BLAST Databases<a class="headerlink" href="#blast-databases" title="Permanent link">&para;</a></h2>
 <p>We download the standard NCBI databases quarterly, and create a
 corresponding environment module named like <code>BLASTDB/&lt;yyyy-mm&gt;</code> which
 sets the BLASTDB environment variable accordingly. If you want to use
@@ -2193,7 +2311,7 @@ ls $BLASTDB
 <p>Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
 use old job submission scripts as templates for new ones.</p>
-<h1 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h1>
+<h2 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
 <p>When given a large amount of query sequence to get through the BLAST
 search programs will take batches of it, running through the database
 with each batch and then starting over with the next batch.  This can
@@ -2203,7 +2321,7 @@ there are two reasonable ways to run BLAST programs on our system:
 single threaded for small jobs, or multithreaded with a local copy of
 the database for large jobs.  If in doubt try the simpler single-thread
 approach first and see if it takes too long.</p>
-<h2 id="single-thread">Single Thread<a class="headerlink" href="#single-thread" title="Permanent link">&para;</a></h2>
+<h3 id="single-thread">Single Thread<a class="headerlink" href="#single-thread" title="Permanent link">&para;</a></h3>
 <p>For jobs which need less than 24 CPU-hours, eg: those that use small
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as <em>blastn</em> with its default (megablast)
@@ -2230,7 +2348,7 @@ module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
 <span class="nv">$BLASTAPP</span><span class="w"> </span><span class="nv">$BLASTOPTS</span><span class="w"> </span>-db<span class="w"> </span><span class="nv">$DB</span><span class="w"> </span>-query<span class="w"> </span><span class="nv">$QUERIES</span><span class="w"> </span>-outfmt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FORMAT</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-out<span class="w"> </span><span class="nv">$QUERIES</span>.<span class="nv">$DB</span>.<span class="nv">$BLASTAPP</span><span class="w"> </span>-num_threads<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
 </code></pre></div>
-<h2 id="multiple-threads-and-local-database-copy">Multiple threads and local database copy<a class="headerlink" href="#multiple-threads-and-local-database-copy" title="Permanent link">&para;</a></h2>
+<h3 id="multiple-threads-and-local-database-copy">Multiple threads and local database copy<a class="headerlink" href="#multiple-threads-and-local-database-copy" title="Permanent link">&para;</a></h3>
 <p>For jobs which need more than 24 CPU-hours, eg: those that use large
 databases (&gt; 10 GB) or large amounts of query sequence (&gt; 1 GB),
 or slow BLAST searches such as classic <em>blastn</em> (<code>blastn -task blastn</code>).</p>
@@ -2272,7 +2390,7 @@ cp<span class="w"> </span><span class="nv">$BLASTDB</span>/<span class="o">{</sp
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

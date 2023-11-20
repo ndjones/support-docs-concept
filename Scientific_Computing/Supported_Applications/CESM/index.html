@@ -1047,8 +1047,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CESM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1059,6 +1068,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cesm" class="md-nav__link">
+    <span class="md-ellipsis">
+      CESM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-cesm2-on-maui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building CESM2 on Māui
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building CESM2 on Māui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-cesm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download CESM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesi-specific-cime-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      NeSI specific CIME configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-and-running-a-test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up and running a test case
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tuning-optimising-processor-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance tuning - optimising processor layout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2226,83 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cesm" class="md-nav__link">
+    <span class="md-ellipsis">
+      CESM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-cesm2-on-maui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building CESM2 on Māui
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building CESM2 on Māui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-cesm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download CESM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesi-specific-cime-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      NeSI specific CIME configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-and-running-a-test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up and running a test case
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tuning-optimising-processor-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance tuning - optimising processor layout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,21 +2326,23 @@
   
 
 
+  <h1>CESM</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="cesm">CESM<a class="headerlink" href="#cesm" title="Permanent link">&para;</a></h1>
+<h2 id="cesm">CESM<a class="headerlink" href="#cesm" title="Permanent link">&para;</a></h2>
 <p>The Community Earth System Model (CESM) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
 simultaneously simulating the Earth’s atmosphere, ocean, land, river
 run-off, land-ice, and sea-ice, plus one central coupler/moderator
 component, CESM allows researchers to conduct fundamental research into
 the Earth’s past, present, and future climate states.</p>
-<h1 id="building-cesm2-on-maui">Building CESM2 on Māui<a class="headerlink" href="#building-cesm2-on-maui" title="Permanent link">&para;</a></h1>
+<h2 id="building-cesm2-on-maui">Building CESM2 on Māui<a class="headerlink" href="#building-cesm2-on-maui" title="Permanent link">&para;</a></h2>
 <p>Here we provide a guide for downloading, building and running a CESM
 test case yourself on Māui This guide is based on CESM 2.1.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <p>Git Large File Storage seems to be required to download some of the CESM
 components. Download the Git-LFS archive from
 <a href="https://git-lfs.github.com/">here</a>, copy the <em>git-lfs</em> executable to
@@ -2187,7 +2359,7 @@ export PATH=$PATH:~/bin
 echo export PATH=\$PATH:\$HOME/bin &gt;&gt; ~/.bashrc
 git lfs install
 </code></pre></div>
-<h2 id="download-cesm">Download CESM<a class="headerlink" href="#download-cesm" title="Permanent link">&para;</a></h2>
+<h3 id="download-cesm">Download CESM<a class="headerlink" href="#download-cesm" title="Permanent link">&para;</a></h3>
 <p>These instructions are based on the <a href="https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html">upstream
 documentation</a>.
 First switch to your project directory (or wherever else you would like
@@ -2202,7 +2374,7 @@ cd my_cesm_sandbox
 documentation linked above for how to check). You may need to rerun the
 command until it is successful, especially if it asks you to accept a
 certificate.</p>
-<h2 id="nesi-specific-cime-configuration">NeSI specific CIME configuration<a class="headerlink" href="#nesi-specific-cime-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="nesi-specific-cime-configuration">NeSI specific CIME configuration<a class="headerlink" href="#nesi-specific-cime-configuration" title="Permanent link">&para;</a></h3>
 <p>Clone the repo containing NeSI specific CIME configuration
 (<a href="http://esmci.github.io/cime/versions/master/html/what_cime/index.html">CIME</a>
 provides a case control system for configuring, building and executing
@@ -2220,7 +2392,7 @@ cp config_batch.xml ~/.cime/config_batch.xml
 <em>~/.cime/config_machines.xml</em>, in particular, it is recommended that
 CESM users share the same input data locations as the input data can be
 large.</p>
-<h2 id="setting-up-and-running-a-test-case">Setting up and running a test case<a class="headerlink" href="#setting-up-and-running-a-test-case" title="Permanent link">&para;</a></h2>
+<h3 id="setting-up-and-running-a-test-case">Setting up and running a test case<a class="headerlink" href="#setting-up-and-running-a-test-case" title="Permanent link">&para;</a></h3>
 <p>Here we will run the test described in the CESM <a href="https://escomp.github.io/CESM/release-cesm2/quickstart.html">quick start
 guide</a>. The
 following are basic instructions to run create and run the case, see the
@@ -2251,7 +2423,7 @@ term archiving:</p>
 <p>A job will be submitted to the Slurm queue, you can view the queue using
 <em>squeue</em> or <em>squeue -u $USER</em> for just your own jobs. Check the job
 succeeded as described on the upstream quick start guide.</p>
-<h1 id="performance-tuning-optimising-processor-layout">Performance tuning - optimising processor layout<a class="headerlink" href="#performance-tuning-optimising-processor-layout" title="Permanent link">&para;</a></h1>
+<h2 id="performance-tuning-optimising-processor-layout">Performance tuning - optimising processor layout<a class="headerlink" href="#performance-tuning-optimising-processor-layout" title="Permanent link">&para;</a></h2>
 <p>With CESM it can be important to tune the processor layout for best
 performance with respect to the different components (atmosphere, land,
 sea ice, etc.). Many different configurations are possible, although
@@ -2273,7 +2445,7 @@ That information can then be used to determine an optimal load balance.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

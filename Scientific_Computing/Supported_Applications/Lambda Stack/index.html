@@ -1327,8 +1327,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lambda Stack
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1339,6 +1348,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-singularity-image-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Singularity image (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-stack-via-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Stack via Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-stack-via-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Stack via Jupyter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-running-transformers-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: running Transformers benchmarks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2202,59 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-singularity-image-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the Singularity image (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-stack-via-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Stack via Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-stack-via-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda Stack via Jupyter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-running-transformers-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: running Transformers benchmarks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,11 +2278,13 @@
   
 
 
+  <h1>Lambda Stack</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p><a href="https://lambdalabs.com/lambda-stack-deep-learning-software">Lambda
 Stack</a> is an
 AI software stack from Lambda containing PyTorch, TensorFlow, CUDA,
@@ -2184,7 +2308,7 @@ README
 <p>In the filenames above, the dates correspond to the date the image was
 built and the file with <em>-latest</em> will correspond to the most recent
 version.</p>
-<h1 id="building-the-singularity-image-optional">Building the Singularity image (optional)<a class="headerlink" href="#building-the-singularity-image-optional" title="Permanent link">&para;</a></h1>
+<h2 id="building-the-singularity-image-optional">Building the Singularity image (optional)<a class="headerlink" href="#building-the-singularity-image-optional" title="Permanent link">&para;</a></h2>
 <p>This step is optional; if you choose to use the prebuilt Singularity
 images under <em>/opt/nesi/containers/lambda-stack/</em> you can skip this
 step.</p>
@@ -2227,7 +2351,7 @@ export SINGULARITY_TMPDIR=/path/to/somewhere/with/lots/of/space
 export SINGULARITY_CACHEDIR=/path/to/somewhere/else/with/lots/of/space
 singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 </code></pre></div>
-<h1 id="lambda-stack-via-slurm">Lambda Stack via Slurm<a class="headerlink" href="#lambda-stack-via-slurm" title="Permanent link">&para;</a></h1>
+<h2 id="lambda-stack-via-slurm">Lambda Stack via Slurm<a class="headerlink" href="#lambda-stack-via-slurm" title="Permanent link">&para;</a></h2>
 <p>The following Slurm script can be used as a template for running jobs
 using Lambda Stack.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
@@ -2251,7 +2375,7 @@ SINGULARITY=&quot;singularity exec --nv -B ${PWD} ${SIF}&quot;
 # run a command in the container
 ${SINGULARITY} echo &quot;Hello World&quot;
 </code></pre></div>
-<h1 id="lambda-stack-via-jupyter">Lambda Stack via Jupyter<a class="headerlink" href="#lambda-stack-via-jupyter" title="Permanent link">&para;</a></h1>
+<h2 id="lambda-stack-via-jupyter">Lambda Stack via Jupyter<a class="headerlink" href="#lambda-stack-via-jupyter" title="Permanent link">&para;</a></h2>
 <p>The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI#adding_a_custom_python_kernel">here</a>).</p>
@@ -2316,7 +2440,7 @@ look like this (change &lt;username&gt; to your NeSI username):</p>
 <p>After refreshing the <a href="https://jupyter.nesi.org.nz/">NeSI JupyterLab</a>
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
 3".</p>
-<h1 id="example-running-transformers-benchmarks">Example: running Transformers benchmarks<a class="headerlink" href="#example-running-transformers-benchmarks" title="Permanent link">&para;</a></h1>
+<h2 id="example-running-transformers-benchmarks">Example: running Transformers benchmarks<a class="headerlink" href="#example-running-transformers-benchmarks" title="Permanent link">&para;</a></h2>
 <p>Here we give an example showing using Lambda Stack to run the
 <a href="https://huggingface.co/transformers/">Transformers</a> library benchmarks.
 Transformers is a natural language processing library that uses either
@@ -2409,7 +2533,7 @@ ${SINGULARITY} bash ./run-benchmark-torch.sh
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

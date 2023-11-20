@@ -1667,8 +1667,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TensorFlow on GPUs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1679,6 +1688,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-nesi-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use NeSI modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singularity-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularity containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-versions-for-a100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specific versions for A100
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2202,59 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-nesi-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use NeSI modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singularity-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singularity containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-versions-for-a100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specific versions for A100
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2167,6 +2289,8 @@
   
 
 
+  <h1>TensorFlow on GPUs</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2192,7 +2316,7 @@ running TensorFlow with GPU support.</p>
      performance.</li>
 </ul>
 </div>
-<h1 id="use-nesi-modules">Use NeSI modules<a class="headerlink" href="#use-nesi-modules" title="Permanent link">&para;</a></h1>
+<h2 id="use-nesi-modules">Use NeSI modules<a class="headerlink" href="#use-nesi-modules" title="Permanent link">&para;</a></h2>
 <p>TensorFlow is available on Mahuika as an <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001113076">environment
 module:</a></p>
 <div class="highlight"><pre><span></span><code>module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
@@ -2244,7 +2368,7 @@ Python scripts in a Slurm submission script, using:</p>
  environment is isolated from packages installed in your home folder
  <code>~/.local/lib/python3.8/site-packages/</code>.</p>
 </div>
-<h1 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h1>
+<h2 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h2>
 <p>As an alternative, you can also create <em>conda</em> environments to install a
 specific version of Python, TensorFlow and any additional packages
 required for your project. On Mahuika, use the Miniconda3 module:</p>
@@ -2309,7 +2433,7 @@ source $(conda info --base)/etc/profile.d/conda.sh  # if you didn&#39;t use &quo
 conda ...  # any conda commands (create, activate, install...)
 </code></pre></div></p>
 </div>
-<h1 id="singularity-containers">Singularity containers<a class="headerlink" href="#singularity-containers" title="Permanent link">&para;</a></h1>
+<h2 id="singularity-containers">Singularity containers<a class="headerlink" href="#singularity-containers" title="Permanent link">&para;</a></h2>
 <p>You can use containers to run your application on the NeSI platform. We
 provide support for
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001107916">Singularity</a>
@@ -2322,7 +2446,7 @@ More information about using Singularity with GPU enabled containers is
 available on the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001500156">NVIDIA GPU
 Containers</a>
 support page.</p>
-<h1 id="specific-versions-for-a100">Specific versions for A100<a class="headerlink" href="#specific-versions-for-a100" title="Permanent link">&para;</a></h1>
+<h2 id="specific-versions-for-a100">Specific versions for A100<a class="headerlink" href="#specific-versions-for-a100" title="Permanent link">&para;</a></h2>
 <p>Here are the recommended options to run TensorFlow on the A100 GPUs:</p>
 <ul>
 <li>If you use TensorFlow 1, use the TF1 <a href="https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow">container provided by
@@ -2334,7 +2458,7 @@ support page.</p>
 <li>If you use TensorFlow 2, any version from 2.4 and above will provide
     support for the A100 GPUs.</li>
 </ul>
-<h1 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h1>
+<h2 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h2>
 <p>In the following example, we will use the
 <a href="https://github.com/tensorflow/hub/blob/r0.12/tensorflow_hub/tools/make_image_classifier/make_image_classifier.py">make_image_classifier</a>
 provided by <a href="https://www.tensorflow.org/hub">TensorFlow Hub</a> to
@@ -2413,7 +2537,7 @@ file, named <code>slurm-JOBID.out</code> by default.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

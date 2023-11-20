@@ -1407,8 +1407,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ORCA
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1419,6 +1428,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licensing requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Further notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-parallel-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting a parallel run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-and-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing and restarting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2208,65 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licensing requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Further notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-parallel-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting a parallel run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-and-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkpointing and restarting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2173,6 +2307,8 @@
   
 
 
+  <h1>ORCA</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2188,7 +2324,7 @@ and multireference correlated <em>ab initio</em> methods. It can also treat
 environmental and relativistic effects.</p>
 <p>The ORCA home page is
 at <a href="https://orcaforum.kofo.mpg.de">https://orcaforum.kofo.mpg.de</a></p>
-<h1 id="licensing-requirements">Licensing requirements<a class="headerlink" href="#licensing-requirements" title="Permanent link">&para;</a></h1>
+<h2 id="licensing-requirements">Licensing requirements<a class="headerlink" href="#licensing-requirements" title="Permanent link">&para;</a></h2>
 <p>ORCA is released as precompiled binaries at no cost, pursuant to a
 closed-source licence.  Users are advised that the terms of <a href="https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&amp;df_id=41">the ORCA
 licence</a>
@@ -2197,7 +2333,7 @@ research group is expected to register with the ORCA developers. If you
 have any questions regarding your eligibility to access ORCA or any
 particular version of it, please contact <a href="mailto:support@nesi.org.nz">our support
 desk</a>.</p>
-<h1 id="example-script">Example script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h1>
+<h2 id="example-script">Example script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
 <span class="c1">#SBATCH --job-name      ORCA_job</span>
 <span class="c1">#SBATCH --time          01:00:00</span>
@@ -2212,8 +2348,8 @@ module<span class="w"> </span>load<span class="w"> </span>ORCA/5.0.4-OpenMPI-4.1
 <span class="c1"># Don&#39;t use &quot;srun&quot; as ORCA does that itself when launching its MPI process.</span>
 <span class="si">${</span><span class="nv">orca_exe</span><span class="si">}</span><span class="w"> </span>MyInput.inp
 </code></pre></div>
-<h1 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h1>
-<h2 id="requesting-a-parallel-run">Requesting a parallel run<a class="headerlink" href="#requesting-a-parallel-run" title="Permanent link">&para;</a></h2>
+<h2 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
+<h3 id="requesting-a-parallel-run">Requesting a parallel run<a class="headerlink" href="#requesting-a-parallel-run" title="Permanent link">&para;</a></h3>
 <p>ORCA requires a parallel run to be requested in its input as well as
 from the batch scheduler. To request a parallel run, you need to add a
 line to the input file like the following:</p>
@@ -2221,7 +2357,7 @@ line to the input file like the following:</p>
 </code></pre></div>
 <p>where <code>&lt;np&gt;</code> represents the total number of processors (cores) you have
 requested from the scheduler.</p>
-<h2 id="checkpointing-and-restarting">Checkpointing and restarting<a class="headerlink" href="#checkpointing-and-restarting" title="Permanent link">&para;</a></h2>
+<h3 id="checkpointing-and-restarting">Checkpointing and restarting<a class="headerlink" href="#checkpointing-and-restarting" title="Permanent link">&para;</a></h3>
 <p>ORCA provides for saving of checkpoint data, especially molecular
 orbital information, in a file with extension ".gbw" (short for
 Geometry-Basis-Wavefunction). Given an input file name of "foo.inp" or
@@ -2253,7 +2389,7 @@ please consult the ORCA manual.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

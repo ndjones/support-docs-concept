@@ -1807,8 +1807,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ont-guppy-gpu
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1819,6 +1828,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-and-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      License and Disclaimer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License and Disclaimer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2190,47 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-and-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      License and Disclaimer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License and Disclaimer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,11 +2254,13 @@
   
 
 
+  <h1>ont-guppy-gpu</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Guppy,  is a data processing toolkit that contains Oxford Nanopore’s
 (<a href="https://nanoporetech.com/">https://nanoporetech.com/</a>) basecalling algorithms, and several
 bioinformatic post-processing features, such as
@@ -2168,7 +2268,7 @@ barcoding/demultiplexing, adapter trimming, and alignment. The Guppy
 toolkit also performs modified basecalling (5mC, 6mA and CpG) from the
 raw signal data, producing an additional FAST5 file of modified base
 probabilities.</p>
-<h1 id="license-and-disclaimer">License and Disclaimer<a class="headerlink" href="#license-and-disclaimer" title="Permanent link">&para;</a></h1>
+<h2 id="license-and-disclaimer">License and Disclaimer<a class="headerlink" href="#license-and-disclaimer" title="Permanent link">&para;</a></h2>
 <p>“Base Caller Software” shall mean Oxford’s proprietary software,
 including all functional specifications associated therewith made
 available to the Oxford Group’s customers on the Oxford Group’s
@@ -2178,7 +2278,7 @@ Data to Biological Data, as may be made available to Customers by
 Oxford, whether free of charge or for a fee.</p>
 <p>Guppy is available to ONT customers via their community website
 https://community.nanoporetech.com/</p>
-<h2 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h2>
+<h3 id="example-slurm-script">Example Slurm script<a class="headerlink" href="#example-slurm-script" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Following Slurm script is a template to run Basecalling on NVIDIA
     P100 GPUs.( We do not recommend running Guppy jobs on CPUs )</li>
@@ -2216,7 +2316,7 @@ guppy_basecaller -i /path/to/input/data/directory -s /path/to/save/fastq/files \
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

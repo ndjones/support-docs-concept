@@ -1027,8 +1027,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    BRAKER
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1039,6 +1048,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-and-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      License and Disclaimer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-slurm-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm scripts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2199,56 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-and-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      License and Disclaimer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-slurm-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slurm scripts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,11 +2272,13 @@
   
 
 
+  <h1>BRAKER</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The rapidly growing number of sequenced genomes requires fully automated
 methods for accurate gene structure annotation. With this goal in mind,
 we have developed
@@ -2190,12 +2308,11 @@ result of the pipeline is the combined gene set of both gene prediction
 tools, which only contains genes with very high support from extrinsic
 evidence.</p>
 <p>Home page : <a href="https://github.com/Gaius-Augustus/BRAKER">https://github.com/Gaius-Augustus/BRAKER</a></p>
-<h1 id="license-and-disclaimer">License and Disclaimer<a class="headerlink" href="#license-and-disclaimer" title="Permanent link">&para;</a></h1>
+<h2 id="license-and-disclaimer">License and Disclaimer<a class="headerlink" href="#license-and-disclaimer" title="Permanent link">&para;</a></h2>
 <p>All source code, i.e. <code>scripts/*.pl</code> or <code>scripts/*.py</code> are under the
 Artistic License
 (see <a href="http://www.opensource.org/licenses/artistic-license.php">http://www.opensource.org/licenses/artistic-license.php</a>).</p>
-<h1 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h1>
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>!!! prerequisite Obtain GeneMark-ES/ET Academic License 
      GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
      individual academic license  (this is free). This can be obtained as
@@ -2213,7 +2330,7 @@ Artistic License
      Make a copy of AUGUSTUS config from
      <strong><em>/opt/nesi/CS400_centos7_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config</em></strong>
       to path with read/write permissions .i.e. project, nobackup,home </p>
-<h2 id="example-slurm-scripts">Example Slurm scripts<a class="headerlink" href="#example-slurm-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="example-slurm-scripts">Example Slurm scripts<a class="headerlink" href="#example-slurm-scripts" title="Permanent link">&para;</a></h3>
 <p>Following example uses the .fa files provided BRAKER developers on
 <a href="https://github.com/Gaius-Augustus/BRAKER/tree/master/example">https://github.com/Gaius-Augustus/BRAKER/tree/master/example</a></p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
@@ -2251,7 +2368,7 @@ augustus.hints_iter1.gtf       GeneMark-ES/ proteins.fa
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

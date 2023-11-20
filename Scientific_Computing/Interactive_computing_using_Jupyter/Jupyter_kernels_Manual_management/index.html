@@ -589,8 +589,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jupyter kernels - Manual management
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -601,6 +610,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-custom-python-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a custom Python kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-a-python-kernel-with-your-project-team-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing a Python kernel with your project team members
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-kernel-in-a-singularity-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom kernel in a Singularity container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-custom-r-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a custom R kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spark
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1351,8 +1431,68 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-custom-python-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a custom Python kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-a-python-kernel-with-your-project-team-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing a Python kernel with your project team members
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-kernel-in-a-singularity-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom kernel in a Singularity container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-custom-r-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a custom R kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spark
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1376,11 +1516,13 @@
   
 
 
+  <h1>Jupyter kernels - Manual management</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:</p>
 <ul>
@@ -1396,7 +1538,7 @@ and these can be extended further as described on the
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/207782537">Python</a> and
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/209338087">R</a> support
 pages.</p>
-<h1 id="adding-a-custom-python-kernel">Adding a custom Python kernel<a class="headerlink" href="#adding-a-custom-python-kernel" title="Permanent link">&para;</a></h1>
+<h2 id="adding-a-custom-python-kernel">Adding a custom Python kernel<a class="headerlink" href="#adding-a-custom-python-kernel" title="Permanent link">&para;</a></h2>
 <div class="admonition prerequisite see also">
 <p class="admonition-title">Prerequisite</p>
 <p>See the <a href="https://support.nesi.org.nz/hc/en-gb/articles/4414958674831">Jupyter kernels - Tool-assisted
@@ -1478,7 +1620,7 @@ like this (change &lt;username&gt; to your NeSI username):</p>
 </code></pre></div>
 <p>After refreshing JupyterLab your new kernel should show up in the
 Launcher as "My Conda Env".</p>
-<h1 id="sharing-a-python-kernel-with-your-project-team-members">Sharing a Python kernel with your project team members<a class="headerlink" href="#sharing-a-python-kernel-with-your-project-team-members" title="Permanent link">&para;</a></h1>
+<h2 id="sharing-a-python-kernel-with-your-project-team-members">Sharing a Python kernel with your project team members<a class="headerlink" href="#sharing-a-python-kernel-with-your-project-team-members" title="Permanent link">&para;</a></h2>
 <p>You can also configure a shared Python kernel that others with access to
 the same NeSI project will be able to load. If this kernel is based on a
 Python virtual environment, Conda environment or similar, you must make
@@ -1534,12 +1676,12 @@ look like this (change &lt;project_code&gt; to your NeSI project code):</p>
 </code></pre></div>
 <p>After refreshing JupyterLab your new kernel should show up in the
 Launcher as "Shared Virtual Env".</p>
-<h1 id="custom-kernel-in-a-singularity-container">Custom kernel in a Singularity container<a class="headerlink" href="#custom-kernel-in-a-singularity-container" title="Permanent link">&para;</a></h1>
+<h2 id="custom-kernel-in-a-singularity-container">Custom kernel in a Singularity container<a class="headerlink" href="#custom-kernel-in-a-singularity-container" title="Permanent link">&para;</a></h2>
 <p>An example showing setting up a custom kernel running in a Singularity
 container can be found on our <a href="https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter">Lambda
 Stack</a>
 support page.</p>
-<h1 id="adding-a-custom-r-kernel">Adding a custom R kernel<a class="headerlink" href="#adding-a-custom-r-kernel" title="Permanent link">&para;</a></h1>
+<h2 id="adding-a-custom-r-kernel">Adding a custom R kernel<a class="headerlink" href="#adding-a-custom-r-kernel" title="Permanent link">&para;</a></h2>
 <p>You can configure custom R kernels for running your Jupyter notebooks.
 The following example will create a custom kernel based on the
 R/3.6.2-gimkl-2020a environment module and will additionally load an
@@ -1596,7 +1738,7 @@ something like this (change &lt;username&gt; to your NeSI username):</p>
 </code></pre></div>
 <p>After refreshing JupyterLab your new R kernel should show up in the
 Launcher as "R with MPFR".</p>
-<h1 id="spark">Spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h1>
+<h2 id="spark">Spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
 <p>At the time of writing, the latest stable version of Spark does not
 support Python 3.8. If you wish to use Spark (e.g. PySpark) make sure
 you select one of our Python 3.7.3 or Anaconda3 kernels.</p>
@@ -1606,7 +1748,7 @@ you select one of our Python 3.7.3 or Anaconda3 kernels.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

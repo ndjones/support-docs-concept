@@ -1207,8 +1207,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1237,8 +1235,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1247,6 +1243,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#job-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job submission
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#checkpointing-and-restarting" class="md-nav__link">
     <span class="md-ellipsis">
       Checkpointing and restarting
@@ -1254,11 +1260,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#warnings-regarding-cpu-affinity" class="md-nav__link">
     <span class="md-ellipsis">
       Warnings regarding CPU affinity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvidia-gpu-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA GPU Container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Documentation
     </span>
   </a>
   
@@ -2179,8 +2208,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2189,6 +2216,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#job-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job submission
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#checkpointing-and-restarting" class="md-nav__link">
     <span class="md-ellipsis">
       Checkpointing and restarting
@@ -2196,11 +2233,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#warnings-regarding-cpu-affinity" class="md-nav__link">
     <span class="md-ellipsis">
       Warnings regarding CPU affinity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvidia-gpu-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      NVIDIA GPU Container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Documentation
     </span>
   </a>
   
@@ -2230,6 +2290,8 @@
   
 
 
+  <h1>GROMACS</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2248,7 +2310,7 @@ Licence</a>. Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software (see</p>
-<h1 id="job-submission">Job submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h1>
+<h2 id="job-submission">Job submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h2>
 <p>GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
 balancing algorithm, the ratio between the number of Particle-Particle
@@ -2289,11 +2351,11 @@ mdrun" (if called as "gmx mdrun") and "gmx_serial" in all other cases.</p>
 architectures. Thus you can use gmx_mpi from the
 GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
 Mahuika GPU nodes.</p>
-<h2 id="checkpointing-and-restarting">Checkpointing and restarting<a class="headerlink" href="#checkpointing-and-restarting" title="Permanent link">&para;</a></h2>
+<h3 id="checkpointing-and-restarting">Checkpointing and restarting<a class="headerlink" href="#checkpointing-and-restarting" title="Permanent link">&para;</a></h3>
 <p>In the examples given above, the <code>-cpt 30</code> option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the <code>-cpi</code> flag, thus: <code>-cpi state.cpt</code>.</p>
-<h2 id="warnings-regarding-cpu-affinity">Warnings regarding CPU affinity<a class="headerlink" href="#warnings-regarding-cpu-affinity" title="Permanent link">&para;</a></h2>
+<h3 id="warnings-regarding-cpu-affinity">Warnings regarding CPU affinity<a class="headerlink" href="#warnings-regarding-cpu-affinity" title="Permanent link">&para;</a></h3>
 <p>If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
 output:
@@ -2353,7 +2415,7 @@ nodes.  However, we have seen issues with slow performance and will
 recommend using the `--exclusive` flag when running GROMACS. It may
 also be advisable to request tasks or CPUs in multiples of 80, since
 that is the number of vCPUs per node.</p>
-<h1 id="nvidia-gpu-container">NVIDIA GPU Container<a class="headerlink" href="#nvidia-gpu-container" title="Permanent link">&para;</a></h1>
+<h2 id="nvidia-gpu-container">NVIDIA GPU Container<a class="headerlink" href="#nvidia-gpu-container" title="Permanent link">&para;</a></h2>
 <p>NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers">here</a>).
@@ -2362,7 +2424,7 @@ location (you can also pull your own version if you wish):
 <em>/opt/nesi/containers/nvidia/gromacs-2020_2.sif</em>. We have also provided
 an example submission script that calls the Singularity image here:
 <em>/opt/nesi/containers/nvidia/gromacs-example.sl</em>.</p>
-<h1 id="further-documentation">Further Documentation<a class="headerlink" href="#further-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="further-documentation">Further Documentation<a class="headerlink" href="#further-documentation" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.gromacs.org/">GROMACS Homepage</a></p>
 <p><a href="http://www.gromacs.org/Documentation/Manual">GROMACS Manual</a></p>
 
@@ -2371,7 +2433,7 @@ an example submission script that calls the Singularity image here:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

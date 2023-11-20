@@ -817,15 +817,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#home" class="md-nav__link">
     <span class="md-ellipsis">
       /home
@@ -1133,15 +1124,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#home" class="md-nav__link">
     <span class="md-ellipsis">
       /home
@@ -1283,6 +1265,8 @@
   
 
 
+  <h1>NeSI File Systems and Quotas</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1307,7 +1291,7 @@ command: </p>
 <p>The values for 'nn_storage_quota' are updated approximately every hour
 and cached between updates.</p>
 <h2 id="_1"><img alt="neSI_filetree.svg" src="../../../assets/images/NeSI_File_Systems_and_Quotas.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h1 id="file-system-specifications">File System Specifications<a class="headerlink" href="#file-system-specifications" title="Permanent link">&para;</a></h1>
+<h2 id="file-system-specifications">File System Specifications<a class="headerlink" href="#file-system-specifications" title="Permanent link">&para;</a></h2>
 <table class="table table-bordered"
 style="tr td: first-child {    white-space:nowrap;">
 <colgroup>
@@ -1485,7 +1469,7 @@ interfaces</strong></span></td>
 possible to end up with more data or files in the fileset than the quota
 allows for. This outcome does not trigger deletion of any existing data,
 but will prevent creation of new data or files.</p>
-<h3 id="notes"><strong>Notes:</strong><a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h4 id="notes"><strong>Notes:</strong><a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>You may request an increase in storage and inode quota if needed by
     a project. This may in turn be reduced as part of managing overall
@@ -1510,7 +1494,7 @@ but will prevent creation of new data or files.</p>
     command to prevent the cleaning policy from removing files, because
     this behaviour would deprive the community of a shared resource.</li>
 </ul>
-<h2 id="home">/home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h2>
+<h3 id="home">/home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
 <p>This file system is accessible from login, compute and ancillary nodes.
 Users should <strong>not</strong> run jobs from this filesystem. All home directories
 are backed up daily, both via the Spectrum Protect backup system, which
@@ -1519,7 +1503,7 @@ retains the last 10 versions of all files for up to 90 days, and via
 No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.</p>
-<h2 id="nesiproject">/nesi/project<a class="headerlink" href="#nesiproject" title="Permanent link">&para;</a></h2>
+<h3 id="nesiproject">/nesi/project<a class="headerlink" href="#nesiproject" title="Permanent link">&para;</a></h3>
 <p>This filesystem is accessible from all login, compute and ancillary
 nodes. Contents are backed up daily, via the Spectrum Protect backup
 system, which retains the last 10 versions of all files for 90 days. No
@@ -1536,7 +1520,7 @@ similar archiving package such as <code>tar</code> .</p>
 about in your <a href="https://my.nesi.org.nz/html/request_project">application for a new NeSI
 project</a>, and separately
 covering disk space and number of files.</p>
-<h2 id="nesinobackup">/nesi/nobackup<a class="headerlink" href="#nesinobackup" title="Permanent link">&para;</a></h2>
+<h3 id="nesinobackup">/nesi/nobackup<a class="headerlink" href="#nesinobackup" title="Permanent link">&para;</a></h3>
 <p>The <code>/nesi/nobackup</code> file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
 disk. It provides access to a very large (4.4 PB) resource for
@@ -1559,7 +1543,7 @@ policy from removing unused files, because this behaviour would deprive
 the community of a shared resource.</p>
 <p>The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.</p>
-<h2 id="nesinearline">/nesi/nearline<a class="headerlink" href="#nesinearline" title="Permanent link">&para;</a></h2>
+<h3 id="nesinearline">/nesi/nearline<a class="headerlink" href="#nesinearline" title="Permanent link">&para;</a></h3>
 <div class="admonition prerequisite note">
 <p class="admonition-title">Prerequisite</p>
 <p>The nearline service, including its associated file systems, is in an
@@ -1578,14 +1562,14 @@ catalogue of files on tape will remain on the disk for quick access.</p>
 <p>See <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001169956">this
 page</a> for
 more information about the nearline service.</p>
-<h1 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h1>
+<h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h2>
 <p>If you have accidentally deleted data you can recover it from
 a <a href="https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406">snapshot</a>.
 Snapshots are taken daily of <code>home/</code> and <code>project</code> directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 emailing <a href="mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File">NeSI
 Support</a>.</p>
-<h1 id="contributions-of-small-files-towards-quotas">Contributions of Small Files Towards Quotas<a class="headerlink" href="#contributions-of-small-files-towards-quotas" title="Permanent link">&para;</a></h1>
+<h2 id="contributions-of-small-files-towards-quotas">Contributions of Small Files Towards Quotas<a class="headerlink" href="#contributions-of-small-files-towards-quotas" title="Permanent link">&para;</a></h2>
 <p>The Scale file system makes use of a feature called <em>data-in-inode</em>.
 This feature will ensure that, once all of a (non-encrypted) file's
 required metadata has been written to our metadata storage, if all the
@@ -1607,7 +1591,7 @@ large numbers of very small files in your home directory or in a
 project's persistent storage, please <a href="https://support.nesi.org.nz/hc/en-gb/requests/new">contact our support
 team</a> to discuss your
 storage needs.</p>
-<h1 id="transparent-file-data-compression">Transparent File Data Compression<a class="headerlink" href="#transparent-file-data-compression" title="Permanent link">&para;</a></h1>
+<h2 id="transparent-file-data-compression">Transparent File Data Compression<a class="headerlink" href="#transparent-file-data-compression" title="Permanent link">&para;</a></h2>
 <p>The Scale file system has the ability to transparently compress file
 data. That is, file contents/data can be compressed behind the scenes,
 taking up less space on disk, while appearing uncompressed to
@@ -1623,7 +1607,7 @@ data compression can also be automatically applied by administrators
 through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the <code>/nesi/project</code>
 file system.</p>
-<h2 id="what-project-data-is-automatically-compressed">What Project data is automatically compressed?<a class="headerlink" href="#what-project-data-is-automatically-compressed" title="Permanent link">&para;</a></h2>
+<h3 id="what-project-data-is-automatically-compressed">What Project data is automatically compressed?<a class="headerlink" href="#what-project-data-is-automatically-compressed" title="Permanent link">&para;</a></h3>
 <p>Our current policy compresses files that have not been accessed (either
 read from or written to) within the last 365 days, i.e., very inactive
 cold data. We may decrease this in future.</p>
@@ -1640,7 +1624,7 @@ the compression space saving is &gt;=10%.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

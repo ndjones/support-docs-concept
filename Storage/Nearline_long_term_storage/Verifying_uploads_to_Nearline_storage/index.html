@@ -759,8 +759,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Verifying uploads to Nearline storage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -771,6 +780,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-transfer-status-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 1: Transfer status report
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-file-counts-and-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 2: File counts and sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-checksums" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 3: Checksums
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -911,8 +964,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-transfer-status-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 1: Transfer status report
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-file-counts-and-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 2: File counts and sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-checksums" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 3: Checksums
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -935,6 +1021,8 @@
   
   
 
+
+  <h1>Verifying uploads to Nearline storage</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -962,7 +1050,7 @@ storage).</p>
 </div>
 <p>There are several options for verification, depending on the level of
 assurance you require.</p>
-<h1 id="level-1-transfer-status-report">Level 1: Transfer status report<a class="headerlink" href="#level-1-transfer-status-report" title="Permanent link">&para;</a></h1>
+<h2 id="level-1-transfer-status-report">Level 1: Transfer status report<a class="headerlink" href="#level-1-transfer-status-report" title="Permanent link">&para;</a></h2>
 <p>The most basic form of verification is to look at the results
 of <code>nljobstatus</code>. If all the Nearline job IDs associated with movement
 of data to Nearline (i.e. <code>nlput</code> commands)
@@ -976,7 +1064,7 @@ confidence that the files were in fact copied over to nearline.</p>
  existed on nearline will silently skip those files and still report
  success.</p>
 </div>
-<h1 id="level-2-file-counts-and-sizes">Level 2: File counts and sizes<a class="headerlink" href="#level-2-file-counts-and-sizes" title="Permanent link">&para;</a></h1>
+<h2 id="level-2-file-counts-and-sizes">Level 2: File counts and sizes<a class="headerlink" href="#level-2-file-counts-and-sizes" title="Permanent link">&para;</a></h2>
 <p>You can get a higher level of assurance by checking the number of files,
 and their sizes and last modified times, in a particular directory on
 nearline, and optionally to compare that number and size to the
@@ -1007,7 +1095,7 @@ other, which you can do using a comparison program such as <code>diff</code> or
  should do so as soon as possible after you have established that the
  <code>nlput</code> operation completed successfully.</p>
 </div>
-<h1 id="level-3-checksums">Level 3: Checksums<a class="headerlink" href="#level-3-checksums" title="Permanent link">&para;</a></h1>
+<h2 id="level-3-checksums">Level 3: Checksums<a class="headerlink" href="#level-3-checksums" title="Permanent link">&para;</a></h2>
 <p>For especially important files, you can get a still higher level of
 assurance by retrieving those files individually or in small numbers
 from nearline and running checksums (e.g. SHA256 sums) on them,
@@ -1034,7 +1122,7 @@ even if their modification dates and times are reported differently.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

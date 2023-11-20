@@ -979,9 +979,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="1) Quality of Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#2-fair-share" class="md-nav__link">
     <span class="md-ellipsis">
       2) Fair Share
@@ -989,8 +990,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3-job-age" class="md-nav__link">
     <span class="md-ellipsis">
       3) Job Age
@@ -998,8 +999,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-job-size-or-tres-trackable-resources" class="md-nav__link">
     <span class="md-ellipsis">
       4) Job Size or "TRES" (Trackable RESources)
@@ -1007,8 +1008,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5-project-allocation-class" class="md-nav__link">
     <span class="md-ellipsis">
       5) Project Allocation Class
@@ -1016,17 +1017,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#6-nice-values" class="md-nav__link">
     <span class="md-ellipsis">
       6) Nice values
@@ -1034,13 +1026,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#7-holds" class="md-nav__link">
     <span class="md-ellipsis">
       7) Holds
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1621,9 +1618,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="1) Quality of Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#2-fair-share" class="md-nav__link">
     <span class="md-ellipsis">
       2) Fair Share
@@ -1631,8 +1629,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3-job-age" class="md-nav__link">
     <span class="md-ellipsis">
       3) Job Age
@@ -1640,8 +1638,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-job-size-or-tres-trackable-resources" class="md-nav__link">
     <span class="md-ellipsis">
       4) Job Size or "TRES" (Trackable RESources)
@@ -1649,8 +1647,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5-project-allocation-class" class="md-nav__link">
     <span class="md-ellipsis">
       5) Project Allocation Class
@@ -1658,17 +1656,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#6-nice-values" class="md-nav__link">
     <span class="md-ellipsis">
       6) Nice values
@@ -1676,13 +1665,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#7-holds" class="md-nav__link">
     <span class="md-ellipsis">
       7) Holds
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1740,7 +1734,7 @@ reserved for jobs with a higher priority.</p>
 <p>To see the priorities of your currently pending jobs you can use the
 command <code>sprio -u $USER</code>.</p>
 <p>Priority scores are determined by a number of factors:</p>
-<h3 id="1-quality-of-service">1) Quality of Service<a class="headerlink" href="#1-quality-of-service" title="Permanent link">&para;</a></h3>
+<h2 id="1-quality-of-service">1) Quality of Service<a class="headerlink" href="#1-quality-of-service" title="Permanent link">&para;</a></h2>
 <p>The "debug" Quality of Service can be gained by adding the <code>sbatch</code>
 command line option <code>--qos=debug</code>.<br />
 This adds 5000 to the job priority so raises it above all non-debug
@@ -1802,7 +1796,6 @@ NeSI.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h3 id="6-nice-values">6) Nice values<a class="headerlink" href="#6-nice-values" title="Permanent link">&para;</a></h3>
 <p>It is possible to give a job a "nice" value which is subtracted from its
 priority. You can do that with the <code>--nice</code> option of <code>sbatch</code> or the
@@ -1838,7 +1831,7 @@ done on the HPCs.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

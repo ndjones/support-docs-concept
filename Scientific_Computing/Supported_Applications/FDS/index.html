@@ -2289,6 +2289,8 @@
   
 
 
+  <h1>FDS</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2303,7 +2305,7 @@ fires.</p>
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-SLURM-Parallel-Execution#t_mpi">MPI</a>
 and
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-SLURM-Parallel-Execution#t_multi">OpenMP</a></p>
-<h3 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h3>
+<h2 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
 #SBATCH --time           02:00:00       #Walltime
@@ -2318,7 +2320,7 @@ input=&quot;/nesi/project/nesi99999/path/to/input.fds&quot;
 
 srun fds ${input}
 </code></pre></div>
-<h1 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h1>
+<h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.</li>
@@ -2332,9 +2334,9 @@ srun fds ${input}
     cores. <code>--cpus-per-task 4</code></li>
 <li>Hyper-threading is not recommended. Set <code>--hint nomultithread</code></li>
 </ul>
-<h2 id="scaling-with-mpi">Scaling with MPI<a class="headerlink" href="#scaling-with-mpi" title="Permanent link">&para;</a></h2>
+<h3 id="scaling-with-mpi">Scaling with MPI<a class="headerlink" href="#scaling-with-mpi" title="Permanent link">&para;</a></h3>
 <p><img alt="mceclip1.png" src="../../../assets/images/FDS.png" /></p>
-<h2 id="scaling-with-omp">Scaling with oMP<a class="headerlink" href="#scaling-with-omp" title="Permanent link">&para;</a></h2>
+<h3 id="scaling-with-omp">Scaling with oMP<a class="headerlink" href="#scaling-with-omp" title="Permanent link">&para;</a></h3>
 <p><img alt="mceclip0.png" src="../../../assets/images/FDS_0.png" /></p>
 
   <hr>
@@ -2342,7 +2344,7 @@ srun fds ${input}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

@@ -1267,8 +1267,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Julia
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1279,6 +1288,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licensing requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#julia-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Julia packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Julia packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-julia-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Julia packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-julia-packages-available-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Julia packages available at runtime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-julia-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling Julia code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2208,65 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#licensing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licensing requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#julia-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Julia packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Julia packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-julia-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Julia packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-julia-packages-available-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Julia packages available at runtime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-julia-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling Julia code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,6 +2290,8 @@
   
 
 
+  <h1>Julia</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2164,18 +2300,18 @@
 numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
 at <a href="https://julialang.org/">https://julialang.org/</a>.</p>
-<h1 id="licensing-requirements">Licensing requirements<a class="headerlink" href="#licensing-requirements" title="Permanent link">&para;</a></h1>
+<h2 id="licensing-requirements">Licensing requirements<a class="headerlink" href="#licensing-requirements" title="Permanent link">&para;</a></h2>
 <p>The Julia language is (mostly) licensed under the MIT licence. For more
 details, including the full text of the licence and a list of
 exceptions,
 see <a href="https://github.com/JuliaLang/julia/blob/master/LICENSE.md">https://github.com/JuliaLang/julia/blob/master/LICENSE.md</a>.</p>
-<h1 id="julia-packages">Julia packages<a class="headerlink" href="#julia-packages" title="Permanent link">&para;</a></h1>
+<h2 id="julia-packages">Julia packages<a class="headerlink" href="#julia-packages" title="Permanent link">&para;</a></h2>
 <p>Besides the core Julia language and interpreter, a great deal of
 functionality is provided by Julia packages contributed by the Julia
 developers and by third parties, or you can write your own packages.
 These packages are licensed separately from the main Julia software, so
 different terms and conditions may apply.</p>
-<h2 id="installing-julia-packages">Installing Julia packages<a class="headerlink" href="#installing-julia-packages" title="Permanent link">&para;</a></h2>
+<h3 id="installing-julia-packages">Installing Julia packages<a class="headerlink" href="#installing-julia-packages" title="Permanent link">&para;</a></h3>
 <p>Julia extensions, i.e. pieces of code that add functionality, are called
 <em>modules</em>, and for installation and management purposes modules are
 grouped into <em>packages</em>. Each package thus consists of one or more
@@ -2275,7 +2411,7 @@ julia&gt;
 various packages into the chosen directory.</p>
 </li>
 </ol>
-<h2 id="making-julia-packages-available-at-runtime">Making Julia packages available at runtime<a class="headerlink" href="#making-julia-packages-available-at-runtime" title="Permanent link">&para;</a></h2>
+<h3 id="making-julia-packages-available-at-runtime">Making Julia packages available at runtime<a class="headerlink" href="#making-julia-packages-available-at-runtime" title="Permanent link">&para;</a></h3>
 <p>For some reason, Julia uses the <code>DEPOT_PATH</code> variable only to control
 where newly obtained packages are to be installed. The directories where
 existing packages are searched for are stored in a different variable,
@@ -2316,7 +2452,7 @@ certainly the easiest is to do the following in your environment:</p>
 $ export JULIA_LOAD_PATH
 </code></pre></div></p>
 </div>
-<h1 id="profiling-julia-code">Profiling Julia code<a class="headerlink" href="#profiling-julia-code" title="Permanent link">&para;</a></h1>
+<h2 id="profiling-julia-code">Profiling Julia code<a class="headerlink" href="#profiling-julia-code" title="Permanent link">&para;</a></h2>
 <p>In addition to the Julia Profile module (see the <a href="https://docs.julialang.org/en/v1/manual/profile/">official
 documentation</a>), it is
 also possible to profile Julia code with <a href="https://docs.julialang.org/en/v1/manual/profile/#External-Profiling-1">external
@@ -2363,7 +2499,7 @@ Guide</a>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

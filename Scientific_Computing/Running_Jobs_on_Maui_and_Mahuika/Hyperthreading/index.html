@@ -897,8 +897,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hyperthreading
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -909,6 +918,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading-with-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperthreading with slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use Hyperthreading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use Hyperthreading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Hyperthreading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many logical CPUs will my job use or be charged for?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1491,8 +1559,56 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading-with-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperthreading with slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use Hyperthreading
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-hyperthreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use Hyperthreading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use Hyperthreading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      How many logical CPUs will my job use or be charged for?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1516,6 +1632,8 @@
   
 
 
+  <h1>Hyperthreading</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -1535,7 +1653,7 @@ and share some hardware with nearby logical cores. Physical cores are
 made up of two logical cores.</p>
 <p>Hyperthreading is enabled by default on NeSI machines, meaning, by
 default, Slurm will allocate two threads to each physical core. </p>
-<h1 id="hyperthreading-with-slurm">Hyperthreading with slurm<a class="headerlink" href="#hyperthreading-with-slurm" title="Permanent link">&para;</a></h1>
+<h2 id="hyperthreading-with-slurm">Hyperthreading with slurm<a class="headerlink" href="#hyperthreading-with-slurm" title="Permanent link">&para;</a></h2>
 <p>When Slurm request a CPU, it is <strong>requesting logical cores,</strong> which, as
 mentioned above, there are two of per physical core. If you use
 <code>--ntasks=n</code> to request CPUs, Slurm will start <code>n</code> MPI tasks which are
@@ -1671,7 +1789,7 @@ CPUs according to the following image:</p>
 </table>
 <p>Image adapted from <a href="https://slurm.schedmd.com/cpu_management.html">Slurm's documentation
 page</a>.</p>
-<h1 id="when-to-use-hyperthreading">When to use Hyperthreading<a class="headerlink" href="#when-to-use-hyperthreading" title="Permanent link">&para;</a></h1>
+<h2 id="when-to-use-hyperthreading">When to use Hyperthreading<a class="headerlink" href="#when-to-use-hyperthreading" title="Permanent link">&para;</a></h2>
 <p>Hyperthreading increases the efficiency of some jobs, but the fact that
 Slurm is counting in logical CPUs makes aspects of running
 non-Hyperthreaded jobs confusing, even when Hyperthreading is turned off
@@ -1688,7 +1806,7 @@ error or stays at 100% efficiency, it is likely you can not run your
 code Hyperthreaded. 200% CPU efficiency would be the maximally efficient
 job, however, this is rarely observed and anything over 100% should be
 considered a bonus.</p>
-<h1 id="how-to-use-hyperthreading">How to use Hyperthreading<a class="headerlink" href="#how-to-use-hyperthreading" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-use-hyperthreading">How to use Hyperthreading<a class="headerlink" href="#how-to-use-hyperthreading" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Non-hyperthreaded jobs which use  <code>--mem-per-cpu</code> requests should
     halve their memory requests as those are based on memory per logical
@@ -1722,7 +1840,7 @@ considered a bonus.</p>
                           in your job submission <br />
                           script.                  </p>
 <hr />
-<h2 id="how-many-logical-cpus-will-my-job-use-or-be-charged-for">How many logical CPUs will my job use or be charged for?<a class="headerlink" href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" title="Permanent link">&para;</a></h2>
+<h3 id="how-many-logical-cpus-will-my-job-use-or-be-charged-for">How many logical CPUs will my job use or be charged for?<a class="headerlink" href="#how-many-logical-cpus-will-my-job-use-or-be-charged-for" title="Permanent link">&para;</a></h3>
 <p>The possible job configurations and their results are shown in the
 following table. We have also included some recommendations to help you
 make the best choices, depending on the needs of your workflow.</p>
@@ -1850,7 +1968,7 @@ such that <em>N</em> × (tasks per node) = 40.</strong></p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

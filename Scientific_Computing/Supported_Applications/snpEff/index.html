@@ -1827,8 +1827,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    snpEff
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1839,6 +1848,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2184,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,6 +2242,8 @@
   
 
 
+  <h1>snpEff</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2165,10 +2253,10 @@
 <li><a href="#h_01HA8M29QKYGBY6EA8Q6C5YS57">Configuration File</a></li>
 <li><a href="#h_01HA8M29QKGQ7JFP2E0YV2Q849">Example Script</a></li>
 </ul>
-<h1 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>snpEff is a genetic variant annotation, and functional effect prediction
 tool.</p>
-<h1 id="configuration-file">Configuration File<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h1>
+<h2 id="configuration-file">Configuration File<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h2>
 <p>snpEff requires a one-off configuration of the <code>.config</code> file. The
 following instructions are a one-off set up of the configuration file
 required for snpEff.</p>
@@ -2197,7 +2285,7 @@ required for snpEff.</p>
 </code></pre></div>
 </li>
 </ol>
-<h1 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h1>
+<h2 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h2>
 <p>You will need to set up your configuration file before you run snpEff.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
@@ -2225,7 +2313,7 @@ java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/&lt;project_id&gt;/my_snpEff
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

@@ -1121,8 +1121,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Why is my job taking a long time to start?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1133,6 +1142,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scheduled-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduled maintenance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delays-in-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delays in the queue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delays in the queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-job-is-being-beaten-by-other-high-priority-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your job is being beaten by other high-priority jobs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-jobs-resource-demands-are-hard-to-satisfy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your job's resource demands are hard to satisfy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-other-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some other problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1451,8 +1528,65 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scheduled-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduled maintenance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delays-in-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delays in the queue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delays in the queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-job-is-being-beaten-by-other-high-priority-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your job is being beaten by other high-priority jobs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-jobs-resource-demands-are-hard-to-satisfy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your job's resource demands are hard to satisfy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-other-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some other problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1475,6 +1609,8 @@
   
   
 
+
+  <h1>Why is my job taking a long time to start?</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1500,13 +1636,13 @@ there are several possible causes.</p>
 </ul>
 </li>
 </ul>
-<h1 id="scheduled-maintenance">Scheduled maintenance<a class="headerlink" href="#scheduled-maintenance" title="Permanent link">&para;</a></h1>
+<h2 id="scheduled-maintenance">Scheduled maintenance<a class="headerlink" href="#scheduled-maintenance" title="Permanent link">&para;</a></h2>
 <p>First, check our <a href="https://status.nesi.org.nz/">status page</a> to look for
 scheduled maintenance periods. If your job would otherwise run on a
 cluster during maintenance work affecting that cluster, your job may be
 delayed until after the maintenance work is completed and the cluster
 returns to service, depending on the nature of the work to be done.</p>
-<h1 id="delays-in-the-queue">Delays in the queue<a class="headerlink" href="#delays-in-the-queue" title="Permanent link">&para;</a></h1>
+<h2 id="delays-in-the-queue">Delays in the queue<a class="headerlink" href="#delays-in-the-queue" title="Permanent link">&para;</a></h2>
 <p>If your job is not supposed to be affected by a maintenance period, you
 can get more information by running this command:</p>
 <div class="highlight"><pre><span></span><code>nn_my_queued_jobs
@@ -1540,7 +1676,7 @@ only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and
 another could say Resources, when in fact both are waiting due to
 Priority and Resources at the same time.</p>
-<h2 id="your-job-is-being-beaten-by-other-high-priority-jobs">Your job is being beaten by other high-priority jobs<a class="headerlink" href="#your-job-is-being-beaten-by-other-high-priority-jobs" title="Permanent link">&para;</a></h2>
+<h3 id="your-job-is-being-beaten-by-other-high-priority-jobs">Your job is being beaten by other high-priority jobs<a class="headerlink" href="#your-job-is-being-beaten-by-other-high-priority-jobs" title="Permanent link">&para;</a></h3>
 <p>You can check the job's priority relative to other waiting jobs by means
 of the following command on a
 <a href="https://support.nesi.org.nz/hc/articles/360000163575-Mahuika">Mahuika</a>
@@ -1568,7 +1704,7 @@ to lowest.</p>
 </code></pre></div>
 <p>The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.</p>
-<h3 id="your-project-has-a-low-fair-share-score">Your project has a low Fair Share score<a class="headerlink" href="#your-project-has-a-low-fair-share-score" title="Permanent link">&para;</a></h3>
+<h4 id="your-project-has-a-low-fair-share-score">Your project has a low Fair Share score<a class="headerlink" href="#your-project-has-a-low-fair-share-score" title="Permanent link">&para;</a></h4>
 <p>If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
@@ -1576,7 +1712,7 @@ hours faster than expected. See <a href="https://support.nesi.org.nz/hc/articles
 page</a> for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.</p>
-<h3 id="your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects">Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects<a class="headerlink" href="#your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects" title="Permanent link">&para;</a></h3>
+<h4 id="your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects">Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects<a class="headerlink" href="#your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects" title="Permanent link">&para;</a></h4>
 <p>In the unlikely scenario that your job's position in the list is low but
 your job's fair share score is high (i.e. nearly 1,000), you will just
 have to wait, as this scenario supposes that other jobs like yours are
@@ -1586,7 +1722,7 @@ than your job. This condition is called <em>queue congestion</em>, and arises
 when researchers submit a lot of work at about the same time. Because it
 is triggered by aggregate researcher behaviour, there isn't much we can
 do about it.</p>
-<h2 id="your-jobs-resource-demands-are-hard-to-satisfy">Your job's resource demands are hard to satisfy<a class="headerlink" href="#your-jobs-resource-demands-are-hard-to-satisfy" title="Permanent link">&para;</a></h2>
+<h3 id="your-jobs-resource-demands-are-hard-to-satisfy">Your job's resource demands are hard to satisfy<a class="headerlink" href="#your-jobs-resource-demands-are-hard-to-satisfy" title="Permanent link">&para;</a></h3>
 <p>If your job's priority is high compared to other jobs but the job still
 won't start, make sure that your resource requests (in your Slurm
 script) are appropriate. If the nature of your work allows, you could
@@ -1616,7 +1752,7 @@ change the amount of memory (RAM) or the number or arrangement of cores,
 you should cancel your queued job using the <code>scancel</code> command and then
 resubmit it. If your project's fair share score is high, your newly
 submitted job should progress quickly through the queue.</p>
-<h2 id="some-other-problem">Some other problem<a class="headerlink" href="#some-other-problem" title="Permanent link">&para;</a></h2>
+<h3 id="some-other-problem">Some other problem<a class="headerlink" href="#some-other-problem" title="Permanent link">&para;</a></h3>
 <p>If your job priority is high, your resource requests are low and your
 job still won't start, please <a href="https://support.nesi.org.nz/hc/requests/new">send a request to our support
 team</a> and we will look into
@@ -1627,7 +1763,7 @@ the problem.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

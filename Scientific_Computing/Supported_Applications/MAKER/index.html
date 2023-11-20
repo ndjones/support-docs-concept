@@ -1347,8 +1347,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MAKER
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1359,6 +1368,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-customisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Customisations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallelism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2184,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-customisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Customisations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallelism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2156,15 +2242,17 @@
   
 
 
+  <h1>MAKER</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
 </div>
-<h1 id="local-customisations">Local Customisations<a class="headerlink" href="#local-customisations" title="Permanent link">&para;</a></h1>
+<h2 id="local-customisations">Local Customisations<a class="headerlink" href="#local-customisations" title="Permanent link">&para;</a></h2>
 <p>Since the MAKER control file <em>maker_exe.ctl</em> is just an annoyance in an
 environment module based system we have patched MAKER to make that
 optional. If it is absent then the defaults will be used directly. </p>
-<h1 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h1>
+<h2 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h2>
 <p>MAKER can be used with MPI, though due to a complicated interaction
 between Infiniband libraries and MAKER's use of forking it can't be used
 across multiple nodes. So we recommend running large MAKER jobs with up
@@ -2176,7 +2264,7 @@ to 36 tasks on one node (ie: one full regular node), eg:</p>
 module load MAKER/2.31.9-gimkl-2020a
 srun maker -q
 </code></pre></div>
-<h1 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h1>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p>MAKER creates many files in its output, sometimes hundreds of thousands.
  There is a risk that you exhaust your quota of inodes, so:</p>
 <ul>
@@ -2190,7 +2278,7 @@ srun maker -q
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:

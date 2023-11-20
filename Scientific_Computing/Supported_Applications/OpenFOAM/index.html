@@ -1427,8 +1427,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1439,6 +1448,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesystem-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filesystem Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding custom solvers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding custom solvers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      wmake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2131,8 +2244,101 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesystem-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filesystem Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding custom solvers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding custom solvers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      wmake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2179,6 +2385,8 @@
   
 
 
+  <h1>OpenFOAM</h1>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2195,7 +2403,7 @@ to use effectively.</p>
 <div class="highlight"><pre><span></span><code>module load OpenFOAM
 source $FOAM_BASH
 </code></pre></div>
-<h1 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h1>
+<h2 id="example-script">Example Script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #=================================================#
 #title          OpenFoamTest.sl
@@ -2223,7 +2431,7 @@ decomposePar                   #Break domain into pieces for parallel execution.
 srun simpleFoam -parallel       
 reconstructPar -latestTime     #Collect 
 </code></pre></div>
-<h1 id="filesystem-limitations">Filesystem Limitations<a class="headerlink" href="#filesystem-limitations" title="Permanent link">&para;</a></h1>
+<h2 id="filesystem-limitations">Filesystem Limitations<a class="headerlink" href="#filesystem-limitations" title="Permanent link">&para;</a></h2>
 <p>OpenFOAM generates a large number of files during run-time. In addition
 to the I/O load there is also the danger of using up available
 <a href="https://support.nesi.org.nz/knowledge/articles/360000177256">inodes</a>.</p>
@@ -2275,7 +2483,7 @@ nobackup_nesi99999              6.833T            10000000    2691383   26.91%
     limit for you.</p>
 </li>
 </ul>
-<h1 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h1>
+<h2 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
 <p>You may find it useful to use environment variables in your dictionaries
 e.g.</p>
 <div class="highlight"><pre><span></span><code>numberOfSubdomains ${SLURM_NTASKS};
@@ -2288,35 +2496,35 @@ e.g.</p>
 <div class="highlight"><pre><span></span><code>NSUBDOMAINS=10
 sed -i &quot;s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g&quot; system/controlDict
 </code></pre></div>
-<h1 id="recommended-resources">Recommended Resources<a class="headerlink" href="#recommended-resources" title="Permanent link">&para;</a></h1>
+<h2 id="recommended-resources">Recommended Resources<a class="headerlink" href="#recommended-resources" title="Permanent link">&para;</a></h2>
 <p>Generally, using 16 or less tasks will keep your job reasonably
 efficient. However this is <em>highly</em> dependant on the type of simulation
 and how the model was decomposed.</p>
-<h1 id="adding-custom-solvers">Adding custom solvers<a class="headerlink" href="#adding-custom-solvers" title="Permanent link">&para;</a></h1>
+<h2 id="adding-custom-solvers">Adding custom solvers<a class="headerlink" href="#adding-custom-solvers" title="Permanent link">&para;</a></h2>
 <p>Rather than installing custom solvers centrally, we encourage users to
 install under their user or project.</p>
-<h2 id="downloading">Downloading<a class="headerlink" href="#downloading" title="Permanent link">&para;</a></h2>
+<h3 id="downloading">Downloading<a class="headerlink" href="#downloading" title="Permanent link">&para;</a></h3>
 <p>Generally your custom solver will be stored in a git repo. Make sure you
 have the same version as the OpenFOAM you plan to use, this may require
 changing branch.</p>
 <p><img alt="git_releases.png" src="../../../assets/images/OpenFOAM.png" /></p>
-<h3 id="if-releases-are-available">If releases are available<a class="headerlink" href="#if-releases-are-available" title="Permanent link">&para;</a></h3>
+<h4 id="if-releases-are-available">If releases are available<a class="headerlink" href="#if-releases-are-available" title="Permanent link">&para;</a></h4>
 <p>Open the 'releases' tab, right click on the '.tar' or '.zip' of the
 version you want and select 'copy link address', then paste that link
 into your terminal after <code>wget</code>. For example:</p>
 <div class="highlight"><pre><span></span><code>wget https://github.com/vincentcasseau/hyStrath/archive/Concordia.tar.gz
 </code></pre></div>
 <p>wget can also be used to fetch files from other sources.</p>
-<h3 id="if-repo-only">If repo only<a class="headerlink" href="#if-repo-only" title="Permanent link">&para;</a></h3>
+<h4 id="if-repo-only">If repo only<a class="headerlink" href="#if-repo-only" title="Permanent link">&para;</a></h4>
 <p>Use the command <code>git clone &lt;path to repo&gt;.git</code> For example:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vincentcasseau/hyStrath.git
 </code></pre></div>
-<h2 id="decompress">Decompress<a class="headerlink" href="#decompress" title="Permanent link">&para;</a></h2>
+<h3 id="decompress">Decompress<a class="headerlink" href="#decompress" title="Permanent link">&para;</a></h3>
 <p>If your source is a .zip file use the command <code>unzip &lt;filename&gt;</code> if it
 is a .tar.gz use the command <code>tar -xvzf &lt;filename&gt;</code></p>
 <p>From here steps will vary, it is best to check the README of the package
 you are installing.</p>
-<h2 id="wmake">wmake<a class="headerlink" href="#wmake" title="Permanent link">&para;</a></h2>
+<h3 id="wmake">wmake<a class="headerlink" href="#wmake" title="Permanent link">&para;</a></h3>
 <p><code>wmake</code> is an OpenFOAM tool used to compile code, based on <code>make</code>.</p>
 <p>A more comprehensive description of the use of wmake can be
 found <a href="https://cfd.direct/openfoam/user-guide/v6-compiling-applications/">here</a>.</p>
@@ -2334,7 +2542,7 @@ the user having to compile each item manually.</p>
 objects in <code>$FOAM_APPBIN</code>, this will cause the build to fail as you will
 not have permission to write there. Make sure the <code>Make/options</code> file
 specifies variables <code>$FOAM_USER_LIBBIN</code> or <code>$FOAM_USER_APPBIN</code> instead.</p>
-<h2 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
 <p>User compiled libraries are kept in <code>$FOAM_USER_LIBBIN</code>, by default this
 is set
 to <code>~/$USER/OpenFOAM/$USER-&lt;version&gt;/platforms/linux64GccDPInt32Opt/lib</code> </p>
@@ -2364,7 +2572,7 @@ and before running the solvers.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
         <br>
         Created:
