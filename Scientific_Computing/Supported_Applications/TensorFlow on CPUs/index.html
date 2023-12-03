@@ -917,6 +917,8 @@
       
         
       
+        
+      
     
     
     
@@ -1190,6 +1192,27 @@
   
   <span class="md-ellipsis">
     FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Find%20execution%20hot%20spots%20with%20VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Find execution hot spots with VTune
   </span>
   
 
@@ -2312,7 +2335,7 @@
 </div>
 <p>TensorFlow is a popular software library for machine learning
 applications, see our
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000990436">TensorFlow</a>
+<a href="../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs">TensorFlow</a>
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
@@ -2391,7 +2414,7 @@ source activate /nesi/project/&lt;project ID&gt;/conda_envs/tf_cpu
 srun python my_tensorflow_program.py
 </code></pre></div>
 <p>If you are unsure about setting up the memory and runtime parameters,
-have a look at our article <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000728016">Ascertaining job
+have a look at our article <a href="../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions">Ascertaining job
 dimensions</a>.
 Please also read the section on operator parallelisation below before
 you choose a number of CPUs.</p>
@@ -2399,9 +2422,9 @@ you choose a number of CPUs.</p>
 threading behaviour of the Intel oneDNN library. While these settings
 should work well for a lot of applications, it is worth trying out
 different setups (e.g., longer blocktimes) and compare runtimes. Please
-see our article on <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000995575">Thread Placement and Thread
-Affinity</a> as
-well as this <a href="https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture">Intel
+see our article on <a href="../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity">Thread Placement and Thread
+Affinity</a>
+as well as this <a href="https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture">Intel
 article</a>
 for further information and tips for improving peformance on CPUs.</p>
 <h2 id="setting-up-operator-parallelisation-in-tensorflow-1x">Setting up operator parallelisation in TensorFlow 1.x<a class="headerlink" href="#setting-up-operator-parallelisation-in-tensorflow-1x" title="Permanent link">&para;</a></h2>
@@ -2450,7 +2473,7 @@ configurations.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
       
         <br>
         Created:

@@ -1274,6 +1274,8 @@
       
         
       
+        
+      
     
     
     
@@ -1692,8 +1694,8 @@ once your job starts you will have twice the number of CPUs as <code>ntasks</cod
 <p>If you set <code>--cpus-per-task=n</code>, Slurm will request <code>n</code> logical CPUs per
 task, i.e., will set <code>n</code> threads for the job. Your code must be capable
 of running Hyperthreaded (for example using
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001070496">OpenMP</a>) if
-<code>--cpus-per-task &gt; 1</code>.</p>
+<a href="../../Scientific_Computing/HPC_Software_Environment/OpenMP_settings">OpenMP</a>)
+if <code>--cpus-per-task &gt; 1</code>.</p>
 <p>Setting <code>--hint=nomultithread</code> with srun or sbatch "causes Slurm to
 allocate only one thread from each core to this job". This will allocate
 CPUs according to the following image:</p>
@@ -1843,9 +1845,9 @@ considered a bonus.</p>
     CPU, not per the number of threads or tasks.  For non-MPI jobs, or
     for MPI jobs that request the same number of tasks on every node, we
     recommend to specify <code>--mem</code> (i.e. memory per node) instead. See
-    <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001108756">How to request memory
-    (RAM)</a>
-    for more information.</li>
+    <a href="../../General/FAQs/How_do_I_request_memory">How to request memory
+    (RAM)</a> for more
+    information.</li>
 <li>Non-MPI jobs which specify <code>--cpus-per-task</code> and use <strong>srun</strong> should
     also set <code>--ntasks=1</code>, otherwise the program will be run twice in
     parallel, halving the efficiency of the job.</li>
@@ -1998,7 +2000,7 @@ such that <em>N</em> × (tasks per node) = 40.</strong></p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
       
         <br>
         Created:
