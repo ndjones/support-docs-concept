@@ -1410,7 +1410,7 @@ last HPC Compute &amp; Analytics allocation. See also Transparent File
 Data Compression.</span></td>
 <td style="width: 188px"><span>With certain exceptions, individual files
 will be deleted after being untouched for 120 days. See <a
-href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system">Automatic
+href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md">Automatic
 cleaning of nobackup file system</a> for more information.
 </span><span>90 days after the end of the project's last HPC Compute
 &amp; Analytics allocation, all remaining data is subject to
@@ -1546,12 +1546,12 @@ apply per-project quotas to both disk space and number of files on this
 file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
-requirements with us during <a href="../../General/NeSI_Policies/How_we_review_applications">the project application
+requirements with us during <a href="../../../General/NeSI_Policies/How_we_review_applications/">the project application
 process</a>, or
 <a href="https://support.nesi.org.nz/hc/requests/new">contact our support team</a>
 at any time.</p>
 <p>To ensure this file system remains fit-for-purpose, we have a regular
-cleaning policy as described in <a href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system">Automatic cleaning of nobackup
+cleaning policy as described in <a href="../Automatic_cleaning_of_nobackup_file_system/">Automatic cleaning of nobackup
 filesystem</a>.</p>
 <p>Do not use the <code>touch</code> command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -1574,7 +1574,7 @@ files between high performance disk storage and magnetic tape storage in
 an Automatic Tape Library (ATL). Files will remain on <code>/nesi/nearline</code>
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.</p>
-<p>See <a href="../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service">this
+<p>See <a href="../../Nearline_long_term_storage/Nearline_Long_Term_Storage_Service/">this
 page</a>
 for more information about the nearline service.</p>
 <h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h2>
@@ -1616,11 +1616,12 @@ in-line decompression may have a small IO performance/latency impact,
 though this is mitigated by space and bandwidth savings.</p>
 <p>Transparent file data compression can be controlled and applied by users
 via file attributes, you can find out more about using this method on
-our <a href="../../Storage/File_Systems_and_Quotas/Data_Compression">Data Compression support
-page</a>. File data
-compression can also be automatically applied by administrators through
-the Scale policy engine. We leverage this latter feature to regularly
-identify and compress inactive data on the <code>/nesi/project</code> file system.</p>
+our <a href="../Data_Compression/">Data Compression support
+page</a>. File
+data compression can also be automatically applied by administrators
+through the Scale policy engine. We leverage this latter feature to
+regularly identify and compress inactive data on the <code>/nesi/project</code>
+file system.</p>
 <h3 id="what-project-data-is-automatically-compressed">What Project data is automatically compressed?<a class="headerlink" href="#what-project-data-is-automatically-compressed" title="Permanent link">&para;</a></h3>
 <p>Our current policy compresses files that have not been accessed (either
 read from or written to) within the last 365 days, i.e., very inactive
@@ -1628,10 +1629,10 @@ cold data. We may decrease this in future.</p>
 <p>Additionally, we only automatically compress files in the range of 4kB -
 10GB in size. Files larger than this can be compressed by user
 interaction - see the instructions for the <code>mmchattr</code> command on
-the <a href="../../Storage/File_Systems_and_Quotas/Data_Compression">Data Compression support
-page</a>. Also note
-that the Scale filesystem will only store compressed blocks when the
-compression space saving is &gt;=10%.</p>
+the <a href="../Data_Compression/">Data Compression support
+page</a>. Also
+note that the Scale filesystem will only store compressed blocks when
+the compression space saving is &gt;=10%.</p>
 
   <hr>
 <div class="md-source-file">

@@ -1941,16 +1941,16 @@ dependencies:
 <div class="admonition prerequisite see also">
 <p class="admonition-title">Prerequisite</p>
 <p>See the
- <a href="../../Scientific_Computing/Supported_Applications/Miniconda3">Miniconda3</a>
+ <a href="../../Supported_Applications/Miniconda3/">Miniconda3</a>
  page for more information on how to create and manage Miniconda
  environments on NeSI.</p>
 </div>
 <h2 id="configuring-slurm">Configuring Slurm<a class="headerlink" href="#configuring-slurm" title="Permanent link">&para;</a></h2>
 <p>At runtime, Slurm will launch a number of Python processes as requested
-in the <a href="../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet">Slurm configuration
-script</a>. Each
-process is given an ID (or "rank") starting at rank 0. Dask-MPI then
-assigns different roles to the different ranks:</p>
+in the <a href="../../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet/">Slurm configuration
+script</a>.
+Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
+then assigns different roles to the different ranks:</p>
 <ul>
 <li>Rank 0 becomes the scheduler that coordinates work and communication</li>
 <li>Rank 1 becomes the worker that executes the main Python program and
@@ -1960,7 +1960,7 @@ assigns different roles to the different ranks:</p>
 <p>This implies that <strong>Dask-MPI jobs must be launched on at least 3 MPI
 ranks!</strong> Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-<a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading">Hyperthreading</a>
+<a href="../../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">Hyperthreading</a>
 to place these two ranks onto a single physical core. Ensure that
 activating hyperthreading does not slow down the worker ranks by running
 a short test workload with and without hyperthreading.</p>
@@ -2096,7 +2096,7 @@ Conda environment inside the container.</p>
 <div class="admonition prerequisite tips">
 <p class="admonition-title">Prerequisite</p>
 <p>You can build this container on NeSI, using the Mahuika Extension
- nodes, following the instructions from the <a href="../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node">dedicated support
+ nodes, following the instructions from the <a href="../Build_an_Apptainer_container_on_a_Milan_compute_node/">dedicated support
  page</a>.</p>
 </div>
 <h3 id="slurm-configuration">Slurm configuration<a class="headerlink" href="#slurm-configuration" title="Permanent link">&para;</a></h3>

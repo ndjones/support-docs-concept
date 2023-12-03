@@ -1694,7 +1694,7 @@ once your job starts you will have twice the number of CPUs as <code>ntasks</cod
 <p>If you set <code>--cpus-per-task=n</code>, Slurm will request <code>n</code> logical CPUs per
 task, i.e., will set <code>n</code> threads for the job. Your code must be capable
 of running Hyperthreaded (for example using
-<a href="../../Scientific_Computing/HPC_Software_Environment/OpenMP_settings">OpenMP</a>)
+<a href="../../HPC_Software_Environment/OpenMP_settings/">OpenMP</a>)
 if <code>--cpus-per-task &gt; 1</code>.</p>
 <p>Setting <code>--hint=nomultithread</code> with srun or sbatch "causes Slurm to
 allocate only one thread from each core to this job". This will allocate
@@ -1845,7 +1845,7 @@ considered a bonus.</p>
     CPU, not per the number of threads or tasks.  For non-MPI jobs, or
     for MPI jobs that request the same number of tasks on every node, we
     recommend to specify <code>--mem</code> (i.e. memory per node) instead. See
-    <a href="../../General/FAQs/How_do_I_request_memory">How to request memory
+    <a href="../../../General/FAQs/How_do_I_request_memory/">How to request memory
     (RAM)</a> for more
     information.</li>
 <li>Non-MPI jobs which specify <code>--cpus-per-task</code> and use <strong>srun</strong> should

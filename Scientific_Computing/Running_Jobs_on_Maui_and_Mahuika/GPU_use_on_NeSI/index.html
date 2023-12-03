@@ -1694,23 +1694,23 @@ please have a look at the dedicated pages listed at the end of this
 page.</p>
 <div class="admonition prerequisite important">
 <p class="admonition-title">Prerequisite</p>
-<p>An overview of available GPU cards is available in the <a href="../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI">Available GPUs
+<p>An overview of available GPU cards is available in the <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/">Available GPUs
  on
  NeSI</a>
  support page.
  Details about GPU cards for each system and usage limits are in the
- <a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions">Mahuika Slurm
+ <a href="../Mahuika_Slurm_Partitions/">Mahuika Slurm
  Partitions</a>
- and <a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions#_Toc514341606">Māui_Ancil (CS500) Slurm
+ and <a href="../Maui_Slurm_Partitions/#_Toc514341606">Māui_Ancil (CS500) Slurm
  Partitions</a>
  support pages.
  Details about pricing in terms of compute units can be found in the
- <a href="../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation">What is an
+ <a href="../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation/">What is an
  allocation?</a>
  page.</p>
 </div>
 <h2 id="request-gpu-resources-using-slurm">Request GPU resources using Slurm<a class="headerlink" href="#request-gpu-resources-using-slurm" title="Permanent link">&para;</a></h2>
-<p>To request a GPU for your <a href="../../Getting_Started/Next_Steps/Submitting_your_first_job">Slurm
+<p>To request a GPU for your <a href="../../../Getting_Started/Next_Steps/Submitting_your_first_job/">Slurm
 job</a>, add
 the following option at the beginning of your submission script:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --gpus-per-node=1
@@ -1790,7 +1790,7 @@ regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
 GPU).</em></p>
 </li>
 </ul>
-<p>You can also use the <code>--gpus-per-node</code>option in <a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions">Slurm interactive
+<p>You can also use the <code>--gpus-per-node</code>option in <a href="../Slurm_Interactive_Sessions/">Slurm interactive
 sessions</a>,
 with the <code>srun</code> and <code>salloc</code> commands. For example:</p>
 <div class="highlight"><pre><span></span><code>srun --job-name &quot;InteractiveGPU&quot; --gpus-per-node 1 --cpus-per-task 8 --mem 2GB --time 00:30:00 --pty bash
@@ -1812,7 +1812,7 @@ $ echo $CUDA_VISIBLE_DEVICES
 </div>
 <h2 id="load-cuda-and-cudnn-modules">Load CUDA and cuDNN modules<a class="headerlink" href="#load-cuda-and-cudnn-modules" title="Permanent link">&para;</a></h2>
 <p>To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the <a href="../../Getting_Started/Next_Steps/The_HPC_environment">environment
+driver and the CUDA toolkit via the <a href="../../../Getting_Started/Next_Steps/The_HPC_environment/">environment
 modules</a>
 mechanism:</p>
 <div class="highlight"><pre><span></span><code>module load CUDA/11.0.2
@@ -1944,8 +1944,8 @@ graphical interface.</p>
 <p class="admonition-title">Prerequisite</p>
 <p>The <code>nsys-ui</code> and <code>ncu-ui</code> tools require access to a display server,
  either via
- <a href="../../Scientific_Computing/Terminal_Setup/X11_on_NeSI">X11</a> or a
- <a href="../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI">Virtual
+ <a href="../../Terminal_Setup/X11_on_NeSI/">X11</a> or a
+ <a href="../../Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI/">Virtual
  Desktop</a>.
  You also need to load the <code>PyQt</code> module beforehand:
  <div class="highlight"><pre><span></span><code>module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
@@ -1957,21 +1957,21 @@ nsys-ui  # this will work only if you have a graphical session
 <p>The following pages provide additional information for supported
 applications:</p>
 <ul>
-<li><a href="../../Scientific_Computing/Supported_Applications/ABAQUS#gpus">ABAQUS</a></li>
-<li><a href="../../Scientific_Computing/Supported_Applications/GROMACS#nvidia_gpu_container">GROMACS</a></li>
-<li><a href="../../Scientific_Computing/Supported_Applications/Lambda Stack">Lambda
+<li><a href="../../Supported_Applications/ABAQUS/#gpus">ABAQUS</a></li>
+<li><a href="../../Supported_Applications/GROMACS/#nvidia_gpu_container">GROMACS</a></li>
+<li><a href="../../Supported_Applications/Lambda%20Stack/">Lambda
     Stack</a></li>
-<li><a href="../../Scientific_Computing/Supported_Applications/MATLAB#GPU">Matlab</a></li>
-<li><a href="../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs">TensorFlow on
+<li><a href="../../Supported_Applications/MATLAB/#GPU">Matlab</a></li>
+<li><a href="../../Supported_Applications/TensorFlow%20on%20GPUs/">TensorFlow on
     GPUs</a></li>
 </ul>
 <p>And programming toolkits:</p>
 <ul>
-<li><a href="../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP">Offloading to GPU with
+<li><a href="../../HPC_Software_Environment/Offloading_to_GPU_with_OpenMP/">Offloading to GPU with
     OpenMP</a></li>
 <li><a href="https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler">Offloading to GPU with OpenACC using the Cray
     compiler</a></li>
-<li><a href="../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers">NVIDIA GPU
+<li><a href="../../HPC_Software_Environment/NVIDIA_GPU_Containers/">NVIDIA GPU
     Containers</a></li>
 </ul>
 

@@ -1749,16 +1749,16 @@ probably be combined into larger jobs using a simple loop in the batch
 script so as to amortise the overheads of each job (starting, accounting
 etc).</p>
 <h3 id="memory-ram">Memory (RAM)<a class="headerlink" href="#memory-ram" title="Permanent link">&para;</a></h3>
-<p>If you request more memory (RAM) than you need for your job, it <a href="../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start">will
+<p>If you request more memory (RAM) than you need for your job, it <a href="../../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start/">will
 wait longer in the queue and will be more expensive when it
-runs</a>. On
-the other hand, if you don't request enough memory, the job may be
+runs</a>.
+On the other hand, if you don't request enough memory, the job may be
 killed for attempting to exceed its allocated memory limits.</p>
 <p>We recommend that you request a little more RAM, but not much more, than
 your program will need at peak memory usage.</p>
 <p>We also recommend using <code>--mem</code> instead of <code>--mem-per-cpu</code> in most
 cases. There are a few kinds of jobs for which <code>--mem-per-cpu</code> is more
-suitable. See <a href="../../General/FAQs/How_do_I_request_memory">our article on how to request
+suitable. See <a href="../../../General/FAQs/How_do_I_request_memory/">our article on how to request
 memory</a> for more
 information.</p>
 <h3 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h3>
@@ -1777,7 +1777,7 @@ job array in a single command)</p>
 <h3 id="fairshare">Fairshare<a class="headerlink" href="#fairshare" title="Permanent link">&para;</a></h3>
 <p>A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-<a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share">here</a>.</p>
+<a href="../Fair_Share/">here</a>.</p>
 <h3 id="cross-machine-submission">Cross machine submission<a class="headerlink" href="#cross-machine-submission" title="Permanent link">&para;</a></h3>
 <p>Jobs can be submitted from one machine to another by using the
 <code>--cluster</code> option. E.g. submitting a job from Māui_Ancil to Māui.</p>
