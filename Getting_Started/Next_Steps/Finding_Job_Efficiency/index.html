@@ -660,27 +660,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#walltime" class="md-nav__link">
+  <a href="#using-nn_seff" class="md-nav__link">
     <span class="md-ellipsis">
-      Walltime
+      Using nn_seff
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
+  <a href="#using-sacct" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      CPU's
+      Using sacct
     </span>
   </a>
   
@@ -711,9 +702,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
+  <a href="#using-htop" class="md-nav__link">
     <span class="md-ellipsis">
-      htop
+      Using htop
     </span>
   </a>
   
@@ -1314,27 +1305,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#walltime" class="md-nav__link">
+  <a href="#using-nn_seff" class="md-nav__link">
     <span class="md-ellipsis">
-      Walltime
+      Using nn_seff
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
+  <a href="#using-sacct" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      CPU's
+      Using sacct
     </span>
   </a>
   
@@ -1365,9 +1347,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
+  <a href="#using-htop" class="md-nav__link">
     <span class="md-ellipsis">
-      htop
+      Using htop
     </span>
   </a>
   
@@ -1439,18 +1421,14 @@
 
   <h1>Finding Job Efficiency</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="on-job-completion">On Job Completion<a class="headerlink" href="#on-job-completion" title="Permanent link">&para;</a></h2>
 <p>It is good practice to have a look at the resources your job used on
 completion, this way you can improve your job specifications in the
 future.</p>
 <p>Once your job has finished check the relevant details using the tools:
 <code>nn_seff</code> or <code>sacct</code> For example:  </p>
-<p><strong>nn_seff</strong></p>
-<div class="highlight"><pre><span></span><code>nn_seff 30479534
+<h3 id="using-nn_seff">Using <code>nn_seff</code><a class="headerlink" href="#using-nn_seff" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nn_seff<span class="w"> </span><span class="m">30479534</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Job ID: 1936245
 Cluster: mahuika
@@ -1463,21 +1441,18 @@ Job Wall-time: 7.67% 00:01:09 of 00:15:00 time limit
 CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
 Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 </code></pre></div>
-<p>Notice that the CPU efficiency was high but the memory efficiency was
-very low and consideration should be given to reducing memory requests
-for similar jobs.  If in doubt, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a> for
-guidance.</p>
-<p><strong>sacct</strong></p>
-<div class="highlight"><pre><span></span><code>sacct --format=&quot;JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State&quot; -j &lt;jobid&gt;
+<p>Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
+for similar jobs.  If in doubt, please contact <a href="mailto:support@nesi.org.nz">support@nesi.org.nz</a> for guidance.</p>
+<h3 id="using-sacct">Using <code>sacct</code><a class="headerlink" href="#using-sacct" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>--format<span class="o">=</span><span class="s2">&quot;JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State&quot;</span><span class="w"> </span>-j<span class="w"> </span>&lt;jobid&gt;
 </code></pre></div>
-<div class="admonition prerequisite tip">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p><em>If you want to make this your default</em> <code>sacct</code> <em>setting, run;</em>
- <div class="highlight"><pre><span></span><code>echo &#39;export SACCT_FORMAT=&quot;JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State&quot;&#39; &gt;&gt; ~/.bash_profile
-source ~/.bash_profile
+ <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export SACCT_FORMAT=&quot;JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bash_profile
+<span class="nb">source</span><span class="w"> </span>~/.bash_profile
 </code></pre></div></p>
 </div>
-<hr />
 <p>Below is an output for reference:</p>
 <div class="highlight"><pre><span></span><code>       JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
@@ -1487,18 +1462,17 @@ source ~/.bash_profile
 </code></pre></div>
 <p><em>All of the adjustments below still allow for a degree of variation.
 There may be factors you have not accounted for.</em></p>
-<hr />
-<h3 id="walltime"><strong>Walltime</strong><a class="headerlink" href="#walltime" title="Permanent link">&para;</a></h3>
+<h4 id="walltime">Walltime<a class="headerlink" href="#walltime" title="Permanent link">&para;</a></h4>
 <p>From the <code>Elapsed</code> field we may want to update our next run to have a
 more appropriate walltime.</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --time=00:40:00
 </code></pre></div>
-<h3 id="memory"><strong>Memory</strong><a class="headerlink" href="#memory" title="Permanent link">&para;</a></h3>
+<h4 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h4>
 <p>The <code>MaxRSS</code> field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --mem=15G
 </code></pre></div>
-<h3 id="cpus"><strong>CPU's</strong><a class="headerlink" href="#cpus" title="Permanent link">&para;</a></h3>
+<h4 id="cpus">CPUs<a class="headerlink" href="#cpus" title="Permanent link">&para;</a></h4>
 <p><code>TotalCPU</code> is the number of computation hours, in the best case scenario
 the computation hours would be equal to <code>Elapsed</code> x <code>AllocCPUS</code>.</p>
 <p>In this case our ideal <code>TotalCPU</code> would be 07:12:00, as our job only
@@ -1536,12 +1510,12 @@ the compute node where it it running.</p>
 <code>squeue</code> commands you can find the node a job is running on using the
 command; <code>squeue -h -o %N -j &lt;jobid&gt;</code> The node will look something like
 <code>wbn123</code> on Mahuika or <code>nid00123</code> on Māui</p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If your job is using MPI it may be running on multiple nodes</p>
 </div>
-<h3 id="htop">htop<a class="headerlink" href="#htop" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ssh -t wbn175 htop -u $USER
+<h3 id="using-htop">Using <code>htop</code><a class="headerlink" href="#using-htop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-t<span class="w"> </span>wbn175<span class="w"> </span>htop<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 </code></pre></div>
 <p>If it is your first time connecting to that particular node, you may be
 prompted:</p>
@@ -1564,9 +1538,9 @@ parent process).</p>
 <li>Any other letter - Something has gone wrong!</li>
 </ul>
 <p><strong>CPU%</strong> - Percentage CPU utilisation.</p>
-<p><strong>MEM% </strong>Percentage Memory utilisation.</p>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
+<p><strong>MEM%</strong> - Percentage Memory utilisation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>If the job finishes, or is killed you will be kicked off the node. If
  htop freezes, type <code>reset</code> to clear your terminal.</p>
 </div>
@@ -1575,14 +1549,11 @@ parent process).</p>
 time</em> the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time <em>may vary by number of
 CPU</em>s.</p>
-<p>The only way to get the full context, is to compare walltime performance
-between jobs at different scale. See <a href="../Job_Scaling_Ascertaining_job_dimensions/">Job
-Scaling</a>
-for more details.</p>
+<p>The only way to get the full context, is to compare walltime performance between jobs at different scale. See <a href="../Job_Scaling_Ascertaining_job_dimensions/">Job Scaling</a> for more details.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p><img alt="qdyn_eff.png" src="../../../assets/images/Finding_Job_Efficiency_0.png" /></p>
 <p>From the above plot of CPU efficiency, you might decide a 5% reduction
-of CPU efficiency is acceptable and scale your job up to 18 CPU cores . </p>
+of CPU efficiency is acceptable and scale your job up to 18 CPU cores .</p>
 <p><img alt="qdyn_walltime.png" src="../../../assets/images/Finding_Job_Efficiency_1.png" /></p>
 <p>However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in
@@ -1594,7 +1565,7 @@ CPUs.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 4, 2023</span>
       
         <br>
         Created:
