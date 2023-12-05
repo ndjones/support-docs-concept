@@ -2461,13 +2461,9 @@
 
   <h1>Trinity</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>Trinity, developed at the <a href="http://www.broadinstitute.org/">Broad
 Institute</a> and the <a href="http://www.cs.huji.ac.il/">Hebrew University of
-Jerusalem</a>, performs de novo reconstruction
+Jerusalem</a>, performs <em>de&nbsp;novo</em> reconstruction
 of transcriptomes from RNA-seq data. It combines three independent
 software modules: Inchworm, Chrysalis, and Butterfly, applied
 sequentially to process large volumes of RNA-seq reads. Trinity
@@ -2513,9 +2509,9 @@ places.</p>
 <p><strong>Note</strong>  :</p>
 <ul>
 <li><code>--cpus-per-task</code> and <code>--mem</code> defined in the following example are
-    just place holders. </li>
+  just place holders. </li>
 <li>Use a subset of your sample, run a test first to find the
-    suitable/required amount of CPUs and memory for your dataset</li>
+  suitable/required amount of CPUs and memory for your dataset</li>
 </ul>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #SBATCH --job-name=trinity-phase1
@@ -2537,15 +2533,15 @@ srun Trinity --no_distributed_trinity_exec \
 <p>The extra Trinity arguments are:</p>
 <ul>
 <li><code>--no_distributed_trinity_exec</code> tells Trinity to stop before running
-    Phase 2</li>
+  Phase 2</li>
 <li><code>--CPU ${SLURM_CPUS_PER_TASK}</code> tells Trinity to use the number of
-    CPUs specified by the sbatch option <code>--cpus-per-task</code> (i.e. you only
-    need to update it in one place if you change it)</li>
+  CPUs specified by the sbatch option <code>--cpus-per-task</code> (i.e. you only
+  need to update it in one place if you change it)</li>
 <li><code>--max_memory</code> should be the same (or maybe slightly lower, so you
-    have a small buffer) than the value specified with the sbatch option
-    <code>--mem</code></li>
+  have a small buffer) than the value specified with the sbatch option
+  <code>--mem</code></li>
 <li><code>[your_other_trinity_options]</code> should be replaced with the other
-    trinity options you would usually use, e.g. <code>--seqType fq</code>, etc.</li>
+  trinity options you would usually use, e.g. <code>--seqType fq</code>, etc.</li>
 </ul>
 <h3 id="running-trinity-phase-2">Running Trinity Phase 2<a class="headerlink" href="#running-trinity-phase-2" title="Permanent link">&para;</a></h3>
 <p>Upstream documentation for running Trinity Phase 2 in parallel can be
@@ -2610,15 +2606,15 @@ cmds_per_node=100
 <p>The important details are:</p>
 <ul>
 <li><code>cmds_per_node</code> is the size of each batch of commands, i.e. here
-    each Slurm sub-job runs 100 commands and then exits</li>
+  each Slurm sub-job runs 100 commands and then exits</li>
 <li><code>max_nodes</code> is the number of sub-jobs that can be in the queue at
-    any given time (each sub-job is single threaded, i.e. it uses just
-    one core)</li>
-<li>name this file SLURM.conf in the directory you will submit the job
-    from</li>
+  any given time (each sub-job is single threaded, i.e. it uses just
+  one core)</li>
+<li>name this file <code>SLURM.conf</code> in the directory you will submit the job
+  from</li>
 <li>memory usage may be low enough that the sub-jobs can be run on
-    either the large or bigmem partitions, which should improve
-    throughput compared to bigmem alone</li>
+  either the large or bigmem partitions, which should improve
+  throughput compared to bigmem alone</li>
 </ul>
 <p>A template Slurm submission script for Trinity Phase 2 is shown below:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
@@ -2643,11 +2639,11 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
 </code></pre></div>
 <ul>
 <li>This assumes that you named the HPC GridRunner configuration script
-    SLURM.conf and placed it in the same directory that you submit this
-    job from</li>
+  SLURM.conf and placed it in the same directory that you submit this
+  job from</li>
 <li>The options <code>--CPU</code> and <code>--max_memory</code> aren't used by Trinity in
-    "grid mode" but are still required to be set (i.e. it shouldn't
-    matter what you set them to)</li>
+  "grid mode" but are still required to be set (i.e. it shouldn't
+  matter what you set them to)</li>
 </ul>
 <h2 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h2>
 <p>Here we provide details of a number of Trinity assemblies that have been
@@ -2672,19 +2668,13 @@ default, single node way to run Phase 2, to using Trinity's "grid mode".</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>Type of run</th>
+<th>Number of cores / grid specification</th>
+<th>Run time (hrs:mins:secs)</th>
+<th>Approximate core hour cost</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Type of run</strong></td>
-<td><strong>Number of cores / grid specification</strong></td>
-<td><strong>Run time (hrs:mins:secs)</strong></td>
-<td><strong>Approximate core hour cost</strong></td>
-</tr>
 <tr>
 <td>Single node (default)</td>
 <td>16 cores</td>
@@ -2753,7 +2743,7 @@ core hours.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:
