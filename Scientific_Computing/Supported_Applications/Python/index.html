@@ -1616,24 +1616,28 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi-example" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usrbinenv-python3" class="md-nav__link">
     <span class="md-ellipsis">
-      MPI Example
+      !/usr/bin/env python3
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
+  <a href="#get-tests-from-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      get tests from file
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get tests from file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#python-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Python Packages
@@ -1674,8 +1678,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#further-notes" class="md-nav__link">
     <span class="md-ellipsis">
       Further notes
@@ -1691,6 +1695,11 @@
       iPython
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2394,24 +2403,28 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi-example" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usrbinenv-python3" class="md-nav__link">
     <span class="md-ellipsis">
-      MPI Example
+      !/usr/bin/env python3
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
+  <a href="#get-tests-from-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      get tests from file
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get tests from file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#python-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Python Packages
@@ -2452,8 +2465,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#further-notes" class="md-nav__link">
     <span class="md-ellipsis">
       Further notes
@@ -2469,6 +2482,11 @@
       iPython
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2497,13 +2515,13 @@
     
     
     
-      <span class="md-tag">mahuika</span>
+      <span class="md-tag">ml</span>
     
   
     
     
     
-      <span class="md-tag">app</span>
+      <span class="md-tag">language</span>
     
   
 </nav>
@@ -2517,15 +2535,6 @@
   
   
 
-
-  <h1>Python</h1>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
 
 <p>All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
@@ -2541,65 +2550,70 @@ Python packages for computational work such as <em>numpy</em>, <em>scipy</em>,
 <p>Our most recent Python environment modules have:</p>
 <ul>
 <li>
-<p><em>multiprocessing.cpu_count()</em> patched to return only the number of
+<p><code>multiprocessing.cpu_count()</code> patched to return only the number of
     CPUs available to the process, which in a Slurm job can be fewer
     than the number of CPUs on the node.</p>
 </li>
 <li>
-<p>PYTHONUSERBASE set to a path which includes the toolchain, so that
+<p><code>PYTHONUSERBASE</code> set to a path which includes the toolchain, so that
     incompatible builds of the same version of Python don't attempt to
     share user-installed libraries.</p>
 </li>
 </ul>
 <h2 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serial Job</label><label for="__tabbed_1_2">Distributed Memory Job</label><label for="__tabbed_1_3">Shared Memory Example</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name    MyPythonJob</span>
-<span class="c1">#SBATCH --time        01:00:00</span>
-<span class="c1">#SBATCH --mem         512MB</span>
+#SBATCH --job-name    Python_Serial
+#SBATCH --time        01:00:00
+#SBATCH --mem         512MB
 
-module<span class="w"> </span>load<span class="w"> </span>Python/3.7.3-gimkl-2018b
+module load Python/3.11.3-gimkl-2022a
 
-python<span class="w"> </span>MyPythonScript.py
+python MyPythonScript.py
 </code></pre></div>
-<h3 id="mpi-example">MPI Example<a class="headerlink" href="#mpi-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>  #!/bin/bash -e
-  #SBATCH --job-name=PythonMPI
-  #SBATCH --ntasks=2          # Number of MPI tasks
-  #SBATCH --time=00:30:00
-  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name=PythonMPI
+#SBATCH --ntasks=2          # Number of MPI tasks
+#SBATCH --time=00:30:00
+#SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-  module load Python
-  srun python PythonMPI.py   # Executes ntasks copies of the script
+module load Python
+srun python PythonMPI.py   # Executes ntasks copies of the script
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>import numpy as np
-from mpi4py import MPI
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
 
-comm = MPI.COMM_WORLD
-size = comm.Get_size() # Total number of MPI tasks
-rank = comm.Get_rank() # Rank of this MPI task
+<span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span> <span class="c1"># Total number of MPI tasks</span>
+<span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span> <span class="c1"># Rank of this MPI task</span>
 
-# Calculate the data (numbers 0-9) on the MPI ranks
-rank_data = np.arange(rank, 10, size)
+<span class="c1"># Calculate the data (numbers 0-9) on the MPI ranks</span>
+<span class="n">rank_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
-# perform some operation on the ranks data
-rank_data += 1
+<span class="c1"># perform some operation on the ranks data</span>
+<span class="n">rank_data</span> <span class="o">+=</span> <span class="mi">1</span>
 
-# gather the data back to rank 0
-data_gather = comm.gather(rank_data, root = 0)
+<span class="c1"># gather the data back to rank 0</span>
+<span class="n">data_gather</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">rank_data</span><span class="p">,</span> <span class="n">root</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
-# on rank 0 sum the gathered data and print both the sum of, 
-# and the unsummed data
-if rank == 0:
-    print(&#39;Gathered data:&#39;, data_gather)
-    print(&#39;Sum:&#39;, sum(data_gather))
+<span class="c1"># on rank 0 sum the gathered data and print both the sum of, </span>
+<span class="c1"># and the unsummed data</span>
+<span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gathered data:&#39;</span><span class="p">,</span> <span class="n">data_gather</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum:&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data_gather</span><span class="p">))</span>
 </code></pre></div>
 <p>The above Python script will create a list of numbers (0-9) split
 between the MPI tasks (ranks). Each task will then add one to the
 numbers it has, those numbers will then be gathered back to task 0,
 where the numbers will be summed and both the sum of, and the unsummed
 data is printed.</p>
-<h4 id="multiprocessing-example">Multiprocessing Example<a class="headerlink" href="#multiprocessing-example" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>  #!/bin/bash -e
   #SBATCH --job-name=PytonMultiprocessing
   #SBATCH --cpus-per-task=2   # Number of logical CPUs
@@ -2609,53 +2623,58 @@ data is printed.</p>
   module load Python
   python PythonMultiprocessing.py
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>import multiprocessing
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">multiprocessing</span>
 
-def calc_square(numbers, result1):
-    for idx, n in enumerate(numbers):
-        result1[idx] = n*n
+<span class="k">def</span> <span class="nf">calc_square</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">result1</span><span class="p">):</span>
+     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+        <span class="n">result1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">n</span>
 
-def calc_cube(numbers, result2):
-    for idx, n in enumerate(numbers):
-        result2[idx] = n*n*n
+<span class="k">def</span> <span class="nf">calc_cube</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">result2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+        <span class="n">result2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span>
 
-if __name__ == &quot;__main__&quot;:
-    numbers = [2,3,4]
-    # Sets up the shared memory variables, allowing the variables to be
-    # accessed globally across processes
-    result1 = multiprocessing.Array(&#39;i&#39;,3)
-    result2 = multiprocessing.Array(&#39;i&#39;,3)
-    # set up the processes
-    p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
-    p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+    <span class="c1"># Sets up the shared memory variables, allowing the variables to be</span>
+    <span class="c1"># accessed globally across processes</span>
+    <span class="n">result1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># set up the processes</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">calc_square</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="n">result1</span><span class="p">,))</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">calc_cube</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="n">result2</span><span class="p">,))</span>
 
-    # start the processes
-    p1.start()
-    p2.start()
+    <span class="c1"># start the processes</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-    # end the processes
-    p1.join()
-    p2.join()
+    <span class="c1"># end the processes</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 
-    print(result1[:])
-    print(result2[:])
+    <span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">[:])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result2</span><span class="p">[:])</span>
 </code></pre></div>
 <p>The above Python script will calculated the square and cube of an array
 of numbers using multiprocessing and print the results from outside of
-those processes, safely circumventing Python's <a href="https://wiki.python.org/moin/GlobalInterpreterLock">global interpreter
-lock</a>.</p>
+those processes, safely circumventing Python's <a href="https://wiki.python.org/moin/GlobalInterpreterLock">global interpreter lock</a>.</p>
 <p>For more in depth examples of and descriptions of Multiprocessing in
-Python you may find <a href="https://www.youtube.com/watch?v=PJ4t2U15ACo&amp;list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&amp;index=1">this Multithreading/Multiprocessing Youtube
-tutorial
-series</a>
+Python you may find [this Multithreading/Multiprocessing Youtube</p>
+</div>
+</div>
+</div>
+<p>tutorial
+series](https://www.youtube.com/watch?v=PJ4t2U15ACo&amp;list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&amp;index=1)
 helpful</p>
-<h4 id="job-arrays">Job Arrays<a class="headerlink" href="#job-arrays" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Job Arrays</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Job arrays can be handled using the Slurm environment variable
 <code>SLURM_ARRAY_TASK_ID</code> as array index. This index can be called directly
 from within the script or using a command line argument. In the
 following both options are presented:</p>
 <p>The job scripts calling both examples:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
+
 #SBATCH -J test
 #SBATCH --time=00:01:00
 #SBATCH --ntasks=1
@@ -2664,7 +2683,7 @@ following both options are presented:</p>
 
 module load Anaconda3
 
-echo &quot;SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT&quot;
+echo &quot;SLURM_ARRAY_TASK_ID.$SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT&quot;
 
 #env variable in python
 python hello_world.py
@@ -2673,44 +2692,47 @@ python hello_world.py
 python hello_world_args.py -ID $SLURM_ARRAY_TASK_ID
 </code></pre></div>
 <p>the version getting the env variable in the python script
-"hello_world.py"</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env python3
-
-import os
-my_id = os.environ[&#39;SLURM_ARRAY_TASK_ID&#39;]
-print(&quot;hello world with ID {}&quot;.format(my_id))
+<code>hello_world.py</code></p>
+<p>```py</p>
+<h1 id="usrbinenv-python3">!/usr/bin/env python3<a class="headerlink" href="#usrbinenv-python3" title="Permanent link">&para;</a></h1>
+<p>import os
+my_id = os.environ['SLURM_ARRAY_TASK_ID']
+print("hello world with ID {}".format(my_id))</p>
+</div>
+</div>
+</div>
+<p>```</p>
+<div class="highlight"><pre><span></span><code>the version getting the env variable as argument in the python script
 </code></pre></div>
-<p>the version getting the env variable as argument in the python script
-"hello_world_args.py"</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env python3
+<p><code>hello_world_args.py</code></p>
+<div class="highlight"><pre><span></span><code>``` sl
+#!/usr/bin/env python3
 &quot;&quot;&quot;
-Module for handling input arguments
+Module for handling inpu arguments
 &quot;&quot;&quot;
 
 import argparse
-
-# get tests from file
-class LoadFromFile(argparse.Action):
-    &quot;&quot;&quot;
+</code></pre></div>
+<h1 id="get-tests-from-file">get tests from file<a class="headerlink" href="#get-tests-from-file" title="Permanent link">&para;</a></h1>
+<p>class LoadFromFile(argparse.Action):
+    """
     class for reading arguments from file
-    &quot;&quot;&quot;
-    def __call__(self, parser, namespace, values, option_string=None):
+    """
+    def <strong>call</strong>(self, parser, namespace, values, option_string=None):
         with values as F:
             vals = F.read().split()
-        setattr(namespace, self.dest, vals)
-
-def get_args():
-    &quot;&quot;&quot;
+        setattr(namespace, self.dest, vals)</p>
+<p>def get_args():
+    """
     Definition of the input arguments
-    &quot;&quot;&quot;
-    parser = argparse.ArgumentParser(description=&#39;Hello World&#39;)
-    parser.add_argument(&#39;-ID&#39;, type=int, action=&#39;store&#39;, dest=&#39;my_id&#39;,
-                        help=&#39;Slurm ID&#39;)
-    return parser.parse_args()
-
-
-ARGS = get_args()
+    """
+    parser = argparse.ArgumentParser(description='Hello World')
+    parser.add_argument('-ID', type=int, action='store', dest='my_id',
+                        help='Slurm ID')
+    return parser.parse_args()</p>
+<div class="highlight"><pre><span></span><code>ARGS = get_args()
 print(&quot;hello world from ID {}&quot;.format(ARGS.my_id))
+```
 </code></pre></div>
 <h2 id="python-packages">Python Packages<a class="headerlink" href="#python-packages" title="Permanent link">&para;</a></h2>
 <p>Programmers around the world have written and released many packages for
@@ -2854,7 +2876,7 @@ be found.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:

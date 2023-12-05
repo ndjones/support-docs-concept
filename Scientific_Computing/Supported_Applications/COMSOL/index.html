@@ -1151,9 +1151,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations" class="md-nav__link">
+  <a href="#best-practice" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommendations
+      Best Practice
     </span>
   </a>
   
@@ -2313,9 +2313,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations" class="md-nav__link">
+  <a href="#best-practice" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommendations
+      Best Practice
     </span>
   </a>
   
@@ -2350,6 +2350,30 @@
       <span class="md-tag">COMSOL</span>
     
   
+    
+    
+    
+      <span class="md-tag">cae</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">multiphysics</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">cfd</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">fea</span>
+    
+  
 </nav>
 
 
@@ -2362,15 +2386,13 @@
   
 
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
+  <h1>COMSOL</h1>
+
 <div class="highlight"><pre><span></span><code>comsol --help
 </code></pre></div>
 <p>Will display a list of COMSOL batch commands.</p>
-<div class="admonition prerequisite useful links">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Useful Links</p>
 <ul>
 <li><a href="https://www.comsol.com/support/knowledgebase/1001/">Running COMSOL in parallel on
      clusters.</a></li>
@@ -2415,90 +2437,75 @@ distribution. </p>
 </tbody>
 </table>
 <h2 id="example-scripts">Example Scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
-<hr />
-<table style="height: 481px; width: 811px;">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 506px"><h2 id="serial-example">Serial Example</h2>
-<hr />
-<p>Single <em>process</em> with a single <em>thread</em></p>
-<p>Usually submitted as part of an array, as in the case of parameter
-sweeps.</p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-serial</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00          # Walltime</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           1512               # total mem</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td style="width: 506px"><h2 id="shared-memory-example">Shared Memory
-Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-shared</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00        # Walltime</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 8</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           4G              # total mem</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="odd">
-<td style="width: 506px"><h2 id="distributed-memory-example">Distributed
-Memory Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-distributed </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00            # Walltime</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks        8           </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu   1500                # mem per cpu</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">comsolbatch</span> <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td class="wysiwyg-text-align-left" style="width: 506px"><h2
-id="hybrid-example">Hybrid Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name         COMSOL-hybrid </span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses         comsol@uoa_foe</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time             00:05:00          # Walltime</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks           4                 # total mem</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task    16</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu      1500B             # total mem</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition prerequisite important">
-<p class="admonition-title">Prerequisite</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serial Job</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Single <em>process</em> with a single <em>thread</em>
+Usually submitted as part of an array, as in the case of parameter</p>
+</div>
+</div>
+</div>
+<p>sweeps.</p>
+<div class="highlight"><pre><span></span><code>```
+#!/bin/bash -e
+
+#SBATCH --job-name      COMSOL-serial&lt;/span&gt;&lt;/span&gt;
+#SBATCH --licenses      comsol@uoa_foe
+#SBATCH --time          00:05:00          # Walltime&lt;/span&gt;&lt;/span&gt;
+#SBATCH --mem           1512               # total mem&lt;/span&gt;&lt;/span&gt;
+
+module load COMSOL/6.1
+comsol batch -inputfile my_input.mph
+```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Shared Memory Job</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name      COMSOL-shared
+#SBATCH --licenses      comsol@uoa_foe
+#SBATCH --time          00:05:00        # Walltime
+#SBATCH --cpus-per-task 8
+#SBATCH --mem           4G              # total mem
+module load COMSOL/6.1
+comsol batch -mpibootstrap slurm -inputfile my_input.mph 
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>=== Distributed Memory Job</p>
+<div class="highlight"><pre><span></span><code>```
+#!/bin/bash -e
+
+#SBATCH --job-name      COMSOL-distributed
+#SBATCH --licenses      comsol@uoa_foe
+#SBATCH --time          00:05:00            # Walltime&lt;/span&gt;&lt;/span&gt;
+#SBATCH --ntasks        8         
+#SBATCH --mem-per-cpu   1500                # mem per cpu
+
+module load COMSOL/6.1
+comsolbatcH -mpibootstrap slurm -inputfile my_input.mph
+```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hybrid Job</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e&lt;/span&gt;&lt;/span&gt;
+#SBATCH --job-name         COMSOL-hybrid
+#SBATCH --licenses         comsol@uoa_foe
+#SBATCH --time             00:05:00          # Walltime
+#SBATCH --ntasks           4                 # total mem&lt;/span&gt;&lt;/span&gt;
+#SBATCH --cpus-per-task    16
+#SBATCH --mem-per-cpu      1500B             # total mem&lt;/span&gt;&lt;/span&gt;
+
+module load COMSOL/2022
+comsol batch -mpibootstrap slurm -inputfile my_input.mph
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>If no output file is set, using <code>--output</code> the input file will be
  updated instead.</p>
 </div>
@@ -2507,39 +2514,23 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 X11</a>, you can
 open the COMSOL GUI by running the command <code>comsol</code>.</p>
 <p>Large jobs should not be run on the login node.</p>
-<h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
+<h2 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">&para;</a></h2>
 <p>COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use <code>--cpus-per-task</code> over <code>--ntasks</code></p>
-<!--
-<h1 id="best-practices">Resource requirements</h1>
-<hr>
-<p>
-  COMSOL does not support MPI therefore <code>#SBATCH --ntasks</code> should never
-  be greater than 1.
-</p>
-<p>
-  Memory requirements depend on job type, but will scale up with number of CPUs
-  ≈ linearly.
-</p>
-<p>
-  Hyper-threading can benefit jobs using less than
-  <dfn class="dictionary-of-numbers">8 CPUs</dfn>, but is not recommended on larger
-  jobs.
-</p>
-<p>
-  <em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em>
-</p>
-<p>
-  <img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png" width="1001" height="576">
-</p>
--->
+<p>Memory requirements depend on job type, but will scale up with number of CPUs
+  ≈ linearly.</p>
+<p>Multithreading will benefit jobs using less than
+  8 CPUs, but is not recommended on larger
+  jobs.</p>
+<p><em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em></p>
+<p><img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png"></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:

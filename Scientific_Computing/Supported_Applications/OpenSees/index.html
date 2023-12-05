@@ -2281,6 +2281,23 @@
                 
 
                   
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">geo</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">earthquake</span>
+    
+  
+</nav>
+
 
   
     <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Supported_Applications/OpenSees.md" title="Edit this page" class="md-content__button md-icon">
@@ -2293,47 +2310,34 @@
 
   <h1>OpenSees</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>There are three commands with which a OpenSees job can be launched.</p>
 <ul>
-<li>OpenSees - For running a job in serial (single CPU).</li>
-<li>OpenSeesSP - Intended for the single analysis of very large models.</li>
-<li>OpenSeesMP - For advanced parametric studies.</li>
+<li><code>OpenSees</code>: For running a job in serial (single CPU).</li>
+<li><code>OpenSeesSP</code>: Intended for the single analysis of very large models.</li>
+<li><code>OpenSeesMP</code>: For advanced parametric studies.</li>
 </ul>
 <p>More info can be found about running OpenSees in parallel
 <a href="http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf">here</a>.</p>
-<table style="height: 481px; width: 811px;">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 506px"><h3 id="serial">Serial</h3>
-<hr />
-<p>Single <em>process</em> with a single <em>thread.</em></p>
-<p>Usually submitted as part of an array, as in the case of parameter
-sweeps.</p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      OpenSees-Serial</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00          # Walltime</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           512MB             # total mem</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --hint          nomultithread     # Hyperthreading disabled</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load OpenSees</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">input</span><span class="op">=</span><span class="st">&quot;frame.tcl&quot;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">OpenSees</span> <span class="va">${input}</span></span></code></pre></div></td>
-</tr>
-</tbody>
-</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SerialJob</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>Single <em>process</em> with a single <em>thread</em>.
+Usually submitted as part of an array, as in the case of parameter
+sweeps.</p>
+<div class="highlight"><pre><span></span><code>```sl
+#!/bin/bash -e
 
+#SBATCH --job-name      OpenSees-Serial
+#SBATCH --time          00:05:00          # Walltime&lt;/span&gt;&lt;/span&gt;
+#SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled.
+#SBATCH --mem           512MB             # total mem
+#SBATCH --hint          nomultithread     # Hyperthreading disabled
+
+module load OpenSees/20220411-gimkl-2020a
+OpenSees &quot;frame.tcl&quot;
+</code></pre></div>
 <h2 id="input-from-shell">Input from Shell<a class="headerlink" href="#input-from-shell" title="Permanent link">&para;</a></h2>
 <p>Information can be passed from the bash shell to a Tcl script by use of
 environment variables.</p>
@@ -2341,7 +2345,7 @@ environment variables.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MY_VARIABLE</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
 </code></pre></div>
 <p>Retrieved in Tcl script:</p>
-<div class="highlight"><pre><span></span><code>puts $::env(MY_VARIABLE)
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="nv">$::env</span><span class="k">(</span><span class="nv">MY_VARIABLE</span><span class="k">)</span>
 </code></pre></div>
 
   <hr>
@@ -2349,7 +2353,7 @@ environment variables.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:
