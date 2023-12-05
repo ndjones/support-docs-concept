@@ -1169,7 +1169,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes:
+      Notes
     </span>
   </a>
   
@@ -1409,7 +1409,7 @@
         <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes:
+      Notes
     </span>
   </a>
   
@@ -1473,17 +1473,13 @@
 
   <h1>Māui Ancillary</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>The Māui Ancillary Nodes provide access to a Virtualised environment
 that supports:</p>
 <ol>
 <li>Pre- and post-processing of data for jobs running on the
-    <a href="https://support.nesi.org.nz/hc/articles/360000163695">Māui</a>
+    <a href="../Maui/">Māui</a>
     Supercomputer or
-    <a href="https://support.nesi.org.nz/hc/articles/360000163575">Mahuika</a> HPC
+    <a href="../Mahuika/">Mahuika</a> HPC
     Cluster. Typically, as serial processes on a Slurm partition running
     on a set of Ancillary node VMs or baremetal servers.</li>
 <li>Virtual laboratories that provide interactive access to data stored
@@ -1497,7 +1493,7 @@ that supports:</p>
 </ol>
 <p>Scientific Workflows may access resources across the Māui Supercomputer
 and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.</p>
-<h2 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ol>
 <li>The <code>/home, /nesi/project</code>, and <code>/nesi/nobackup</code>
     <a href="https://support.nesi.org.nz/hc/articles/360000177256">filesystems</a>
@@ -1566,14 +1562,14 @@ Māui login nodes to:</p>
 could add the following section to <code>~/.ssh/config</code> (extending the
 <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup">recommended terminal
 setup</a>)</p>
-<div class="highlight"><pre><span></span><code>Host w-mauivlab01 
-  User &lt;username&gt; 
-  Hostname w-mauivlab01.maui.nesi.org.nz 
-  ProxyCommand ssh -W %h:%p maui 
-  ForwardX11 yes
-  ForwardX11Trusted yes
-  ServerAliveInterval 300
-  ServerAliveCountMax 2
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>w-mauivlab01<span class="w"> </span>
+<span class="w">  </span>User<span class="w"> </span>&lt;username&gt;<span class="w"> </span>
+<span class="w">  </span>Hostname<span class="w"> </span>w-mauivlab01.maui.nesi.org.nz<span class="w"> </span>
+<span class="w">  </span>ProxyCommand<span class="w"> </span>ssh<span class="w"> </span>-W<span class="w"> </span>%h:%p<span class="w"> </span>maui<span class="w"> </span>
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ServerAliveInterval<span class="w"> </span><span class="m">300</span>
+<span class="w">  </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 
   <hr>
@@ -1581,7 +1577,7 @@ setup</a>)</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:
