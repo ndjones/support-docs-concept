@@ -2359,10 +2359,6 @@
 
   <h1>BRAKER</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The rapidly growing number of sequenced genomes requires fully automated
 methods for accurate gene structure annotation. With this goal in mind,
@@ -2398,26 +2394,21 @@ evidence.</p>
 Artistic License
 (see <a href="http://www.opensource.org/licenses/artistic-license.php">http://www.opensource.org/licenses/artistic-license.php</a>).</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>!!! prerequisite Obtain GeneMark-ES/ET Academic License 
-     GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
-     individual academic license  (this is free). This can be obtained as
-     below
-     -   Download URL
-         <a href="http://topaz.gatech.edu/genemark/license_download.cgi">http://topaz.gatech.edu/genemark/license_download.cgi</a>
-      
-      
-     -   <img alt="genemark_es_license.png" src="../../../assets/images/BRAKER.png" />
-     -   Downloaded filename will be in the format of <strong>gm_key_64.gz. **
-     -   Decompress this file with <code>gunzip gm_key_64.gz</code>  and move it to
-         home directory as  a </strong>hidden** file under the filename <code>.gm_key</code>
-          .i.e. <code>~/.gm_key</code></p>
-<p>!!! prerequisite Copy AUGUSTUS config to a path with read/write permissions
-     Make a copy of AUGUSTUS config from
-     <strong><em>/opt/nesi/CS400_centos7_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config</em></strong>
-      to path with read/write permissions .i.e. project, nobackup,home </p>
+<div class="admonition prerequisite">
+<p class="admonition-title">Obtain GeneMark-ES/ET Academic License</p>
+<p>GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic license  (this is free). This can be obtained as below
+ -   Download URL <a href="http://topaz.gatech.edu/genemark/license_download.cgi">http://topaz.gatech.edu/genemark/license_download.cgi</a>
+ -   <img alt="genemark_es_license.png" src="../../../assets/images/BRAKER.png" />
+ -   Downloaded filename will be in the format of <strong>gm_key_64.gz. **
+ -   Decompress this file with <code>gunzip gm_key_64.gz</code>  and move it to
+     home directory as  a </strong>hidden** file under the filename <code>.gm_key</code> .i.e. <code>~/.gm_key</code></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Copy AUGUSTUS config to a path with read/write permissions</p>
+<p>Make a copy of AUGUSTUS config from <strong><em>/opt/nesi/CS400_centos7_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config</em></strong> to path with read/write permissions .i.e. project, nobackup,home </p>
+</div>
 <h3 id="example-slurm-scripts">Example Slurm scripts<a class="headerlink" href="#example-slurm-scripts" title="Permanent link">&para;</a></h3>
-<p>Following example uses the .fa files provided BRAKER developers on
-<a href="https://github.com/Gaius-Augustus/BRAKER/tree/master/example">https://github.com/Gaius-Augustus/BRAKER/tree/master/example</a></p>
+<p>Following example uses the <a href="https://github.com/Gaius-Augustus/BRAKER/tree/master/example">.fa files provided BRAKER developers</a></p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
 #SBATCH --account nesi12345
@@ -2453,7 +2444,7 @@ augustus.hints_iter1.gtf       GeneMark-ES/ proteins.fa
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:
