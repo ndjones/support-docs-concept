@@ -1295,10 +1295,6 @@
 
   <h1>Data Transfer using Globus V5</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
 <p>Globus is a third-party service for transferring large amounts of data
 between Globus Data Transfer Nodes (DTNs). For example you can transfer
@@ -1307,28 +1303,26 @@ endpoint, or an endpoint from your institution. With Globus, very high
 data transfer rates are achievable. This service allows data to be
 accessible to any person who has a Globus account. The newest
 implementation (v5) provides extra features and some key differences
-from the previous setup that you can find
-<a href="https://docs.globus.org/globus-connect-server/">here</a>. </p>
+from the previous setup that you can find <a href="https://docs.globus.org/globus-connect-server/">here</a>.</p>
 <p>To use Globus on NeSI platforms, you need:</p>
 <ol>
 <li>A Globus account (see <a href="../Initial_Globus_Sign_Up-and_your_Globus_Identities/">Initial Globus Sign-Up and Globus
-    ID</a>)</li>
+   ID</a>)</li>
 <li>An active NeSI account (see <a href="../../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile/">Creating a NeSI
-    Account</a>)</li>
+   Account</a>)</li>
 <li>
 <p>Access privileges on the non-NeSI Globus endpoint/collection you
-    plan on transferring data from or to. This other endpoint/collection
-    could be a personal one on your workstation, or it could be managed
-    by your institution or a third party.</p>
-</li>
-<li>
-<p><em>Note that a NeSI user account does not create a Globus account, and
+   plan on transferring data from or to. This other endpoint/collection
+   could be a personal one on your workstation, or it could be managed
+   by your institution or a third party.</p>
+<ul>
+<li><em>Note that a NeSI user account does not create a Globus account, and
     similarly a Globus account does not create a NeSI user account. Nor
-    can you, as the end user, link the two through any website.</em></p>
+    can you, as the end user, link the two through any website.</em></li>
+</ul>
 </li>
 </ol>
-<p>Both your accounts (NeSI and Globus) must exist before you try to use
-our DTN.</p>
+<p>Both your accounts (NeSI and Globus) must exist before you try to use our DTN.</p>
 <p>The NeSI Wellington DTN endpoint is protected by a second factor
 authentication (2FA).  Also note, your NeSI username and password are
 case-sensitive.</p>
@@ -1372,6 +1366,11 @@ especially if your institution has an aggressive firewall.</p>
 <p>As an example, to move files between the NeSI HPC Storage (accessible
 from Māui and Mahuika) and the Otago University high-capacity central
 file storage (another managed server endpoint):</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Log in to the <a href="https://transfer.nesi.org.nz/file-manager">NeSI File Manager</a> where you are able to search for DTNs in the Collection field.
+<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000931775">Here</a> is a listing of available endpoints on the New Zealand Data Transfer Platform.</p>
+</div>
 <p>Find the NeSI endpoint by typing in "NeSI Wellington DTN V5". Select the
 endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
 to authenticate your access to the endpoint. Click Continue to the next
@@ -1396,7 +1395,7 @@ the token number.)</p>
 path, then you could change the path to</p>
 <p>(1) your <strong><em>/home/&lt;username&gt;</em></strong> directory,</p>
 <p>(2) project directory (read-only)
-<strong><em>/nesi/project/&lt;project_code&gt;</em></strong> </p>
+<strong><em>/nesi/project/&lt;project_code&gt;</em></strong></p>
 <p>(3) project sub-directories of
 <strong><em>/nesi/nobackup/&lt;project_code&gt;</em></strong>  - see <a href="../Globus_V5_Paths-Permissions-Storage_Allocation/">Globus Paths,
 Permissions,  Storage
@@ -1417,27 +1416,27 @@ button:  </p>
 <h2 id="in-brief">In brief:<a class="headerlink" href="#in-brief" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sign in to the NeSI Globus Web App <a href="https://transfer.nesi.org.nz/">https://transfer.nesi.org.nz/</a>.
-    You will be taken to the <em>File Manager</em> page
-    <a href="https://transfer.nesi.org.nz/file-manager">https://transfer.nesi.org.nz/file-manager</a></li>
+  You will be taken to the <em>File Manager</em> page
+  <a href="https://transfer.nesi.org.nz/file-manager">https://transfer.nesi.org.nz/file-manager</a></li>
 <li>If this is your first time, you will need to create a Globus
-    account.</li>
+  account.</li>
 <li>Open the two-endpoint panel
-    <img alt="two_endpoint.png" src="../../../assets/images/Data_Transfer_using_Globus_V12.png" />located
-    on the top-right of the <em>File Manager</em> page.</li>
+  <img alt="two_endpoint.png" src="../../../assets/images/Data_Transfer_using_Globus_V12.png" style="height:2em;" /> located
+  on the top-right of the <em>File Manager</em> page.</li>
 <li>Select the Endpoints you wish to move files between (start typing
-    "nesi#" to see the list of NeSI DTNs to select from).
-    <a href="../Globus_V5_endpoint_activation/">Authenticate</a>
-    at both endpoints.</li>
-<li>At Globus.org the<strong> </strong>endpoint <strong>defaults to
-    "/home/&lt;username&gt;" path</strong> (represented by "/~/") on Mahuika or
-    Māui. We do not recommend uploading data to your home directory, as
-    home directories are very small. Instead, navigate to an appropriate
-    project directory under /nobackup (see <a href="../Globus_V5_Paths-Permissions-Storage_Allocation/">Globus Paths, Permissions,
-    Storage
-    Allocation</a>).</li>
+  "nesi#" to see the list of NeSI DTNs to select from).
+  <a href="../Globus_V5_endpoint_activation/">Authenticate</a>
+  at both endpoints.</li>
+<li>At Globus.org the endpoint <strong>defaults to
+  "/home/&lt;username&gt;" path</strong> (represented by "/~/") on Mahuika or
+  Māui. We do not recommend uploading data to your home directory, as
+  home directories are very small. Instead, navigate to an appropriate
+  project directory under /nobackup (see <a href="../Globus_V5_Paths-Permissions-Storage_Allocation/">Globus Paths, Permissions,
+  Storage
+  Allocation</a>).</li>
 <li>Transfer the files by clicking the appropriate
-    <img alt="start.png" src="../../../assets/images/Data_Transfer_using_Globus_V13.png" />button
-    depending on the direction of the transfer.</li>
+  <img alt="start.png" src="../../../assets/images/Data_Transfer_using_Globus_V13.png" style="height:1em;" /> button
+  depending on the direction of the transfer.</li>
 <li>Check your email for confirmation about the job completion report.</li>
 </ul>
 <h2 id="transferring-data-using-a-personal-endpoint">Transferring data using a personal endpoint<a class="headerlink" href="#transferring-data-using-a-personal-endpoint" title="Permanent link">&para;</a></h2>
@@ -1469,7 +1468,7 @@ touch (<a href="mailto:support@nesi.org.nz">support@nesi.org.nz</a>).</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
         <br>
         Created:
