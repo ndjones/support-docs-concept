@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wrf" class="md-skip">
+        <a href="#wrf-on-mahuika" class="md-skip">
           Skip to content
         </a>
       
@@ -828,6 +828,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -931,16 +935,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Supported Applications
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
@@ -948,6 +960,8 @@
             Supported Applications
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1192,27 +1206,6 @@
   
   <span class="md-ellipsis">
     FDS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Find%20execution%20hot%20spots%20with%20VTune/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Find execution hot spots with VTune
   </span>
   
 
@@ -1712,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_CPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1733,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_GPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,6 +1810,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VTune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../VirSorter/" class="md-nav__link">
         
   
@@ -1878,15 +1892,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wrf" class="md-nav__link">
-    <span class="md-ellipsis">
-      WRF
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#wrf-on-mahuika" class="md-nav__link">
@@ -2352,15 +2357,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wrf" class="md-nav__link">
-    <span class="md-ellipsis">
-      WRF
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#wrf-on-mahuika" class="md-nav__link">
     <span class="md-ellipsis">
       WRF on Mahuika
@@ -2479,11 +2475,6 @@
 
   <h1>WRF</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<h2 id="wrf">WRF<a class="headerlink" href="#wrf" title="Permanent link">&para;</a></h2>
 <p>The Weather Research and Forecasting (WRF) Model is a next-generation
 mesoscale numerical weather prediction system designed for both
 atmospheric research and operational forecasting applications. It
@@ -2492,9 +2483,9 @@ architecture supporting parallel computation and system extensibility.
 The model serves a wide range of meteorological applications across
 scales from tens of meters to thousands of kilometres.</p>
 <p>Download WRF:</p>
-<div class="highlight"><pre><span></span><code>cd /nesi/project/&lt;your_project_code&gt;
-wget https://github.com/wrf-model/WRF/archive/v4.1.1.tar.gz
-tar xf v4.1.1.tar.gz
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;your_project_code&gt;
+wget<span class="w"> </span>https://github.com/wrf-model/WRF/archive/v4.1.1.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>v4.1.1.tar.gz
 </code></pre></div>
 <p>This guide is based on WRF 4.1.1 and WPS 4.2 (it was also tested with
 Polar WRF 4.1.1 but for that, you would need to apply the Polar WRF and
@@ -2505,80 +2496,80 @@ recommend to download these packages and build them by hand
 (instructions are provided below).</p>
 <h2 id="wrf-on-mahuika">WRF on Mahuika<a class="headerlink" href="#wrf-on-mahuika" title="Permanent link">&para;</a></h2>
 <h3 id="environment-on-mahuika">Environment on Mahuika<a class="headerlink" href="#environment-on-mahuika" title="Permanent link">&para;</a></h3>
-<p>We'll use the Intel compiler and Intel MPI library. </p>
-<div class="highlight"><pre><span></span><code>module purge
-module load HDF5/1.12.2-iimpi-2022a
+<p>We'll use the Intel compiler and Intel MPI library.</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>HDF5/1.12.2-iimpi-2022a
 </code></pre></div>
 <p>Although NeSI has NetCDF modules installed, WRF wants the C and Fortran
 NetCDF libraries, include files and modules all installed under the same
 root directory. Hence we build those by hand.</p>
 <h3 id="building-wrf-dependencies-on-mahuika">Building WRF dependencies on Mahuika<a class="headerlink" href="#building-wrf-dependencies-on-mahuika" title="Permanent link">&para;</a></h3>
 <p>Copy-paste the commands below to build WRF on Mahuika:</p>
-<div class="highlight"><pre><span></span><code># create build directory for WRF&#39;s dependencies
-export WRF_DEPS_DIR=$PWD/wrf-deps
-mkdir $WRF_DEPS_DIR
-cd $WRF_DEPS_DIR
+<div class="highlight"><pre><span></span><code><span class="c1"># create build directory for WRF&#39;s dependencies</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WRF_DEPS_DIR</span><span class="o">=</span><span class="nv">$PWD</span>/wrf-deps
+mkdir<span class="w"> </span><span class="nv">$WRF_DEPS_DIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WRF_DEPS_DIR</span>
 
-# required for building and running
-export LD_LIBRARY_PATH=$WRF_DEPS_DIR/lib:$LD_LIBRARY_PATH
+<span class="c1"># required for building and running</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 
-# to access the nc-config anf nf-config commands
-export PATH=$WRF_DEPS_DIR/bin:$PATH
+<span class="c1"># to access the nc-config anf nf-config commands</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>/bin:<span class="nv">$PATH</span>
 
-# set the compilers
-export CC=icc
-export CXX=icc
-export FC=ifort
-export F77=ifort
-export MPICC=mpiicc
-export MPICXX=mpiicc
-export MPIF77=mpiifort
-export MPIF90=mpiifort
+<span class="c1"># set the compilers</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>icc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>icc
+<span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span>ifort
+<span class="nb">export</span><span class="w"> </span><span class="nv">F77</span><span class="o">=</span>ifort
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPICC</span><span class="o">=</span>mpiicc
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPICXX</span><span class="o">=</span>mpiicc
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPIF77</span><span class="o">=</span>mpiifort
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPIF90</span><span class="o">=</span>mpiifort
 
-# now install the dependencies
+<span class="c1"># now install the dependencies</span>
 
-# netcdf-c
-wget https://downloads.unidata.ucar.edu/netcdf-c/4.9.2/netcdf-c-4.9.2.tar.gz
-tar xf netcdf-c-4.9.2.tar.gz
-cd netcdf-c-4.9.2/
-./configure --prefix=$WRF_DEPS_DIR
-make &amp; make install
-cd ..
+<span class="c1"># netcdf-c</span>
+wget<span class="w"> </span>https://downloads.unidata.ucar.edu/netcdf-c/4.9.2/netcdf-c-4.9.2.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>netcdf-c-4.9.2.tar.gz
+<span class="nb">cd</span><span class="w"> </span>netcdf-c-4.9.2/
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
+make<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
 
-# netcdf-fortran
-wget https://downloads.unidata.ucar.edu/netcdf-fortran/4.6.1/netcdf-fortran-4.6.1.tar.gz
-tar xf netcdf-fortran-4.6.1.tar.gz
-cd netcdf-fortran-4.6.1
-CPPFLAGS=&quot;$(../bin/nc-config --cflags)&quot; LDFLAGS=&quot;$(../bin/nc-config --libs)&quot; \
-./configure --prefix=$WRF_DEPS_DIR
-make &amp; make install
-cd ..
+<span class="c1"># netcdf-fortran</span>
+wget<span class="w"> </span>https://downloads.unidata.ucar.edu/netcdf-fortran/4.6.1/netcdf-fortran-4.6.1.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>netcdf-fortran-4.6.1.tar.gz
+<span class="nb">cd</span><span class="w"> </span>netcdf-fortran-4.6.1
+<span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>../bin/nc-config<span class="w"> </span>--cflags<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>../bin/nc-config<span class="w"> </span>--libs<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
+make<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
 
-# pnetcdf
-wget https://parallel-netcdf.github.io/Release/pnetcdf-1.12.3.tar.gz
-tar xf pnetcdf-1.12.3.tar.gz
-cd pnetcdf-1.12.3
-./configure --prefix=$WRF_DEPS_DIR --with-netcdf4=$WRF_DEPS_DIR
-make &amp; make install
-cd ..
+<span class="c1"># pnetcdf</span>
+wget<span class="w"> </span>https://parallel-netcdf.github.io/Release/pnetcdf-1.12.3.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>pnetcdf-1.12.3.tar.gz
+<span class="nb">cd</span><span class="w"> </span>pnetcdf-1.12.3
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span><span class="w"> </span>--with-netcdf4<span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
+make<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>..
 
-# back to the top directory
-cd ..
+<span class="c1"># back to the top directory</span>
+<span class="nb">cd</span><span class="w"> </span>..
 </code></pre></div>
 <p>Then proceed to configure WRF by setting</p>
-<div class="highlight"><pre><span></span><code>export NETCDF=$WRF_DEPS_DIR
-export HDF5=$WRF_DEPS_DIR
-export PNETCDF=$WRF_DEPS_DIR
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NETCDF</span><span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HDF5</span><span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PNETCDF</span><span class="o">=</span><span class="nv">$WRF_DEPS_DIR</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>cd WRF-4.1.1
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>WRF-4.1.1
 ./configure
-[select 15]
+<span class="o">[</span><span class="k">select</span><span class="w"> </span><span class="m">15</span><span class="o">]</span>
 </code></pre></div>
 <p>and build the code with</p>
-<div class="highlight"><pre><span></span><code>./compile em_real &gt;&amp; log.compile
+<div class="highlight"><pre><span></span><code>./compile<span class="w"> </span>em_real<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>log.compile
 </code></pre></div>
 <p>This may take several hours to compile. Check the log file to ensure
-that the compilation was successful. </p>
+that the compilation was successful.</p>
 <h3 id="running-wrf-on-mahuika">Running WRF on Mahuika<a class="headerlink" href="#running-wrf-on-mahuika" title="Permanent link">&para;</a></h3>
 <p>An example Slurm script for running WRF on Mahuika extension, which can
 be submitted with <em>sbatch name_of_script.sl</em>:</p>
@@ -2620,8 +2611,8 @@ export PNETCDF=$PNETCDF_DIR
 </code></pre></div>
 <p>Apply patches for Polar WRF if required and then configure WRF:</p>
 <div class="highlight"><pre><span></span><code>./configure
-# choose option 50 - INTEL (ftn/icc) Cray XC (dmpar)
-# choose an appropriate nesting option or leave it at the default
+<span class="c1"># choose option 50 - INTEL (ftn/icc) Cray XC (dmpar)</span>
+<span class="c1"># choose an appropriate nesting option or leave it at the default</span>
 </code></pre></div>
 <p>The configure script takes some options, for example, to configure for a
 debug build (no optimisations and debug symbols enabled) you could run
@@ -2631,7 +2622,7 @@ edited manually if desired. For example, if you want an optimised build
 with debug symbols included, you could add <em>-g</em> to the <em>FCDEBUG</em>
 variable.</p>
 <p>Next compile WRF:</p>
-<div class="highlight"><pre><span></span><code>./compile em_real &gt;&amp; log.compile
+<div class="highlight"><pre><span></span><code>./compile<span class="w"> </span>em_real<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>log.compile
 </code></pre></div>
 <p>It is important to check the output in <em>log.compile</em> as the command will
 not exit with an error if it fails. Check the end of the log file for a
@@ -2670,9 +2661,9 @@ required) to set <em>nocolons = .true.</em> in the <em>time_control</em> section
 the namelist when using parallel IO.</p>
 <h3 id="building-wps">Building WPS<a class="headerlink" href="#building-wps" title="Permanent link">&para;</a></h3>
 <p>Download WPS:</p>
-<div class="highlight"><pre><span></span><code>wget https://github.com/wrf-model/WPS/archive/v4.2.tar.gz
-tar xf v4.2.tar.gz
-cd WPS-4.2
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://github.com/wrf-model/WPS/archive/v4.2.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>v4.2.tar.gz
+<span class="nb">cd</span><span class="w"> </span>WPS-4.2
 </code></pre></div>
 <p>Load environment modules and set up the build environment (here we will
 build with the Intel compiler). We will build WPS using dynamic linking
@@ -2697,12 +2688,12 @@ export CRAYPE_LINK_TYPE=dynamic
 </code></pre></div>
 <p>Configure WPS:</p>
 <div class="highlight"><pre><span></span><code>./configure
-# choose option 39 - Cray XC Intel parallel build
+<span class="c1"># choose option 39 - Cray XC Intel parallel build</span>
 </code></pre></div>
 <p>This creates the <em>configure.wps</em> file, which can be edited in a similar
 way to <em>configure.wrf</em> above, if desired.</p>
 <p>Now compile WPS:</p>
-<div class="highlight"><pre><span></span><code>./compile &gt;&amp; log.compile
+<div class="highlight"><pre><span></span><code>./compile<span class="w"> </span>&gt;<span class="p">&amp;</span><span class="w"> </span>log.compile
 </code></pre></div>
 <p>Check that the executables were successfully created: <em>geogrid.exe</em>,
 <em>ungrib.exe</em> and <em>metgrid.exe</em>.</p>
@@ -2712,7 +2703,7 @@ Māui compute nodes. However, <em>ungrib</em> is serial and should not be run on
 a compute node unless it is very quick to finish. Alternatively you
 could run <em>ungrib</em> on an interactive/login node if it will not take up
 many resources, or you could compile WRF and WPS on a Māui Ancillary
-node and run it there. </p>
+node and run it there.</p>
 <p>Note that WPS does a lot of file IO and therefore probably won't scale
 up to as many processes as WRF.</p>
 <p>This example shows running <em>geogrid</em> in a Slurm job:</p>
@@ -2758,7 +2749,7 @@ srun --output=geogrid.log ./geogrid.exe
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
   </span>
 
     

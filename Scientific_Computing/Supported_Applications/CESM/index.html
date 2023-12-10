@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cesm" class="md-skip">
+        <a href="#building-cesm2-on-maui" class="md-skip">
           Skip to content
         </a>
       
@@ -828,6 +828,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -931,16 +935,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Supported Applications
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
@@ -948,6 +960,8 @@
             Supported Applications
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1101,15 +1115,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cesm" class="md-nav__link">
-    <span class="md-ellipsis">
-      CESM
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#building-cesm2-on-maui" class="md-nav__link">
@@ -1297,27 +1302,6 @@
   
   <span class="md-ellipsis">
     FDS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Find%20execution%20hot%20spots%20with%20VTune/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Find execution hot spots with VTune
   </span>
   
 
@@ -1817,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_CPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1838,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_GPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1906,6 +1890,27 @@
   
   <span class="md-ellipsis">
     VASP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VTune
   </span>
   
 
@@ -2319,15 +2324,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cesm" class="md-nav__link">
-    <span class="md-ellipsis">
-      CESM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#building-cesm2-on-maui" class="md-nav__link">
     <span class="md-ellipsis">
       Building CESM2 on Māui
@@ -2413,11 +2409,6 @@
 
   <h1>CESM</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<h2 id="cesm">CESM<a class="headerlink" href="#cesm" title="Permanent link">&para;</a></h2>
 <p>The Community Earth System Model (CESM) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
 simultaneously simulating the Earth’s atmosphere, ocean, land, river
@@ -2434,15 +2425,15 @@ components. Download the Git-LFS archive from
 the <em>bin</em> directory in your home, add that directory to <em>PATH</em> and run a
 git command to finish the Git-LFS installation. The following commands
 will achieve this:</p>
-<div class="highlight"><pre><span></span><code>mkdir git-lfs
-cd git-lfs
-wget https://github.com/git-lfs/git-lfs/releases/download/v2.12.0/git-lfs-linux-amd64-v2.12.0.tar.gz
-tar xf git-lfs-linux-amd64-v2.12.0.tar.gz
-mkdir -p ~/bin
-cp git-lfs ~/bin/
-export PATH=$PATH:~/bin
-echo export PATH=\$PATH:\$HOME/bin &gt;&gt; ~/.bashrc
-git lfs install
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>git-lfs
+<span class="nb">cd</span><span class="w"> </span>git-lfs
+wget<span class="w"> </span>https://github.com/git-lfs/git-lfs/releases/download/v2.12.0/git-lfs-linux-amd64-v2.12.0.tar.gz
+tar<span class="w"> </span>xf<span class="w"> </span>git-lfs-linux-amd64-v2.12.0.tar.gz
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/bin
+cp<span class="w"> </span>git-lfs<span class="w"> </span>~/bin/
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/bin
+<span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="se">\$</span>PATH:<span class="se">\$</span>HOME/bin<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+git<span class="w"> </span>lfs<span class="w"> </span>install
 </code></pre></div>
 <h3 id="download-cesm">Download CESM<a class="headerlink" href="#download-cesm" title="Permanent link">&para;</a></h3>
 <p>These instructions are based on the <a href="https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html">upstream
@@ -2450,9 +2441,9 @@ documentation</a>.
 First switch to your project directory (or wherever else you would like
 the CESM source to live) and then run the commands to download CESM
 (replacing <em>&lt;your_project_code&gt;</em> with your project code):</p>
-<div class="highlight"><pre><span></span><code>cd /nesi/project/&lt;your_project_code&gt;
-git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
-cd my_cesm_sandbox
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;your_project_code&gt;
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>release-cesm2.1.3<span class="w"> </span>https://github.com/ESCOMP/CESM.git<span class="w"> </span>my_cesm_sandbox
+<span class="nb">cd</span><span class="w"> </span>my_cesm_sandbox
 ./manage_externals/checkout_externals
 </code></pre></div>
 <p>Make sure the above command is successful (see the upstream
@@ -2466,12 +2457,12 @@ provides a case control system for configuring, building and executing
 Earth system models) and copy the config files to <em>~/.cime</em>. In the
 following, replace <em>&lt;your_project_code&gt;</em> with your project code
 (this will overwrite any current configuration your have in <em>~/.cime</em>):</p>
-<div class="highlight"><pre><span></span><code>cd /nesi/project/&lt;your_project_code&gt;
-git clone https://github.com/nesi/nesi-cesm-config.git
-cd nesi-cesm-config
-mkdir -p ~/.cime
-sed &#39;s/nesi99999/&lt;your_project_code&gt;/g&#39; config_machines.xml &gt; ~/.cime/config_machines.xml
-cp config_batch.xml ~/.cime/config_batch.xml
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;your_project_code&gt;
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nesi/nesi-cesm-config.git
+<span class="nb">cd</span><span class="w"> </span>nesi-cesm-config
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/.cime
+sed<span class="w"> </span><span class="s1">&#39;s/nesi99999/&lt;your_project_code&gt;/g&#39;</span><span class="w"> </span>config_machines.xml<span class="w"> </span>&gt;<span class="w"> </span>~/.cime/config_machines.xml
+cp<span class="w"> </span>config_batch.xml<span class="w"> </span>~/.cime/config_batch.xml
 </code></pre></div>
 <p>Check that you are happy with the paths specified in
 <em>~/.cime/config_machines.xml</em>, in particular, it is recommended that
@@ -2483,9 +2474,9 @@ guide</a>. The
 following are basic instructions to run create and run the case, see the
 above link for more information.</p>
 <p>First, create the case:</p>
-<div class="highlight"><pre><span></span><code>cd /nesi/project/&lt;your_project_code&gt;/my_cesm_sandbox/cime/scripts
-./create_newcase --case /nesi/nobackup/&lt;your_project_code&gt;/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
-cd /nesi/nobackup/&lt;your_project_code&gt;/$USER/cesm/output/b.e20.B1850.f19_g17.test
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;your_project_code&gt;/my_cesm_sandbox/cime/scripts
+./create_newcase<span class="w"> </span>--case<span class="w"> </span>/nesi/nobackup/&lt;your_project_code&gt;/<span class="nv">$USER</span>/cesm/output/b.e20.B1850.f19_g17.test<span class="w"> </span>--compset<span class="w"> </span>B1850<span class="w"> </span>--res<span class="w"> </span>f19_g17<span class="w"> </span>--machine<span class="w"> </span>maui<span class="w"> </span>--compiler<span class="w"> </span>intel
+<span class="nb">cd</span><span class="w"> </span>/nesi/nobackup/&lt;your_project_code&gt;/<span class="nv">$USER</span>/cesm/output/b.e20.B1850.f19_g17.test
 </code></pre></div>
 <p>The <em>--machine Māui --compiler intel</em> arguments to <em>./create_case</em> tell
 CESM to use the NeSI specific configuration we added to your home
@@ -2500,7 +2491,7 @@ case:</p>
 </code></pre></div>
 <p>Update any settings if necessary, for example here we turn off short
 term archiving:</p>
-<div class="highlight"><pre><span></span><code>./xmlchange DOUT_S=FALSE
+<div class="highlight"><pre><span></span><code>./xmlchange<span class="w"> </span><span class="nv">DOUT_S</span><span class="o">=</span>FALSE
 </code></pre></div>
 <p>Finally, run the job:</p>
 <div class="highlight"><pre><span></span><code>./case.submit
@@ -2546,7 +2537,7 @@ That information can then be used to determine an optimal load balance.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
   </span>
 
     

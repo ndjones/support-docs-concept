@@ -828,6 +828,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -931,16 +935,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Supported Applications
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
@@ -948,6 +960,8 @@
             Supported Applications
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1192,27 +1206,6 @@
   
   <span class="md-ellipsis">
     FDS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Find%20execution%20hot%20spots%20with%20VTune/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Find execution hot spots with VTune
   </span>
   
 
@@ -1793,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_CPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1814,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_GPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1882,6 +1875,27 @@
   
   <span class="md-ellipsis">
     VASP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VTune
   </span>
   
 
@@ -2365,10 +2379,6 @@
 
   <h1>Lambda Stack</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p><a href="https://lambdalabs.com/lambda-stack-deep-learning-software">Lambda
 Stack</a> is an
@@ -2383,7 +2393,7 @@ guide below). In the following sections, we will show you how to run
 Lambda Stack in a Slurm job or interactively via
 <a href="../../Interactive_computing_using_Jupyter/Jupyter_on_NeSI/">JupyterLab</a>.</p>
 <p>You can list the available Lambda Stack version on NeSI by running:</p>
-<div class="highlight"><pre><span></span><code>$ ls /opt/nesi/containers/lambda-stack
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/opt/nesi/containers/lambda-stack
 lambda-stack-focal-20201130.sif
 lambda-stack-focal-20201221.sif
 lambda-stack-focal-20210105.sif
@@ -2395,7 +2405,7 @@ built and the file with <em>-latest</em> will correspond to the most recent
 version.</p>
 <h2 id="building-the-singularity-image-optional">Building the Singularity image (optional)<a class="headerlink" href="#building-the-singularity-image-optional" title="Permanent link">&para;</a></h2>
 <p>This step is optional; if you choose to use the prebuilt Singularity
-images under <em>/opt/nesi/containers/lambda-stack/</em> you can skip this
+images under <code>/opt/nesi/containers/lambda-stack/</code> you can skip this
 step.</p>
 <p>Note that Singularity images are immutable, so the versions of packages
 in the image are a snapshot of the available versions from when the
@@ -2415,15 +2425,15 @@ installing an Ubuntu VM in
 <p>Make sure you have <a href="https://docs.docker.com/get-docker/">Docker</a> and
 <a href="https://sylabs.io/guides/3.7/user-guide/quick_start.html#quick-installation-steps">Singularity</a>
 installed first and then follow the steps below.</p>
-<div class="highlight"><pre><span></span><code># clone the lambda stack Dockerfiles repo
-git clone https://github.com/lambdal/lambda-stack-dockerfiles.git
-cd lambda-stack-dockerfiles
+<div class="highlight"><pre><span></span><code><span class="c1"># clone the lambda stack Dockerfiles repo</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lambdal/lambda-stack-dockerfiles.git
+<span class="nb">cd</span><span class="w"> </span>lambda-stack-dockerfiles
 
-# build the Docker image
-sudo docker build -t lambda-stack:20.04 -f Dockerfile.focal .
+<span class="c1"># build the Docker image</span>
+sudo<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>lambda-stack:20.04<span class="w"> </span>-f<span class="w"> </span>Dockerfile.focal<span class="w"> </span>.
 
-# build the Singularity image from the Docker image
-sudo singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
+<span class="c1"># build the Singularity image from the Docker image</span>
+sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>lambda-stack-focal-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.sif<span class="w"> </span>docker-daemon:lambda-stack:20.04
 </code></pre></div>
 <p>Note that the Docker build will require a lot of disk space during the
 build (~40GB) and the final image will be ~14GB. The Singularity image
@@ -2431,10 +2441,10 @@ will be ~5GB and will also require a lot of space during the build. If
 you don't have enough space in <em>/tmp</em> for the Singularity build you
 could try running the following script (updating paths first) as root
 (e.g. using <em>sudo</em>):</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-export SINGULARITY_TMPDIR=/path/to/somewhere/with/lots/of/space
-export SINGULARITY_CACHEDIR=/path/to/somewhere/else/with/lots/of/space
-singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_TMPDIR</span><span class="o">=</span>/path/to/somewhere/with/lots/of/space
+<span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_CACHEDIR</span><span class="o">=</span>/path/to/somewhere/else/with/lots/of/space
+singularity<span class="w"> </span>build<span class="w"> </span>lambda-stack-focal-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.sif<span class="w"> </span>docker-daemon:lambda-stack:20.04
 </code></pre></div>
 <h2 id="lambda-stack-via-slurm">Lambda Stack via Slurm<a class="headerlink" href="#lambda-stack-via-slurm" title="Permanent link">&para;</a></h2>
 <p>The following Slurm script can be used as a template for running jobs
@@ -2467,60 +2477,60 @@ accessed via NeSI's Jupyter service (based on the instructions
 <p>First, we need to create a kernel definition and wrapper that will
 launch the Singularity image. Run the following commands on the Mahuika
 login node:</p>
-<div class="highlight"><pre><span></span><code># load the Singularity envioronment module
-module load Singularity
+<div class="highlight"><pre><span></span><code><span class="c1"># load the Singularity envioronment module</span>
+module<span class="w"> </span>load<span class="w"> </span>Singularity
 
-# path to the singularity image file (optionally replace with your own)
-export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
+<span class="c1"># path to the singularity image file (optionally replace with your own)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SIF</span><span class="o">=</span>/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-# create a jupyter kernel using the Python within the Singularity image
-singularity exec -B $HOME $SIF python -m ipykernel install --user \
-        --name lambdastack --display-name=&quot;Lambda Stack Python 3&quot;
+<span class="c1"># create a jupyter kernel using the Python within the Singularity image</span>
+singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-B<span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="nv">$SIF</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--name<span class="w"> </span>lambdastack<span class="w"> </span>--display-name<span class="o">=</span><span class="s2">&quot;Lambda Stack Python 3&quot;</span>
 </code></pre></div>
 <p>If successful this should report that a kernelspec has been installed.
 Change to the kernelspec directory:</p>
-<div class="highlight"><pre><span></span><code>cd $HOME/.local/share/jupyter/kernels/lambdastack
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/.local/share/jupyter/kernels/lambdastack
 </code></pre></div>
 <p>and create a wrapper script for launching the kernel, named wrapper.sh:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
-# path to the singularity image file (optionally replace with your own)
-SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
+<span class="c1"># path to the singularity image file (optionally replace with your own)</span>
+<span class="nv">SIF</span><span class="o">=</span>/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-# load environment modules (these are always required)
-module purge
-module load Singularity
+<span class="c1"># load environment modules (these are always required)</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Singularity
 
-# unfortunately $HOME is not the canonical path to your home directory,
-# we need to bind in canonical home path too so jupyter can find kernel
-# connection file
-homefull=$(readlink -e $HOME)
+<span class="c1"># unfortunately $HOME is not the canonical path to your home directory,</span>
+<span class="c1"># we need to bind in canonical home path too so jupyter can find kernel</span>
+<span class="c1"># connection file</span>
+<span class="nv">homefull</span><span class="o">=</span><span class="k">$(</span>readlink<span class="w"> </span>-e<span class="w"> </span><span class="nv">$HOME</span><span class="k">)</span>
 
-# for convenience store the singularity command in an environment variable
-# feel free to add additional binds if you need them 
-SINGULARITY=&quot;singularity exec --nv -B ${HOME},${homefull},${PWD} ${SIF}&quot;
+<span class="c1"># for convenience store the singularity command in an environment variable</span>
+<span class="c1"># feel free to add additional binds if you need them </span>
+<span class="nv">SINGULARITY</span><span class="o">=</span><span class="s2">&quot;singularity exec --nv -B </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">,</span><span class="si">${</span><span class="nv">homefull</span><span class="si">}</span><span class="s2">,</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">SIF</span><span class="si">}</span><span class="s2">&quot;</span>
 
-# run a command in the container
-echo ${SINGULARITY} python3 $@
-${SINGULARITY} python3 $@
+<span class="c1"># run a command in the container</span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">SINGULARITY</span><span class="si">}</span><span class="w"> </span>python3<span class="w"> </span><span class="nv">$@</span>
+<span class="si">${</span><span class="nv">SINGULARITY</span><span class="si">}</span><span class="w"> </span>python3<span class="w"> </span><span class="nv">$@</span>
 </code></pre></div>
 <p>Make the wrapper script executable:</p>
-<div class="highlight"><pre><span></span><code>chmod +x wrapper.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>wrapper.sh
 </code></pre></div>
 <p>Next, edit the <em>kernel.json</em> to change the first element of the argv
 list to point to the wrapper script we just created. The file should
 look like this (change &lt;username&gt; to your NeSI username):</p>
-<div class="highlight"><pre><span></span><code>{
-&quot;argv&quot;: [
-&quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/lambdastack/wrapper.sh&quot;,
-&quot;-m&quot;,
-&quot;ipykernel_launcher&quot;,
-&quot;-f&quot;,
-&quot;{connection_file}&quot;
-],
-&quot;display_name&quot;: &quot;Lambda Stack Python 3&quot;,
-&quot;language&quot;: &quot;python&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="s2">&quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/lambdastack/wrapper.sh&quot;</span><span class="p">,</span>
+<span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="s2">&quot;{connection_file}&quot;</span>
+<span class="p">],</span>
+<span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lambda Stack Python 3&quot;</span><span class="p">,</span>
+<span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>After refreshing the <a href="https://jupyter.nesi.org.nz/">NeSI JupyterLab</a>
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
@@ -2533,54 +2543,54 @@ TensorFlow or PyTorch underneath. While both PyTorch and TensorFlow are
 included in the Lambda Stack distribution, the Transformers library is
 not, so the first thing we do is create a virtual environment and
 install transformers into it:</p>
-<div class="highlight"><pre><span></span><code># load the Singularity environment module
-module load Singularity
+<div class="highlight"><pre><span></span><code><span class="c1"># load the Singularity environment module</span>
+module<span class="w"> </span>load<span class="w"> </span>Singularity
 
-# create a directory and change to it
-mkdir /nesi/project/&lt;project_code&gt;/transformers-benchmarks
-cd /nesi/project/&lt;project_code&gt;/transformers-benchmarks
+<span class="c1"># create a directory and change to it</span>
+mkdir<span class="w"> </span>/nesi/project/&lt;project_code&gt;/transformers-benchmarks
+<span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;project_code&gt;/transformers-benchmarks
 
-# path to the singularity image file (optionally replace with your own)
-export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
+<span class="c1"># path to the singularity image file (optionally replace with your own)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SIF</span><span class="o">=</span>/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-# launch a bash shell in the Singularity image
-singularity exec -B $PWD $SIF bash
+<span class="c1"># launch a bash shell in the Singularity image</span>
+singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-B<span class="w"> </span><span class="nv">$PWD</span><span class="w"> </span><span class="nv">$SIF</span><span class="w"> </span>bash
 </code></pre></div>
 <p>After executing the above command your prompt should have changed to
 <em>Singularity&gt;</em>, the following commands are all executed at this
 prompt (i.e. within the container):</p>
-<div class="highlight"><pre><span></span><code>virtualenv --system-site-packages transenv
-source transenv/bin/activate
-pip install transformers psutil py3nvml
+<div class="highlight"><pre><span></span><code>virtualenv<span class="w"> </span>--system-site-packages<span class="w"> </span>transenv
+<span class="nb">source</span><span class="w"> </span>transenv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>transformers<span class="w"> </span>psutil<span class="w"> </span>py3nvml
 
-# exit the Singularity container bash prompt
-exit
+<span class="c1"># exit the Singularity container bash prompt</span>
+<span class="nb">exit</span>
 </code></pre></div>
-<p>Note we used <em>--system-site-packages</em> so that we can use the Lambda
+<p>Note we used `--system-site-packages`` so that we can use the Lambda
 Stack installed TensorFlow, PyTorch, etc., instead of installing them
 separately.</p>
 <p>Now clone the transformers git repo so we can run the benchmark script
 (these commands run outside the container):</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/huggingface/transformers.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/huggingface/transformers.git
 </code></pre></div>
 <p>Create the following script for running the benchmarks, named
 <em>run-benchmark-torch.sh</em>:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
 
-# load the virtual environment with transformers installed
-source transenv/bin/activate
+<span class="c1"># load the virtual environment with transformers installed</span>
+<span class="nb">source</span><span class="w"> </span>transenv/bin/activate
 
-# path to transformers benchmark script
-BENCH_SCRIPT=transformers/examples/pytorch/benchmarking/run_benchmark.py
+<span class="c1"># path to transformers benchmark script</span>
+<span class="nv">BENCH_SCRIPT</span><span class="o">=</span>transformers/examples/pytorch/benchmarking/run_benchmark.py
 
-# run the benchmarks
-python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \
-                       --save_to_csv --env_print \
-                       --models bert-base-cased bert-large-cased \
-                                bert-large-uncased gpt2 \
-                                gpt2-large gpt2-xl \
-                       --batch_sizes 8 \
-                       --sequence_lengths 8 32 128 512
+<span class="c1"># run the benchmarks</span>
+python<span class="w"> </span><span class="si">${</span><span class="nv">BENCH_SCRIPT</span><span class="si">}</span><span class="w"> </span>--no_multi_process<span class="w"> </span>--training<span class="w"> </span>--no_memory<span class="w"> </span><span class="se">\</span>
+<span class="w">                       </span>--save_to_csv<span class="w"> </span>--env_print<span class="w"> </span><span class="se">\</span>
+<span class="w">                       </span>--models<span class="w"> </span>bert-base-cased<span class="w"> </span>bert-large-cased<span class="w"> </span><span class="se">\</span>
+<span class="w">                                </span>bert-large-uncased<span class="w"> </span>gpt2<span class="w"> </span><span class="se">\</span>
+<span class="w">                                </span>gpt2-large<span class="w"> </span>gpt2-xl<span class="w"> </span><span class="se">\</span>
+<span class="w">                       </span>--batch_sizes<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                       </span>--sequence_lengths<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="m">512</span>
 </code></pre></div>
 <p>Now create a Slurm script that will launch the job, names
 <em>run-benchmark-torch.sl</em>:</p>
@@ -2610,7 +2620,7 @@ ${SINGULARITY} python3 -c &quot;import torch; print(&#39;num devices&#39;, torch
 ${SINGULARITY} bash ./run-benchmark-torch.sh
 </code></pre></div>
 <p>Submit this job to Slurm and then wait for the benchmarks to run:</p>
-<div class="highlight"><pre><span></span><code>sbatch run-benchmark-torch.sl
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>run-benchmark-torch.sl
 </code></pre></div>
 
 
@@ -2634,7 +2644,7 @@ ${SINGULARITY} bash ./run-benchmark-torch.sh
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
   </span>
 
     

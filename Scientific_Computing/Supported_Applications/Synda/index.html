@@ -16,7 +16,7 @@
         <link rel="prev" href="../Supernova/">
       
       
-        <link rel="next" href="../TensorFlow%20on%20CPUs/">
+        <link rel="next" href="../TensorFlow_on_CPUs/">
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
@@ -828,6 +828,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -931,16 +935,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Supported Applications
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
@@ -948,6 +960,8 @@
             Supported Applications
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1192,27 +1206,6 @@
   
   <span class="md-ellipsis">
     FDS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Find%20execution%20hot%20spots%20with%20VTune/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Find execution hot spots with VTune
   </span>
   
 
@@ -1775,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20CPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_CPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1796,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TensorFlow%20on%20GPUs/" class="md-nav__link">
+      <a href="../TensorFlow_on_GPUs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,6 +1857,27 @@
   
   <span class="md-ellipsis">
     VASP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VTune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VTune
   </span>
   
 
@@ -2329,10 +2343,6 @@
 
   <h1>Synda</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="what-is-synda">What is synda?<a class="headerlink" href="#what-is-synda" title="Permanent link">&para;</a></h2>
 <p>Synda is a command line tool to search and download files from the Earth
 System Grid Federation (<a href="http://pcmdi.llnl.gov/">ESGF</a>) archive. Synda
@@ -2343,22 +2353,22 @@ download protocols (e.g. HTTPS) and can download files in parallel.</p>
 Maui_ancil.</p>
 <h2 id="how-to-install-synda">How to install synda<a class="headerlink" href="#how-to-install-synda" title="Permanent link">&para;</a></h2>
 <p>1. Load Anaconda3</p>
-<div class="highlight"><pre><span></span><code>module load Anaconda3
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
 </code></pre></div>
 <p>2. Create a conda environment and activate the environment</p>
-<div class="highlight"><pre><span></span><code>conda create --prefix=&lt;SYNDA_ENV&gt;
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>&lt;SYNDA_ENV&gt;
 </code></pre></div>
 <p>where &lt;SYNDA_ENV&gt; is a directory of your choice. Activate your
 new environment</p>
-<div class="highlight"><pre><span></span><code>conda activate &lt;SYNDA_ENV&gt;
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>&lt;SYNDA_ENV&gt;
 </code></pre></div>
 <p>3. Install synda (currently version 3.10)</p>
-<div class="highlight"><pre><span></span><code>conda install -c IPSL synda
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>IPSL<span class="w"> </span>synda
 </code></pre></div>
 <p>4. Configure synda</p>
 <p>Set the ST_HOME environment variable and populate <code>$ST_HOME</code>, for
 instance</p>
-<div class="highlight"><pre><span></span><code>export ST_HOME=/nesi/nobackup/&lt;YOUR PROJECT&gt;/synda_home
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ST_HOME</span><span class="o">=</span>/nesi/nobackup/&lt;YOUR<span class="w"> </span>PROJECT&gt;/synda_home
 </code></pre></div>
 <p>Note: you may want to add the above "export ST_HOME=&lt;...&gt;"
 somewhere near the bottom of your ~/.bashrc file.</p>
@@ -2369,42 +2379,42 @@ you to provide a user name (USER_NAME) and a password - you will
 receive an openID in return. Copy your openID string as you will need
 later.</p>
 <p>To configure and store your ESGF credentials, type</p>
-<div class="highlight"><pre><span></span><code>synda -h
-synda check-env
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>-h
+synda<span class="w"> </span>check-env
 </code></pre></div>
 <p>Paste in the openID you received when creating your ESGF account. If you
 created an account on esgf-node.llnl.gov then your openID will be:</p>
-<div class="highlight"><pre><span></span><code>openID url: https://esgf-node.llnl.gov/esgf-idp/openid/USER_NAME
+<div class="highlight"><pre><span></span><code>openID<span class="w"> </span>url:<span class="w"> </span>https://esgf-node.llnl.gov/esgf-idp/openid/USER_NAME
 </code></pre></div>
 <p>(USER_NAME is the user name you chose when creating the account). You
 can change your default configuration by editing
 $ST_HOME/conf/sdt.conf. I have</p>
-<div class="highlight"><pre><span></span><code>indexes = esgf-node.llnl.gov
-default_index = esgf-node.llnl.gov
+<div class="highlight"><pre><span></span><code><span class="nv">indexes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>esgf-node.llnl.gov
+<span class="nv">default_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>esgf-node.llnl.gov
 </code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Find all the datasets for given ocean surface temperature ("tos"),
 variant label ("r1i1p1f1") produced by institution "NOAA-GFDL" for
 historical data and table Id "Omon":</p>
-<div class="highlight"><pre><span></span><code>synda search project=CMIP6 realm=ocean variable=tos variant_label=r1i1p1f1 institution_id=NOAA-GFDL table_id=Omon experiment_id=historical
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>search<span class="w"> </span><span class="nv">project</span><span class="o">=</span>CMIP6<span class="w"> </span><span class="nv">realm</span><span class="o">=</span>ocean<span class="w"> </span><span class="nv">variable</span><span class="o">=</span>tos<span class="w"> </span><span class="nv">variant_label</span><span class="o">=</span>r1i1p1f1<span class="w"> </span><span class="nv">institution_id</span><span class="o">=</span>NOAA-GFDL<span class="w"> </span><span class="nv">table_id</span><span class="o">=</span>Omon<span class="w"> </span><span class="nv">experiment_id</span><span class="o">=</span>historical
 </code></pre></div>
 <p>This will return</p>
-<div class="highlight"><pre><span></span><code>new  CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v20180701
-new  CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gr.v20180701
-new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gn.v20190726
-new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
+<div class="highlight"><pre><span></span><code>new<span class="w">  </span>CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v20180701
+new<span class="w">  </span>CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gr.v20180701
+new<span class="w">  </span>CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gn.v20190726
+new<span class="w">  </span>CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
 </code></pre></div>
 <p>Choose one of the datasets. To find out how big the dataset is, type: </p>
-<div class="highlight"><pre><span></span><code>synda stat CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>stat<span class="w"> </span>CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
 </code></pre></div>
 <p>which returns</p>
-<div class="highlight"><pre><span></span><code>Total files count: 9
-New files count: 9
-Total size: 262.8 MB
-New files size: 262.8 MB
+<div class="highlight"><pre><span></span><code>Total<span class="w"> </span>files<span class="w"> </span>count:<span class="w"> </span><span class="m">9</span>
+New<span class="w"> </span>files<span class="w"> </span>count:<span class="w"> </span><span class="m">9</span>
+Total<span class="w"> </span>size:<span class="w"> </span><span class="m">262</span>.8<span class="w"> </span>MB
+New<span class="w"> </span>files<span class="w"> </span>size:<span class="w"> </span><span class="m">262</span>.8<span class="w"> </span>MB
 </code></pre></div>
 <p>To download the dataset, type</p>
-<div class="highlight"><pre><span></span><code>synda get CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v2018070
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>get<span class="w"> </span>CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v2018070
 </code></pre></div>
 <p>The datasets (NetCDF files) will be downloaded locally in your
 directory.</p>
@@ -2430,7 +2440,7 @@ directory.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
   </span>
 
     
