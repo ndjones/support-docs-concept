@@ -1344,24 +1344,20 @@
 
   <h1>Multithreading Scaling Example</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
 chosen for the purpose of illustration.</p>
 <h2 id="initial-r-script">Initial R Script<a class="headerlink" href="#initial-r-script" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code> library(doParallel)
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
 
-  registerDoParallel(strtoi(Sys.getenv(&#39;SLURM_CPUS_PER_TASK&#39;)))
+<span class="nf">registerDoParallel</span><span class="p">(</span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;SLURM_CPUS_PER_TASK&#39;</span><span class="p">)))</span>
 
-  # 60,000 calculations to be done:
-  foreach(z=1000000:1060000) %dopar% {
-   x &lt;- sum(rnorm(z))
-  }
+<span class="c1"># 60,000 calculations to be done:</span>
+<span class="nf">foreach</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">1000000</span><span class="o">:</span><span class="m">1060000</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>You do not need to understand what the above R script is doing, but for
 context, it will take the sum of <em>z</em> random numbers derived from a
@@ -1376,14 +1372,14 @@ for. So we will first try with 5,000 iterations rather than 60,000
 iterations. So now lets change the number of iterations from 60,000 to
 5,000.</p>
 <h3 id="revised-r-script">Revised R Script<a class="headerlink" href="#revised-r-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code> library(doParallel)
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
 
-  registerDoParallel(strtoi(Sys.getenv(&#39;SLURM_CPUS_PER_TASK&#39;)))
+<span class="nf">registerDoParallel</span><span class="p">(</span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;SLURM_CPUS_PER_TASK&#39;</span><span class="p">)))</span>
 
-  # 5,000 calculations to be done:
-  foreach(z=1000000:1005000) %dopar% {
-   x &lt;- sum(rnorm(z))
-  }
+<span class="c1"># 5,000 calculations to be done:</span>
+<span class="nf">foreach</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">1000000</span><span class="o">:</span><span class="m">1005000</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
@@ -1391,20 +1387,23 @@ this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated guess,
 and if the job fails increase the resources requested until is
 completes.</p>
-<p><strong>TIP:</strong> If you can, write your program so that it prints results and
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
 1,000 iterations. That way, even if your job runs out of time or memory
 and gets killed, you will be able to see how far it got and how long it
 took to get there.</p>
+</div>
 <h3 id="slurm-script">Slurm Script<a class="headerlink" href="#slurm-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>  #!/bin/bash -e
-  #SBATCH --job-name=Scaling5k
-  #SBATCH --time=00:10:00
-  #SBATCH --mem=512MB
-  #SBATCH --cpus-per-task=4
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name=Scaling5k
+#SBATCH --time=00:10:00
+#SBATCH --mem=512MB
+#SBATCH --cpus-per-task=4
 
-  module load R
-  Rscript scaling.R
+module load R
+Rscript scaling.R
 </code></pre></div>
 <p>Let's run our Slurm script with sbatch and look at our output from
 <code>sacct</code>.</p>
@@ -1449,20 +1448,7 @@ increasing as we add more iterations, but the maximum memory doesn't
 seem to change much. Let's try plotting this data (we used R here, but
 feel free to use excel or whatever your preferred plotting software) to
 help us better understand what is happening:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="Plot1" src="../../../assets/images/Multithreading_Scaling_Example.png" /></td>
-<td><img alt="Plot2" src="../../../assets/images/Multithreading_Scaling_Example_0.png" /></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="Plot1" src="../../../assets/images/Multithreading_Scaling_Example.png" width="47%" /> <img alt="Plot2" src="../../../assets/images/Multithreading_Scaling_Example_0.png" width="47%" /></p>
 <p>This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.</p>
 <p>Extrapolating from this data, we can estimate the full 60,000 iterations
@@ -1471,9 +1457,8 @@ will take 12 times longer than 5,000 iterations or about 40 minutes.</p>
 using 4 CPU cores, but what if we used more? Could we speed up our job
 by that means?</p>
 <p>To find out we are going to have to run more tests. Let's try running
-our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:</p>
-<div class="highlight"><pre><span></span><code> sacct
-         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
+our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results using <code>sacct</code>:</p>
+<div class="highlight"><pre><span></span><code>         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3063584        Scaling2        00:06:29    12:49.971     2          COMPLETED
 3063584.batch  batch           00:06:29    00:00.591     2    4208K COMPLETED
@@ -1508,20 +1493,7 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:</p>
 3106181.extern extern          00:01:00    00:00.001    16      89K COMPLETED
 3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
 </code></pre></div>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="TvC-MT.png" src="../../../assets/images/Multithreading_Scaling_Example_1.png" /></td>
-<td><img alt="TvL2C-MT.png" src="../../../assets/images/Multithreading_Scaling_Example_2.png" /></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="TvC-MT.png" src="../../../assets/images/Multithreading_Scaling_Example_1.png" width="47%" /> <img alt="TvL2C-MT.png" src="../../../assets/images/Multithreading_Scaling_Example_2.png" width="47%" /></p>
 <p>The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
 see the inflection point on the Log2 graph when the speed up from
@@ -1568,15 +1540,15 @@ full scale job should take 12 times longer (21 minutes) and require 0.75
 GB of memory. To be on the safe side, let's request 1 GB of memory and
 30 minutes.</p>
 <h3 id="revised-slurm-script">Revised Slurm Script<a class="headerlink" href="#revised-slurm-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>  #!/bin/bash -e
-  #SBATCH --account=nesi99999
-  #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
-  #SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
-  #SBATCH --mem=512MB           # Memory per node
-  #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --account=nesi99999
+#SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
+#SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB           # Memory per node
+#SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
 
-  module load R
-  Rscript scaling.R
+module load R
+Rscript scaling.R
 </code></pre></div>
 <p>Checking on our job with <code>sacct</code> </p>
 <div class="highlight"><pre><span></span><code>         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
@@ -1589,11 +1561,14 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 <p>It looks as though our estimates were accurate, but looking at our
 maximum memory usage it is a good thing that we requested additional
 memory as we may otherwise have run out.</p>
-<p><strong>TIP:</strong> Whenever you submit a job it is always a good idea to request
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Whenever you submit a job it is always a good idea to request
 about 20% more wall time and memory than you think you are going to need
 to minimise the chance of your jobs failing due to a lack of resources.
 Your project's fair share score considers the time actually used by the
 job, not the time requested by the job.</p>
+</div>
 
 
 
@@ -1616,7 +1591,7 @@ job, not the time requested by the job.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
   </span>
 
     
