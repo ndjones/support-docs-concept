@@ -2922,10 +2922,11 @@
                     <span class="md-tag" >2021R2</span>
                     <span class="md-tag" >2022R1</span>
                     <span class="md-tag" >2022R2</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2023R1</span>
+                    <span class="md-tag" >2023R1</span>
+                    <span class="md-tag-latest md-tag" title="Default Version" >2023R2</span>
 
             </nav></p>
-            <pre><code>module load ANSYS/<span id="mod__ver">2023R1</span></code></pre>
+            <pre><code>module load ANSYS/<span id="mod__ver">2023R2</span></code></pre>
         </div>
     <div class="tabbed-block">
             <p><nav class="md-tags">
@@ -2939,10 +2940,11 @@
                     <span class="md-tag" >2021R2</span>
                     <span class="md-tag" >2022R1</span>
                     <span class="md-tag" >2022R2</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2023R1</span>
+                    <span class="md-tag" >2023R1</span>
+                    <span class="md-tag-latest md-tag" title="Default Version" >2023R2</span>
 
             </nav></p>
-            <pre><code>module load ANSYS/<span id="mod__ver">2023R1</span></code></pre>
+            <pre><code>module load ANSYS/<span id="mod__ver">2023R2</span></code></pre>
         </div>
     <div class="tabbed-block">
             <p><nav class="md-tags">
@@ -3013,7 +3015,7 @@ to make a file from a
 <span class="c1">#SBATCH --array         1-100 </span>
 <span class="c1">#SBATCH --hint          nomultithread     # No hyperthreading</span>
 
-module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R1<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R2<span class="w"> </span>
 
 <span class="nv">JOURNAL_FILE</span><span class="o">=</span>fluent_<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.in
 cat<span class="w">  </span><span class="si">${</span><span class="nv">JOURNAL_FILE</span><span class="si">}</span>
@@ -3101,7 +3103,7 @@ files</a></p>
 #SBATCH --mem           512MB             # total memory (per node)
 #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 
 JOURNAL_FILE=/share/test/ansys/fluent/wing.in
 fluent 3ddp -g -i ${JOURNAL_FILE}
@@ -3128,7 +3130,7 @@ schedule.</p>
 <span class="kp">#SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed</span>
 <span class="kp">#SBATCH --hint              nomultithread     # Hyperthreading disabled</span>
 
-module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R1
+module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R2
 <span class="nv">JOURNAL_FILE</span><span class="o">=</span>/share/test/ansys/fluent/wing.in
 fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_NTASKS</span><span class="si">}</span><span class="w"> </span>-i<span class="w"> </span><span class="si">${</span><span class="nv">JOURNAL_FILE</span><span class="si">}</span>
 </code></pre></div>
@@ -3259,7 +3261,7 @@ Usually submitted as part of an array, as in the case of parameter sweeps.</p>
 <span class="c1">#SBATCH --mem           512MB             # total mem</span>
 <span class="c1">#SBATCH --hint          nomultithread     # Hyperthreading disabled</span>
 
-module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R1
+module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R2
 
 <span class="nv">input</span><span class="o">=</span><span class="s2">&quot;/share/test/ansys/cfx/pump.def&quot;</span>
 cfx5solve<span class="w"> </span>-batch<span class="w"> </span>-def<span class="w"> </span><span class="si">${</span><span class="nv">input</span><span class="si">}</span>
@@ -3281,7 +3283,7 @@ Each task could be running on a different node leading to increased communicatio
 #SBATCH --mem-per-cpu       512MB             # Standard for large partition
 #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 input=&quot;/share/test/ansys/mechanical/structural.dat&quot; 
 cfx5solve -batch -def &quot;${input} -part ${SLURM_NTASKS}
 </code></pre></div>
@@ -3316,7 +3318,7 @@ Usually submitted as part of an array, as in the case of parameter sweeps.</p>
 #SBATCH --mem           1500M             # total mem
 #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 
 input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
 mapdl -b -i &quot;${input}
@@ -3335,7 +3337,7 @@ Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
 #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
 #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
 mapdl -b -np ${SLURM_CPUS_PER_TASK} -i ${input}
 </code></pre></div>
@@ -3357,7 +3359,7 @@ Distributed Memory Parallel is currently not supported on Māui.</p>
 #SBATCH --mem-per-cpu       1500
 #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
 mapdl -b -dis -np ${SLURM_NTASKS} -i &quot;${input}&quot;
 </code></pre></div>
@@ -3445,7 +3447,7 @@ mapdl -b -dis -np ${SLURM_NTASKS} -i &quot;${input}&quot;
 #SBATCH --mem-per-cpu   512MB             # Memory per cpu
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i=&quot;$input&quot; memory=$(($SLURM_MEM_PER_CPU/8))M
 </code></pre></div>
@@ -3532,7 +3534,7 @@ not working for you.</p>
 #SBATCH --ntasks-per-node     36
 #SBATCH --mem-per-cpu         1500
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 INPUTNAME=&quot;Sim1.aedt&quot;
 startRSM
 
@@ -3553,7 +3555,7 @@ ansysedt -ng -batchsolve -distributed -machinelistfile=&quot;.machinefile&qu
 <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--job-name<span class="w"> </span>edt_interactive<span class="w"> </span>--nodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--ntasks-per-node<span class="w"> </span><span class="m">36</span><span class="w"> </span>--mem-per-cpu<span class="w"> </span><span class="m">1500</span>
 </code></pre></div>
 <p>Then load your desired version of ANSYS</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R1
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ANSYS/2023R2
 </code></pre></div>
 <p>Run the script to start startRSM, this will start ANSYS remote solver on
 your requested nodes, and set the environment variable <code>MACHINELIST</code>.</p>
@@ -3573,7 +3575,7 @@ your requested nodes, and set the environment variable <code>MACHINELIST</code>.
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/2023R1
+module load ANSYS/2023R2
 
 COMP_CPUS=$((SLURM_NTASKS-1))
 MECHANICAL_CPUS=1

@@ -2614,10 +2614,11 @@
                     <span class="md-tag" >2021b</span>
                     <span class="md-tag" >2022a</span>
                     <span class="md-tag" >2022b</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2023a</span>
+                    <span class="md-tag" >2023a</span>
+                    <span class="md-tag-latest md-tag" title="Default Version" >2023b</span>
 
             </nav></p>
-            <pre><code>module load MATLAB/<span id="mod__ver">2023a</span></code></pre>
+            <pre><code>module load MATLAB/<span id="mod__ver">2023b</span></code></pre>
         </div>
     <div class="tabbed-block">
             <p><nav class="md-tags">
@@ -2660,7 +2661,7 @@
 #SBATCH --time       01:00:00       # Max walltime 
 #SBATCH --mem        512MB          # Max memory
 
-module load MATLAB/2023a
+module load MATLAB/2023b
 
 # Run the MATLAB script MATLAB_job.m 
 matlab -nodisplay &lt; MATLAB_job.m 
@@ -2675,7 +2676,7 @@ matlab -nodisplay &lt; MATLAB_job.m
 #SBATCH --cpus-per-task  4             # 2 physical cores.
 #SBATCH --output         %x.log        # Location of output log
 
-module load MATLAB/2023a 
+module load MATLAB/2023b 
 
 matlab -batch &quot;addpath(genpath(&#39;.&#39;));myFunction(5,20)&quot;
 # For versions older than 2019a, use &#39;-nodisplay -r&#39; instead of &#39;-batch&#39;
