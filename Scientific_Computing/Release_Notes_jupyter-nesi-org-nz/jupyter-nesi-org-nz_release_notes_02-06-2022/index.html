@@ -1682,7 +1682,7 @@
 <li>Updated <a href="../../Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI/">RStudio-on-NeSI</a> (v0.22.5): fix library path when using NeSI R package in RStudio (e.g. R-bundle-Bioconductor)</li>
 <li>Plotly extension re-added (missing in the previous release)</li>
 <li>Added <a href="https://pypi.org/project/papermill/">papermill</a> extension</li>
-<li>Updated <a href="../../Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI/">NeSI Virtual Desktop</a> to v2.4.1</li>
+<li>Updated <a href="../../Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI/">NeSI Virtual Desktop</a> to v2.4.1<ul>
 <li>Image changes<ul>
 <li>Update default Firefox version.</li>
 <li>Update to use singularity 3.8.5.</li>
@@ -1695,14 +1695,16 @@
 <li>Bug fixes<ul>
 <li>Fixed faulty startup messages</li>
 <li>Fixed entrypoint duplication issue.</li>
-<li>unset 'SLURM_EXPORT_ENV' before starting desktop.</li>
+<li>unset <code>SLURM_EXPORT_ENV</code> before starting desktop.</li>
 </ul>
 </li>
 <li>Refactoring<ul>
 <li>Removed dependency on system vdt repo.</li>
 <li>Removed faulty &amp; uneeded bind paths.</li>
 <li>Removed debug by default and hardcoded verbose.</li>
-<li>replaced VDT_HOME with XDG equiv</li>
+<li>replaced <code>VDT_HOME</code> with XDG equiv</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
