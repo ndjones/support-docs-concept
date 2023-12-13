@@ -2357,32 +2357,33 @@
 <p>ParaView is a scientific parallel visualizer.  This version supports CPU-only rendering without X context using the OSMesa library, it does not support GPU rendering, and it does not provide a GUI.  Use the GALLIUM_DRIVER environment variable to choose a software renderer, it is recommended to use  GALLIUM_DRIVER=swr  for best performance.  Ray tracing using the OSPRay library is also supported.</p>
 <p><a href="http://www.paraview.org">ParaView Homepage</a></p>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<div class="tabbed-set tabbed-alternate" data-tabs="0:2">
+    <input checked="checked" id="__tabbed_0_1" name="__tabbed_0" type="radio">
+    <input id="__tabbed_0_2" name="__tabbed_0" type="radio">
+
     <div class="tabbed-labels">
-        <label for="__tabbed_1_1">Mahuika</label>
-        <label for="__tabbed_1_2">Maui_ancil</label>
+        <label for="__tabbed_0_1">Mahuika</label>
+        <label for="__tabbed_0_2">Maui_ancil</label>
 
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >5.3.0-gimkl-2017a</span>
-                    <span class="md-tag" >5.4.1-gimkl-2018b-Python-2.7.16</span>
-                    <span class="md-tag" >5.4.1-gimpi-2018b</span>
-                    <span class="md-tag" >5.6.0-gimkl-2018b-Python-3.7.3</span>
-                    <span class="md-tag" >5.6.0-gimpi-2018b</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >5.9.0-gimkl-2020a-Python-3.8.2</span>
+                    <a id="mod__ver__5.3.0-gimkl-2017a" onclick="changeVersion('5.3.0-gimkl-2017a')" class="md-tag-ver md-tag">5.3.0-gimkl-2017a</a>
+                    <a id="mod__ver__5.4.1-gimkl-2018b-Python-2.7.16" onclick="changeVersion('5.4.1-gimkl-2018b-Python-2.7.16')" class="md-tag-ver md-tag">5.4.1-gimkl-2018b-Python-2.7.16</a>
+                    <a id="mod__ver__5.4.1-gimpi-2018b" onclick="changeVersion('5.4.1-gimpi-2018b')" class="md-tag-ver md-tag">5.4.1-gimpi-2018b</a>
+                    <a id="mod__ver__5.6.0-gimkl-2018b-Python-3.7.3" onclick="changeVersion('5.6.0-gimkl-2018b-Python-3.7.3')" class="md-tag-ver md-tag">5.6.0-gimkl-2018b-Python-3.7.3</a>
+                    <a id="mod__ver__5.6.0-gimpi-2018b" onclick="changeVersion('5.6.0-gimpi-2018b')" class="md-tag-ver md-tag">5.6.0-gimpi-2018b</a>
+                    <a id="mod__ver__5.9.0-gimkl-2020a-Python-3.8.2" onclick="changeVersion('5.9.0-gimkl-2020a-Python-3.8.2')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">5.9.0-gimkl-2020a-Python-3.8.2</a>
 
             </nav></p>
             <pre><code>module load ParaView/<span id="mod__ver">5.9.0-gimkl-2020a-Python-3.8.2</span></code></pre>
         </div>
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >5.5.2-gimpi-2018a-Server-EGL</span>
-                    <span class="md-tag" >5.5.2-gimpi-2018b-GUI-Mesa</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >5.5.2-gimpi-2018b-Server-OSMesa</span>
+                    <a id="mod__ver__5.5.2-gimpi-2018a-Server-EGL" onclick="changeVersion('5.5.2-gimpi-2018a-Server-EGL')" class="md-tag-ver md-tag">5.5.2-gimpi-2018a-Server-EGL</a>
+                    <a id="mod__ver__5.5.2-gimpi-2018b-GUI-Mesa" onclick="changeVersion('5.5.2-gimpi-2018b-GUI-Mesa')" class="md-tag-ver md-tag">5.5.2-gimpi-2018b-GUI-Mesa</a>
+                    <a id="mod__ver__5.5.2-gimpi-2018b-Server-OSMesa" onclick="changeVersion('5.5.2-gimpi-2018b-Server-OSMesa')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">5.5.2-gimpi-2018b-Server-OSMesa</a>
 
             </nav></p>
             <pre><code>module load ParaView/<span id="mod__ver">5.5.2-gimpi-2018b-Server-OSMesa</span></code></pre>
@@ -2395,6 +2396,8 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The ParaView server loaded must be the same version as the client you
@@ -2458,6 +2461,7 @@ on the number of cores available in your session):</p>
 <span class="nb">export</span><span class="w"> </span><span class="nv">OSPRAY_THREADS</span><span class="o">=</span>&lt;number<span class="w"> </span>of<span class="w"> </span>cores&gt;
 </code></pre></div>
 <p>ParaView Server also supports parallel execution using MPI.</p>
+<!-- Uncomment this if we make a good page on modues -->
 
 
 
@@ -2551,7 +2555,7 @@ on the number of cores available in your session):</p>
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="../../../assets/javascripts/general.js"></script>
       
     
   </body>

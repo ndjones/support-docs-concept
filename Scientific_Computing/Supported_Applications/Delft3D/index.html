@@ -2339,18 +2339,18 @@
 <p>Integrated simulation of sediment transport and morphology, waves, water quality and ecology.</p>
 <p><a href="http://oss.deltares.nl/web/delft3d">Delft3D Homepage</a></p>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<div class="tabbed-set tabbed-alternate" data-tabs="0:1">
+    <input checked="checked" id="__tabbed_0_1" name="__tabbed_0" type="radio">
+
     <div class="tabbed-labels">
-        <label for="__tabbed_1_1">Mahuika</label>
+        <label for="__tabbed_0_1">Mahuika</label>
 
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >66341-intel-2020a</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >141732-intel-2022a</span>
+                    <a id="mod__ver__66341-intel-2020a" onclick="changeVersion('66341-intel-2020a')" class="md-tag-ver md-tag">66341-intel-2020a</a>
+                    <a id="mod__ver__141732-intel-2022a" onclick="changeVersion('141732-intel-2022a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">141732-intel-2022a</a>
 
             </nav></p>
             <pre><code>module load Delft3D/<span id="mod__ver">141732-intel-2022a</span></code></pre>
@@ -2363,6 +2363,8 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
 <h2 id="example-scripts">Example scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serial</label><label for="__tabbed_1_2">Shared Memory</label><label for="__tabbed_1_3">Distributed Memory</label></div>
 <div class="tabbed-content">
@@ -2427,6 +2429,7 @@ srun d_hyrdo test_input.xml
 <p class="admonition-title">Warning</p>
 <p>Trying to use more tasks than there are partitions in your model will cause failure.</p>
 </div>
+<!-- Uncomment this if we make a good page on modues -->
 
 
 
@@ -2520,7 +2523,7 @@ srun d_hyrdo test_input.xml
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="../../../assets/javascripts/general.js"></script>
       
     
   </body>

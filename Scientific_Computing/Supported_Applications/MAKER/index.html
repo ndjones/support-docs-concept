@@ -2364,18 +2364,18 @@
 <p>Genome annotation pipeline</p>
 <p><a href="http://www.yandell-lab.org/software/maker.html">MAKER Homepage</a></p>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<div class="tabbed-set tabbed-alternate" data-tabs="0:1">
+    <input checked="checked" id="__tabbed_0_1" name="__tabbed_0" type="radio">
+
     <div class="tabbed-labels">
-        <label for="__tabbed_1_1">Mahuika</label>
+        <label for="__tabbed_0_1">Mahuika</label>
 
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >2.31.9-gimkl-2018b</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2.31.9-gimkl-2020a</span>
+                    <a id="mod__ver__2.31.9-gimkl-2018b" onclick="changeVersion('2.31.9-gimkl-2018b')" class="md-tag-ver md-tag">2.31.9-gimkl-2018b</a>
+                    <a id="mod__ver__2.31.9-gimkl-2020a" onclick="changeVersion('2.31.9-gimkl-2020a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">2.31.9-gimkl-2020a</a>
 
             </nav></p>
             <pre><code>module load MAKER/<span id="mod__ver">2.31.9-gimkl-2020a</span></code></pre>
@@ -2388,6 +2388,8 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page has been automatically migrated and may contain formatting errors.</p>
@@ -2416,6 +2418,7 @@ srun maker -q
 <li>Delete unneeded output files promptly after MAKER finishes.  You can
     of course use <code>nn_archive_files</code> or <code>tar</code> to archive them first.</li>
 </ul>
+<!-- Uncomment this if we make a good page on modues -->
 
 
 
@@ -2509,7 +2512,7 @@ srun maker -q
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="../../../assets/javascripts/general.js"></script>
       
     
   </body>

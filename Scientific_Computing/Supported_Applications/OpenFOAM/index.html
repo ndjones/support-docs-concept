@@ -2513,29 +2513,29 @@
 <p>OpenFOAM is a free, open source CFD software package.</p>
 <p><a href="https://www.openfoam.org/">OpenFOAM Homepage</a></p>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<div class="tabbed-set tabbed-alternate" data-tabs="0:1">
+    <input checked="checked" id="__tabbed_0_1" name="__tabbed_0" type="radio">
+
     <div class="tabbed-labels">
-        <label for="__tabbed_1_1">Mahuika</label>
+        <label for="__tabbed_0_1">Mahuika</label>
 
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >v1706-gimkl-2018b</span>
-                    <span class="md-tag" >v1712-gimkl-2017a</span>
-                    <span class="md-tag" >v1812-gimkl-2018b-libAcoustics</span>
-                    <span class="md-tag" >v1812-gimkl-2018b</span>
-                    <span class="md-tag" >v1906-gimkl-2018b</span>
-                    <span class="md-tag" >v2106-gimkl-2020a</span>
-                    <span class="md-tag" >v2212-gimkl-2022a-noParaview</span>
-                    <span class="md-tag" >2.4.0-gimkl-2018b-debug</span>
-                    <span class="md-tag" >2.4.0-gimkl-2018b</span>
-                    <span class="md-tag" >5.0-gimkl-2018b</span>
-                    <span class="md-tag" >6-gimkl-2018b</span>
-                    <span class="md-tag" >8-gimkl-2020a</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >10-gimkl-2022a</span>
+                    <a id="mod__ver__v1706-gimkl-2018b" onclick="changeVersion('v1706-gimkl-2018b')" class="md-tag-ver md-tag">v1706-gimkl-2018b</a>
+                    <a id="mod__ver__v1712-gimkl-2017a" onclick="changeVersion('v1712-gimkl-2017a')" class="md-tag-ver md-tag">v1712-gimkl-2017a</a>
+                    <a id="mod__ver__v1812-gimkl-2018b-libAcoustics" onclick="changeVersion('v1812-gimkl-2018b-libAcoustics')" class="md-tag-ver md-tag">v1812-gimkl-2018b-libAcoustics</a>
+                    <a id="mod__ver__v1812-gimkl-2018b" onclick="changeVersion('v1812-gimkl-2018b')" class="md-tag-ver md-tag">v1812-gimkl-2018b</a>
+                    <a id="mod__ver__v1906-gimkl-2018b" onclick="changeVersion('v1906-gimkl-2018b')" class="md-tag-ver md-tag">v1906-gimkl-2018b</a>
+                    <a id="mod__ver__v2106-gimkl-2020a" onclick="changeVersion('v2106-gimkl-2020a')" class="md-tag-ver md-tag">v2106-gimkl-2020a</a>
+                    <a id="mod__ver__v2212-gimkl-2022a-noParaview" onclick="changeVersion('v2212-gimkl-2022a-noParaview')" class="md-tag-ver md-tag">v2212-gimkl-2022a-noParaview</a>
+                    <a id="mod__ver__2.4.0-gimkl-2018b-debug" onclick="changeVersion('2.4.0-gimkl-2018b-debug')" class="md-tag-ver md-tag">2.4.0-gimkl-2018b-debug</a>
+                    <a id="mod__ver__2.4.0-gimkl-2018b" onclick="changeVersion('2.4.0-gimkl-2018b')" class="md-tag-ver md-tag">2.4.0-gimkl-2018b</a>
+                    <a id="mod__ver__5.0-gimkl-2018b" onclick="changeVersion('5.0-gimkl-2018b')" class="md-tag-ver md-tag">5.0-gimkl-2018b</a>
+                    <a id="mod__ver__6-gimkl-2018b" onclick="changeVersion('6-gimkl-2018b')" class="md-tag-ver md-tag">6-gimkl-2018b</a>
+                    <a id="mod__ver__8-gimkl-2020a" onclick="changeVersion('8-gimkl-2020a')" class="md-tag-ver md-tag">8-gimkl-2020a</a>
+                    <a id="mod__ver__10-gimkl-2022a" onclick="changeVersion('10-gimkl-2022a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">10-gimkl-2022a</a>
 
             </nav></p>
             <pre><code>module load OpenFOAM/<span id="mod__ver">10-gimkl-2022a</span></code></pre>
@@ -2548,6 +2548,8 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
 <p>OpenFOAM (Open Field Operation And Manipulation) is a open-source C++
 toolbox maintained by the OpenFOAM foundation and ESI Group. Although
 primarily used for CFD (Computational Fluid Dynamics) OpenFOAM can be
@@ -2714,6 +2716,7 @@ and before running the solvers.</p>
 <p>Make sure to <code>export</code> your custom paths before <code>source $FOAM_BASH</code>
  else they will be reset to default.</p>
 </div>
+<!-- Uncomment this if we make a good page on modues -->
 
 
 
@@ -2807,7 +2810,7 @@ and before running the solvers.</p>
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="../../../assets/javascripts/general.js"></script>
       
     
   </body>

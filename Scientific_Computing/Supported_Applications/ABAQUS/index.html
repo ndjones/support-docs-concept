@@ -1030,6 +1030,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#licences_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solver-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       Solver Compatibility
@@ -2336,6 +2345,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#licences_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Licences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solver-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       Solver Compatibility
@@ -2445,36 +2463,37 @@
 <p>ABAQUS is proprietary software. Make sure you meet the <a href="#licences">requirements for it's usage</a>.</p>
 </div>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+<div class="tabbed-set tabbed-alternate" data-tabs="0:2">
+    <input checked="checked" id="__tabbed_0_1" name="__tabbed_0" type="radio">
+    <input id="__tabbed_0_2" name="__tabbed_0" type="radio">
+
     <div class="tabbed-labels">
-        <label for="__tabbed_1_1">Mahuika</label>
-        <label for="__tabbed_1_2">Maui</label>
+        <label for="__tabbed_0_1">Mahuika</label>
+        <label for="__tabbed_0_2">Maui</label>
 
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >6.14.2</span>
-                    <span class="md-tag" >2017</span>
-                    <span class="md-tag" >2018</span>
-                    <span class="md-tag" >2019</span>
-                    <span class="md-tag" >2020</span>
-                    <span class="md-tag" >2021</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2022</span>
+                    <a id="mod__ver__6.14.2" onclick="changeVersion('6.14.2')" class="md-tag-ver md-tag">6.14.2</a>
+                    <a id="mod__ver__2017" onclick="changeVersion('2017')" class="md-tag-ver md-tag">2017</a>
+                    <a id="mod__ver__2018" onclick="changeVersion('2018')" class="md-tag-ver md-tag">2018</a>
+                    <a id="mod__ver__2019" onclick="changeVersion('2019')" class="md-tag-ver md-tag">2019</a>
+                    <a id="mod__ver__2020" onclick="changeVersion('2020')" class="md-tag-ver md-tag">2020</a>
+                    <a id="mod__ver__2021" onclick="changeVersion('2021')" class="md-tag-ver md-tag">2021</a>
+                    <a id="mod__ver__2022" onclick="changeVersion('2022')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">2022</a>
 
             </nav></p>
             <pre><code>module load ABAQUS/<span id="mod__ver">2022</span></code></pre>
         </div>
     <div class="tabbed-block">
             <p><nav class="md-tags">
-                    <span class="md-tag" >2017</span>
-                    <span class="md-tag" >2018</span>
-                    <span class="md-tag" >2019</span>
-                    <span class="md-tag" >2020</span>
-                    <span class="md-tag" >2021</span>
-                    <span class="md-tag-latest md-tag" title="Default Version" >2022</span>
+                    <a id="mod__ver__2017" onclick="changeVersion('2017')" class="md-tag-ver md-tag">2017</a>
+                    <a id="mod__ver__2018" onclick="changeVersion('2018')" class="md-tag-ver md-tag">2018</a>
+                    <a id="mod__ver__2019" onclick="changeVersion('2019')" class="md-tag-ver md-tag">2019</a>
+                    <a id="mod__ver__2020" onclick="changeVersion('2020')" class="md-tag-ver md-tag">2020</a>
+                    <a id="mod__ver__2021" onclick="changeVersion('2021')" class="md-tag-ver md-tag">2021</a>
+                    <a id="mod__ver__2022" onclick="changeVersion('2022')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">2022</a>
 
             </nav></p>
             <pre><code>module load ABAQUS/<span id="mod__ver">2022</span></code></pre>
@@ -2487,9 +2506,47 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
+<h2 id="licences">Licences<a class="headerlink" href="#licences" title="Permanent link">&para;</a></h2>
+<!-- Uncomment this if we make a good page on modues --><p>The following network licence servers can be accessed from the NeSI cluster.</p>
+<p>If you do not have access, or want a server connected <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
+<table>
+    <thead>
+    <tr>
+    <th>Institution</th>
+    <th>Faculty</th>
+    <!-- <th>Feature</th>
+    <th>Total</th> 
+    <th>Conditions</th>-->
+    <th>Token</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+
+        <td rowspan=3>University of Auckland</td>
+        <td rowspan=3>Faculty of Engineering</td>
+        <!-- <td>gpgpu</td><td>0</td><td></td> -->
+        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <tr>
+        <!-- <td>parallel_teaching</td><td>0</td><td></td> -->
+        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <tr>
+        <!-- <td>abaqus</td><td>0</td><td></td> -->
+        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+
+        <tr>
+
+
+        <td rowspan=1>University of Waikato</td>
+        <td rowspan=1></td>
+        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr></tbody>
+</table>
 <div class="highlight"><pre><span></span><code>abaqus<span class="w"> </span><span class="nb">help</span>
 </code></pre></div>
-<h2 id="licences">Licences<a class="headerlink" href="#licences" title="Permanent link">&para;</a></h2>
+<h2 id="licences_1">Licences<a class="headerlink" href="#licences_1" title="Permanent link">&para;</a></h2>
 <p>You can force ABAQUS to use a specific licence type by setting the
 parameter <code>academic=TEACHING</code> or <code>academic=RESEARCH</code> in a relevant
 <a href="#environment-file">environment file</a>.</p>
@@ -2769,7 +2826,7 @@ Results highly model dependant. Do your own tests.</em></p>
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="../../../assets/javascripts/general.js"></script>
       
     
   </body>
