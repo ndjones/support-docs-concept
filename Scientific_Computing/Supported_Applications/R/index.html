@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#available-modules" class="md-skip">
+        <a href="#description" class="md-skip">
           Skip to content
         </a>
       
@@ -1600,15 +1600,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#available-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Available Modules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       Description
@@ -1636,11 +1627,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-environment-modules" class="md-nav__link">
+  <a href="#available-modules" class="md-nav__link">
     <span class="md-ellipsis">
-      Related environment modules
+      Available Modules
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Available Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-Geo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-bundle-bioconductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-bundle-Bioconductor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2426,15 +2441,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#available-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Available Modules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       Description
@@ -2462,11 +2468,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-environment-modules" class="md-nav__link">
+  <a href="#available-modules" class="md-nav__link">
     <span class="md-ellipsis">
-      Related environment modules
+      Available Modules
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Available Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-Geo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-bundle-bioconductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-bundle-Bioconductor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2630,8 +2660,32 @@
 
   <h1>R</h1>
 
-<p>R is a free software environment for statistical computing and graphics.</p>
-<p><a href="http://www.r-project.org/">R Homepage</a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>R is a language and environment for statistical computing and graphics.
+It is a GNU project which is similar to the S language and environment,
+itself developed at Bell Laboratories (formerly AT&amp;T, now Lucent
+Technologies) by John Chambers and colleagues. R can be considered as a
+different implementation of S. There are some important differences, but
+much code written for S runs unaltered under R.</p>
+<p>R provides a wide variety of statistical (linear and nonlinear
+modelling, classical statistical tests, time-series analysis,
+classification, clustering, and so forth) and graphical techniques, and
+is highly extensible. The S language is often the vehicle of choice for
+research in statistical methodology, and R provides an Open Source route
+to participation in that activity.</p>
+<h2 id="licence">Licence<a class="headerlink" href="#licence" title="Permanent link">&para;</a></h2>
+<p>R is made available at no cost under the terms of version 2 of the GNU
+General Public Licence. The full text of the R licence is available at
+<a href="https://www.r-project.org/COPYING">https://www.r-project.org/COPYING</a>.</p>
+<h2 id="nesi-customisations">NeSI Customisations<a class="headerlink" href="#nesi-customisations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>We patch the <em>snow</em> package so that there is no need to use RMPISNOW
+  when using it over MPI.</li>
+<li>Our most recent R environment modules set R_LIBS_USER to a path
+  which includes the compiler toolchain, so for
+  example <em>~/R/gimkl-2022a/4.2</em> rather than the usual default
+  of <em>~/R/x86_64-pc-linux-gnu-library/4.2</em>.</li>
+</ul>
 <h2 id="available-modules">Available Modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="0:2">
     <input checked="checked" id="__tabbed__r_1" name="__tabbed__r_0" type="radio">
@@ -2678,73 +2732,83 @@
         <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
     </div>
 </div>
-<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>R is a language and environment for statistical computing and graphics.
-It is a GNU project which is similar to the S language and environment,
-itself developed at Bell Laboratories (formerly AT&amp;T, now Lucent
-Technologies) by John Chambers and colleagues. R can be considered as a
-different implementation of S. There are some important differences, but
-much code written for S runs unaltered under R.</p>
-<p>R provides a wide variety of statistical (linear and nonlinear
-modelling, classical statistical tests, time-series analysis,
-classification, clustering, and so forth) and graphical techniques, and
-is highly extensible. The S language is often the vehicle of choice for
-research in statistical methodology, and R provides an Open Source route
-to participation in that activity.</p>
-<p>The R home page is at <a href="http://www.r-project.org">http://www.r-project.org</a>.</p>
-<h2 id="licence">Licence<a class="headerlink" href="#licence" title="Permanent link">&para;</a></h2>
-<p>R is made available at no cost under the terms of version 2 of the GNU
-General Public Licence. The full text of the R licence is available at
-<a href="https://www.r-project.org/COPYING">https://www.r-project.org/COPYING</a>.</p>
-<h2 id="nesi-customisations">NeSI Customisations<a class="headerlink" href="#nesi-customisations" title="Permanent link">&para;</a></h2>
-<ul>
-<li>We patch the <em>snow</em> package so that there is no need to use RMPISNOW
-    when using it over MPI.</li>
-<li>Our most recent R environment modules set R_LIBS_USER to a path
-    which includes the compiler toolchain, so for
-    example <em>~/R/gimkl-2022a/4.2</em> rather than the usual default
-    of <em>~/R/x86_64-pc-linux-gnu-library/4.2</em>.</li>
-</ul>
-<h2 id="related-environment-modules">Related environment modules<a class="headerlink" href="#related-environment-modules" title="Permanent link">&para;</a></h2>
 <p>We also have some environment modules which extend the base R ones with
 extra packages:</p>
-<ul>
-<li><em>R-Geo</em> with rgeos, rgdal and other geometric and geospatial
-    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.<ul>
-<li><code>sl
-    $ module load R-Geo/4.2.1-gimkl-2022a</code></li>
-</ul>
-</li>
-<li><em>R-bundle-Bioconductor</em> with many of the BioConductor suite of
-    packages.<ul>
-<li><code>sl
-    $ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1</code></li>
-</ul>
-</li>
-</ul>
+<h3 id="r-geo">R-Geo<a class="headerlink" href="#r-geo" title="Permanent link">&para;</a></h3>
+<p>Includes rgeos, rgdal and other geometric and geospatial
+packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="0:1">
+    <input checked="checked" id="__tabbed__r-geo_1" name="__tabbed__r-geo_0" type="radio">
+
+    <div class="tabbed-labels">
+        <label for="__tabbed__r-geo_1">Mahuika</label>
+
+    </div>
+    <div class="tabbed-content">
+    <div class="tabbed-block">
+            <p><nav class="md-tags md-tags-ver-r-geo-mahuika">
+                    <a id="mod_r-geo_mahuika_3.6.1-gimkl-2018b" onclick="changeVersion('r-geo', 'mahuika','3.6.1-gimkl-2018b')" class="md-tag-ver md-tag">3.6.1-gimkl-2018b</a>
+                    <a id="mod_r-geo_mahuika_3.6.2-gimkl-2020a" onclick="changeVersion('r-geo', 'mahuika','3.6.2-gimkl-2020a')" class="md-tag-ver md-tag">3.6.2-gimkl-2020a</a>
+                    <a id="mod_r-geo_mahuika_4.0.1-gimkl-2020a" onclick="changeVersion('r-geo', 'mahuika','4.0.1-gimkl-2020a')" class="md-tag-ver md-tag">4.0.1-gimkl-2020a</a>
+                    <a id="mod_r-geo_mahuika_4.1.0-gimkl-2020a" onclick="changeVersion('r-geo', 'mahuika','4.1.0-gimkl-2020a')" class="md-tag-ver md-tag">4.1.0-gimkl-2020a</a>
+                    <a id="mod_r-geo_mahuika_4.2.1-gimkl-2022a" onclick="changeVersion('r-geo', 'mahuika','4.2.1-gimkl-2022a')" class="md-tag-ver md-tag">4.2.1-gimkl-2022a</a>
+                    <a id="mod_r-geo_mahuika_4.3.1-gimkl-2022a" onclick="changeVersion('r-geo', 'mahuika','4.3.1-gimkl-2022a')" class="md-tag-ver md-tag">4.3.1-gimkl-2022a</a>
+                    <a id="mod_r-geo_mahuika_4.3.2-foss-2023a" onclick="changeVersion('r-geo', 'mahuika','4.3.2-foss-2023a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">4.3.2-foss-2023a</a>
+
+            </nav></p>
+            <pre><code>module load R-Geo/<span id="mod_r-geo_mahuika">4.3.2-foss-2023a</span></code></pre>
+        </div>
+    </div>
+    <div class="tabbed-control tabbed-control--prev" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+    <div class="tabbed-control tabbed-control--next" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+</div>
+<h3 id="r-bundle-bioconductor">R-bundle-Bioconductor<a class="headerlink" href="#r-bundle-bioconductor" title="Permanent link">&para;</a></h3>
+<p>Includes many of the BioConductor suite of
+packages.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="0:1">
+    <input checked="checked" id="__tabbed__r-bundle-bioconductor_1" name="__tabbed__r-bundle-bioconductor_0" type="radio">
+
+    <div class="tabbed-labels">
+        <label for="__tabbed__r-bundle-bioconductor_1">Mahuika</label>
+
+    </div>
+    <div class="tabbed-content">
+    <div class="tabbed-block">
+            <p><nav class="md-tags md-tags-ver-r-bundle-bioconductor-mahuika">
+                    <a id="mod_r-bundle-bioconductor_mahuika_3.11-gimkl-2020a-R-4.0.1" onclick="changeVersion('r-bundle-bioconductor', 'mahuika','3.11-gimkl-2020a-R-4.0.1')" class="md-tag-ver md-tag">3.11-gimkl-2020a-R-4.0.1</a>
+                    <a id="mod_r-bundle-bioconductor_mahuika_3.13-gimkl-2020a-R-4.1.0" onclick="changeVersion('r-bundle-bioconductor', 'mahuika','3.13-gimkl-2020a-R-4.1.0')" class="md-tag-ver md-tag">3.13-gimkl-2020a-R-4.1.0</a>
+                    <a id="mod_r-bundle-bioconductor_mahuika_3.15-gimkl-2022a-R-4.2.1" onclick="changeVersion('r-bundle-bioconductor', 'mahuika','3.15-gimkl-2022a-R-4.2.1')" class="md-tag-ver md-tag">3.15-gimkl-2022a-R-4.2.1</a>
+                    <a id="mod_r-bundle-bioconductor_mahuika_3.17-gimkl-2022a-R-4.3.1" onclick="changeVersion('r-bundle-bioconductor', 'mahuika','3.17-gimkl-2022a-R-4.3.1')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">3.17-gimkl-2022a-R-4.3.1</a>
+
+            </nav></p>
+            <pre><code>module load R-bundle-Bioconductor/<span id="mod_r-bundle-bioconductor_mahuika">3.17-gimkl-2022a-R-4.3.1</span></code></pre>
+        </div>
+    </div>
+    <div class="tabbed-control tabbed-control--prev" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+    <div class="tabbed-control tabbed-control--next" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+</div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="r-scripts">R scripts<a class="headerlink" href="#r-scripts" title="Permanent link">&para;</a></h3>
 <h4 id="serial-r-script">Serial R script<a class="headerlink" href="#serial-r-script" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>png(filename=&quot;plot.png&quot;)  # This line redirects plots from screen to plot.png file.
+<div class="highlight"><pre><span></span><code><span class="nf">png</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&quot;plot.png&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1"># This line redirects plots from screen to plot.png file.</span>
 
-# Define the cars vector with 5 values
-cars &lt;- c(1, 3, 6, 4, 9)
+<span class="c1"># Define the cars vector with 5 values</span>
+<span class="n">cars</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">)</span>
 
-# Graph the cars vector with all defaults
-plot(cars)
+<span class="c1"># Graph the cars vector with all defaults</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="array-r-script">Array R script<a class="headerlink" href="#array-r-script" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>jobid &lt;- as.numeric(Sys.getenv(&quot;SLURM_ARRAY_TASK_ID&quot;))
-jobid
+<div class="highlight"><pre><span></span><code><span class="n">jobid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SLURM_ARRAY_TASK_ID&quot;</span><span class="p">))</span>
+<span class="n">jobid</span>
 </code></pre></div>
 <h4 id="parallel-script-using-doparallel">Parallel script using <em>doParallel</em><a class="headerlink" href="#parallel-script-using-doparallel" title="Permanent link">&para;</a></h4>
 <p>The following example sums 50 normally distributed random value vectors
@@ -2752,110 +2816,110 @@ of sizes 1 million to 1000050. Set the number of workers in your
 submission script with --cpus-per-task=... Note that all workers run on
 the same node. Hence, the number of workers is limited to the number of
 cores (physical if --hint=nomultithread or logical if using
---hint=multithread). </p>
-<div class="highlight"><pre><span></span><code>library(doParallel)
-registerDoParallel(strtoi(Sys.getenv(&quot;SLURM_CPUS_PER_TASK&quot;)))
+--hint=multithread).</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="nf">registerDoParallel</span><span class="p">(</span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SLURM_CPUS_PER_TASK&quot;</span><span class="p">)))</span>
 
-# 50 calculations, store the result in &#39;x&#39;
-x &lt;- foreach(z = 1000000:1000050, .combine = &#39;c&#39;) %dopar% {
-  sum(rnorm(z))
-}
+<span class="c1"># 50 calculations, store the result in &#39;x&#39;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">foreach</span><span class="p">(</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="o">:</span><span class="m">1000050</span><span class="p">,</span><span class="w"> </span><span class="n">.combine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;c&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">sum</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="p">}</span>
 
-print(x)
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="parallel-script-using-dompi">Parallel script using <em>doMPI</em><a class="headerlink" href="#parallel-script-using-dompi" title="Permanent link">&para;</a></h4>
 <p>This example is similar to the above except that workers can run across
 multiple nodes. Note that we don't need to specify the number of workers
 when starting the cluster -- it will be derived by the mpiexec command,
 which slurm will invoke. You will need to load the gimkl module to
-expose the MPI library. </p>
-<div class="highlight"><pre><span></span><code>library(doMPI, quiet=TRUE)
-cl &lt;- startMPIcluster()
-registerDoMPI(cl)
+expose the MPI library.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">doMPI</span><span class="p">,</span><span class="w"> </span><span class="n">quiet</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">startMPIcluster</span><span class="p">()</span>
+<span class="nf">registerDoMPI</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 
-# 50 calculations, store the result in &#39;x&#39;
-x &lt;- foreach(z = 1000000:1000050, .combine = &#39;c&#39;) %dopar% {
-  sum(rnorm(z))
-}
+<span class="c1"># 50 calculations, store the result in &#39;x&#39;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">foreach</span><span class="p">(</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="o">:</span><span class="m">1000050</span><span class="p">,</span><span class="w"> </span><span class="n">.combine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;c&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">sum</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="p">}</span>
 
-closeCluster(cl)
-print(x)
-mpi.quit()
+<span class="nf">closeCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">mpi.quit</span><span class="p">()</span>
 </code></pre></div>
 <h4 id="parallel-script-using-snow">Parallel script using <em>snow</em><a class="headerlink" href="#parallel-script-using-snow" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>library(snow)
-# If there are multiple tasks only one reaches here, others become slaves.
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">snow</span><span class="p">)</span>
+<span class="c1"># If there are multiple tasks only one reaches here, others become slaves.</span>
 
-# Select MPI-based or fork-based parallelism depending on ntasks
-if(strtoi(Sys.getenv(&quot;SLURM_NTASKS&quot;)) &gt; 1) {
-    cl &lt;- makeMPIcluster()
-} else {
-    cl &lt;- makeSOCKcluster(max(strtoi(Sys.getenv(&#39;SLURM_CPUS_PER_TASK&#39;)), 1))
-}
+<span class="c1"># Select MPI-based or fork-based parallelism depending on ntasks</span>
+<span class="nf">if</span><span class="p">(</span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SLURM_NTASKS&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">makeMPIcluster</span><span class="p">()</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">makeSOCKcluster</span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;SLURM_CPUS_PER_TASK&#39;</span><span class="p">)),</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+<span class="p">}</span>
 
-# 50 calculations to be done:
-x &lt;- clusterApply(cl, 1000000:1000050, function(z) sum(rnorm(z)))
+<span class="c1"># 50 calculations to be done:</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">clusterApply</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span><span class="w"> </span><span class="m">1000000</span><span class="o">:</span><span class="m">1000050</span><span class="p">,</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span>
 
-stopCluster(cl)
+<span class="nf">stopCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="job-submission-scripts">Job submission scripts<a class="headerlink" href="#job-submission-scripts" title="Permanent link">&para;</a></h3>
 <h4 id="submission-script-for-a-serial-r-job">Submission script for a serial R job<a class="headerlink" href="#submission-script-for-a-serial-r-job" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name    MySerialRJob</span>
-<span class="c1">#SBATCH --time        01:00:00</span>
-<span class="c1">#SBATCH --mem         512MB</span>
-<span class="c1">#SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of</span>
-<span class="c1">#SBATCH --error       MySerialRJob.%j.err # the output and error files</span>
+#SBATCH --job-name    MySerialRJob
+#SBATCH --time        01:00:00
+#SBATCH --mem         512MB
+#SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of
+#SBATCH --error       MySerialRJob.%j.err # the output and error files
 
-module<span class="w"> </span>load<span class="w"> </span><span class="m">4</span>.2.1-gimkl-2022a
+module load 4.2.1-gimkl-2022a
 
-<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
-<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
-srun<span class="w"> </span>Rscript<span class="w"> </span>MySerialRJob.R
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+# Help R to flush errors and show overall job progress by printing
+# &quot;executing&quot; and &quot;finished&quot; statements.
+echo &quot;Executing R ...&quot;
+srun Rscript MySerialRJob.R
+echo &quot;R finished.&quot;
 </code></pre></div>
 <h4 id="submission-script-for-an-array-r-job">Submission script for an array R job<a class="headerlink" href="#submission-script-for-an-array-r-job" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name    MyArrayRJob</span>
-<span class="c1">#SBATCH --time        01:00:00</span>
-<span class="c1">#SBATCH --array       1-10</span>
-<span class="c1">#SBATCH --mem         512MB</span>
-<span class="c1">#SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of</span>
-<span class="c1">#SBATCH --error       MyArrayRJob.%j.err # the output and error files</span>
+#SBATCH --job-name    MyArrayRJob
+#SBATCH --time        01:00:00
+#SBATCH --array       1-10
+#SBATCH --mem         512MB
+#SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of
+#SBATCH --error       MyArrayRJob.%j.err # the output and error files
 
-module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
+module load R/4.2.1-gimkl-2022a
 
-<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
-<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
-srun<span class="w"> </span>Rscript<span class="w"> </span>MyArrayRJob.R
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+# Help R to flush errors and show overall job progress by printing
+# &quot;executing&quot; and &quot;finished&quot; statements.
+echo &quot;Executing R ...&quot;
+srun Rscript MyArrayRJob.R
+echo &quot;R finished.&quot;
 </code></pre></div>
 <h4 id="submission-script-for-an-mpi-r-job">Submission script for an MPI R job<a class="headerlink" href="#submission-script-for-an-mpi-r-job" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name      MyMPIRJob</span>
-<span class="c1">#SBATCH --time          01:00:00</span>
-<span class="c1">#SBATCH --ntasks        12</span>
-<span class="c1">#SBATCH --cpus-per-task 1</span>
-<span class="c1">#SBATCH --mem-per-cpu   512MB</span>
-<span class="c1">#SBATCH --output        MyMPIRJob.%j.out # Include the job ID in the names of</span>
-<span class="c1">#SBATCH --error         MyMPIRJob.%j.err # the output and error files</span>
+#SBATCH --job-name      MyMPIRJob
+#SBATCH --time          01:00:00
+#SBATCH --ntasks        12
+#SBATCH --cpus-per-task 1
+#SBATCH --mem-per-cpu   512MB
+#SBATCH --output        MyMPIRJob.%j.out # Include the job ID in the names of
+#SBATCH --error         MyMPIRJob.%j.err # the output and error files
 
-module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
-<span class="c1"># need MPI</span>
-module<span class="w"> </span>load<span class="w"> </span>gimkl/2022a
+module load R/4.2.1-gimkl-2022a
+# need MPI
+module load gimkl/2022a
 
-<span class="c1"># Help R to flush errors and show overall job progress by printing</span>
-<span class="c1"># &quot;executing&quot; and &quot;finished&quot; statements.</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Executing R ...&quot;</span>
-<span class="c1"># Our R has a patched copy of the snow library so that there is no need to use</span>
-<span class="c1"># RMPISNOW.</span>
-srun<span class="w"> </span>Rscript<span class="w"> </span>doMPI
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;R finished.&quot;</span>
+# Help R to flush errors and show overall job progress by printing
+# &quot;executing&quot; and &quot;finished&quot; statements.
+echo &quot;Executing R ...&quot;
+# Our R has a patched copy of the snow library so that there is no need to use
+# RMPISNOW.
+srun Rscript doMPI
+echo &quot;R finished.&quot;
 </code></pre></div>
 <h2 id="further-notes">Further notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
 <h3 id="generating-images-and-plots">Generating images and plots<a class="headerlink" href="#generating-images-and-plots" title="Permanent link">&para;</a></h3>
@@ -2864,7 +2928,7 @@ graphical user interface to be available so it can render and display
 the image on the fly. However, it is possible to instruct R to export
 the image directly to a file instead of displaying it on the screen,
 using code like the following:</p>
-<div class="highlight"><pre><span></span><code>png(filename=&quot;plot.png&quot;)
+<div class="highlight"><pre><span></span><code><span class="nf">png</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&quot;plot.png&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This statement instructs R to export all future graphical output to a
 PNG file named <code>plot.png</code>, until a different device driver is selected.</p>
@@ -2874,17 +2938,17 @@ documentation</a>.</p>
 <p>Much R functionality is not supplied with the base installation, but is
 instead added by means of packages written by the R developers or by
 third parties.  We include a large number of such R packages in our R
-environment modules</p>
+environment modules.</p>
 <h4 id="getting-a-list-of-installed-packages">Getting a list of installed packages<a class="headerlink" href="#getting-a-list-of-installed-packages" title="Permanent link">&para;</a></h4>
 <p>It is best to view the list of available R packages interactively. To do
 so, call up the package library:</p>
-<div class="highlight"><pre><span></span><code>$ module R/4.2.1-gimkl-2022a
-$ R
-...
-     library()
+<p><div class="highlight"><pre><span></span><code>module<span class="w"> </span>R/4.2.1-gimkl-2022a
+R
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>library()
+</code></pre></div></p>
 <p>or just use the module command:</p>
-<div class="highlight"><pre><span></span><code>$ module show R/4.2.1-gimkl-2022a
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>show<span class="w"> </span>R/4.2.1-gimkl-2022a
 </code></pre></div>
 <p>Please note that different installations of R, even on the same NeSI
 cluster, may contain different collections of packages. Furthermore, if
@@ -2893,11 +2957,12 @@ detect, these will also be shown in a separate section.</p>
 <h4 id="getting-a-list-of-available-libraries">Getting a list of available libraries<a class="headerlink" href="#getting-a-list-of-available-libraries" title="Permanent link">&para;</a></h4>
 <p>You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:</p>
-<div class="highlight"><pre><span></span><code>     .libPaths()
+<div class="highlight"><pre><span></span><code><span class="nf">.libPaths</span><span class="p">()</span>
 </code></pre></div>
 <p>For R/4.2.1 the command <code>.libPaths()</code> will return the following:</p>
-<div class="highlight"><pre><span></span><code>     .libPaths()
-[1] &quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;                            
+<div class="highlight"><pre><span></span><code><span class="nf">.libPaths</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1] &quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;                            
 [2] &quot;/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library&quot;
 </code></pre></div>
 <p>When using the <code>library()</code> function R will first look to your
@@ -2905,32 +2970,32 @@ Home/Personal library for the package and then to the Systems Library
 provided by NeSI. This can be used in conjuction with
 <code>installed.packages()</code> to see what is available in a specific library.
 eg:</p>
-<div class="highlight"><pre><span></span><code>     installed.packages(&quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;)
-...
-ggplot2 NA NA NA &quot;no&quot; &quot;4.2.1&quot;
-ggrepel NA NA NA &quot;yes&quot; &quot;4.2.1&quot;
-etc...
+<div class="highlight"><pre><span></span><code><span class="nf">installed.packages</span><span class="p">(</span><span class="s">&quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;</span><span class="p">)</span>
+<span class="kc">...</span>
+<span class="n">ggplot2</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="s">&quot;4.2.1&quot;</span>
+<span class="n">ggrepel</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="kc">NA</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="s">&quot;4.2.1&quot;</span>
+<span class="n">etc...</span>
 </code></pre></div>
 <h4 id="specifying-custom-library-directories">Specifying custom library directories<a class="headerlink" href="#specifying-custom-library-directories" title="Permanent link">&para;</a></h4>
 <p>You can add your own custom library directories by putting a list of
 extra directories in the <code>.Renviron</code> file in your home directory. This
 list should look like the following:</p>
-<div class="highlight"><pre><span></span><code>export R_LIBS=/home/jblo123/R/foo:/home/jblo123/R/bar
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS</span><span class="o">=</span>/home/jblo123/R/foo:/home/jblo123/R/bar
 </code></pre></div>
 <p>Note that, of the contents of the <code>R_LIBS</code> variable, only those
 directories that actually exist will show up in the output of
 <code>.libPaths()</code>.</p>
 <p>Alternatively, you can specify in your R script:</p>
-<div class="highlight"><pre><span></span><code>dir.create(&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;, showWarnings = FALSE, recursive = TRUE)
-.libPaths(new=&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;)
+<div class="highlight"><pre><span></span><code><span class="nf">dir.create</span><span class="p">(</span><span class="s">&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">showWarnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">.libPaths</span><span class="p">(</span><span class="n">new</span><span class="o">=</span><span class="s">&quot;/nesi/project/&lt;projectID&gt;/Rpackages&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="downloading-and-installing-a-new-package">Downloading and installing a new package<a class="headerlink" href="#downloading-and-installing-a-new-package" title="Permanent link">&para;</a></h4>
 <p>To install a package into R, use the install.packages command.</p>
 <p>For example, to install the sampling package:</p>
-<div class="highlight"><pre><span></span><code>$ module load R/4.2.1-gimkl-2022a
-$ R
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
+R
 ...
-     install.packages(&quot;sampling&quot;)
+install.packages<span class="o">(</span><span class="s2">&quot;sampling&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>You will most likely be asked if you want to use a personal library and,
 if you have not previously done so, whether you wish to create a new
@@ -2939,31 +3004,32 @@ personal library. Answer "y" to both questions.</p>
 download mirrors that will appear, as the lone New Zealand mirror site
 is more often out of date.</p>
 <p>R will then download, compile and install the new package for you.</p>
-<p>You can confirm the package has been installed by using the library()
+<p>You can confirm the package has been installed by using the <code>library()</code>
 command:</p>
-<div class="highlight"><pre><span></span><code>     library(&quot;foo&quot;)
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>If the package has been correctly installed, you will get no response.
 On the other hand, if the package is missing or was not installed
 correctly, an error message will typically be returned:</p>
-<div class="highlight"><pre><span></span><code>     library(&quot;foo&quot;)
-Error in library(&quot;foo&quot;) : there is no package called ‘foo’
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Error in library(&quot;foo&quot;) : there is no package called ‘foo’
 </code></pre></div>
 <h4 id="compiling-a-c-library-for-use-with-r">Compiling a C library for use with R<a class="headerlink" href="#compiling-a-c-library-for-use-with-r" title="Permanent link">&para;</a></h4>
 <p>You can compile custom C libraries for use with R using the R shared
 library compiler:</p>
-<div class="highlight"><pre><span></span><code>$ module load R/4.2.1-gimkl-2022a
-$ R CMD SHLIB mylib.c
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
+R<span class="w"> </span>CMD<span class="w"> </span>SHLIB<span class="w"> </span>mylib.c
 </code></pre></div>
 <p>This will create the shared object mylib.so. You can then reference the
 library in your R script:</p>
-<div class="highlight"><pre><span></span><code>$ R
+<div class="highlight"><pre><span></span><code>R
 ...
-     dyn.load(&quot;~/R/lib64/mylib.so&quot;)
+dyn.load<span class="o">(</span><span class="s2">&quot;~/R/lib64/mylib.so&quot;</span><span class="o">)</span>
 </code></pre></div>
 <h3 id="quitting-an-interactive-r-session">Quitting an interactive R session<a class="headerlink" href="#quitting-an-interactive-r-session" title="Permanent link">&para;</a></h3>
 <p>At the R command prompt, when you want to quit R, type the following:</p>
-<div class="highlight"><pre><span></span><code>     quit()
+<div class="highlight"><pre><span></span><code><span class="nf">quit</span><span class="p">()</span>
 </code></pre></div>
 <p>You will be asked "Save workspace image? [y/n/c]". Type n.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
@@ -2971,12 +3037,12 @@ library in your R script:</p>
 <p>Package installation will occasionally fail due to missing system
 libraries (eg <em>HarfBuzz, FriBidi or devtools)</em>, this is resolved by
 loading the <em>devtools</em> module prior to the version of R you require.</p>
-<div class="highlight"><pre><span></span><code>$ module load devtools
-$ module load R/4.2.1-gimkl-2022a
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>devtools
+module<span class="w"> </span>load<span class="w"> </span>R/4.2.1-gimkl-2022a
 </code></pre></div>
 <h3 id="cant-install-sf-rgdal-etc">Can't install <em>sf, rgdal</em> etc<a class="headerlink" href="#cant-install-sf-rgdal-etc" title="Permanent link">&para;</a></h3>
 <p>Use the R-Geo module</p>
-<div class="highlight"><pre><span></span><code>$ module load R-Geo/4.2.1-gimkl-2022a
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R-Geo/4.2.1-gimkl-2022a
 </code></pre></div>
 <h3 id="clusterparallel-environment-variable-not-accessed">Cluster/Parallel environment variable not accessed<a class="headerlink" href="#clusterparallel-environment-variable-not-accessed" title="Permanent link">&para;</a></h3>
 <p>Depending on the working environment, registering of a cluster and
@@ -2988,7 +3054,6 @@ doesn't work correctly. Instead use <code>as.numeric</code></p>
 <li><code>strtoi(Sys.getenv("SLURM_CPUS_PER_TASK"))</code></li>
 <li><code>as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))</code></li>
 </ul>
-<!-- Uncomment this if we make a good page on modues -->
 
 
 
@@ -3011,7 +3076,7 @@ doesn't work correctly. Instead use <code>as.numeric</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     

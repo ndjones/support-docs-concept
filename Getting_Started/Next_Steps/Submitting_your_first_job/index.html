@@ -867,7 +867,7 @@
         
   
   <span class="md-ellipsis">
-    The HPC environment 
+    The HPC environment
   </span>
   
 
@@ -1391,46 +1391,45 @@
 
   <h1>Submitting your first job</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="environment-modules">Environment Modules<a class="headerlink" href="#environment-modules" title="Permanent link">&para;</a></h2>
-<p>Modules are a convenient  way to provide access to applications  on the
-cluster. They prepare the environment you need to run an application.</p>
-<p>For a full list of module commands run man module</p>
+<p>Modules are a convenient  way to provide access to applications  on the cluster. They prepare the environment you need to run an application.</p>
+<p>For a full list of module commands run <code>man module</code>.</p>
+<style>
+.command {
+    white-space: nowrap;
+}
+</style>
+
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Command</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>module spider [ &lt;string&gt; ]</code></td>
+<td><span class="command"><code>module spider [ &lt;string&gt; ]</code></span></td>
 <td>List all modules whose names, including version strings, contain <code>&lt;string&gt;</code>. If the <code>&lt;string&gt;</code> argument is not supplied, list all available modules. (only on Mahuika)</td>
 </tr>
 <tr>
-<td><code>module show &lt;string&gt;</code></td>
+<td><span class="command"><code>module show &lt;string&gt;</code></span></td>
 <td>Show the contents of the module given by <code>&lt;string&gt;</code>. If only the module name (e.g. <code>Python</code>) is given, show the default module of that name. If both name and version are given, show that particular version module.</td>
 </tr>
 <tr>
-<td><code>module load &lt;string&gt;</code></td>
+<td><span class="command"><code>module load &lt;string&gt;</code></span></td>
 <td>Load the module (name and version) given by <code>&lt;string&gt;</code>. If no version is given, load the default version.</td>
 </tr>
 <tr>
-<td><code>module list [ &lt;string&gt; ]</code></td>
+<td><span class="command"><code>module list [ &lt;string&gt; ]</code></span></td>
 <td>List all currently loaded modules whose names, including version strings, contain <code>&lt;string&gt;</code>. If the <code>&lt;string&gt;</code> argument is not supplied, list all currently loaded modules.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
-<p>Jobs on Mahuika and Māui are submitted<em> </em>in the form of a <em>batch
-script </em>containing the code you want to run and a header of information
-needed by our job scheduler <em>Slurm.</em></p>
+<p>Jobs on Mahuika and Māui are submitted<em> </em>in the form of a <em>batch script </em>containing the code you want to run and a header of information needed by our job scheduler <em>Slurm.</em></p>
 <h2 id="creating-a-batch-script">Creating a batch script<a class="headerlink" href="#creating-a-batch-script" title="Permanent link">&para;</a></h2>
-<p>Create a new file and open it with nano myjob.sl</p>
+<p>Create a new file and open it with <code>nano myjob.sl</code></p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #SBATCH --job-name=SerialJob # job name (shows up in the queue)
 #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
@@ -1439,73 +1438,65 @@ needed by our job scheduler <em>Slurm.</em></p>
 
 pwd # Prints working directory
 </code></pre></div>
-<p>Copy in the above text and save and exit the text editor with 'ctrl +
-x'.</p>
-<p>Note:<code>#!/bin/bash</code>is expected by Slurm</p>
-<p>Note: if you are a member of multiple accounts you should add the line
-<code>#SBATCH --account=&lt;projectcode&gt;</code></p>
+<p>Copy in the above text and save and exit the text editor with 'ctrl + x'.</p>
+<p>Note: <code>#!/bin/bash</code> is expected by Slurm.</p>
+<p>Note: if you are a member of multiple accounts you should add the line</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --account=&lt;projectcode&gt;
+</code></pre></div>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <p>We recommend testing your job using the debug Quality of Service (QOS). 
-The debug QOS can be gained by adding the <code>sbatch</code> command line option
-<code>--qos=debug</code>.<br />
-This adds 5000 to the job priority so raises it above all non-debug
-jobs, but is limited to one small job per user at a time: no more than
-15 minutes and no more than 2 nodes.</p>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
-<p>Please do not run your code on the login node.  Any processes running
- on the login node for long periods of time or using large numbers of
- CPUs will be terminated.</p>
+The debug QOS can be gained by adding the <code>sbatch</code> command line option <code>--qos=debug</code>.<br />
+This adds 5000 to the job priority so raises it above all non-debug jobs, but is limited to one small job per user at a time: no more than 15 minutes and no more than 2 nodes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not run your code on the login node.
+Any processes running on the login node for long periods of time or using large numbers of CPUs will be terminated.</p>
 </div>
 <h2 id="submitting">Submitting<a class="headerlink" href="#submitting" title="Permanent link">&para;</a></h2>
 <p>Jobs are submitted to the scheduler using:</p>
-<div class="highlight"><pre><span></span><code>sbatch myjob.sl
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>myjob.sl
 </code></pre></div>
 <p>You should receive an output</p>
 <p>Submitted batch job 1748836</p>
-<p><code>sbatch</code>can take command line arguments similar to those used in the
-shell script through SBATCH pragmas</p>
-<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/sbatch.html">Slurm
-Documentation</a></p>
+<p><code>sbatch</code> can take command line arguments similar to those used in the shell script through SBATCH pragmas</p>
+<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/sbatch.html">Slurm Documentation</a></p>
 <h2 id="job-queue">Job Queue<a class="headerlink" href="#job-queue" title="Permanent link">&para;</a></h2>
 <p>The currently queued jobs can be checked using </p>
 <div class="highlight"><pre><span></span><code>squeue
 </code></pre></div>
 <p>You can filter to just your jobs by adding the flag</p>
-<div class="highlight"><pre><span></span><code>squeue -u usr9999
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span>usr9999
 </code></pre></div>
 <p>You can also filter to just your jobs using</p>
-<div class="highlight"><pre><span></span><code>squeue --me
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>--me
 </code></pre></div>
-<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/squeue.html">Slurm
-Documentation</a></p>
+<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/squeue.html">Slurm Documentation</a>.</p>
 <p>You can check all jobs submitted by you in the past day using:</p>
 <div class="highlight"><pre><span></span><code>sacct
 </code></pre></div>
 <p>Or since a specified date using:</p>
-<div class="highlight"><pre><span></span><code>sacct -S YYYY-MM-DD
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>-S<span class="w"> </span>YYYY-MM-DD
 </code></pre></div>
-<p>Each job will show as multiple lines, one line for the parent job and
-then additional lines for each job step.</p>
-<div class="admonition prerequisite tips">
-<p class="admonition-title">Prerequisite</p>
-<p>sacct -X Only show parent processes.
- sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
- state.</p>
+<p>Each job will show as multiple lines, one line for the parent job and then additional lines for each job step.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li><code>sacct -X</code> Only show parent processes.</li>
+<li><code>sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</code> Filter jobs by state.</li>
+</ul>
 </div>
-<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/sacct.html">Slurm
-Documentation</a></p>
+<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/sacct.html">Slurm Documentation</a>.</p>
 <h2 id="cancelling">Cancelling<a class="headerlink" href="#cancelling" title="Permanent link">&para;</a></h2>
-<p>scancel &lt;jobid&gt; will cancel the job described by &lt;jobid&gt;.
-You can obtain the job ID by using sacct or squeue.</p>
-<div class="admonition prerequisite tips">
-<p class="admonition-title">Prerequisite</p>
-<p>scancel -u [username] Kill all jobs submitted by you.
- scancel {[n1]..[n2]} Kill all jobs with an id between [n1] and
- [n2]</p>
+<p><code>scancel &lt;jobid&gt;</code> will cancel the job described by <code>&lt;jobid&gt;</code>.
+You can obtain the job ID by using <code>sacct</code> or <code>squeue</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li><code>scancel -u [username]</code> Kill all jobs submitted by you.</li>
+<li><code>scancel {[n1]..[n2]}</code> Kill all jobs with an id between <code>[n1]</code> and <code>[n2]</code>.</li>
+</ul>
 </div>
-<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/scancel.html">Slurm
-Documentation</a></p>
+<p>You can find more details on its use on the <a href="https://slurm.schedmd.com/scancel.html">Slurm Documentation</a>.</p>
 <h2 id="job-output">Job Output<a class="headerlink" href="#job-output" title="Permanent link">&para;</a></h2>
 <p>When the job completes, or in some cases earlier, two files will be
 added to the directory in which you were working when you submitted the
@@ -1534,7 +1525,7 @@ job:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     
