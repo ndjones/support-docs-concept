@@ -83,11 +83,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#sbatch-job-namenamdgpu" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -688,8 +683,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1590,8 +1583,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1615,80 +1606,81 @@
   
 
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<p>NVIDIA provides access to GPU accelerated software through their NGC
-container
-registry: <a href="https://www.nvidia.com/en-us/gpu-cloud/containers/">https://www.nvidia.com/en-us/gpu-cloud/containers/</a>.</p>
-<p><em>NGC offers a comprehensive catalog of GPU-accelerated software for deep
+  <h1>NVIDIA GPU Containers</h1>
+
+<p>NVIDIA provides access to GPU accelerated software through their
+<a href="https://catalog.ngc.nvidia.com/containers">NGC container registry</a>.</p>
+<p>NGC offers a comprehensive catalog of GPU-accelerated software for deep
 learning, machine learning, and HPC. NGC containers deliver powerful and
 easy-to-deploy software proven to deliver the fastest results. By taking
 care of the plumbing, NGC enables users to focus on building lean
-models, producing optimal solutions and gathering faster insights.</em></p>
-<p>Many of these containers are able to run under Singularity, which is
+models, producing optimal solutions and gathering faster insights.</p>
+<p>Many of these containers are able to run under Apptainer, which is
 supported on the NeSI platform. NVIDIA also specifies the GPU
 requirements for each container, i.e. whether it will run on our Pascal
 (sm60) GPUs.</p>
-<p>There are instructions for converting their Docker images to Singularity
+<p>There are instructions for converting their Docker images to Apptainer
 images on the NVIDIA site but some small changes are required to these
 instructions on NeSI. As an example, here we show the steps required for
 running the NAMD image on NeSI, based on the NVIDIA instructions
-here: <a href="https://ngc.nvidia.com/catalog/containers/hpc:namd">https://ngc.nvidia.com/catalog/containers/hpc:namd</a>.</p>
+<a href="https://ngc.nvidia.com/catalog/containers/hpc:namd">here</a>.</p>
 <ol>
-<li>Download the APOA1 benchmark data:<ul>
-<li><code>sl
-    wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
-    cd apoa1</code></li>
-</ul>
-</li>
-<li>Load the Singularity module:<ul>
-<li><code>sl
-    module load Singularity</code></li>
-</ul>
+<li>
+<p>Download the APOA1 benchmark data:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+<span class="nb">cd</span><span class="w"> </span>apoa1
+</code></pre></div>
 </li>
 <li>
-<p>Build the Singularity image. This step differs from the NVIDIA
-    instructions because instead of using "build" we "pull" the image
-    directly, which does not require root access:</p>
-<ul>
-<li>
-<p>Please do refer  "<a href="../../Supported_Applications/Singularity/#build_environment_variables">Build Environment
-    Variables</a>"
-    prior to running the following <code>pull</code> command</p>
+<p>Load the Apptainer module:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Apptainer
+</code></pre></div>
 </li>
 <li>
-<p><code>sl
-    singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode</code></p>
+<p>Build the Apptainer image. This step differs from the NVIDIA
+   instructions because instead of using "build" we "pull" the image
+   directly, which does not require root access:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please do refer <a href="../../Supported_Applications/Singularity/#build-environment-variables">Build Environment
+Variables</a>
+prior to running the following <code>pull</code> command.</p>
+</div>
+<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span>pull<span class="w"> </span>namd-3.0-alpha9-singlenode.sif<span class="w"> </span>docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
+</code></pre></div>
 </li>
-<li>Copy the following into a Slurm script named <em>run.sl</em>:</li>
 <li>
-<p>``` sl
-    #!/bin/bash -e</p>
-<h1 id="sbatch-job-namenamdgpu">SBATCH --job-name=namdgpu<a class="headerlink" href="#sbatch-job-namenamdgpu" title="Permanent link">&para;</a></h1>
-<h1 id="sbatch-time001000">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000" title="Permanent link">&para;</a></h1>
-<h1 id="sbatch-ntasks1">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1" title="Permanent link">&para;</a></h1>
-<h1 id="sbatch-cpus-per-task8">SBATCH --cpus-per-task=8<a class="headerlink" href="#sbatch-cpus-per-task8" title="Permanent link">&para;</a></h1>
-<h1 id="sbatch-gpus-per-node-p1001">SBATCH --gpus-per-node P100:1<a class="headerlink" href="#sbatch-gpus-per-node-p1001" title="Permanent link">&para;</a></h1>
-<h1 id="sbatch-mem1g">SBATCH --mem=1G<a class="headerlink" href="#sbatch-mem1g" title="Permanent link">&para;</a></h1>
-<p>module purge
-module load Singularity</p>
-<h1 id="name-of-the-namd-input-file-tag-etc">name of the NAMD input file, tag, etc<a class="headerlink" href="#name-of-the-namd-input-file-tag-etc" title="Permanent link">&para;</a></h1>
-<p>NAMD_INPUT="apoa1_nve_cuda.namd"
-NAMD_SIF="namd-3.0-alpha9-singlenode.sif"
-NAMD_EXE=namd3</p>
-<h1 id="singularity-command-with-required-arguments">singularity command with required arguments<a class="headerlink" href="#singularity-command-with-required-arguments" title="Permanent link">&para;</a></h1>
-<p>SINGULARITY="singularity exec --nv -B $(pwd):/host_pwd --pwd /host_pwd ${NAMD_SIF}"</p>
-<h1 id="run-namd">run NAMD<a class="headerlink" href="#run-namd" title="Permanent link">&para;</a></h1>
-<p>${SINGULARITY} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
-<code>5.  Submit the job:
-    -</code> sl
-sbatch run.sl
-```
-6.  View the standard output from the simulation in the Slurm .out file.</p>
+<p>Copy the following into a Slurm script named <em>run.sl</em>:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name=namdgpu
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --gpus-per-node P100:1
+#SBATCH --mem=1G
+
+module purge
+module load Apptainer
+
+# name of the NAMD input file, tag, etc
+NAMD_INPUT=&quot;apoa1_nve_cuda.namd&quot;
+NAMD_SIF=&quot;namd-3.0-alpha9-singlenode.sif&quot;
+NAMD_EXE=namd3
+
+# apptainer command with required arguments
+APPTAINER=&quot;apptainer exec --nv -B $(pwd):/host_pwd --pwd /host_pwd ${NAMD_SIF}&quot;
+
+# run NAMD
+${APPTAINER} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
+</code></pre></div>
 </li>
-</ul>
+<li>
+<p>Submit the job:</p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>run.sl
+</code></pre></div>
+</li>
+<li>
+<p>View the standard output from the simulation in the Slurm .out file.</p>
 </li>
 </ol>
 <p>We expect similar steps to work for other NGC containers.</p>
@@ -1714,7 +1706,7 @@ sbatch run.sl
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     

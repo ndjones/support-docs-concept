@@ -1667,10 +1667,6 @@
 
   <h1>Per job temporary directories</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>Most programs which create temporary files will put those files in the
 directory specified by the environment variable <code>TMPDIR</code> if that is set,
 or <code>/tmp</code> otherwise. This is also true in Slurm, such that whenever a
@@ -1684,7 +1680,7 @@ include enough to cover the size of any temporary files.</p>
 <p>On the <code>milan</code> and <code>hgx</code> partitions, however, you have the option of
 specifying <code>#SBATCH --gres=ssd</code> in your job script which will place
 <code>TMPDIR</code> on a 1.5 TB NVMe SSD attached to the node rather than in RAM.
-When <code>--gres=ssd</code> is set your job’s memory request <em>does not</em> need to
+When <code>--gres=ssd</code> is set your job’s memory request <strong>does not</strong> need to
 include enough to cover the size of any temporary files (as this is a
 separate resource). These SSDs give the job a slower but very much
 larger temporary directory. They are allocated exclusively to jobs, so
@@ -1697,7 +1693,8 @@ slowest option with the largest capacity. Also if set to <code>nobackup</code> t
 files will remain after the job finishes, so be weary of how much space
 your jobs temporary files use. An example of how <code>TMPDIR</code> may be set
 yourself is shown below,</p>
-<p><code>export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/nesi/nobackup/<span class="nv">$SLURM_ACCOUNT</span>/tmp/<span class="nv">$SLURM_JOB_ID</span>
+</code></pre></div>
 <h2 id="example-of-copying-data-into-the-per-job-temporary-directories-for-use-mid-job">Example of copying data into the per job temporary directories for use mid-job<a class="headerlink" href="#example-of-copying-data-into-the-per-job-temporary-directories-for-use-mid-job" title="Permanent link">&para;</a></h2>
 <p>The per job temporary directory can also be used to store data that
 needs to be accessed as the job runs. For example you may wish to read
@@ -1706,7 +1703,7 @@ the standard database of Kraken2 (located in
 of <code>/opt</code>. To do this, request the NVMe SSD on <code>milan</code> as described
 above. Then, after loading the Kraken2 module in your Slurm script, copy
 the database onto the SSD,</p>
-<div class="highlight"><pre><span></span><code>cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/opt/nesi/db/Kraken2/standard-2018-09/*<span class="w"> </span><span class="nv">$TMPDIR</span>
 </code></pre></div>
 <p>To get Kraken2 to read the DB from the SSDs (and not from <code>/opt</code>),
 change the <code>KRAKEN2_DEFAULT_DB</code> variable,</p>
@@ -1736,7 +1733,7 @@ found by <code>module show Kraken2</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     

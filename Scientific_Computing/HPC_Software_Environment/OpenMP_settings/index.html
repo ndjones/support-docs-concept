@@ -1685,10 +1685,6 @@
 
   <h1>OpenMP settings</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p><a href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a> is an application
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple
@@ -1699,126 +1695,124 @@ physical core can handle up to two threads in parallel using
 <a href="../../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">Hyperthreading</a>.
 Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui</p>
 <p>The environment variable that controls the number of threads is
-OMP_NUM_THREADS, e.g.,</p>
-<div class="highlight"><pre><span></span><code>export OMP_NUM_THREADS=16
+<code>OMP_NUM_THREADS</code>, e.g.,</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">16</span>
 </code></pre></div>
 <p>allows OpenMP code to fork 16 threads. To make sure that resources
-requested from SLURM and used by your program are consistent, is usually
+requested from Slurm and used by your program are consistent, is usually
 a good idea to set</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --cpus-per-task=16
 [...]
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 </code></pre></div>
-<p>in your SLURM script - although this can sometimes be more complicated,
+<p>in your Slurm script - although this can sometimes be more complicated,
 e.g., with <a href="../../Supported_Applications/TensorFlow_on_CPUs/">TensorFlow on
 CPUs</a>.</p>
 <p>On Mahuika, you will be charged for the number of physical cores that
 you requested - the second logical core on a physical core is free,
-although SLURM always reports both cores. On Māui you will be charged
+although Slurm always reports both cores. On Māui you will be charged
 for full nodes.</p>
 <p>In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika whose
-nodes are shared between different SLURM jobs. Following are some
+nodes are shared between different Slurm jobs. Following are some
 settings that can help improve scaling and/or make your timings more
 consistent, additional information can be found in our article <a href="../Thread_Placement_and_Thread_Affinity/">Thread
 Placement and Thread
 Affinity</a>.</p>
-<p>1. --hint=nomultithread. Set this in conjunction with srun or sbatch to
-tell SLURM that you don't want to use hyperthreads. Your program will
+<ol>
+<li>
+<p><code>--hint=nomultithread</code>. Set this in conjunction with srun or sbatch to
+tell Slurm that you don't want to use hyperthreads. Your program will
 only be presented with physical cores. Inversely, --hint=multithread
-will request two threads per physical core. If --hint is not set, SLURM
+will request two threads per physical core. If --hint is not set, Slurm
 will currently assume --hint=multithread by default.</p>
-<p>2. OMP_PROC_BIND. Set this to "true" to pin the threads down during
+</li>
+<li>
+<p><code>OMP_PROC_BIND</code>. Set this to "true" to pin the threads down during
 program execution. By default, threads may migrate from one core to
 another, depending on the load on the node. In an HPC setting, it is
 generally advisable to pin the threads to avoid delays caused by thread
 migration.</p>
-<p>3. OMP_PLACES. Set this to "cores" if you want to pin the threads to
+</li>
+<li>
+<p><code>OMP_PLACES</code>. Set this to "cores" if you want to pin the threads to
 physical cores, or to "threads" if you want to use hyperthreading. </p>
+</li>
+</ol>
 <p>The effect of each setting is illustrated below. In this experiment we
 measured the execution time twice of the finite difference
 code <a href="https://github.com/pletzer/fidibench">upwindCxx -numCells 256 -numSteps
 10.</a> The code was built with the
 gimpi/2018b toolchain on Mahuika.</p>
-<table style="height: 146px;" width="737">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 181px">Number of physical cores</td>
-<td style="width: 181px">--hint not used, OMP_PROC_BIND and OMP_PLACES
-unset</td>
-<td style="width: 181px"><p>--hint=<span>no</span>multithread</p>
-<p>OMP_PROC_BIND=true</p>
-<p> OMP_PLACES=<span>cores</span></p></td>
-<td style="width: 181px"><p>--hint=multithread</p>
-<p>OMP_PROC_BIND=true</p>
-<p> OMP_PLACES=<span>threads</span></p></td>
-</tr>
-<tr class="even">
-<td style="width: 181px">1</td>
-<td style="width: 181px">1m43s, 1m42s</td>
-<td style="width: 181px">1m42s, 1m42s</td>
-<td style="width: 181px">1m30s, 1m30s</td>
-</tr>
-<tr class="odd">
-<td style="width: 181px">2</td>
-<td style="width: 181px">1m30s, 1m31s</td>
-<td style="width: 181px">1m03, 55s</td>
-<td style="width: 181px">56s, 56s</td>
-</tr>
-<tr class="even">
-<td style="width: 181px">4</td>
-<td style="width: 181px"><strong><span>58s, 1m27s</span></strong></td>
-<td style="width: 181px"><strong><span>45s, 41s</span></strong></td>
-<td style="width: 181px"><strong><span>27s, 28s</span></strong></td>
-</tr>
-<tr class="odd">
-<td style="width: 181px">8</td>
-<td style="width: 181px">24s, 27s</td>
-<td style="width: 181px">18s, 17s</td>
-<td style="width: 181px">16s, 16s</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
-<p>In the default case, --hint was not used and the environment variables
-OMP_PROC_BIND and OMP_PLACES were not set. Significant variations of
-execution times are sometimes observed due to the random placement of
-threads, which may or may not share a physical core. </p>
-<p>The third column shows the settings for the case with no multithreading.
-The fourth column places 2 threads per physical cores (i.e.
-OMP_NUM_THREADS = 2 times the number of physical cores) and this often
-gives the best performance.</p>
-<h2 id="bottom-line">Bottom line<a class="headerlink" href="#bottom-line" title="Permanent link">&para;</a></h2>
-<p>Be explicit by using --hint and setting OMP_PROC_BIND and OMP_PLACES.
-In many cases we expect one of the following to work best:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>Number of physical cores</th>
+<th><code>--hint</code> not used, <code>OMP_PROC_BIND</code>, <code>OMP_PLACES</code> unset</th>
+<th><code>--hint=nomultithread</code>, <code>OMP_PROC_BIND=true</code>, <code>OMP_PLACES=cores</code></th>
+<th><code>--hint=multithread</code>, <code>OMP_PROC_BIND=true</code>. <code>OMP_PLACES=threads</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1 thread per core</td>
-<td>--hint=nomultithread</td>
-<td>OMP_PROC_BIND=true</td>
-<td>OMP_PLACES=cores</td>
+<td>1</td>
+<td>1m43s, 1m42s</td>
+<td>1m42s, 1m42s</td>
+<td>1m30s, 1m30s</td>
 </tr>
 <tr>
-<td>2 threads per core</td>
-<td>--hint=multithread</td>
-<td>OMP_PROC_BIND=true</td>
-<td>OMP_PLACES=threads</td>
+<td>2</td>
+<td>1m30s, 1m31s</td>
+<td>1m03, 55s</td>
+<td>56s, 56s</td>
+</tr>
+<tr>
+<td>4</td>
+<td><span style="color:red">58s, 1m27s</span></td>
+<td><span style="color:blue">45s, 41s</span></td>
+<td><span style="color:green">27s, 28s</span></td>
+</tr>
+<tr>
+<td>8</td>
+<td>24s, 27s</td>
+<td>18s, 17s</td>
+<td>16s, 16s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p>In the default case, <code>--hint</code> was not used and the environment variables
+<code>OMP_PROC_BIND</code> and <code>OMP_PLACES</code> were not set. Significant variations of
+execution times are sometimes observed due to the random placement of
+threads, which may or may not share a physical core. </p>
+<p>The third column shows the settings for the case with no multithreading.
+The fourth column places 2 threads per physical cores (i.e.
+<code>OMP_NUM_THREADS=2</code> times the number of physical cores) and this often
+gives the best performance.</p>
+<h2 id="bottom-line">Bottom line<a class="headerlink" href="#bottom-line" title="Permanent link">&para;</a></h2>
+<p>Be explicit by using <code>--hint</code> and setting <code>OMP_PROC_BIND</code> and <code>OMP_PLACES</code>.
+In many cases we expect one of the following to work best:</p>
+<table>
+<thead>
+<tr>
+<th>threads per core</th>
+<th><code>--hint=</code></th>
+<th><code>OMP_PROC_BIND=</code></th>
+<th><code>OMP_PLACES=</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>nomultithread</td>
+<td>true</td>
+<td>cores</td>
+</tr>
+<tr>
+<td>2</td>
+<td>multithread</td>
+<td>true</td>
+<td>threads</td>
 </tr>
 </tbody>
 </table>
@@ -1845,7 +1839,7 @@ In many cases we expect one of the following to work best:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2023</span>
   </span>
 
     
