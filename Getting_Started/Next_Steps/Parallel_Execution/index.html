@@ -1344,10 +1344,9 @@
 <p>See <a href="../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">our article on hyperthreading</a> for more information.</p>
 <h2 id="multi-threading">Multi-threading<a class="headerlink" href="#multi-threading" title="Permanent link">&para;</a></h2>
 <p>Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally <em>via</em> a library such as OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or pthread (POSIX threads).</p>
-<!-- TODO missing image 1 -->
-
-<p><img alt="par.png" src="../../../assets/images/Parallel_Execution.png" /><em><br />
-Fig. 2: Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.</em></p>
+<p><img alt="serial" src="../../../assets/images/parallel_execution_serial.png" />  </p>
+<p><img alt="parallel" src="../../../assets/images/Parallel_Execution.png" /><br />
+Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.</p>
 <p>Multi-threading is limited in that it requires shared memory, so all CPU cores used must be on the same node. However, because all the CPUs share the same memory environment things only need to be loaded into memory once, meaning that memory requirements will usually not increase proportionally to the number of CPUs.</p>
 <p>Example script:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
@@ -1413,17 +1412,17 @@ This can be useful for sorting your output files e.g.</p>
 #SBATCH --output=outputs/run_%a/slurm_error.err
 </code></pre></div>
 </div>
-<h4 id="as-a-direct-input-to-a-function">As a direct input to a function.<a class="headerlink" href="#as-a-direct-input-to-a-function" title="Permanent link">&para;</a></h4>
+<h4 id="as-a-direct-input-to-a-function">As a direct input to a function<a class="headerlink" href="#as-a-direct-input-to-a-function" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;myFunction(</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="s2">)&quot;</span>
 </code></pre></div>
-<h4 id="as-an-index-to-an-array">As an index to an array.<a class="headerlink" href="#as-an-index-to-an-array" title="Permanent link">&para;</a></h4>
+<h4 id="as-an-index-to-an-array">As an index to an array<a class="headerlink" href="#as-an-index-to-an-array" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nv">inArray</span><span class="o">=(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">128</span><span class="o">)</span>
 <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">inArray</span><span class="p">[</span><span class="nv">$SLURM_ARRAY_TASK_ID</span><span class="p">]</span><span class="si">}</span>
 </code></pre></div>
-<h4 id="for-selecting-input-files">For selecting input files.<a class="headerlink" href="#for-selecting-input-files" title="Permanent link">&para;</a></h4>
+<h4 id="for-selecting-input-files">For selecting input files<a class="headerlink" href="#for-selecting-input-files" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nv">input</span><span class="o">=</span>inputs/mesh_<span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>.stl
 </code></pre></div>
-<h4 id="as-a-seed-for-a-pseudo-random-number">As a seed for a pseudo-random number.<a class="headerlink" href="#as-a-seed-for-a-pseudo-random-number" title="Permanent link">&para;</a></h4>
+<h4 id="as-a-seed-for-a-pseudo-random-number">As a seed for a pseudo-random number<a class="headerlink" href="#as-a-seed-for-a-pseudo-random-number" title="Permanent link">&para;</a></h4>
 <p>In R</p>
 <div class="highlight"><pre><span></span><code><span class="n">task_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SLURM_ARRAY_TASK_ID&quot;</span><span class="p">))</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
@@ -1433,7 +1432,7 @@ This can be useful for sorting your output files e.g.</p>
 <span class="nb">rng</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
 </code></pre></div>
 <p><em>Using a seed is important, otherwise multiple jobs may receive the same pseudo-random numbers.</em></p>
-<h4 id="as-an-index-to-an-array-of-filenames">As an index to an array of filenames.<a class="headerlink" href="#as-an-index-to-an-array-of-filenames" title="Permanent link">&para;</a></h4>
+<h4 id="as-an-index-to-an-array-of-filenames">As an index to an array of filenames<a class="headerlink" href="#as-an-index-to-an-array-of-filenames" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nv">files</span><span class="o">=(</span><span class="w"> </span>inputs/*.dat<span class="w"> </span><span class="o">)</span>
 <span class="nv">input</span><span class="o">=</span><span class="si">${</span><span class="nv">files</span><span class="p">[SLURM_ARRAY_TASK_ID]</span><span class="si">}</span>
 </code></pre></div>
