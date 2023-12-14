@@ -756,6 +756,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1024,6 +1033,11 @@ Details <a href="https://mkdocs-macros-plugin.readthedocs.io/">here</a></p>
 <li><a href="https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/">nz spec</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/">WCAG spec</a></li>
 </ul>
+<h2 id="mkdocsyml">mkdocs.yml<a class="headerlink" href="#mkdocsyml" title="Permanent link">&para;</a></h2>
+<p>When setting a parameter in the YAML, you can use the following syntax.</p>
+<div class="highlight"><pre><span></span><code>some-param : !ENV [TEST_ENV, false]
+</code></pre></div>
+<p>This will use the value of the env variable <code>TEST_ENV</code>, or if unset, false.</p>
 
 
 
