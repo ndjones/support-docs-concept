@@ -521,8 +521,6 @@
       
         
       
-        
-      
     
     
     
@@ -892,27 +890,6 @@
   
   <span class="md-ellipsis">
     I've run out of storage space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Logging_in_to_the_HPCs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging in to the HPCs
   </span>
   
 
@@ -1584,48 +1561,44 @@
 
   <h1>Can I use SSHFS to mount the cluster filesystem on my local machine?</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p><a href="https://github.com/libfuse/sshfs">SSHFS</a> allows you to mount a remote
 filesystem on your local machine. SSHFS relies on SSH underneath, so you
 should follow the "Recommended logon procedure" instructions
-<a href="../Logging_in_to_the_HPCs/">here</a> to configure SSH
+<a href="../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/">here</a> to configure SSH
 first.</p>
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <p>Use the following commands to mount your home directory from Mahuika on
 your local machine (the same command will work for Māui, just replace
 the names):</p>
-<div class="highlight"><pre><span></span><code># create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
+<div class="highlight"><pre><span></span><code><span class="c1"># create a mount point and connect</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/mahuika-home
+sshfs<span class="w"> </span>-oauto_cache,follow_symlinks<span class="w"> </span>mahuika:<span class="w"> </span>~/mahuika-home
 </code></pre></div>
 <p>Now you should be able to navigate to "~/mahuika-home" on your local
 machine to access your home directory on Mahuika. To unmount the
 directory run:</p>
-<div class="highlight"><pre><span></span><code>fusermount -u ~/mahuika-home
+<div class="highlight"><pre><span></span><code>fusermount<span class="w"> </span>-u<span class="w"> </span>~/mahuika-home
 </code></pre></div>
 <p>To mount a project directory, you could run:</p>
-<div class="highlight"><pre><span></span><code># create a mount point and connect
-mkdir -p ~/mahuika-project
-sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
+<div class="highlight"><pre><span></span><code><span class="c1"># create a mount point and connect</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/mahuika-project
+sshfs<span class="w"> </span>-oauto_cache,follow_symlinks<span class="w"> </span>mahuika:/nesi/project/nesiXXXXX<span class="w"> </span>~/mahuika-project
 </code></pre></div>
 <h2 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We recommend using some extra options with MacOS. The following commands
 will mount your home directory, make it show up under devices in Finder
 and give the volume a sensible name:</p>
-<div class="highlight"><pre><span></span><code># create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs mahuika: ~/mahuika-home \
-    -oauto_cache,follow_symlinks \
-    -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
+<div class="highlight"><pre><span></span><code><span class="c1"># create a mount point and connect</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/mahuika-home
+sshfs<span class="w"> </span>mahuika:<span class="w"> </span>~/mahuika-home<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-oauto_cache,follow_symlinks<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-ovolname<span class="o">=</span>MahuikaHome,defer_permissions,noappledouble,local<span class="w"> </span>
 </code></pre></div>
 <p>To unmount the directory on MacOS, either eject from Finder or run:</p>
-<div class="highlight"><pre><span></span><code>umount ~/mahuika-home
+<div class="highlight"><pre><span></span><code>umount<span class="w"> </span>~/mahuika-home
 </code></pre></div>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Newer MacOS does not come with SSHFS pre installed. You will have to
  install FUSE as SSHFS from <a href="https://osxfuse.github.io/">here</a>.</p>
 </div>
@@ -1651,7 +1624,7 @@ sshfs mahuika: ~/mahuika-home \
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

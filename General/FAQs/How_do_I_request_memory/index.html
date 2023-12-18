@@ -516,8 +516,6 @@
       
         
       
-        
-      
     
     
     
@@ -841,27 +839,6 @@
   
   <span class="md-ellipsis">
     I've run out of storage space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Logging_in_to_the_HPCs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging in to the HPCs
   </span>
   
 
@@ -1507,50 +1484,81 @@
 
   <h1>How do I request memory?</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<p>In Slurm, there are two ways to request memory for your job:</p>
 <ul>
 <li><code>--mem</code>: Memory per node</li>
-<li><code>--mem-per-cpu</code>: Memory per <a href="../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">logical
-    CPU</a></li>
+<li><code>--mem-per-cpu</code>: Memory per <a href="../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/">logical CPU</a></li>
 </ul>
 <p>In most circumstances, you should request memory using <code>--mem</code>. The
 exception is if you are running an MPI job that could be placed on more
 than one node, with tasks divided up randomly, in which case
 <code>--mem-per-cpu</code> is more appropriate. More detail is in the following
 table, including how you can tell what sort of job you're submitting.</p>
-<hr />
-<p>Job type        Requested tasks           Requested logical     Requested nodes (<code>-N</code>,   Requested tasks per      Preferred memory   Ideal value
-                  (<code>-n</code>, <code>--ntasks</code>)        CPUs per task         <code>--nodes</code>)               node                     format           <br />
-                                            (<code>--cpus-per-task</code>)                            (<code>--ntasks-per-node</code>)                       </p>
-<p>Serial          1 (or unspecified)        1 (or unspecified)    (Irrelevant, but should  (Irrelevant, but should  <code>--mem=</code>           Peak
-                                                                  not be                   not be                                      memory<sup>3</sup>
-                                                                  specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
-                                                                                                                                       program</p>
-<p>Multithreaded   1 (or unspecified)        &gt; 1                (Irrelevant, but should  (Irrelevant, but should  <code>--mem=</code>           Peak
-  (e.g. OpenMP),                                                  not be                   not be                                      memory<sup>3</sup>
-  but not MPI                                                     specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
-                                                                                                                                       program</p>
-<p>MPI, evenly     Unspecified<sup>4</sup>   ≥ 1 (or unspecified)  ≥ 1<sup>5</sup>          ≥ 1<sup>5</sup>          <code>--mem=</code>           (Peak
-  split between                                                                                                                        memory<sup>3</sup>
-  nodes                                                                                                                                needed per MPI
-  (recommended                                                                                                                         task) × (number of
-  method)                                                                                                                              tasks per node)</p>
-<p>MPI, evenly     &gt; 1                    ≥ 1 (or unspecified)  Either 1 or the number   (Irrelevant, but should  <code>--mem=</code>           (Peak
-  split between                                                   of tasks<sup>6</sup>     not be                                      memory<sup>3</sup>
-  nodes                                                                                    specified)<sup>4</sup>                      needed per MPI
-  (discouraged                                                                                                                         task) × (number of
-  method)                                                                                                                              tasks per node) </p>
-<p>MPI, randomly   &gt; 1                    ≥ 1 (or unspecified)  &gt; 1; &lt; number of   (Irrelevant, but should  <code>--mem-per-cpu=</code>   (Peak
-  placed                                                          tasks<sup>6</sup> (or    not be                                      memory<sup>3</sup>
-                                                                  unspecified)             specified)<sup>4</sup>                      needed per MPI
-                                                                                                                                       task) ÷ (number of
-                                                                                                                                       logical CPUs per MPI
-                                                                                                                                       task)</p>
-<hr />
+<!-- increase column width to make the table readable -->
+<style>
+.md-typeset table:not([class]) th {
+  min-width: 8rem;
+}
+</style>
+
+<table>
+<tbody>
+<tr>
+<th>Job type</th>
+<th>Requested tasks<br> (<code>-n</code>, <code>--ntasks</code>)</th>
+<th>Requested logical CPUs per task<br> (<code>--cpus-per-task</code>)</th>
+<th>Requested nodes (<code>-N</code>, <code>--nodes</code>)</th>
+<th>Requested tasks per node<br> (<code>--ntasks-per-node</code>)</th>
+<th>Preferred memory format</th>
+<th>Ideal value</th>
+</tr>
+<tr>
+<td>Serial</td>
+<td>1 (or unspecified)</td>
+<td>1 (or unspecified)</td>
+<td>(Irrelevant, but should not be specified)<sup>1</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>2</sup></td>
+<td><code>--mem=</code></td>
+<td>Peak memory<sup>3</sup> needed by the program</td>
+</tr>
+<tr>
+<td>Multithreaded (e.g. OpenMP), but not MPI</td>
+<td>1 (or unspecified)</td>
+<td>&gt; 1</td>
+<td>(Irrelevant, but should not be specified)<sup>1</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>2</sup></td>
+<td><code>--mem=</code></td>
+<td>Peak memory<sup>3</sup> needed by the program</td>
+</tr>
+<tr>
+<td>MPI, evenly split between nodes (recommended method)</td>
+<td>Unspecified<sup>4</sup></td>
+<td>≥ 1 (or unspecified)</td>
+<td>≥ 1<sup>5</sup></td>
+<td>≥ 1<sup>5</sup></td>
+<td><code>--mem=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task)&nbsp;× (number of tasks per node)</td>
+</tr>
+<tr>
+<td>MPI, evenly split between nodes (discouraged method)</td>
+<td>&gt; 1</td>
+<td>≥ 1 (or unspecified)</td>
+<td>Either 1 or the number of tasks<sup>6</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>4</sup></td>
+<td><code>--mem=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task)&nbsp;× (number of tasks per node)&nbsp;</td>
+</tr>
+<tr>
+<td>MPI, randomly placed</td>
+<td>&gt; 1</td>
+<td>≥ 1 (or unspecified)</td>
+<td>&gt; 1; &lt; number of tasks<sup>6</sup> (or unspecified)</td>
+<td>(Irrelevant, but should not be specified)<sup>4</sup></td>
+<td><code>--mem-per-cpu=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task)&nbsp;÷ (number of logical CPUs per MPI task)</td>
+</tr>
+</tbody>
+</table>
+
 <p><sup>1</sup> If your job consists of only one task there's no reason to
 request a specific number of nodes, and requesting more than one node
 will cause you to be charged too much for your job. A one-task job will
@@ -1596,7 +1604,7 @@ than tasks never makes sense.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

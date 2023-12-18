@@ -521,8 +521,6 @@
       
         
       
-        
-      
     
     
     
@@ -838,27 +836,6 @@
   
   <span class="md-ellipsis">
     I've run out of storage space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Logging_in_to_the_HPCs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging in to the HPCs
   </span>
   
 
@@ -1209,27 +1186,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#your-job-is-being-beaten-by-other-high-priority-jobs" class="md-nav__link">
+  <a href="#other-high-priority-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      Your job is being beaten by other high-priority jobs
+      Other high-priority jobs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#your-jobs-resource-demands-are-hard-to-satisfy" class="md-nav__link">
+  <a href="#difficult-job" class="md-nav__link">
     <span class="md-ellipsis">
-      Your job's resource demands are hard to satisfy
+      Difficult Job
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#some-other-problem" class="md-nav__link">
+  <a href="#other-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      Some other problem
+      Other problem
     </span>
   </a>
   
@@ -1593,27 +1570,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#your-job-is-being-beaten-by-other-high-priority-jobs" class="md-nav__link">
+  <a href="#other-high-priority-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      Your job is being beaten by other high-priority jobs
+      Other high-priority jobs
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#your-jobs-resource-demands-are-hard-to-satisfy" class="md-nav__link">
+  <a href="#difficult-job" class="md-nav__link">
     <span class="md-ellipsis">
-      Your job's resource demands are hard to satisfy
+      Difficult Job
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#some-other-problem" class="md-nav__link">
+  <a href="#other-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      Some other problem
+      Other problem
     </span>
   </a>
   
@@ -1650,26 +1627,17 @@
 
   <h1>Why is my job taking a long time to start?</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>If you think your job is taking unexpectedly long to start running,
 there are several possible causes.</p>
 <ul>
 <li><a href="#scheduled-maintenance">Scheduled maintenance</a></li>
 <li><a href="#delays-in-the-queue">Delays in the queue</a><ul>
-<li><a href="#other-high-priority-jobs">Your job is being beaten by other high-priority
-    jobs</a><ul>
-<li><a href="#low-fair-share-score">Your project has a low Fair Share
-    score</a></li>
-<li><a href="#queue-congestion">Your project has a high Fair Share score, but there are
-    lots of other jobs from similarly high-priority
-    projects</a></li>
+<li><a href="#other-high-priority-jobs">Your job is being beaten by other high-priority jobs</a><ul>
+<li><a href="#low-fair-share-score">Your project has a low Fair Share score</a></li>
+<li><a href="#queue-congestion">Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects</a></li>
 </ul>
 </li>
-<li><a href="#difficult-job">Your job's resource demands are hard to
-    satisfy</a></li>
+<li><a href="#difficult-job">Your job's resource demands are hard to satisfy</a></li>
 <li><a href="#other-problem">Some other problem</a></li>
 </ul>
 </li>
@@ -1687,9 +1655,9 @@ can get more information by running this command:</p>
 </code></pre></div>
 <p>This command will, for each of your queued jobs, produce an output
 looking something like this:</p>
-<div class="highlight"><pre><span></span><code>$ nn_my_queued_jobs 
-ACCOUNT                JOBID NAME                 SUBMIT_TIME         QOS    NODE CPUS MIN_MEMORY PRIORITY START_TIME          REASON
-nesi99999           12345678 SomeRandomJob        2019-01-01T12:00:00 collab    1    8         2G     1553        N/A          QOSMaxCpuPerJobLimit
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nn_my_queued_jobs<span class="w"> </span>
+ACCOUNT<span class="w">                </span>JOBID<span class="w"> </span>NAME<span class="w">                 </span>SUBMIT_TIME<span class="w">         </span>QOS<span class="w">    </span>NODE<span class="w"> </span>CPUS<span class="w"> </span>MIN_MEMORY<span class="w"> </span>PRIORITY<span class="w"> </span>START_TIME<span class="w">          </span>REASON
+nesi99999<span class="w">           </span><span class="m">12345678</span><span class="w"> </span>SomeRandomJob<span class="w">        </span><span class="m">2019</span>-01-01T12:00:00<span class="w"> </span>collab<span class="w">    </span><span class="m">1</span><span class="w">    </span><span class="m">8</span><span class="w">         </span>2G<span class="w">     </span><span class="m">1553</span><span class="w">        </span>N/A<span class="w">          </span>QOSMaxCpuPerJobLimit
 </code></pre></div>
 <p>One of the most useful columns to look at, far over on the right hand
 side, is the "Reason" column. This column tells you why the job is
@@ -1714,7 +1682,7 @@ only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and
 another could say Resources, when in fact both are waiting due to
 Priority and Resources at the same time.</p>
-<h3 id="your-job-is-being-beaten-by-other-high-priority-jobs">Your job is being beaten by other high-priority jobs<a class="headerlink" href="#your-job-is-being-beaten-by-other-high-priority-jobs" title="Permanent link">&para;</a></h3>
+<h3 id="other-high-priority-jobs">Other high-priority jobs<a class="headerlink" href="#other-high-priority-jobs" title="Permanent link">&para;</a></h3>
 <p>You can check the job's priority relative to other waiting jobs by means
 of the following command on a
 <a href="https://support.nesi.org.nz/hc/articles/360000163575-Mahuika">Mahuika</a>
@@ -1727,22 +1695,22 @@ login node (as appropriate):</p>
 command <code>sprio</code>, but with jobs sorted in order of priority from highest
 to lowest.</p>
 <p>The output should look something like this:</p>
-<div class="highlight"><pre><span></span><code>          JOBID PARTITION   PRIORITY        AGE   FAIRSHARE    JOBSIZE        QOS
-         793492 gpu             1553        504        1000         20         30
-        2008465 long            1107        336         723         18         30
-        2039471 long            1083        312         723         18         30
-        2039456 long            1083        312         723         18         30
-        2039452 long            1083        312         723         18         30
-        2039435 long            1083        312         723         18         30
-        2039399 long            1083        312         723         18         30
-        2039391 long            1083        312         723         18         30
-        2039376 long            1083        312         723         18         30
-        2039371 long            1083        312         723         18         30
+<div class="highlight"><pre><span></span><code><span class="w">          </span>JOBID<span class="w"> </span>PARTITION<span class="w">   </span>PRIORITY<span class="w">        </span>AGE<span class="w">   </span>FAIRSHARE<span class="w">    </span>JOBSIZE<span class="w">        </span>QOS
+<span class="w">         </span><span class="m">793492</span><span class="w"> </span>gpu<span class="w">             </span><span class="m">1553</span><span class="w">        </span><span class="m">504</span><span class="w">        </span><span class="m">1000</span><span class="w">         </span><span class="m">20</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2008465</span><span class="w"> </span>long<span class="w">            </span><span class="m">1107</span><span class="w">        </span><span class="m">336</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039471</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039456</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039452</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039435</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039399</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039391</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039376</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
+<span class="w">        </span><span class="m">2039371</span><span class="w"> </span>long<span class="w">            </span><span class="m">1083</span><span class="w">        </span><span class="m">312</span><span class="w">         </span><span class="m">723</span><span class="w">         </span><span class="m">18</span><span class="w">         </span><span class="m">30</span>
 ...
 </code></pre></div>
 <p>The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.</p>
-<h4 id="your-project-has-a-low-fair-share-score">Your project has a low Fair Share score<a class="headerlink" href="#your-project-has-a-low-fair-share-score" title="Permanent link">&para;</a></h4>
+<h4 id="low-fair-share-score">Low Fair Share score<a class="headerlink" href="#low-fair-share-score" title="Permanent link">&para;</a></h4>
 <p>If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
@@ -1750,7 +1718,7 @@ hours faster than expected. See <a href="https://support.nesi.org.nz/hc/articles
 page</a> for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.</p>
-<h4 id="your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects">Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects<a class="headerlink" href="#your-project-has-a-high-fair-share-score-but-there-are-lots-of-other-jobs-from-similarly-high-priority-projects" title="Permanent link">&para;</a></h4>
+<h4 id="queue-congestion">Queue Congestion<a class="headerlink" href="#queue-congestion" title="Permanent link">&para;</a></h4>
 <p>In the unlikely scenario that your job's position in the list is low but
 your job's fair share score is high (i.e. nearly 1,000), you will just
 have to wait, as this scenario supposes that other jobs like yours are
@@ -1760,7 +1728,7 @@ than your job. This condition is called <em>queue congestion</em>, and arises
 when researchers submit a lot of work at about the same time. Because it
 is triggered by aggregate researcher behaviour, there isn't much we can
 do about it.</p>
-<h3 id="your-jobs-resource-demands-are-hard-to-satisfy">Your job's resource demands are hard to satisfy<a class="headerlink" href="#your-jobs-resource-demands-are-hard-to-satisfy" title="Permanent link">&para;</a></h3>
+<h3 id="difficult-job">Difficult Job<a class="headerlink" href="#difficult-job" title="Permanent link">&para;</a></h3>
 <p>If your job's priority is high compared to other jobs but the job still
 won't start, make sure that your resource requests (in your Slurm
 script) are appropriate. If the nature of your work allows, you could
@@ -1773,12 +1741,12 @@ try:</p>
 <p>You can use the <code>scontrol</code> command to reduce the job's requested wall
 time limit, for example the following command will set the wall time
 limit of job 12345678 to one hour:</p>
-<div class="highlight"><pre><span></span><code>$ scontrol update jobid=12345678 TimeLimit=01:00:00
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">jobid</span><span class="o">=</span><span class="m">12345678</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">01</span>:00:00
 </code></pre></div>
 <p>The <code>scontrol update</code> command does not print out any message to say that
 it has succeeded, so you can check its effect using <code>scontrol show</code>:</p>
-<div class="highlight"><pre><span></span><code>$ scontrol show job 12345678 | grep TimeLimit
-   RunTime=00:00:00 TimeLimit=00:01:00 TimeMin=N/A
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="m">12345678</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>TimeLimit
+<span class="w">   </span><span class="nv">RunTime</span><span class="o">=</span><span class="m">00</span>:00:00<span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">00</span>:01:00<span class="w"> </span><span class="nv">TimeMin</span><span class="o">=</span>N/A
 </code></pre></div>
 <p>Note that you can not yourself use <code>scontrol</code> to increase a job's
 requested wall time.</p>
@@ -1790,7 +1758,7 @@ change the amount of memory (RAM) or the number or arrangement of cores,
 you should cancel your queued job using the <code>scancel</code> command and then
 resubmit it. If your project's fair share score is high, your newly
 submitted job should progress quickly through the queue.</p>
-<h3 id="some-other-problem">Some other problem<a class="headerlink" href="#some-other-problem" title="Permanent link">&para;</a></h3>
+<h3 id="other-problem">Other problem<a class="headerlink" href="#other-problem" title="Permanent link">&para;</a></h3>
 <p>If your job priority is high, your resource requests are low and your
 job still won't start, please  <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> and we will look into
 the problem.</p>
@@ -1816,7 +1784,7 @@ the problem.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

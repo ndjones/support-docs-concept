@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#i-get-the-following-warning-message-do-i-need-to-worry" class="md-skip">
+        <a href="#short" class="md-skip">
           Skip to content
         </a>
       
@@ -521,8 +521,6 @@
       
         
       
-        
-      
     
     
     
@@ -854,27 +852,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Logging_in_to_the_HPCs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging in to the HPCs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Login_Troubleshooting/" class="md-nav__link">
         
   
@@ -980,18 +957,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-get-the-following-warning-message-do-i-need-to-worry" class="md-nav__link">
-    <span class="md-ellipsis">
-      I get the following warning message, do I need to worry?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#short" class="md-nav__link">
     <span class="md-ellipsis">
-      Short:
+      Short
     </span>
   </a>
   
@@ -1000,7 +968,7 @@
         <li class="md-nav__item">
   <a href="#more-details" class="md-nav__link">
     <span class="md-ellipsis">
-      More details:
+      More details
     </span>
   </a>
   
@@ -1550,18 +1518,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#i-get-the-following-warning-message-do-i-need-to-worry" class="md-nav__link">
-    <span class="md-ellipsis">
-      I get the following warning message, do I need to worry?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#short" class="md-nav__link">
     <span class="md-ellipsis">
-      Short:
+      Short
     </span>
   </a>
   
@@ -1570,7 +1529,7 @@
         <li class="md-nav__item">
   <a href="#more-details" class="md-nav__link">
     <span class="md-ellipsis">
-      More details:
+      More details
     </span>
   </a>
   
@@ -1602,17 +1561,13 @@
 
   <h1>Skylake warning message on Māui</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<h2 id="i-get-the-following-warning-message-do-i-need-to-worry">I get the following warning message, do I need to worry?<a class="headerlink" href="#i-get-the-following-warning-message-do-i-need-to-worry" title="Permanent link">&para;</a></h2>
+<p><strong>I get the following warning message, do I need to worry?</strong></p>
 <div class="highlight"><pre><span></span><code>craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
 </code></pre></div>
-<h2 id="short">Short:<a class="headerlink" href="#short" title="Permanent link">&para;</a></h2>
+<h2 id="short">Short<a class="headerlink" href="#short" title="Permanent link">&para;</a></h2>
 <p>No. This is only a warning message from an interim state. And gets
 resolved immidiately afterwards.</p>
-<h2 id="more-details">More details:<a class="headerlink" href="#more-details" title="Permanent link">&para;</a></h2>
+<h2 id="more-details">More details<a class="headerlink" href="#more-details" title="Permanent link">&para;</a></h2>
 <p>Our software stacks are build with easybuild. There are toolchains
 defined, which wraps around the Cray <code>PrgEnv-???</code> modules. These
 toolchains are called <code>CrayIntel</code> , <code>CrayGNU</code> or <code>CrayCCE</code>. Within the
@@ -1627,14 +1582,14 @@ issue.</p>
 certain toolchain or application. Let's say
 {code}VASP/5.4.4-CrayIntel-18.08{code} which is build with build Intel
 18.08, we can first swap into the desired {code}PrgEnv{code}</p>
-<div class="highlight"><pre><span></span><code>module switch PrgEnv-cray PrgEnv-intel
-module load VASP/5.4.4-CrayIntel-23.02-19
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>switch<span class="w"> </span>PrgEnv-cray<span class="w"> </span>PrgEnv-intel
+module<span class="w"> </span>load<span class="w"> </span>VASP/5.4.4-CrayIntel-23.02-19
 </code></pre></div>
 <p>OR</p>
-<div class="highlight"><pre><span></span><code>module unload craype-x86-skylake
-module load CrayIntel        # or any other PrgEnv change you intended to  do
-module load craype-x86-skylake
-module load VASP/5.4.4-CrayIntel-23.02-19
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>unload<span class="w"> </span>craype-x86-skylake
+module<span class="w"> </span>load<span class="w"> </span>CrayIntel<span class="w">        </span><span class="c1"># or any other PrgEnv change you intended to  do</span>
+module<span class="w"> </span>load<span class="w"> </span>craype-x86-skylake
+module<span class="w"> </span>load<span class="w"> </span>VASP/5.4.4-CrayIntel-23.02-19
 </code></pre></div>
 
 
@@ -1658,7 +1613,7 @@ module load VASP/5.4.4-CrayIntel-23.02-19
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     

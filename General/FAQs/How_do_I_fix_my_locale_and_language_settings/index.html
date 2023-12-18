@@ -516,8 +516,6 @@
       
         
       
-        
-      
     
     
     
@@ -841,27 +839,6 @@
   
   <span class="md-ellipsis">
     I've run out of storage space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Logging_in_to_the_HPCs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Logging in to the HPCs
   </span>
   
 
@@ -1507,30 +1484,26 @@
 
   <h1>How do I fix my locale and language settings?</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>When logging in to NeSI from some systems, such as Windows Subsystem for
 Linux, you might get messages like the following while using NeSI (the
 following message is obtained when running <code>man</code>):</p>
-<div class="highlight"><pre><span></span><code>man: can&#39;t set the locale; make sure $LC_* and $LANG are correct
+<div class="highlight"><pre><span></span><code>man:<span class="w"> </span>can<span class="err">&#39;</span>t<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>locale<span class="p">;</span><span class="w"> </span>make<span class="w"> </span>sure<span class="w"> </span><span class="nv">$LC_</span>*<span class="w"> </span>and<span class="w"> </span><span class="nv">$LANG</span><span class="w"> </span>are<span class="w"> </span>correct
 </code></pre></div>
 <p>To get rid of this message, save a text file called <code>.i18n</code> in your home
 directory, with the following contents:</p>
-<div class="highlight"><pre><span></span><code>LC_ALL=&quot;en_US.UTF-8&quot;
-LC_ADDRESS=&quot;en_US.UTF-8&quot;
-LC_COLLATE=&quot;en_US.UTF-8&quot;
-LC_CTYPE=&quot;en_US.UTF-8&quot;
-LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
-LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
-LC_MESSAGES=&quot;en_US.UTF-8&quot;
-LC_MONETARY=&quot;en_US.UTF-8&quot;
-LC_NAME=&quot;en_US.UTF-8&quot;
-LC_NUMERIC=&quot;en_US.UTF-8&quot;
-LC_PAPER=&quot;en_US.UTF-8&quot;
-LC_TELEPHONE=&quot;en_US.UTF-8&quot;
-LC_TIME=&quot;en_US.UTF-8&quot;
+<div class="highlight"><pre><span></span><code><span class="nv">LC_ALL</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_ADDRESS</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_COLLATE</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_CTYPE</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_IDENTIFICATION</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_MEASUREMENT</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_MESSAGES</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_MONETARY</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_NAME</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_NUMERIC</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_PAPER</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_TELEPHONE</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nv">LC_TIME</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
 </code></pre></div>
 <p>If you know what you're doing, you can replace each instance of
 "en_US.UTF-8" with a different locale. You can get a list of available
@@ -1558,7 +1531,7 @@ however.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
   </span>
 
     
