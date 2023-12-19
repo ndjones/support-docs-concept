@@ -1884,18 +1884,16 @@
   <h1>Configuring Dask-MPI jobs</h1>
 
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite start simple">
-<p class="admonition-title">Prerequisite</p>
+<p class="admonition-title">Start simple</p>
 <p>The technique explained in this page should be considered <strong>after</strong>
- trying simpler single node options (e.g.  <a href="https://docs.dask.org/en/stable/deploying-python.html">Dask Distributed
- LocalCluster</a>),
- if
- -   you need more cores than what is available on a single node,
- -   or your queuing time is too long.
- Note that using MPI to distribute computations on multiple nodes can
+ trying simpler single node options (e.g.
+ <a href="https://docs.dask.org/en/stable/deploying-python.html">Dask Distributed LocalCluster</a>),
+ if</p>
+<ul>
+<li>you need more cores than what is available on a single node,</li>
+<li>or your queuing time is too long.</li>
+</ul>
+<p>Note that using MPI to distribute computations on multiple nodes can
  have an impact on performances, compared to a single node setting.</p>
 </div>
 <p><a href="https://dask.org/">Dask</a> is a popular Python package for parallelising
@@ -1920,30 +1918,30 @@ MPI.</p>
 <h2 id="using-dask-mpi-on-mahuika">Using Dask-MPI on Mahuika<a class="headerlink" href="#using-dask-mpi-on-mahuika" title="Permanent link">&para;</a></h2>
 <p>Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.</p>
-<div class="highlight"><pre><span></span><code>module load Python/3.9.9-gimkl-2020a
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Python/3.9.9-gimkl-2020a
 </code></pre></div>
 <h2 id="installing-dask-mpi-with-conda-on-mahuika-and-maui-ancil">Installing Dask-MPI with Conda on Mahuika and Māui Ancil<a class="headerlink" href="#installing-dask-mpi-with-conda-on-mahuika-and-maui-ancil" title="Permanent link">&para;</a></h2>
 <p>Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution <em>before</em> installing the
 Dask-MPI package:</p>
-<div class="highlight"><pre><span></span><code>conda install -c intel mpi4py
-conda install -c conda-forge dask-mpi
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>intel<span class="w"> </span>mpi4py
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>dask-mpi
 </code></pre></div>
 <p>If you use an environment file, add the <code>intel</code> channel at the end of
 the list (so that it will not take priority over other channels) and
 request mpi4py with the Intel MPI distribution as follows:</p>
-<div class="highlight"><pre><span></span><code>name: myenvironment
+<div class="highlight"><pre><span></span><code>name:<span class="w"> </span>myenvironment
 channels:
-  - myfavouritechannel
-  - intel
+<span class="w">  </span>-<span class="w"> </span>myfavouritechannel
+<span class="w">  </span>-<span class="w"> </span>intel
 dependencies:
-  - mypackage
-  - anotherpackage
-  - intel::mpi4py
-  - dask-mpi
+<span class="w">  </span>-<span class="w"> </span>mypackage
+<span class="w">  </span>-<span class="w"> </span>anotherpackage
+<span class="w">  </span>-<span class="w"> </span>intel::mpi4py
+<span class="w">  </span>-<span class="w"> </span>dask-mpi
 </code></pre></div>
-<div class="admonition prerequisite see also">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition info">
+<p class="admonition-title">See also</p>
 <p>See the
  <a href="../../Supported_Applications/Miniconda3/">Miniconda3</a>
  page for more information on how to create and manage Miniconda
@@ -1951,14 +1949,13 @@ dependencies:
 </div>
 <h2 id="configuring-slurm">Configuring Slurm<a class="headerlink" href="#configuring-slurm" title="Permanent link">&para;</a></h2>
 <p>At runtime, Slurm will launch a number of Python processes as requested
-in the <a href="../../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet/">Slurm configuration
-script</a>.
+in the <a href="../../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet/">Slurm configuration script</a>.
 Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
 then assigns different roles to the different ranks:</p>
 <ul>
 <li>Rank 0 becomes the scheduler that coordinates work and communication</li>
 <li>Rank 1 becomes the worker that executes the main Python program and
-    hands out workloads</li>
+  hands out workloads</li>
 <li>Ranks 2 and above become additional workers that run workloads</li>
 </ul>
 <p>This implies that <strong>Dask-MPI jobs must be launched on at least 3 MPI
@@ -1971,7 +1968,7 @@ a short test workload with and without hyperthreading.</p>
 <p>In the following, two cases will be discussed:</p>
 <ol>
 <li>The worker ranks use little memory and they do not use
-    parallelisation themselves</li>
+   parallelisation themselves</li>
 <li>The worker ranks use a lot of memory and/or parallelisation</li>
 </ol>
 <p>Note that Slurm will place different MPI ranks on different nodes on the
@@ -2014,33 +2011,32 @@ srun --het-group=0-1 python mydaskprogram.py
 <p>The <code>--het-group</code> flag asks <code>srun</code> to launch both job packs together.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>The following example illustrates how to run Dask-MPI on the HPC. It is
-based on the Dask Futures tutorial on the <a href="https://examples.dask.org">Dask
-examples</a> webpage.</p>
+based on the Dask Futures tutorial on the <a href="https://examples.dask.org">Dask examples</a> webpage.</p>
 <h3 id="python-program">Python program<a class="headerlink" href="#python-program" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>import os
-import dask_mpi as dm
-import dask.distributed as dd
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">dask_mpi</span> <span class="k">as</span> <span class="nn">dm</span>
+<span class="kn">import</span> <span class="nn">dask.distributed</span> <span class="k">as</span> <span class="nn">dd</span>
 
-# Initialise Dask cluster and store worker files in current work directory
-dm.initialize(local_directory=os.getcwd())
+<span class="c1"># Initialise Dask cluster and store worker files in current work directory</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">local_directory</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 
-# Define two simple test functions
-def inc(x):
-    return x + 1
+<span class="c1"># Define two simple test functions</span>
+<span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-def add(x, y):
-    return x + y
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-client = dd.Client()
+<span class="n">client</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
 
-# Submit chain of computations using futures
-a = client.submit(inc, 1)
-b = client.submit(inc, 2)
-c = client.submit(add, a, b)
+<span class="c1"># Submit chain of computations using futures</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">inc</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">inc</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-# Expect the same answer
-print(&quot;Dask result:&quot;, c.result())
-print(&quot;Local result:&quot;, add(inc(1), inc(2)))
+<span class="c1"># Expect the same answer</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dask result:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Local result:&quot;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="n">inc</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">inc</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
 </code></pre></div>
 <h3 id="slurm-script">Slurm script<a class="headerlink" href="#slurm-script" title="Permanent link">&para;</a></h3>
 <p>Replace <code>PROJECTID</code> with your project ID number and use the <code>sbatch</code>
@@ -2068,8 +2064,9 @@ Local result: 5
 container on the HPC. For reliable and efficient execution it is best to
 use the same MPI distribution inside and outside the container. This
 restricts choices to Intel MPI on the Mahuika and Māui Ancil clusters;
-see section <a href="#h_3e6b313b-a712-4e88-8246-5550cac1d77c">Installing Dask-MPI with
-Conda</a> above for instructions.
+see section
+<a href="#installing-dask-mpi-with-conda-on-mahuika-and-maui-ancil">Installing Dask-MPI with Conda</a>
+above for instructions.
 It will also reduce container portability between platforms that use
 different MPI distributions.</p>
 <h3 id="container-configuration">Container configuration<a class="headerlink" href="#container-configuration" title="Permanent link">&para;</a></h3>
@@ -2077,51 +2074,51 @@ different MPI distributions.</p>
 guidelines should help with configuring the container correctly.</p>
 <ol>
 <li>Make sure that the Intel MPI version of the "mpi4py" package is
-    installed with Dask-MPI</li>
+   installed with Dask-MPI</li>
 <li>The correct version of Python and the Intel MPI distribution need to
-    be loaded at runtime.</li>
+   be loaded at runtime.</li>
 </ol>
 <p>Here is an example of a minimal Singularity container definition file:</p>
-<div class="highlight"><pre><span></span><code>Bootstrap: docker
-From: continuumio/miniconda3:latest
+<div class="highlight"><pre><span></span><code><span class="k">Bootstrap</span>:<span class="w"> </span>docker
+<span class="k">From</span>:<span class="w"> </span>continuumio/miniconda3:latest
 
-%post
-    conda install -y -n base -c intel mpi4py
-    conda install -y -n base -c conda-forge dask-mpi
+<span class="gh">%post</span>
+<span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>intel<span class="w"> </span>mpi4py
+<span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>dask-mpi
 
-%runscript
-    . $(conda info --base)/etc/profile.d/conda.sh
-    conda activate base
-    python &quot;$@&quot;
+<span class="gh">%runscript</span>
+<span class="w">    </span>.<span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>info<span class="w"> </span>--base<span class="k">)</span>/etc/profile.d/conda.sh
+<span class="w">    </span>conda<span class="w"> </span>activate<span class="w"> </span>base
+<span class="w">    </span>python<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>where the <code>%runscript</code> section ensures that the Python script passed to
 <code>singularity run</code> is executed using the Python interpreter of the base
 Conda environment inside the container.</p>
-<div class="admonition prerequisite tips">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note tips">
+<p class="admonition-title">Note</p>
 <p>You can build this container on NeSI, using the Mahuika Extension
  nodes, following the instructions from the <a href="../Build_an_Apptainer_container_on_a_Milan_compute_node/">dedicated support
  page</a>.</p>
 </div>
 <h3 id="slurm-configuration">Slurm configuration<a class="headerlink" href="#slurm-configuration" title="Permanent link">&para;</a></h3>
 <p>Slurm configuration is identical to the case without Singularity, see
-section <a href="#h_75b008cc-7843-40b2-bdb4-8252ca807fab">Configuring Slurm</a>
+section <a href="#configuring-slurm">Configuring Slurm</a>
 above. The Slurm job submission script needs to be slightly modified to
 setup and launch the container runtime environment, ensuring that Intel
 MPI finds Slurm's PMI-2 library on the host.</p>
 <p>In the first case with low worker memory consumption and no
 parallelisation, use for example</p>
-<div class="highlight"><pre><span></span><code>module load Singularity
-export I_MPI_PMI_LIBRARY=&quot;/opt/slurm/lib64/libpmi2.so&quot;
-export SINGULARITY_BIND=&quot;/opt/slurm/lib64&quot;
-srun singularity run my_container.sif dask_example.py
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Singularity
+<span class="nb">export</span><span class="w"> </span><span class="nv">I_MPI_PMI_LIBRARY</span><span class="o">=</span><span class="s2">&quot;/opt/slurm/lib64/libpmi2.so&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_BIND</span><span class="o">=</span><span class="s2">&quot;/opt/slurm/lib64&quot;</span>
+srun<span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>my_container.sif<span class="w"> </span>dask_example.py
 </code></pre></div>
 <p>In the second case with high worker memory consumption and/or
 parallelisation, use for example</p>
-<div class="highlight"><pre><span></span><code>module load Singularity
-export I_MPI_PMI_LIBRARY=&quot;/opt/slurm/lib64/libpmi2.so&quot;
-export SINGULARITY_BIND=&quot;/opt/slurm/lib64&quot;
-srun --het-group=0-1 singularity run my_container.sif dask_example.py
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Singularity
+<span class="nb">export</span><span class="w"> </span><span class="nv">I_MPI_PMI_LIBRARY</span><span class="o">=</span><span class="s2">&quot;/opt/slurm/lib64/libpmi2.so&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_BIND</span><span class="o">=</span><span class="s2">&quot;/opt/slurm/lib64&quot;</span>
+srun<span class="w"> </span>--het-group<span class="o">=</span><span class="m">0</span>-1<span class="w"> </span>singularity<span class="w"> </span>run<span class="w"> </span>my_container.sif<span class="w"> </span>dask_example.py
 </code></pre></div>
 <p><em>Note: You may need to append more folders to <code>SINGULARITY_BIND</code> to make
 your script accessible in the container, e.g. <code>$PWD</code></em></p>
@@ -2147,7 +2144,7 @@ your script accessible in the container, e.g. <code>$PWD</code></em></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 19, 2023</span>
   </span>
 
     
