@@ -534,7 +534,7 @@
           <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Example:
+      Example
     </span>
   </a>
   
@@ -1214,7 +1214,7 @@
           <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Example:
+      Example
     </span>
   </a>
   
@@ -1287,16 +1287,12 @@
 
   <h1>Port Forwarding</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
 <li>Have your <a href="../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup/">connection to the NeSI
-     cluster</a>
-     configured.</li>
+    cluster</a>
+    configured.</li>
 </ul>
 </div>
 <p>Some applications only accept connections from internal ports (i.e a
@@ -1306,43 +1302,43 @@ forwarding</a>.</p>
 <p>Three values must be known, the <em>local port</em>, the <em>host alias</em>, and the
 <em>remote port</em>. Chosen port numbers should be between <strong>1024</strong> and
 <strong>49151</strong> and not be in use by another process.</p>
-<p><strong>Localhost: </strong>The self address of a host (computer), equivalent
+<p><strong>Localhost:</strong> The self address of a host (computer), equivalent
 to <code>127.0.0.1</code>. The alias <code>localhost</code> can also be used in most cases.</p>
-<p><strong>Local Port:</strong> The port number you will use on your local machine. </p>
+<p><strong>Local Port:</strong> The port number you will use on your local machine.</p>
 <p><strong>Host Alias:</strong> An alias for the socket of your main connection to the
 cluster, <code>mahuika</code> or <code>maui</code> if you have set up your ssh config file as
 described
 <a href="../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup/">here</a>.</p>
 <p><strong>Remote Port:</strong> The port number you will use on the remote machine (in
 this case the NeSI cluster)</p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The following examples use aliases as set up in <a href="../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup/">standard terminal
- setup</a>.
- This allows the forwarding from your local machine to the NeSI
- cluster, without having to re-tunnel through the lander node.</p>
+setup</a>.
+This allows the forwarding from your local machine to the NeSI
+cluster, without having to re-tunnel through the lander node.</p>
 </div>
 <h2 id="command-line-openssh">Command line (OpenSSH)<a class="headerlink" href="#command-line-openssh" title="Permanent link">&para;</a></h2>
 <p><em>Works for any Linux terminal, Mac terminal, or Windows with WSL
 enabled.</em></p>
 <p>The command for forwarding a port is</p>
-<div class="highlight"><pre><span></span><code>ssh -L &lt;local_port&gt;:&lt;destination_host&gt;:&lt;remote_port&gt; &lt;ssh_host&gt;
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span>&lt;local_port&gt;:&lt;destination_host&gt;:&lt;remote_port&gt;<span class="w"> </span>&lt;ssh_host&gt;
 </code></pre></div>
-<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p>A client program on my local machine uses the port 5555 to communicate.
 I want to connect to a server running on mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:</p>
-<div class="highlight"><pre><span></span><code>ssh -L 5555:localhost:6666 mahuika 
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">5555</span>:localhost:6666<span class="w"> </span>mahuika<span class="w"> </span>
 </code></pre></div>
 <p>Your terminal will now function like a normal connection to mahuika.
 However if you close this terminal session the port forwarding will end.</p>
 <p>If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
-procedure. </p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+procedure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Your local port and remote port do not have to be different numbers.
- It is generally easier to use the same number for both.</p>
+It is generally easier to use the same number for both.</p>
 </div>
 <h2 id="ssh-config-openssh">SSH Config (OpenSSH)<a class="headerlink" href="#ssh-config-openssh" title="Permanent link">&para;</a></h2>
 <p>If you are using port forwarding on a regular basis, and don't want the
@@ -1351,36 +1347,36 @@ forwarding line in your ssh config file ~/.ssh/config on your local
 machine.</p>
 <p>Under the alias for the cluster you want to connect to add the following
 lines.</p>
-<div class="highlight"><pre><span></span><code>LocalForward &lt;local_port&gt; &lt;host_alias&gt;:&lt;remote_port&gt;
-ExitOnForwardFailure yes
+<div class="highlight"><pre><span></span><code>LocalForward<span class="w"> </span>&lt;local_port&gt;<span class="w"> </span>&lt;host_alias&gt;:&lt;remote_port&gt;
+ExitOnForwardFailure<span class="w"> </span>yes
 </code></pre></div>
 <p>ExitOnForwardFailure is optional, but it is useful to kill the session
-if the port fails. </p>
-<p>e.g.</p>
-<div class="highlight"><pre><span></span><code>  Host mahuika
-      User cwal219
-      Hostname login.mahuika.nesi.org.nz
-      ProxyCommand ssh -W %h:%p lander
-      ForwardX11 yes
-      ForwardX11Trusted yes
-      ServerAliveInterval 300
-      ServerAliveCountMax 2
-      LocalForward 6676 mahuika:6676
-      ExitOnForwardFailure yes
+if the port fails.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>Host<span class="w"> </span>mahuika
+<span class="w">      </span>User<span class="w"> </span>cwal219
+<span class="w">      </span>Hostname<span class="w"> </span>login.mahuika.nesi.org.nz
+<span class="w">      </span>ProxyCommand<span class="w"> </span>ssh<span class="w"> </span>-W<span class="w"> </span>%h:%p<span class="w"> </span>lander
+<span class="w">      </span>ForwardX11<span class="w"> </span>yes
+<span class="w">      </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">      </span>ServerAliveInterval<span class="w"> </span><span class="m">300</span>
+<span class="w">      </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
+<span class="w">      </span>LocalForward<span class="w"> </span><span class="m">6676</span><span class="w"> </span>mahuika:6676
+<span class="w">      </span>ExitOnForwardFailure<span class="w"> </span>yes
 </code></pre></div>
 <p>In the above example, the local and remote ports are the same. This
 isn't a requirement, but it makes things easier to remember.</p>
 <p>Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.</p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>If you get a error message
-     <div class="highlight"><pre><span></span><code>bind: No such file or directory
-unix_listener: cannot bind to path: 
+    <div class="highlight"><pre><span></span><code>bind:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+unix_listener:<span class="w"> </span>cannot<span class="w"> </span><span class="nb">bind</span><span class="w"> </span>to<span class="w"> </span>path:
 </code></pre></div>
-     try to create the following directory:
-     <div class="highlight"><pre><span></span><code>mkdir -P ~/.ssh/sockets
+    try to create the following directory:
+    <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-P<span class="w"> </span>~/.ssh/sockets
 </code></pre></div></li>
 </ul>
 </div>
@@ -1388,7 +1384,7 @@ unix_listener: cannot bind to path:
 <p>If you have Windows Subsystem for Linux installed, you can use the
 method described above. This is the recommended method.</p>
 <p>You can tell if MobaXterm is using WSL as it will appear in the banner
-when starting a new terminal session. </p>
+when starting a new terminal session.</p>
 <p><img alt="mceclip0.png" src="../../../assets/images/Port_Forwarding.png" /></p>
 <p>You can also set up port forwarding using the MobaXterm tunnelling
 interface.</p>
@@ -1398,10 +1394,10 @@ another from mahuika to itself. (This is what using an alias in the
 first two examples allows us to avoid).</p>
 <p>The two tunnels should look like this.</p>
 <p><img alt="mobakey.png" src="../../../assets/images/Port_Forwarding_1.png" /></p>
-<p>■ local port<br />
-■ remote port<br />
-■ must match<br />
-■ doesn't matter</p>
+<p><span style='color:#32CD32'>■</span> local port<br />
+<span style="color:orange">■</span> remote port<br />
+<span style="color:red">■</span> must match<br />
+<span style="color:#FF00FF">■</span> doesn't matter</p>
 <h2 id="sshuttle">sshuttle<a class="headerlink" href="#sshuttle" title="Permanent link">&para;</a></h2>
 <p><a href="https://sshuttle.readthedocs.io/en/stable/">sshuttle</a> is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
@@ -1411,13 +1407,13 @@ remote server that they can connect to via <code>ssh</code>.There is no need to
 create a separate tunnel for every port to be forwarded, the package
 routes all traffic, going to the specified subnet, through the tunnel.</p>
 <p>The command line for <code>sshuttle</code> has the following form:</p>
-<div class="highlight"><pre><span></span><code>sshuttle [-l [ip:]port] -r &lt;host_alias&gt;[:port] &lt;subnets...&gt;
+<div class="highlight"><pre><span></span><code>sshuttle<span class="w"> </span><span class="o">[</span>-l<span class="w"> </span><span class="o">[</span>ip:<span class="o">]</span>port<span class="o">]</span><span class="w"> </span>-r<span class="w"> </span>&lt;host_alias&gt;<span class="o">[</span>:port<span class="o">]</span><span class="w"> </span>&lt;subnets...&gt;
 </code></pre></div>
 <p>More information about specific keys and modifiers for sshuttle commands
 is available in the online documentation.</p>
 <p>As an example, this is how to establish a tunnel through Mahuika login
 node over to a specific virtual machine with IP address <code>192.168.90.5</code>:</p>
-<div class="highlight"><pre><span></span><code>sshuttle -r mahuika 192.168.0.0/16
+<div class="highlight"><pre><span></span><code>sshuttle<span class="w"> </span>-r<span class="w"> </span>mahuika<span class="w"> </span><span class="m">192</span>.168.0.0/16
 </code></pre></div>
 <p>which uses remote SSH host Mahuika to forward all traffic coming to
 <code>192.16.XXX.XXX</code> subnet through the port forwarder.</p>
@@ -1425,15 +1421,15 @@ node over to a specific virtual machine with IP address <code>192.168.90.5</code
 <p>Ports can also be forwarded from the login node to a compute node.</p>
 <p>The best way to do this is by creating a reverse tunnel <strong>from your
 slurm job</strong> (that way the tunnel doesn't depend on a separate shell, and
-the tunnel will not outlive the job). </p>
+the tunnel will not outlive the job).</p>
 <p>The syntax for opening a reverse tunnel is similar the regular tunnel
 command, <code>-N</code> to not execute a command after connecting, <code>-f</code> to run the
 connection in the background and <code>-R</code> for a reverse tunnel ( as opposed
 to <code>-L</code> ).</p>
-<div class="highlight"><pre><span></span><code>ssh -Nf -R &lt;remote_port&gt;:localhost:&lt;local_port&gt; ${SLURM_SUBMIT_HOST}
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-Nf<span class="w"> </span>-R<span class="w"> </span>&lt;remote_port&gt;:localhost:&lt;local_port&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_SUBMIT_HOST</span><span class="si">}</span>
 </code></pre></div>
 <p>An example Slurm script:</p>
-<p><div class="highlight"><pre><span></span><code>#!/bin/bash
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 #SBATCH --time 00:15:00
 #SBATCH --mem  1G
@@ -1442,12 +1438,15 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
 &lt;some process using port 6676&gt;
 </code></pre></div>
-!!! prerequisite What Next?
-     -   Using
-         <a href="../../../Scientific_Computing/Supported_Applications/JupyterLab/">JupyterLab </a>on
-         the cluster.
-     -   <a href="../../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup/">NiceDCV </a>
-     -   <a href="../../../Scientific_Computing/Supported_Applications/ParaView/">Paraview</a></p>
+<div class="admonition tip">
+<p class="admonition-title">What Next?</p>
+<ul>
+<li>Using
+    <a href="../../../Scientific_Computing/Supported_Applications/JupyterLab/">JupyterLab</a> on the cluster.</li>
+<li><a href="../../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup/">NiceDCV</a></li>
+<li><a href="../../../Scientific_Computing/Supported_Applications/ParaView/">Paraview</a></li>
+</ul>
+</div>
 
 
 
