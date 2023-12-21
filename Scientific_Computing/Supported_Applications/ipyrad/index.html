@@ -1117,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1333,6 +1333,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1775,6 +1782,13 @@
     TurboVNC
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
 
       </a>
     </li>
@@ -1951,14 +1965,20 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       Getting Started
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#slurm-script-for-using-multiple-cpus-a-single-compute-node" class="md-nav__link">
@@ -2360,14 +2380,20 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       Getting Started
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#slurm-script-for-using-multiple-cpus-a-single-compute-node" class="md-nav__link">
@@ -2439,10 +2465,6 @@
 </div>
 <!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p><strong>ipyrad</strong>, an interactive assembly and analysis toolkit for
 restriction-site associated DNA (RAD-seq) and related data types. Please
@@ -2454,25 +2476,25 @@ ipyrad.\</p>
 RADseq datasets." Bioinformatics (2020).</p>
 <h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
 <p>GPLv3</p>
-<h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Following <strong>example</strong> uses  rad_example which can be downloaded as per
 instructions on 
 <a href="https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html">https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html</a> </p>
-<div class="highlight"><pre><span></span><code>$ curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
-$ tar -xvzf ipsimdata.tar.gz
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LkO<span class="w"> </span>https://eaton-lab.org/data/ipsimdata.tar.gz
+tar<span class="w"> </span>-xvzf<span class="w"> </span>ipsimdata.tar.gz
 </code></pre></div>
 <p>Start by creating a new Assembly  <code>data1</code>  , and then we’ll edit the
 params file to tell it how to find the input data files for this data
 set.</p>
-<div class="highlight"><pre><span></span><code>$ module purge
-$ module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
-$ ipyrad -n data1
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
+ipyrad<span class="w"> </span>-n<span class="w"> </span>data1
 
-New file &#39;params-data1.txt&#39; created in ........
+New<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;params-data1.txt&#39;</span><span class="w"> </span>created<span class="w"> </span><span class="k">in</span><span class="w"> </span>........
 </code></pre></div>
 <p><code>params-data1.txt</code> will be created on current working directory. Review
 and edit the paths in parameter file to match the destinations of input
-data, barcode paths,etc. </p>
+data, barcode paths,etc.</p>
 <h3 id="slurm-script-for-using-multiple-cpus-a-single-compute-node">Slurm Script for Using Multiple CPUs a Single Compute Node<a class="headerlink" href="#slurm-script-for-using-multiple-cpus-a-single-compute-node" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
@@ -2525,7 +2547,7 @@ srun ipyrad -p $params -s 12 --force
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

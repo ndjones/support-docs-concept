@@ -1117,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1333,6 +1333,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1930,6 +1937,13 @@
   <span class="md-ellipsis">
     TurboVNC
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -2604,10 +2618,6 @@
 </div>
 <!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p><a href="https://sylabs.io/singularity/">Singularity</a> is a science-focused
 application containerisation solution that is specifically tailored for
 integration with HPC systems and suitable for deployment across a broad
@@ -2672,7 +2682,7 @@ created key into your terminal will authorise remote builds from your
 current host.</p>
 <p>Specify you want to use the remote builder by adding the <code>--remote</code> flag
 to the build command.</p>
-<div class="highlight"><pre><span></span><code>singularity build --remote myContainer.sif myContainer.def
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>build<span class="w"> </span>--remote<span class="w"> </span>myContainer.sif<span class="w"> </span>myContainer.def
 </code></pre></div>
 <h3 id="build-environment-variables">Build Environment Variables<a class="headerlink" href="#build-environment-variables" title="Permanent link">&para;</a></h3>
 <p>The environment variables <code>SINGULARITY_TMPDIR</code> and
@@ -2682,10 +2692,10 @@ to <code>/tmp</code> which has limited space, large builds may exceed this
 limitation causing the builder to crash.</p>
 <p>You may wish to change these values to somewhere in your project or
 nobackup directory.</p>
-<div class="highlight"><pre><span></span><code>export SINGULARITY_TMPDIR=/nesi/nobackup/nesi99999/.s_tmpdir
-setfacl -b &quot;$SINGULARITY_TMPDIR&quot;  # avoid Singularity issues due to ACLs set on this folder
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_TMPDIR</span><span class="o">=</span>/nesi/nobackup/nesi99999/.s_tmpdir
+setfacl<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SINGULARITY_TMPDIR</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># avoid Singularity issues due to ACLs set on this folder</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>export SINGULARITY_CACHEDIR=/nesi/nobackup/nesi99999/.s_cachedir
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SINGULARITY_CACHEDIR</span><span class="o">=</span>/nesi/nobackup/nesi99999/.s_cachedir
 </code></pre></div>
 <p>Please Sir, may I have a build node?</p>
 <h2 id="moving-a-container-to-nesi">Moving a container to NeSI<a class="headerlink" href="#moving-a-container-to-nesi" title="Permanent link">&para;</a></h2>
@@ -2714,7 +2724,7 @@ be root or to have Docker installed.</p>
 the <code>pull</code> command with a <code>docker://</code> prefix. The following example
 downloads the latest version of the Ubuntu docker container and save it
 in the <code>ubuntu.sif</code> Singularity image file:</p>
-<div class="highlight"><pre><span></span><code>singularity pull ubuntu.sif docker://ubuntu
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>pull<span class="w"> </span>ubuntu.sif<span class="w"> </span>docker://ubuntu
 </code></pre></div>
 <p>Access to private containers that needs registration is also supported,
 as detailed in the <a href="https://sylabs.io/guides/master/user-guide/singularity_and_docker.html">Singularity
@@ -2761,14 +2771,14 @@ home directory tree.</p>
 your home directory (e.g., in the "nobackup" or "project" file spaces)
 and you need to access its contents, you will need to bind this
 directory using, e.g., the command</p>
-<div class="highlight"><pre><span></span><code>singularity run --bind $PWD my_container.sif
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>--bind<span class="w"> </span><span class="nv">$PWD</span><span class="w"> </span>my_container.sif
 </code></pre></div>
 <p>Note that older releases of Singularity bind the work directory
 automatically.</p>
 <p>You can easily bind extra directories and optionally change their
 locations to a new path inside the container using, e.g.,</p>
-<div class="highlight"><pre><span></span><code>singularity run --bind &quot;/nesi/project/&lt;your project ID&gt;/inputdata:/var/inputdata,\
-/nesi/nobackup/&lt;your project ID&gt;/outputdata:/var/outputdata&quot; my_container.sif
+<div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>--bind<span class="w"> </span><span class="s2">&quot;/nesi/project/&lt;your project ID&gt;/inputdata:/var/inputdata,\</span>
+<span class="s2">/nesi/nobackup/&lt;your project ID&gt;/outputdata:/var/outputdata&quot;</span><span class="w"> </span>my_container.sif
 </code></pre></div>
 <p>Directories <code>inputdata</code> and <code>outputdata</code> can now be accessed inside your
 container under <code>/var/inputdata</code> and <code>/var/outputdata</code>. Alternatively,
@@ -2784,8 +2794,8 @@ to learn how to request a GPU), a singularity container can
 transparently access it using the <code>--nv</code> flag:</p>
 <div class="highlight"><pre><span></span><code>singularity<span class="w"> </span>run<span class="w"> </span>--nv<span class="w"> </span>my_container.sif
 </code></pre></div>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Make sure that your container contains the CUDA toolkit and additional
  libraries needed by your application (e.g. cuDNN). The <code>--nv</code> option
  only ensures that the basic CUDA libraries from the host are bound
@@ -2868,7 +2878,7 @@ further details on using Slurm.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

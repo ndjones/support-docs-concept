@@ -1117,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1333,6 +1333,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1775,6 +1782,13 @@
     TurboVNC
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
 
       </a>
     </li>
@@ -1886,9 +1900,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dont-use-hyperthreading" class="md-nav__link">
+  <a href="#avoid-hyperthreading" class="md-nav__link">
     <span class="md-ellipsis">
-      Don't use hyperthreading!
+      Avoid hyperthreading
     </span>
   </a>
   
@@ -2493,9 +2507,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dont-use-hyperthreading" class="md-nav__link">
+  <a href="#avoid-hyperthreading" class="md-nav__link">
     <span class="md-ellipsis">
-      Don't use hyperthreading!
+      Avoid hyperthreading
     </span>
   </a>
   
@@ -2710,13 +2724,6 @@
 </div>
 <!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The Vienna Ab initio Simulation Package (VASP) is a programme for atomic
 scale materials modelling.</p>
@@ -2753,24 +2760,24 @@ executables. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.</p>
 <h2 id="best-practices-for-vasp-calculations">Best practices for VASP calculations<a class="headerlink" href="#best-practices-for-vasp-calculations" title="Permanent link">&para;</a></h2>
 <h3 id="example-script">Example script<a class="headerlink" href="#example-script" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name        MyVASPJob</span>
-<span class="c1">#SBATCH --time            01:00:00</span>
-<span class="c1">#SBATCH --nodes           1</span>
-<span class="c1">#SBATCH --ntasks          16               # start 16 MPI tasks or 16</span>
-<span class="c1">#SBATCH --mem             20G</span>
-<span class="c1">#SBATCH --hint            nomultithread</span>
+#SBATCH --job-name        MyVASPJob
+#SBATCH --time            01:00:00
+#SBATCH --nodes           1
+#SBATCH --ntasks          16               # start 16 MPI tasks or 16
+#SBATCH --mem             20G
+#SBATCH --hint            nomultithread
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>VASP/6.4.1-intel-2022a
+module purge
+module load VASP/6.4.1-intel-2022a
 
-<span class="c1"># Use the -K switch so that, if any of the VASP processes exits with an</span>
-<span class="c1"># error, the entire job will stop instead of continuing to waste core</span>
-<span class="c1"># hours on a defunct run.</span>
-srun<span class="w"> </span>-K<span class="w"> </span>vasp_std
+# Use the -K switch so that, if any of the VASP processes exits with an
+# error, the entire job will stop instead of continuing to waste core
+# hours on a defunct run.
+srun -K vasp_std
 </code></pre></div>
-<h3 id="dont-use-hyperthreading">Don't use hyperthreading!<a class="headerlink" href="#dont-use-hyperthreading" title="Permanent link">&para;</a></h3>
+<h3 id="avoid-hyperthreading">Avoid hyperthreading<a class="headerlink" href="#avoid-hyperthreading" title="Permanent link">&para;</a></h3>
 <p>We and several researchers have found that VASP doesn't behave well with
 hyperthreading, and will run at a third to a half of its expected speed.
 To disable hyperthreading, please use either</p>
@@ -2992,61 +2999,65 @@ and details about the available GPUs on NeSI
 <a href="../../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/">here</a>.</p>
 <p>Here are some additional notes specific to running VASP on GPUs on NeSI:</p>
 <ul>
-<li>
-<ul>
 <li>The command that you use to run VASP does not change - unlike
-        the previous CUDA version, which had a <code>vasp_gpu</code> executable,
-        with the OpenACC version the usual VASP executables (<code>vasp_std</code>,
-        <code>vasp_gam</code>, <code>vasp_ncl</code>) are all built with OpenACC GPU support
-        in the <em>*-NVHPC-*</em> modules, so just use those as usual</li>
+    the previous CUDA version, which had a <code>vasp_gpu</code> executable,
+    with the OpenACC version the usual VASP executables (<code>vasp_std</code>,
+    <code>vasp_gam</code>, <code>vasp_ncl</code>) are all built with OpenACC GPU support
+    in the <em>*-NVHPC-*</em> modules, so just use those as usual</li>
 <li>
 <p>Always select one MPI process (Slurm task) per GPU, for example:</p>
 <ul>
 <li>
 <p>Running on 1 P100 GPU  </p>
-<div class="highlight"><pre><span></span><code># snippet of Slurm script
+<div class="highlight"><pre><span></span><code>``` sl
+# snippet of Slurm script
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
 #SBATCH --cpus-per-task=1
 #SBATCH --gpus-per-node=P100:1
 # end snippet
+```
 </code></pre></div>
 </li>
 <li>
 <p>Running on 4 HGX A100 GPUs on a single node  </p>
-<p><div class="highlight"><pre><span></span><code># snippet of Slurm script
+<div class="highlight"><pre><span></span><code>``` sl
+# snippet of Slurm script
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
 #SBATCH --cpus-per-task=1
 #SBATCH --gpus-per-node=A100:4
 #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
 # end snippet
+```
 </code></pre></div>
-    -   Multiple threads per MPI process (--cpus-per-task) might be
-        beneficial for performance but you should start by setting this
-        to 1 to get a baseline
-    -   VASP will scale better across multiple GPUs when they are all on
-        the same node compared to across multiple nodes
-    -   if you see memory errors like
-        <code>call to cuMemAlloc returned error 2: Out of memory</code> you
-        probably ran out of GPU memory. You could try requesting more
-        GPUs (so the total amount of available memory is higher) and/or
-        moving to GPUs with more memory (note: GPU memory is distinct
-        from the usual memory you have to request for your job via
-        <code>#SBATCH --mem</code> or similar; when you are allocated a GPU you get
-        access to all the GPU memory on that device)
-        -   P100 GPUs have 12 GB GPU memory and you can have a maximum
-of 2 per node
-        -   PCI A100 GPUs have 40 GB GPU memory and you can have a
-maximum of 2 per node
-        -   HGX A100 GPUs have 80 GB GPU memory and you can have a
-maximum of 4 per node
-    -   the HGX GPUs have a faster interconnect between the GPUs within
-        a single node; if using multiple GPUs you may get better
-        performance with the HGX A100s than with the PCI A100s
-    -   A100 GPUs have more compute power than P100s so will perform
-        better if your simulation can take advantage of the extra power</p>
+<ul>
+<li>Multiple threads per MPI process (--cpus-per-task) might be
+    beneficial for performance but you should start by setting this
+    to 1 to get a baseline</li>
+<li>VASP will scale better across multiple GPUs when they are all on
+    the same node compared to across multiple nodes</li>
+<li>if you see memory errors like
+    <code>call to cuMemAlloc returned error 2: Out of memory</code> you
+    probably ran out of GPU memory. You could try requesting more
+    GPUs (so the total amount of available memory is higher) and/or
+    moving to GPUs with more memory (note: GPU memory is distinct
+    from the usual memory you have to request for your job via
+    <code>#SBATCH --mem</code> or similar; when you are allocated a GPU you get
+    access to all the GPU memory on that device)<ul>
+<li>P100 GPUs have 12 GB GPU memory and you can have a maximum
+of 2 per node</li>
+<li>PCI A100 GPUs have 40 GB GPU memory and you can have a
+maximum of 2 per node</li>
+<li>HGX A100 GPUs have 80 GB GPU memory and you can have a
+maximum of 4 per node</li>
+</ul>
 </li>
+<li>the HGX GPUs have a faster interconnect between the GPUs within
+a single node; if using multiple GPUs you may get better
+performance with the HGX A100s than with the PCI A100s</li>
+<li>A100 GPUs have more compute power than P100s so will perform
+better if your simulation can take advantage of the extra power</li>
 </ul>
 </li>
 </ul>
@@ -3075,7 +3086,7 @@ maximum of 4 per node
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

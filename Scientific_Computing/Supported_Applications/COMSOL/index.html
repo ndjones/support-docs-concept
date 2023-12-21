@@ -16,7 +16,7 @@
         <link rel="prev" href="../CESM/">
       
       
-        <link rel="next" href="../Clair3%20/">
+        <link rel="next" href="../Clair3/">
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
@@ -1180,6 +1180,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Interactive Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#livelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      LiveLink
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1207,11 +1222,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1423,6 +1438,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1864,6 +1886,13 @@
   <span class="md-ellipsis">
     TurboVNC
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -2360,6 +2389,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Interactive Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#livelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      LiveLink
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2569,7 +2613,7 @@
 </div>
 <h2 id="batch-submission">Batch Submission<a class="headerlink" href="#batch-submission" title="Permanent link">&para;</a></h2>
 <p>When using COMSOL batch the following flags can be used to control
-distribution. </p>
+distribution.</p>
 <table>
 <thead>
 <tr>
@@ -2613,10 +2657,10 @@ Usually submitted as part of an array, as in the case of parameter</p>
 <div class="highlight"><pre><span></span><code>```
 #!/bin/bash -e
 
-#SBATCH --job-name      COMSOL-serial&lt;/span&gt;&lt;/span&gt;
+#SBATCH --job-name      COMSOL-serial
 #SBATCH --licenses      comsol@uoa_foe
-#SBATCH --time          00:05:00          # Walltime&lt;/span&gt;&lt;/span&gt;
-#SBATCH --mem           1512               # total mem&lt;/span&gt;&lt;/span&gt;
+#SBATCH --time          00:05:00          # Walltime
+#SBATCH --mem           1512               # total mem
 
 module load COMSOL/6.1
 comsol batch -inputfile my_input.mph
@@ -2643,27 +2687,44 @@ comsol batch -mpibootstrap slurm -inputfile my_input.mph
 
 #SBATCH --job-name      COMSOL-distributed
 #SBATCH --licenses      comsol@uoa_foe
-#SBATCH --time          00:05:00            # Walltime&lt;/span&gt;&lt;/span&gt;
+#SBATCH --time          00:05:00            # Walltime
 #SBATCH --ntasks        8         
 #SBATCH --mem-per-cpu   1500                # mem per cpu
 
 module load COMSOL/6.1
-comsolbatcH -mpibootstrap slurm -inputfile my_input.mph
+comsol batch -mpibootstrap slurm -inputfile my_input.mph
 ```
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hybrid Job</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hybrid Job</label><label for="__tabbed_3_2">LiveLink</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>#!/bin/bash -e&lt;/span&gt;&lt;/span&gt;
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #SBATCH --job-name         COMSOL-hybrid
 #SBATCH --licenses         comsol@uoa_foe
 #SBATCH --time             00:05:00          # Walltime
-#SBATCH --ntasks           4                 # total mem&lt;/span&gt;&lt;/span&gt;
+#SBATCH --ntasks           4                 
 #SBATCH --cpus-per-task    16
-#SBATCH --mem-per-cpu      1500B             # total mem&lt;/span&gt;&lt;/span&gt;
+#SBATCH --mem-per-cpu      1500B             # total mem
 
 module load COMSOL/6.1
 comsol batch -mpibootstrap slurm -inputfile my_input.mph
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
+#SBATCH --job-name         COMSOL-livelink
+#SBATCH --licenses         comsol@uoa_foe
+#SBATCH --time             00:05:00
+#SBATCH --cpus-per-task    16
+#SBATCH --mem-per-cpu      1500
+
+module purge
+
+module load COMSOL/6.1
+module load MATLAB/2021b
+
+comsol mphserver -silent &amp;
+matlab -batch &quot;addpath(&#39;/opt/nesi/share/COMSOL/comsol154/multiphysics/mli/&#39;);mphstart;MyScript&quot;
 </code></pre></div>
 </div>
 </div>
@@ -2678,16 +2739,22 @@ comsol batch -mpibootstrap slurm -inputfile my_input.mph
 X11</a>, you can
 open the COMSOL GUI by running the command <code>comsol</code>.</p>
 <p>Large jobs should not be run on the login node.</p>
+<h3 id="livelink">LiveLink<a class="headerlink" href="#livelink" title="Permanent link">&para;</a></h3>
+<p>If you are using COMSOL LiveLink, you will need to load a MATLAB module (in addition to the COMSOL module), e.g.</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>MATLAB/2021b
+</code></pre></div>
+<p>Then</p>
+<div class="highlight"><pre><span></span><code>comsol<span class="w"> </span>matlab<span class="w"> </span>-mlroot<span class="w"> </span>&lt;path&gt;
+</code></pre></div>
+<p>Where <code>&lt;mlpath&gt;`` is the root directory of the MATLAB version you are using (</code>dirname $(dirname $(which matlab))`).</p>
 <h2 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">&para;</a></h2>
 <p>COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use <code>--cpus-per-task</code> over <code>--ntasks</code></p>
-<p>Memory requirements depend on job type, but will scale up with number of CPUs
-  ≈ linearly.</p>
+<p>Memory requirements depend on job type, but will scale up with number of CPUs ≈ linearly.</p>
 <p>Multithreading will benefit jobs using less than
-  8 CPUs, but is not recommended on larger
-  jobs.</p>
-<p><em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em></p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png"></p>
+8 CPUs, but is not recommended on larger jobs.</p>
+<p><em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em>
+<img alt="Speedup" src="../../../assets/images/speedup_smoothed.png" /></p>
 
 
 
@@ -2710,7 +2777,7 @@ preferable to use <code>--cpus-per-task</code> over <code>--ntasks</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

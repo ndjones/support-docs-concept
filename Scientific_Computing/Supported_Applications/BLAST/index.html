@@ -1204,11 +1204,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1420,6 +1420,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1861,6 +1868,13 @@
   <span class="md-ellipsis">
     TurboVNC
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -2442,13 +2456,6 @@
 </div>
 <!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
 <h2 id="blast-databases">BLAST Databases<a class="headerlink" href="#blast-databases" title="Permanent link">&para;</a></h2>
 <p>We download the standard NCBI databases quarterly, and create a
 corresponding environment module named like <code>BLASTDB/&lt;yyyy-mm&gt;</code> which
@@ -2456,8 +2463,8 @@ sets the BLASTDB environment variable accordingly. If you want to use
 one of these databases then you should find out what our most recent
 version is (<code>module avail BLASTDB</code>) and then load it in your batch
 script.</p>
-<div class="highlight"><pre><span></span><code>module load BLASTDB
-ls $BLASTDB
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>BLASTDB
+ls<span class="w"> </span><span class="nv">$BLASTDB</span>
 </code></pre></div>
 <p>Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
@@ -2477,27 +2484,27 @@ approach first and see if it takes too long.</p>
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as <em>blastn</em> with its default (megablast)
 settings.  </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name      BLAST</span>
-<span class="c1">#SBATCH --time          00:30:00  # ~10 CPU minutes / MB blastn query vs nt</span>
-<span class="c1">#SBATCH --mem           30G</span>
-<span class="c1">#SBATCH --cpus-per-task 2</span>
+#SBATCH --job-name      BLAST
+#SBATCH --time          00:30:00  # ~10 CPU minutes / MB blastn query vs nt
+#SBATCH --mem           30G
+#SBATCH --cpus-per-task 2
 
-module<span class="w"> </span>load<span class="w"> </span>BLAST/2.13.0-GCC-11.3.0
-module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
+module load BLAST/2.13.0-GCC-11.3.0
+module load BLASTDB/2023-01
 
-<span class="c1"># This script takes one argument, the FASTA file of query sequences.</span>
-<span class="nv">QUERIES</span><span class="o">=</span><span class="nv">$1</span>
-<span class="nv">FORMAT</span><span class="o">=</span><span class="s2">&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;</span>
-<span class="nv">BLASTOPTS</span><span class="o">=</span><span class="s2">&quot;-evalue 0.05 -max_target_seqs 10&quot;</span>
-<span class="nv">BLASTAPP</span><span class="o">=</span>blastn
-<span class="nv">DB</span><span class="o">=</span>nt
-<span class="c1">#BLASTAPP=blastx</span>
-<span class="c1">#DB=nr</span>
+# This script takes one argument, the FASTA file of query sequences.
+QUERIES=$1
+FORMAT=&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;
+BLASTOPTS=&quot;-evalue 0.05 -max_target_seqs 10&quot;
+BLASTAPP=blastn
+DB=nt
+#BLASTAPP=blastx
+#DB=nr
 
-<span class="nv">$BLASTAPP</span><span class="w"> </span><span class="nv">$BLASTOPTS</span><span class="w"> </span>-db<span class="w"> </span><span class="nv">$DB</span><span class="w"> </span>-query<span class="w"> </span><span class="nv">$QUERIES</span><span class="w"> </span>-outfmt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FORMAT</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-out<span class="w"> </span><span class="nv">$QUERIES</span>.<span class="nv">$DB</span>.<span class="nv">$BLASTAPP</span><span class="w"> </span>-num_threads<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+$BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt &quot;$FORMAT&quot; \
+    -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 </code></pre></div>
 <h3 id="multiple-threads-and-local-database-copy">Multiple threads and local database copy<a class="headerlink" href="#multiple-threads-and-local-database-copy" title="Permanent link">&para;</a></h3>
 <p>For jobs which need more than 24 CPU-hours, eg: those that use large
@@ -2507,33 +2514,33 @@ or slow BLAST searches such as classic <em>blastn</em> (<code>blastn -task blast
 directory $TMPDIR before starting the search. Since compute nodes do not
 have local disks, this database copy is in memory, and so must be
 allowed for in the memory requested by the job.  As of mid 2023 that is
-283 GB for the <em>nt</em> database, 157 GB for *refseq_protein. *</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -e</span>
+283 GB for the <em>nt</em> database, 157 GB for <em>refseq_protein.</em></p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
-<span class="c1">#SBATCH --job-name      BLAST</span>
-<span class="c1">#SBATCH --time          02:30:00</span>
-<span class="c1">#SBATCH --mem           120G  # 30 GB plus the database</span>
-<span class="c1">#SBATCH --ntasks        1</span>
-<span class="c1">#SBATCH --cpus-per-task 36    # half a node</span>
+#SBATCH --job-name      BLAST
+#SBATCH --time          02:30:00
+#SBATCH --mem           120G  # 30 GB plus the database
+#SBATCH --ntasks        1
+#SBATCH --cpus-per-task 36    # half a node
 
-module<span class="w"> </span>load<span class="w"> </span>BLAST/2.13.0-GCC-11.3.0
-module<span class="w"> </span>load<span class="w"> </span>BLASTDB/2023-01
+module load BLAST/2.13.0-GCC-11.3.0
+module load BLASTDB/2023-01
 
-<span class="c1"># This script takes one argument, the FASTA file of query sequences.</span>
-<span class="nv">QUERIES</span><span class="o">=</span><span class="nv">$1</span>
-<span class="nv">FORMAT</span><span class="o">=</span><span class="s2">&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;</span>
-<span class="nv">BLASTOPTS</span><span class="o">=</span><span class="s2">&quot;-task blastn&quot;</span>
-<span class="nv">BLASTAPP</span><span class="o">=</span>blastn
-<span class="nv">DB</span><span class="o">=</span>nt
-<span class="c1">#BLASTAPP=blastx</span>
-<span class="c1">#DB=nr</span>
+# This script takes one argument, the FASTA file of query sequences.
+QUERIES=$1
+FORMAT=&quot;6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore&quot;
+BLASTOPTS=&quot;-task blastn&quot;
+BLASTAPP=blastn
+DB=nt
+#BLASTAPP=blastx
+#DB=nr
 
-<span class="c1"># Keep the database in RAM</span>
-cp<span class="w"> </span><span class="nv">$BLASTDB</span>/<span class="o">{</span><span class="nv">$DB</span>,taxdb<span class="o">}</span>.*<span class="w"> </span><span class="nv">$TMPDIR</span>/<span class="w"> </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BLASTDB</span><span class="o">=</span><span class="nv">$TMPDIR</span>
+# Keep the database in RAM
+cp $BLASTDB/{$DB,taxdb}.* $TMPDIR/ 
+export BLASTDB=$TMPDIR
 
-<span class="nv">$BLASTAPP</span><span class="w"> </span><span class="nv">$BLASTOPTS</span><span class="w"> </span>-db<span class="w"> </span><span class="nv">$DB</span><span class="w"> </span>-query<span class="w"> </span><span class="nv">$QUERIES</span><span class="w"> </span>-outfmt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FORMAT</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-out<span class="w"> </span><span class="nv">$QUERIES</span>.<span class="nv">$DB</span>.<span class="nv">$BLASTAPP</span><span class="w"> </span>-num_threads<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+$BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt &quot;$FORMAT&quot; \
+    -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 </code></pre></div>
 <!-- Uncomment this if we make a good page on modues -->
 
@@ -2558,7 +2565,7 @@ cp<span class="w"> </span><span class="nv">$BLASTDB</span>/<span class="o">{</sp
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

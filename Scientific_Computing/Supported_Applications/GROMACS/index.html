@@ -1117,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1429,6 +1429,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1870,6 +1877,13 @@
   <span class="md-ellipsis">
     TurboVNC
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -2455,10 +2469,6 @@
 </div>
 <!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>GROMACS (the GROningen MAchine for Chemical Simulations) is a versatile
 package to perform molecular dynamics, i.e. simulate the Newtonian
 equations of motion for systems with hundreds to millions of particles.</p>
@@ -2472,7 +2482,7 @@ Lesser General Public
 Licence</a>. Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
-obtained with the Software (see</p>
+obtained with the Software.</p>
 <h2 id="job-submission">Job submission<a class="headerlink" href="#job-submission" title="Permanent link">&para;</a></h2>
 <p>GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -2529,42 +2539,46 @@ output:
 risk of inefficient CPU usage, is to request entire nodes. On the
 Mahuika cluster, this can be done using the following lines in your
 input, altered as appropriate:</p>
-<ul>
-<li>Using MPI parallelisation and hyperthreading, but no OpenMP
-    parallelisation:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes           4    # May vary</span>
-<span class="c1">#SBATCH --ntasks-per-node 72   # Must be 72</span>
-<span class="w">                               </span><span class="c1"># (the number of logical cores per node)</span>
-<span class="c1">#SBATCH --cpus-per-task   1    # Must be 1</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MPI + SMP</label><label for="__tabbed_1_2">MPI</label><label for="__tabbed_1_3">OpenMP + MPI + SMP</label><label for="__tabbed_1_4">OpenMP + MPI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Using MPI parallelisation and hyperthreading, but no OpenMP
+parallelisation.</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --nodes           4    # May vary
+#SBATCH --ntasks-per-node 72   # Must be 72
+                            # (the number of logical cores per node)
+#SBATCH --cpus-per-task   1    # Must be 1
 </code></pre></div>
-<ul>
-<li>Using MPI parallelisation with neither hyperthreading nor OpenMP
-    parallelisation:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes           4    # May vary</span>
-<span class="c1">#SBATCH --ntasks-per-node 36   # Must be 36</span>
-<span class="w">                               </span><span class="c1"># (the number of physical cores per node)</span>
-<span class="c1">#SBATCH --cpus-per-task   1    # Must be 1</span>
-<span class="c1">#SBATCH --hint=nomultithread   # Don&#39;t use hyperthreading</span>
+</div>
+<div class="tabbed-block">
+<p>Using MPI parallelisation with neither hyperthreading nor OpenMP
+parallelisation.</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --nodes           4    # May vary
+#SBATCH --ntasks-per-node 36   # Must be 36
+                            # (the number of physical cores per node)
+#SBATCH --cpus-per-task   1    # Must be 1
+#SBATCH --hint=nomultithread   # Don&#39;t use hyperthreading
 </code></pre></div>
-<ul>
-<li>Using hybrid (OpenMP + MPI) parallelisation and hyperthreading:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes           4    # May vary</span>
-<span class="c1">#SBATCH --ntasks-per-node 1    # Must be 1</span>
-<span class="c1">#SBATCH --cpus-per-task   72   # Must be 72</span>
-<span class="w">                               </span><span class="c1"># (the number of logical cores per node)</span>
+</div>
+<div class="tabbed-block">
+<p>Using hybrid parallelisation and hyperthreading:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --nodes           4    # May vary
+#SBATCH --ntasks-per-node 1    # Must be 1
+#SBATCH --cpus-per-task   72   # Must be 72
+                            # (the number of logical cores per node)
 </code></pre></div>
-<ul>
-<li>Using hybrid (OpenMP + MPI) parallelisation but not hyperthreading:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes           4    # May vary</span>
-<span class="c1">#SBATCH --ntasks-per-node 1    # Must be 1</span>
-<span class="c1">#SBATCH --cpus-per-task   36   # Must be 36</span>
-<span class="w">                               </span><span class="c1"># (the number of physical cores per node)</span>
-<span class="c1">#SBATCH --hint=nomultithread   # Don&#39;t use hyperthreading</span>
+</div>
+<div class="tabbed-block">
+<p>Using hybrid parallelisation but not hyperthreading:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --nodes           4    # May vary
+#SBATCH --ntasks-per-node 1    # Must be 1
+#SBATCH --cpus-per-task   36   # Must be 36
+                            # (the number of physical cores per node)
+#SBATCH --hint=nomultithread   # Don&#39;t use hyperthreading
 </code></pre></div>
+</div>
+</div>
+</div>
 <p>If you opt to use hybrid parallelisation, it is also important to run
 <code>mdrun_mpi</code> with the <code>-ntomp &lt;number&gt;</code> option, where <code>&lt;number&gt;</code> should
 be the number of CPUs per task. You can make sure the value is correct
@@ -2613,7 +2627,7 @@ an example submission script that calls the Singularity image here:
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     

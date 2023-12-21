@@ -1117,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Clair3%20/" class="md-nav__link">
+      <a href="../Clair3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clair3 
+    Clair3
   </span>
   
 
@@ -1341,6 +1341,13 @@
     JupyterLab
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1351,6 +1358,13 @@
   <span class="md-ellipsis">
     JupyterLab
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1903,6 +1917,13 @@
   <span class="md-ellipsis">
     TurboVNC
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -2516,10 +2537,6 @@
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
 <p>This documentation contains our legacy instructions for running
  JupyterLab by tunnelling through the lander node.<br />
 <a href="../../Interactive_computing_using_Jupyter/Jupyter_on_NeSI/">If you are a Mahuika cluster user, we recommend using jupyter via 
@@ -2572,7 +2589,7 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (<strong>please select another number</strong>).</p>
 <h3 id="setup-ssh-port-forwarding">Setup SSH port forwarding<a class="headerlink" href="#setup-ssh-port-forwarding" title="Permanent link">&para;</a></h3>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
 <li>In the following we assume you already configured
@@ -2586,21 +2603,19 @@ machine and the NeSI system. Therewith a local port will be connected to
 the remote port on the NeSI system. For simplicity, we kept both numbers
 the same (here 15051). This can be specified on the <a href="#h_892370eb-662a-4480-9ae4-b56fd64eb7d0">command line in the
 terminal</a> or using the
-<a href="#h_cc633523-5df0-4f24-a460-391ced9a0316">MobaXterm GUI</a>.</p>
+<a href="#mobaxterm-gui">MobaXterm GUI</a>.</p>
 <h4 id="ssh-command-line">SSH Command Line<a class="headerlink" href="#ssh-command-line" title="Permanent link">&para;</a></h4>
 <p>The ssh command need to be called with following arguments, e.g. for
 Mahuika:</p>
-<div class="highlight"><pre><span></span><code>ssh -N -L 15051:localhost:15051 mahuika
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">15051</span>:localhost:15051<span class="w"> </span>mahuika
 </code></pre></div>
 <p>Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".</p>
-<div class="admonition prerequisite tips">
-<p class="admonition-title">Prerequisite</p>
-<ul>
-<li>For Maui_Ancil, e.g. w-mauivlab01 you may want to add the
-     following to your <code>.ssh/config</code> to avoid establishing the
-     additional hop manually.
-     <div class="highlight"><pre><span></span><code>Host maui_vlab
+<p>!!!  tip
+     -   For Maui_Ancil, e.g. w-mauivlab01 you may want to add the
+         following to your <code>.ssh/config</code> to avoid establishing the
+         additional hop manually.
+         <div class="highlight"><pre><span></span><code>Host maui_vlab
    User &lt;username&gt;
    Hostname w-mauivlab01.maui.niwa.co.nz
    ProxyCommand ssh -W %h:%p maui
@@ -2609,13 +2624,11 @@ Local Port".</p>
    ServerAliveInterval 300
    ServerAliveCountMax 2
 </code></pre></div>
-     &lt;username&gt; needs to be changed. Hostnames can be adapted for
-     other nodes, e.g. <code>w-clim01</code></li>
-</ul>
-</div>
+         &lt;username&gt; needs to be changed. Hostnames can be adapted for
+         other nodes, e.g. <code>w-clim01</code></p>
 <h4 id="mobaxterm-gui">MobaXterm GUI<a class="headerlink" href="#mobaxterm-gui" title="Permanent link">&para;</a></h4>
-<div class="admonition prerequisite tips">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
 <ul>
 <li>MobaXterm has an internal terminal which acts like a linux
      terminal and can be configured as described in the <a href="../../Terminal_Setup/Standard_Terminal_Setup/">Standard
@@ -2657,17 +2670,17 @@ module load IRkernel  # optional
 </code></pre></div>
 <p>The JupyterLab server then can be started on the present node (login or
 virtual lab) or offloaded to a compute node. Please launch compute or
-memory intensive tasks <a href="#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d">on a compute
-node</a>.</p>
+memory intensive tasks on a compute
+node</p>
 <h4 id="on-login-nodes-virtual-labs">On login nodes / virtual labs<a class="headerlink" href="#on-login-nodes-virtual-labs" title="Permanent link">&para;</a></h4>
 <p>For very small (computational cheap and small memory) the JupyterLab can
-be started on the login or virtual lab using: </p>
+be started on the login or virtual lab using:</p>
 <div class="highlight"><pre><span></span><code>jupyter lab --port 15051 --no-browser
 </code></pre></div>
 <p>Where, <code>--port 15051</code> specifies the above selected port number and
 <code>--no-browser</code> option prevents JupyterLab from trying to open a browser
 on the compute/login node side. Jupyter will present output as described
-in the <a href="#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d">next section</a> including
+in the next section including
 the URL and a unique key, which needs to be copied in your local
 browser.</p>
 <h4 id="on-compute-node">On compute node<a class="headerlink" href="#on-compute-node" title="Permanent link">&para;</a></h4>
@@ -2755,7 +2768,7 @@ page.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2023</span>
   </span>
 
     
