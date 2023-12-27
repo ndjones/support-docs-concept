@@ -1547,10 +1547,6 @@
 
   <h1>Jupyter kernels - Manual management</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:</p>
@@ -1568,8 +1564,8 @@ and these can be extended further as described on the
 <a href="../../Supported_Applications/R/">R</a> support
 pages.</p>
 <h2 id="adding-a-custom-python-kernel">Adding a custom Python kernel<a class="headerlink" href="#adding-a-custom-python-kernel" title="Permanent link">&para;</a></h2>
-<div class="admonition prerequisite see also">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">see also</p>
 <p>See the <a href="../Jupyter_kernels_Tool_assisted_management/">Jupyter kernels - Tool-assisted
  management</a>
  page for the <strong>preferred</strong> way to register kernels, which uses the
@@ -1590,62 +1586,62 @@ Miniconda3 environment module (but applies to other environment modules
 too).</p>
 <p>In a terminal run the following commands to load a Miniconda environment
 module:</p>
-<div class="highlight"><pre><span></span><code>$ module purge
-$ module load Miniconda3/4.8.2
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Miniconda3/4.8.2
 </code></pre></div>
 <p>Now create a conda environment named "my-conda-env" using Python 3.6.
 The <em>ipykernel</em> Python package is required but you can change the names
 of the environment, version of Python and install other Python packages
 as required.</p>
-<div class="highlight"><pre><span></span><code>$ conda create --name my-conda-env python=3.6
-$ source $(conda info --base)/etc/profile.d/conda.sh
-$ conda activate my-conda-env
-$ conda install ipykernel
-$ # you can pip/conda install other packages here too
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my-conda-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
+<span class="nb">source</span><span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>info<span class="w"> </span>--base<span class="k">)</span>/etc/profile.d/conda.sh
+conda<span class="w"> </span>activate<span class="w"> </span>my-conda-env
+conda<span class="w"> </span>install<span class="w"> </span>ipykernel
+<span class="c1"># you can pip/conda install other packages here too</span>
 </code></pre></div>
 <p>Now create a Jupyter kernel based on your new conda environment:</p>
-<div class="highlight"><pre><span></span><code>$ python -m ipykernel install --user --name my-conda-env --display-name=&quot;My Conda Env&quot;
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>my-conda-env<span class="w"> </span>--display-name<span class="o">=</span><span class="s2">&quot;My Conda Env&quot;</span>
 </code></pre></div>
 <p>We must now edit the kernel to load the required NeSI environment
 modules before the kernel is launched. Change to the directory the
 kernelspec was installed to
-(~/.local/share/jupyter/kernels/my-conda-env,<em> </em>assuming you kept
-<em>--name my-conda-env</em> in the above command):</p>
-<div class="highlight"><pre><span></span><code>$ cd ~/.local/share/jupyter/kernels/my-conda-env
+<code>~/.local/share/jupyter/kernels/my-conda-env</code>, (assuming you kept
+<code>--name my-conda-env</code> in the above command):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/.local/share/jupyter/kernels/my-conda-env
 </code></pre></div>
-<p>Now create a wrapper script, called <em>wrapper.sh</em>, with the following
+<p>Now create a wrapper script, called <code>wrapper.sh</code>, with the following
 contents:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
-# load required modules here
-module purge
-module load Miniconda3/4.8.2
+<span class="c1"># load required modules here</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Miniconda3/4.8.2
 
-# activate conda environment
-source $(conda info --base)/etc/profile.d/conda.sh 
-conda deactivate  # workaround for https://github.com/conda/conda/issues/9392
-conda activate my-conda-env
+<span class="c1"># activate conda environment</span>
+<span class="nb">source</span><span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>info<span class="w"> </span>--base<span class="k">)</span>/etc/profile.d/conda.sh<span class="w"> </span>
+conda<span class="w"> </span>deactivate<span class="w">  </span><span class="c1"># workaround for https://github.com/conda/conda/issues/9392</span>
+conda<span class="w"> </span>activate<span class="w"> </span>my-conda-env
 
-# run the kernel
-exec python $@
+<span class="c1"># run the kernel</span>
+<span class="nb">exec</span><span class="w"> </span>python<span class="w"> </span><span class="nv">$@</span>
 </code></pre></div>
 <p>Make the wrapper script executable:</p>
-<div class="highlight"><pre><span></span><code>$ chmod +x wrapper.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>wrapper.sh
 </code></pre></div>
 <p>Next edit the <em>kernel.json</em> to change the first element of the argv list
 to point to the wrapper script we just created. The file should look
 like this (change &lt;username&gt; to your NeSI username):</p>
-<div class="highlight"><pre><span></span><code>{
- &quot;argv&quot;: [
- &quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/my-conda-env/wrapper.sh&quot;,
- &quot;-m&quot;,
- &quot;ipykernel_launcher&quot;,
- &quot;-f&quot;,
- &quot;{connection_file}&quot;
- ],
- &quot;display_name&quot;: &quot;My Conda Env&quot;,
- &quot;language&quot;: &quot;python&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w"> </span><span class="s2">&quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/my-conda-env/wrapper.sh&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;{connection_file}&quot;</span>
+<span class="w"> </span><span class="p">],</span>
+<span class="w"> </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Conda Env&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>After refreshing JupyterLab your new kernel should show up in the
 Launcher as "My Conda Env".</p>
@@ -1656,59 +1652,58 @@ Python virtual environment, Conda environment or similar, you must make
 sure it also exists in a shared location (other users cannot see your
 home directory).</p>
 <p>The example below shows creating a shared Python kernel based on the
-<em>Python/3.8.2-gimkl-2020a</em> module and also loads the
-<em>ETE/3.1.1-gimkl-2020a-Python-3.8.2</em> module.</p>
+<code>Python/3.8.2-gimkl-2020a</code> module and also loads the
+<code>ETE/3.1.1-gimkl-2020a-Python-3.8.2</code> module.</p>
 <p>In a terminal run the following commands to load the Python and ETE
 environment modules:</p>
-<div class="highlight"><pre><span></span><code>$ module purge
-$ module load Python/3.8.2-gimkl-2020a
-$ module load ETE/3.1.1-gimkl-2020a-Python-3.8.2
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Python/3.8.2-gimkl-2020a
+module<span class="w"> </span>load<span class="w"> </span>ETE/3.1.1-gimkl-2020a-Python-3.8.2
 </code></pre></div>
 <p>Now create a Jupyter kernel within your project directory, based on your
 new virtual environment:</p>
-<div class="highlight"><pre><span></span><code>$ python -m ipykernel install --prefix=/nesi/project/&lt;project_code&gt;/.jupyter --name shared-ete-env --display-name=&quot;Shared ETE Env&quot;
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--prefix<span class="o">=</span>/nesi/project/&lt;project_code&gt;/.jupyter<span class="w"> </span>--name<span class="w"> </span>shared-ete-env<span class="w"> </span>--display-name<span class="o">=</span><span class="s2">&quot;Shared ETE Env&quot;</span>
 </code></pre></div>
 <p>Next change to the kernel directory, which for the above command would
 be:</p>
-<div class="highlight"><pre><span></span><code>$ cd /nesi/project/&lt;project_code&gt;/.jupyter/share/jupyter/kernels/shared-ete-env
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/nesi/project/&lt;project_code&gt;/.jupyter/share/jupyter/kernels/shared-ete-env
 </code></pre></div>
 <p>Create a wrapper script, <em>wrapper.sh</em>, with the following contents:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
-# load necessary modules here
-module purge
-module load Python/3.8.2-gimkl-2020a
-module load ETE/3.1.1-gimkl-2020a-Python-3.8.2
+<span class="c1"># load necessary modules here</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Python/3.8.2-gimkl-2020a
+module<span class="w"> </span>load<span class="w"> </span>ETE/3.1.1-gimkl-2020a-Python-3.8.2
 
-# run the kernel
-exec python $@
+<span class="c1"># run the kernel</span>
+<span class="nb">exec</span><span class="w"> </span>python<span class="w"> </span><span class="nv">$@</span>
 </code></pre></div>
 <p>Note we also load the ETE module so that we can use that from our
 kernel.</p>
 <p>Make the wrapper script executable:</p>
-<div class="highlight"><pre><span></span><code>chmod +x wrapper.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>wrapper.sh
 </code></pre></div>
 <p>Next, edit the <em>kernel.json</em> to change the first element of the argv
 list to point to the wrapper script we just created. The file should
 look like this (change &lt;project_code&gt; to your NeSI project code):</p>
-<div class="highlight"><pre><span></span><code>{
- &quot;argv&quot;: [
- &quot;/nesi/project/&lt;project_code&gt;/.jupyter/share/jupyter/kernels/shared-ete-env/wrapper.sh&quot;,
- &quot;-m&quot;,
- &quot;ipykernel_launcher&quot;,
- &quot;-f&quot;,
- &quot;{connection_file}&quot;
- ],
- &quot;display_name&quot;: &quot;Shared Conda Env&quot;,
- &quot;language&quot;: &quot;python&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w"> </span><span class="s2">&quot;/nesi/project/&lt;project_code&gt;/.jupyter/share/jupyter/kernels/shared-ete-env/wrapper.sh&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;{connection_file}&quot;</span>
+<span class="w"> </span><span class="p">],</span>
+<span class="w"> </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shared Conda Env&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>After refreshing JupyterLab your new kernel should show up in the
 Launcher as "Shared Virtual Env".</p>
 <h2 id="custom-kernel-in-a-singularity-container">Custom kernel in a Singularity container<a class="headerlink" href="#custom-kernel-in-a-singularity-container" title="Permanent link">&para;</a></h2>
 <p>An example showing setting up a custom kernel running in a Singularity
-container can be found on our <a href="../../Supported_Applications/Lambda%20Stack/#lambda_stack_via_jupyter">Lambda
-Stack</a>
+container can be found on our <a href="../../Supported_Applications/Lambda%20Stack/#lambda_stack_via_jupyter">Lambda Stack</a>
 support page.</p>
 <h2 id="adding-a-custom-r-kernel">Adding a custom R kernel<a class="headerlink" href="#adding-a-custom-r-kernel" title="Permanent link">&para;</a></h2>
 <p>You can configure custom R kernels for running your Jupyter notebooks.
@@ -1717,53 +1712,53 @@ R/3.6.2-gimkl-2020a environment module and will additionally load an
 MPFR environment module (e.g. if you wanted to load the Rmpfr package).</p>
 <p>In a terminal run the following commands to load the required
 environment modules:</p>
-<div class="highlight"><pre><span></span><code>$ module purge
-$ module load IRkernel/1.1.1-gimkl-2020a-R-3.6.2
-$ module load Python/3.8.2-gimkl-2020a
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>IRkernel/1.1.1-gimkl-2020a-R-3.6.2
+module<span class="w"> </span>load<span class="w"> </span>Python/3.8.2-gimkl-2020a
 </code></pre></div>
 <p>The IRkernel module loads the R module as a dependency and provides the
 R kernel for Jupyter. Python is required to install the kernel (since
 Jupyter is written in Python).</p>
 <p>Now create an R Jupyter kernel based on your new conda environment:</p>
-<div class="highlight"><pre><span></span><code>$ R -e &quot;IRkernel::installspec(name=&#39;myrwithmpfr&#39;, displayname = &#39;R with MPFR&#39;, user = TRUE)&quot;
+<div class="highlight"><pre><span></span><code>R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;IRkernel::installspec(name=&#39;myrwithmpfr&#39;, displayname = &#39;R with MPFR&#39;, user = TRUE)&quot;</span>
 </code></pre></div>
 <p>We must now to edit the kernel to load the required NeSI environment
 modules when the kernel is launched. Change to the directory the
 kernelspec was installed to
 (~/.local/share/jupyter/kernels/myrwithmpfr,<em> </em>assuming you kept <em>--name
 myrwithmpfr</em> in the above command):</p>
-<div class="highlight"><pre><span></span><code>$ cd ~/.local/share/jupyter/kernels/myrwithmpfr
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/.local/share/jupyter/kernels/myrwithmpfr
 </code></pre></div>
 <p>Now create a wrapper script in that directory, called <em>wrapper.sh</em>, with
 the following contents:</p>
-<div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
-# load required modules here
-module purge
-module load MPFR/4.0.2-GCCcore-9.2.0
-module load IRkernel/1.1.1-gimkl-2020a-R-3.6.2
+<span class="c1"># load required modules here</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>MPFR/4.0.2-GCCcore-9.2.0
+module<span class="w"> </span>load<span class="w"> </span>IRkernel/1.1.1-gimkl-2020a-R-3.6.2
 
-# run the kernel
-exec R $@
+<span class="c1"># run the kernel</span>
+<span class="nb">exec</span><span class="w"> </span>R<span class="w"> </span><span class="nv">$@</span>
 </code></pre></div>
 <p>Make the wrapper script executable:</p>
-<div class="highlight"><pre><span></span><code>$ chmod +x wrapper.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>wrapper.sh
 </code></pre></div>
 <p>Next edit the <em>kernel.json</em> to change the first element of the argv list
 to point to the wrapper script we just created. The file should look
 something like this (change &lt;username&gt; to your NeSI username):</p>
-<div class="highlight"><pre><span></span><code>{
- &quot;argv&quot;: [
- &quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh&quot;,
- &quot;--slave&quot;,
- &quot;-e&quot;,
- &quot;IRkernel::main()&quot;,
- &quot;--args&quot;,
- &quot;{connection_file}&quot;
- ],
- &quot;display_name&quot;: &quot;R with MPFR&quot;,
- &quot;language&quot;: &quot;R&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;argv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w"> </span><span class="s2">&quot;/home/&lt;username&gt;/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;--slave&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;-e&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;IRkernel::main()&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;--args&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="s2">&quot;{connection_file}&quot;</span>
+<span class="w"> </span><span class="p">],</span>
+<span class="w"> </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R with MPFR&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>After refreshing JupyterLab your new R kernel should show up in the
 Launcher as "R with MPFR".</p>
@@ -1793,7 +1788,7 @@ you select one of our Python 3.7.3 or Anaconda3 kernels.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2023</span>
   </span>
 
     

@@ -1529,18 +1529,12 @@
 
   <h1>RStudio via Jupyter on NeSI</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>This functionality is experimental and may introduce breaking changes
  in the future. These notes should be read in conjunction with NeSI's
- main <a href="../../Supported_Applications/R/">R support
- page</a>
- Your feedback is welcome, please don't hesitate to contact us at
- <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a> to make suggestions.</p>
+ main <a href="../../Supported_Applications/R/">R support page</a>
+ Your feedback is welcome, please don't hesitate <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> to make suggestions.</p>
 </div>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>RStudio can be accessed as a web application via <a href="../Jupyter_on_NeSI/">Jupyter on
@@ -1562,15 +1556,16 @@ change the version of the R interpreter or use NeSI's <em>R-Geo</em> or
 <p>The module needs to be entered in the configuration file
 <code>~/.config/rstudio_on_nesi/prelude.bash</code>.</p>
 <p>In the following example, we use the module that is built for R/4.2.1</p>
-<div class="highlight"><pre><span></span><code>$ echo &quot;module load R/4.2.1-gimkl-2022a&quot; &gt; ~/.config/rstudio_on_nesi/prelude.bash
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;module load R/4.2.1-gimkl-2022a&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.config/rstudio_on_nesi/prelude.bash
 </code></pre></div>
 <p>Once your configuration file is ready, make sure to restart your Jupyter
 session and re-launch RStudio for these changes to be taken into
 account. Check that the correct version of R has loaded and that the
 correct Library Paths are available. For R/4.2.1 the command
 <code>.libPaths()</code> will return the following:</p>
-<div class="highlight"><pre><span></span><code>     .libPaths()
-[1] &quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;                            
+<div class="highlight"><pre><span></span><code><span class="nf">.libPaths</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1] &quot;/home/YOUR_USER_NAME/R/gimkl-2022a/4.2&quot;                            
 [2] &quot;/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library&quot;
 </code></pre></div>
 <h2 id="package-installation">Package Installation<a class="headerlink" href="#package-installation" title="Permanent link">&para;</a></h2>
@@ -1578,15 +1573,16 @@ correct Library Paths are available. For R/4.2.1 the command
 in a terminal run the following two lines of code. These will setup a
 larger directory that will allow for packages to be installed to your
 personal library. NOTE: this is not creating a library.</p>
-<div class="highlight"><pre><span></span><code>$ mkdir -p /nesi/nobackup/&lt;projectID&gt;/rstudio_tmp
-$ echo &quot;TMP=/nesi/nobackup/&lt;projectID&gt;/rstudio_tmp&quot; &gt; .Renviron
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/nesi/nobackup/&lt;projectID&gt;/rstudio_tmp
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TMP=/nesi/nobackup/&lt;projectID&gt;/rstudio_tmp&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>.Renviron
 </code></pre></div>
 <p>Within RStudio run the command `tempdir()` which should return the
 following (below), where `Rtmpjp2rm8` is a randomly generated folder
 name, and is emptied with each new session. So will not fill up your
 home directory.</p>
-<div class="highlight"><pre><span></span><code>    tempdir()
-[1] &quot;/nesi/nobackup/&lt;projectID&gt;/rstudio_tmp/Rtmpjp2rm8&quot;
+<div class="highlight"><pre><span></span><code><span class="nf">tempdir</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1] &quot;/nesi/nobackup/&lt;projectID&gt;/rstudio_tmp/Rtmpjp2rm8&quot;
 </code></pre></div>
 <p>The alternative is to install packages in a terminal session</p>
 <h2 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
@@ -1597,14 +1593,13 @@ prepared by the NeSI team to run on
 hosted on GitHub, in the
 <a href="https://github.com/nesi/rstudio_on_nesi">rstudio_on_nesi</a> repository.</p>
 <p>To modify the content of the container, you need to adapt the
-<a href="https://github.com/nesi/rstudio_on_nesi/blob/main/conf/rstudio_server_on_centos7.def">Singularity definition
-file</a>,
+<a href="https://github.com/nesi/rstudio_on_nesi/blob/main/conf/rstudio_server_on_centos7.def">Singularity definition file</a>,
 found in the <code>conf</code> folder of the repository, and then rebuild the
 container.</p>
 <p>Once your container is ready, upload it on NeSI and use the
 configuration file <code>~/.config/rstudio_on_nesi/singularity_image_path</code> to
 indicate the path of your container to the RStudio-on-NeSI plugin:</p>
-<div class="highlight"><pre><span></span><code>$ echo PATH_TO_CONTAINER &gt; ~/.config/rstudio_on_nesi/singularity_image_path
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>PATH_TO_CONTAINER<span class="w"> </span>&gt;<span class="w"> </span>~/.config/rstudio_on_nesi/singularity_image_path
 </code></pre></div>
 <p>Then restart your Jupyter session and launch a new RStudio session to
 make use of your container.</p>
@@ -1614,20 +1609,19 @@ to start.</p>
 <p>If this does not work, you will need to investigate the errors. A good
 place to start is looking at the log file from jupyter, for the current
 session:</p>
-<div class="highlight"><pre><span></span><code>$ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.jupyter/.jupyterhub_<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>_<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>.log
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If you get an error 500 after clicking on the launcher icon, this could
 be due to RStudio taking too much time to start, which is interpreted as
 a failure by JupyterLab. Please try to start RStudio again from the
-launcher. If the problem persists, contact our support team at
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a>.</p>
+launcher. If the problem persists, <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 <p><img alt="error_500.PNG" src="../../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png" /></p>
 <p>If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve
 the password, open a terminal in JupyterLab and enter the following to
 print the password:</p>
-<div class="highlight"><pre><span></span><code>$ cat ~/.config/rstudio_on_nesi/server_password
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>~/.config/rstudio_on_nesi/server_password
 </code></pre></div>
 
 
@@ -1651,7 +1645,7 @@ print the password:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2023</span>
   </span>
 
     

@@ -1529,10 +1529,6 @@
 
   <h1>Jupyter kernels - Tool-assisted management</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Jupyter can execute code in different computing environments using
 <em>kernels</em>. Some kernels are provided by default (Python, R, etc.) but
@@ -1540,8 +1536,7 @@ you may want to register your computing environment to use it in
 notebooks. For example, you may want to load a specific environment
 module in your kernel or use a Conda environment.</p>
 <p>To register a Jupyter kernel, you can follow the steps highlighted in
-the <a href="../Jupyter_kernels_Manual_management/">Jupyter kernels - Manual
-management</a>
+the <a href="../Jupyter_kernels_Manual_management/">Jupyter kernels - Manual management</a>
 or use the <code>nesi-add-kernel</code> tool provided on Jupyter on NeSI service.
 This page details the latter option, which we recommend.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
@@ -1549,59 +1544,59 @@ This page details the latter option, which we recommend.</p>
 on NeSI or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
 access to the <code>nesi-add-kernel</code> tool:</p>
-<div class="highlight"><pre><span></span><code>module purge  # remove all previously loaded modules
-module load JupyterLab
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge<span class="w">  </span><span class="c1"># remove all previously loaded modules</span>
+module<span class="w"> </span>load<span class="w"> </span>JupyterLab
 </code></pre></div>
 <p>Then, to list all available options, use the <code>-h</code> or <code>--help</code> options as
 follows:</p>
-<div class="highlight"><pre><span></span><code>nesi-add-kernel --help
+<div class="highlight"><pre><span></span><code>nesi-add-kernel<span class="w"> </span>--help
 </code></pre></div>
 <p>Here is an example to add a TensorFlow kernel, using NeSI’s module:</p>
-<div class="highlight"><pre><span></span><code>nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+<div class="highlight"><pre><span></span><code>nesi-add-kernel<span class="w"> </span>tf_kernel<span class="w"> </span>TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 </code></pre></div>
 <p>and to share the kernel with other members of your NeSI project:</p>
-<div class="highlight"><pre><span></span><code>nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
+<div class="highlight"><pre><span></span><code>nesi-add-kernel<span class="w"> </span>--shared<span class="w"> </span>tf_kernel_shared<span class="w"> </span>TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5<span class="w"> </span>
 </code></pre></div>
 <p>To list all the installed kernels, use the following command:</p>
-<div class="highlight"><pre><span></span><code>jupyter-kernelspec list
+<div class="highlight"><pre><span></span><code>jupyter-kernelspec<span class="w"> </span>list
 </code></pre></div>
 <p>and to delete a specific kernel:</p>
-<div class="highlight"><pre><span></span><code>jupyter-kernelspec remove &lt;kernel_name&gt;
+<div class="highlight"><pre><span></span><code>jupyter-kernelspec<span class="w"> </span>remove<span class="w"> </span>&lt;kernel_name&gt;
 </code></pre></div>
 <p>where <code>&lt;kernel_name&gt;</code> stands for the name of the kernel to delete.</p>
 <h2 id="conda-environment">Conda environment<a class="headerlink" href="#conda-environment" title="Permanent link">&para;</a></h2>
 <p>First, make sure the <code>JupyterLab</code> module is loaded:</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load JupyterLab
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>JupyterLab
 </code></pre></div>
 <p>To add a Conda environment created using
 <code>conda create -p &lt;conda_env_path&gt;</code>, use:</p>
-<div class="highlight"><pre><span></span><code>nesi-add-kernel my_conda_env -p &lt;conda_env_path&gt;
+<div class="highlight"><pre><span></span><code>nesi-add-kernel<span class="w"> </span>my_conda_env<span class="w"> </span>-p<span class="w"> </span>&lt;conda_env_path&gt;
 </code></pre></div>
 <p>otherwise if created using <code>conda create -n &lt;conda_env_name&gt;</code>, use:</p>
-<div class="highlight"><pre><span></span><code>nesi-add-kernel my_conda_env -n &lt;conda_env_name&gt;
+<div class="highlight"><pre><span></span><code>nesi-add-kernel<span class="w"> </span>my_conda_env<span class="w"> </span>-n<span class="w"> </span>&lt;conda_env_name&gt;
 </code></pre></div>
 <h2 id="virtual-environment">Virtual environment<a class="headerlink" href="#virtual-environment" title="Permanent link">&para;</a></h2>
 <p>If you want to use a Python virtual environment, don’t forget to specify
 which Python module you used to create it.</p>
 <p>For example, if we create a virtual environment named <code>my_test_venv</code>
 using Python 3.10.5:</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load Python/3.10.5-gimkl-2022a
-python -m venv my_test_venv
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Python/3.10.5-gimkl-2022a
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>my_test_venv
 </code></pre></div>
 <p>to create the corresponding <code>my_test_kernel</code> kernel, we need to use the
 command:</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load JupyterLab
-nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>JupyterLab
+nesi-add-kernel<span class="w"> </span>my_test_kernel<span class="w"> </span>Python/3.10.5-gimkl-2022a<span class="w"> </span>--venv<span class="w"> </span>my_test_venv
 </code></pre></div>
 <h2 id="singularity-container">Singularity container<a class="headerlink" href="#singularity-container" title="Permanent link">&para;</a></h2>
 <p>To use a Singularity container, use the <code>-c</code> or <code>--container</code> options as
 follows:</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load JupyterLab
-nesi-add-kernel my_test_kernel -c &lt;container_image.sif&gt;
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>JupyterLab
+nesi-add-kernel<span class="w"> </span>my_test_kernel<span class="w"> </span>-c<span class="w"> </span>&lt;container_image.sif&gt;
 </code></pre></div>
 <p>where <code>&lt;container_image.sif&gt;</code> is a path to your container image.</p>
 <p>Note that your container <strong>must</strong> have the <code>ipykernel</code> Python package
@@ -1611,16 +1606,16 @@ arguments to the <code>singularity exec</code> command used to instantiate the
 kernel.</p>
 <p>Here is an example instantiating a NVIDIA NGC container as a kernel.
 First, we need to pull the container:</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load Singularity/3.11.3
-singularity pull nvidia_tf.sif docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>Singularity/3.11.3
+singularity<span class="w"> </span>pull<span class="w"> </span>nvidia_tf.sif<span class="w"> </span>docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
 </code></pre></div>
 <p>then we can instantiate the kernel, using the <code>--nv</code> singularity flag to
 ensure that the GPU will be found at runtime (assuming our Jupyter
 session has access to a GPU):</p>
-<div class="highlight"><pre><span></span><code>module purge
-module load JupyterLab
-nesi-add-kernel nvidia_tf -c nvidia_tf.sif --container-args &quot;&#39;--nv&#39;&quot;
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>JupyterLab
+nesi-add-kernel<span class="w"> </span>nvidia_tf<span class="w"> </span>-c<span class="w"> </span>nvidia_tf.sif<span class="w"> </span>--container-args<span class="w"> </span><span class="s2">&quot;&#39;--nv&#39;&quot;</span>
 </code></pre></div>
 <p>Note that the double-quoting of <code>--nv</code> is needed to properly pass the
 options to <code>singularity exec</code>.</p>
@@ -1646,7 +1641,7 @@ options to <code>singularity exec</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2023</span>
   </span>
 
     
