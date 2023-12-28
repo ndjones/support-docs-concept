@@ -356,17 +356,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Bashl-Reference_Sheet/</loc>
+         <lastmod>2023-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Git-Reference_Sheet/</loc>
          <lastmod>2023-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet/</loc>
-         <lastmod>2023-12-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/Getting_Started/Cheat_Sheets/Unix_Shell-Reference_Sheet/</loc>
          <lastmod>2023-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>

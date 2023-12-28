@@ -498,11 +498,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Unix_Shell-Reference_Sheet/" class="md-nav__link">
+      <a href="../Bashl-Reference_Sheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Unix Shell: Reference Sheet
+    Bash: Reference Sheet
   </span>
   
 
@@ -1277,10 +1277,6 @@
 
   <h1>Git: Reference Sheet</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.</p>
@@ -1290,8 +1286,8 @@ found <a href="https://git-scm.com/docs/git">here</a>, or using <code>man git</
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
 <p>In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.</p>
-<div class="admonition prerequisite password authentication">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition warning">
+<p class="admonition-title">Password authentication</p>
 <p>GitHub removed support for password authentication on August 13, 2021.
  Using a SSH key is now the easiest way to set up authentication.</p>
 </div>
@@ -1301,7 +1297,7 @@ documentation</a>.</p>
 <ul>
 <li>
 <p>On the NeSI cluster, run the command </p>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519 -C &quot;your_github_account@example.com&quot;
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_github_account@example.com&quot;</span>
 </code></pre></div>
 </li>
 <li>
@@ -1310,18 +1306,17 @@ documentation</a>.</p>
 </li>
 <li>
 <p>Open up the newly created .pub key with the command </p>
-<div class="highlight"><pre><span></span><code>cat ~/.ssh/id_ed25519.pub
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
 </code></pre></div>
 <p>(or whatever you named the key). It should look something like: </p>
-<div class="highlight"><pre><span></span><code>ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
+<div class="highlight"><pre><span></span><code>ssh-ed25519<span class="w"> </span>ABCDEFGKSAfjksjafkjsaLJfakjJF<span class="w"> </span>your_github_account@example.com
 </code></pre></div>
 <p>Copy the whole key.</p>
 </li>
 <li>
 <p>Now log in to your github account. In the upper-right corner of any
     page, click your profile photo click <strong>Settings</strong>.</p>
-<p><img alt="Settings icon in the user
-bar" src="../../../assets/images/Git-Reference_Sheet.png" /></p>
+<p><img alt="Settings icon in the user bar" src="../../../assets/images/Git-Reference_Sheet.png" /></p>
 </li>
 <li>
 <p>In the "Access" section of the sidebar, click <strong>SSH and GPG keys</strong>.</p>
@@ -1342,11 +1337,11 @@ bar" src="../../../assets/images/Git-Reference_Sheet.png" /></p>
 </li>
 <li>
 <p>Switching back to your terminal on the cluster, you can test your
-    connection with the command </p>
-<div class="highlight"><pre><span></span><code>ssh -T git@github.com
+    connection with the command</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </code></pre></div>
 <p>You may be promted to authenticate, if so type 'yes'<br />
-If everything is working, you should see the message </p>
+If everything is working, you should see the message</p>
 <div class="highlight"><pre><span></span><code>Hi User! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </code></pre></div>
 </li>
@@ -1451,7 +1446,7 @@ will be the repo you cloned from, or set manually using
 <tr>
 <td>fetch </td>
 <td><code>git fetch</code></td>
-<td>Gets status of 'origin'. git fetch <strong>does not </strong>change your working directory or local repository (see <code>git pull</code>). </td>
+<td>Gets status of 'origin'. git fetch <strong>does not</strong> change your working directory or local repository (see <code>git pull</code>). </td>
 </tr>
 <tr>
 <td></td>
@@ -1480,8 +1475,8 @@ will be the repo you cloned from, or set manually using
 </tr>
 </tbody>
 </table>
-<div class="admonition prerequisite tip">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>If you are working without collaborators, there should be no reason to
  have a conflict between your local and your remote repo. Make sure you
  always git pull when starting work on your local and git push when
@@ -1522,10 +1517,10 @@ multiple branches, or requires merging.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition prerequisite other resources">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition prerequisite">
+<p class="admonition-title">Other Resources</p>
 <ul>
-<li><a href="https://ohshitgit.com/">https://ohshitgit.com/</a></li>
+<li><a href="https://ohshitgit.com/">oshitgit.com</a></li>
 </ul>
 </div>
 
@@ -1550,7 +1545,7 @@ multiple branches, or requires merging.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2023</span>
   </span>
 
     
