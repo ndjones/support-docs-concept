@@ -557,6 +557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Compiling_software_on_Maui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiling software on Māui
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Per_job_temporary_directories/" class="md-nav__link">
         
   
@@ -822,6 +843,13 @@
     NICE DCV Setup
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
 
       </a>
     </li>
@@ -842,6 +870,13 @@
   <span class="md-ellipsis">
     Visualisation software
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -904,27 +939,6 @@
   
   <span class="md-ellipsis">
     Compiling software on Mahuika
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Compiling_software_on_Maui/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Compiling software on Māui
   </span>
   
 
@@ -1757,10 +1771,6 @@
 
   <h1>Thread Placement and Thread Affinity</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on <a href="../../../Getting_Started/Next_Steps/Parallel_Execution/">Parallel
@@ -1845,23 +1855,24 @@ Intel compiler, or uses Intel oneMKL. Other OpenMP libraries such as
 GOMP have similar configurations.</p>
 <p>Use a text editor to save the following test program in a text file
 called "hello_world.c":</p>
-<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
-#include &lt;omp.h&gt;
-int main()
-{
-    #pragma omp parallel
-    printf(&quot;Hello World from Thread %i!\n&quot;, omp_get_thread_num());
-    return 0;
-}
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cp">#pragma omp parallel</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World from Thread %i!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">());</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>On Mahuika or Māui Ancil, compile the program using the commands</p>
-<div class="highlight"><pre><span></span><code>module load intel/2018b
-icc -o hello_world.x -qopenmp hello_world.c
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>intel/2018b
+icc<span class="w"> </span>-o<span class="w"> </span>hello_world.x<span class="w"> </span>-qopenmp<span class="w"> </span>hello_world.c
 </code></pre></div>
 <p>Running the program with two threads should return the following output
 (although the order of threads may be different):</p>
-<div class="highlight"><pre><span></span><code>OMP_NUM_THREADS=2 ./hello_world.x
-Hello World from Thread 0!
+<div class="highlight"><pre><span></span><code><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>./hello_world.x
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Hello World from Thread 0!
 Hello World from Thread 1!
 </code></pre></div>
 <h2 id="configuring-slurm">Configuring Slurm<a class="headerlink" href="#configuring-slurm" title="Permanent link">&para;</a></h2>
@@ -1936,10 +1947,13 @@ Hello World from Thread 2!
 <p>We will now place our threads on cores in a specific order and bind them
 to these cores, so that they can no longer move to another core during
 execution.</p>
-<p><strong>Important:</strong> As mentioned above, Slurm does NOT guarantee that all
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Slurm does NOT guarantee that all
 threads will be placed on the same socket even if our job would fit
 entirely within one socket. This needs to be taken into account when
 optimising threading setup.</p>
+</div>
 <p>Let us start with the following setup:</p>
 <ul>
 <li>Run with "--hint=multithread" so that our program can access all
@@ -2072,7 +2086,7 @@ export KMP_AFFINITY=granularity=fine,compact,0,0
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2023</span>
   </span>
 
     
