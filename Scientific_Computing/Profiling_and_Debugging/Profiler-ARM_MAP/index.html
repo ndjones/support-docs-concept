@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP/">
       
       
-        <link rel="prev" href="../Slurm_Native_Profiling/">
+        <link rel="prev" href="../Debugging/">
       
       
-        <link rel="next" href="../Debugging/">
+        <link rel="next" href="../Profiler-VTune/">
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
@@ -685,32 +685,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Profiler-VTune/" class="md-nav__link">
+      <a href="../Debugging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Profiler: VTune
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Slurm_Native_Profiling/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm Native Profiling
+    Debugging
   </span>
   
 
@@ -838,11 +817,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Debugging/" class="md-nav__link">
+      <a href="../Profiler-VTune/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Debugging
+    Profiler: VTune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Slurm_Native_Profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Native Profiling
   </span>
   
 
@@ -1505,18 +1505,6 @@
 
   <h1>Profiler: ARM MAP</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<ul>
-<li><a href="#introduction-to-profiling">Introduction to profiling</a></li>
-<li><a href="#h_23e5a159-4e9c-4f25-9395-53f03e1187f7">Profiling test cases</a></li>
-<li><a href="#h_e444a43e-f0a5-45a5-8ed2-8bd06abae1a9">MAP profiler</a></li>
-<li><a href="#using-the-express-launch">MAP “Express Launch”</a></li>
-<li><a href="#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873">MAP GUI launch</a></li>
-<li><a href="#map-profile">MAP Profile</a></li>
-</ul>
 <p>The ARM (previously known as Allinea) provides a package called <em>forge</em>,
 which consists of a debugger, DDT and a profiler, MAP.</p>
 <h2 id="introduction-to-profiling">Introduction to profiling<a class="headerlink" href="#introduction-to-profiling" title="Permanent link">&para;</a></h2>
@@ -1553,26 +1541,25 @@ the MAP GUI. This conveniently provides access to different metrics and
 allows the user to navigate through different levels of details,
 browsing through the code, and focusing on specific functions, loops and
 source code lines.  See section <a href="#map-profile">MAP profile</a> below.</p>
-<p>There is also an <a href="https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge">Arm Forge
-Client</a>
+<p>There is also an <a href="https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge">Arm Forge Client</a>
 you can download to your local machine. Therewith you can browse through
 your downloaded profiling data or even start your profiling/debug tasks
 from remote (not described in detail here).</p>
-<p><strong>Note:</strong> If you want to use the GUI on the NeSI systems, please
-remember to start your ssh session using X11 forwarding (e.g. using the
-<code>ssh -Y</code> option).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to use the GUI on the NeSI systems, please
+remember to start your ssh session using X11 forwarding (e.g. using the <code>ssh -Y</code> option).</p>
+</div>
 <h2 id="map-express-launch">MAP “Express Launch”<a class="headerlink" href="#map-express-launch" title="Permanent link">&para;</a></h2>
 <p>To use MAP we need to load the <em>forge</em> module in our batch script and
 add <code>map --profile</code> in front of the parallel run statements. For
 example:</p>
 <p>Upon execution, a <code>.map</code> file will be generated. The results can be
 viewed, for instance, with</p>
-<p>(the <code>.map</code> file name will vary with each run.) See section <a href="#map-profile">MAP
-profile</a> below for how to interpret the results.</p>
+<p>(the <code>.map</code> file name will vary with each run.) See section <a href="#map-profile">MAP profile</a> below for how to interpret the results.</p>
 <h2 id="map-gui-launch">MAP GUI launch<a class="headerlink" href="#map-gui-launch" title="Permanent link">&para;</a></h2>
 <p>The GUI can be started after loading <code>module load forge</code> and launching</p>
-<p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png"><img alt="Arm MAP
-main" src="../../../assets/images/Profiler-ARM_MAP.png" /></a></p>
+<p><img alt="Arm MAP main" src="../../../assets/images/Profiler-ARM_MAP.png" /></p>
 <p>Click on “PROFILE”.</p>
 <p><img alt="MAP_profile_python.PNG" src="../../../assets/images/Profiler-ARM_MAP.PNG" /></p>
 <p>In the profile menu we need to specify the <em>executable/application</em> (in
@@ -1588,7 +1575,7 @@ profile information.</p>
 <h2 id="map-profile">MAP Profile<a class="headerlink" href="#map-profile" title="Permanent link">&para;</a></h2>
 <p>By default the profile window is divided into the following three main
 sections (click on picture to enlarge).</p>
-<p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png"><img alt="example-map-scatter" src="../../../assets/images/Profiler-ARM_MAP_0.png" /></a></p>
+<p><img alt="example-map-scatter" src="../../../assets/images/Profiler-ARM_MAP_0.png" /></p>
 <p>On top, various metrics can be selected in the “Metrics” menu. In the
 middle part, a source code navigator connects line by line source code
 with its profiling data. Most interesting is the profiling table at the
@@ -1610,8 +1597,11 @@ instruction sets during the program run time.</p>
 <p><a href="https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png"><img alt="example-map-scatter_CPU" src="../../../assets/images/Profiler-ARM_MAP_1.png" /></a></p>
 <p>The lower part can also be used to check the <em>application output</em> or
 show statistics on basis of <em>files</em> or <em>functions</em>.</p>
-<p><strong>Note:</strong> often you can get additional information while hovering with
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Often you can get additional information while hovering with
 your mouse over a certain item.</p>
+</div>
 
 
 
@@ -1634,7 +1624,7 @@ your mouse over a certain item.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2023</span>
   </span>
 
     
