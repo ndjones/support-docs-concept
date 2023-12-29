@@ -638,6 +638,13 @@
     Troubleshooting on NeSI
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
 
       </a>
     </li>
@@ -658,6 +665,13 @@
   <span class="md-ellipsis">
     Manuals
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -686,6 +700,13 @@
   <span class="md-ellipsis">
     XC50 Aries Network Architecture
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
   
 
       </a>
@@ -1323,6 +1344,17 @@
                 
 
                   
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">asadasdad</span>
+    
+  
+</nav>
+
 
   
     <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Manuals_and_User_Guides/XC50_Aries_Network_Architecture.md" title="Edit this page" class="md-content__button md-icon">
@@ -1335,25 +1367,24 @@
 
   <h1>XC50 Aries Network Architecture</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>There are 4 dual socket nodes on blade, connected to a single Aries
 (switch) chip, and there are 16 Aries chips in a chassis connected to
-the backplane. On Māui, this implies each chassis contains 64 nodes, or
-2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
-XC50 cabinets are an Electrical "group". Māui has 1.5 groups.</p>
+the backplane.
+On Māui, this implies each chassis contains 64 nodes, or
+2,560 Skylake cores.
+There are 3 chassis in an XC50 cabinet, and two
+XC50 cabinets are an Electrical "group".
+Māui has 1.5 groups.</p>
 <p><img alt="UPM_html_2d91e9cdd34d272d.gif" src="../../../assets/images/XC50_Aries_Network_Architecture.gif" /></p>
 <p>The performance characteristics are:</p>
 <ol>
-<li>
-<ol>
-<li>Intra-Chassis
-        1.  Backplane
-        2.  15 links in the backplane
-        3.  Rank 1 (green) Network
-        4.  14 Gbps</li>
+<li>Intra-Chassis<ol>
+<li>Backplane</li>
+<li>15 links in the backplane</li>
+<li>Rank 1 (green) Network</li>
+<li>14 Gbps</li>
+</ol>
+</li>
 <li>Intra-group<ol>
 <li>Copper cables</li>
 <li>15 links in 5 connectors</li>
@@ -1366,8 +1397,6 @@ XC50 cabinets are an Electrical "group". Māui has 1.5 groups.</p>
 <li>10 links in 5 connectors</li>
 <li>Rank 3 (blue) Network</li>
 <li>12.5 Gbps</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
@@ -1397,7 +1426,7 @@ alternative paths is applied on all 3 levels of the network.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2023</span>
   </span>
 
     
