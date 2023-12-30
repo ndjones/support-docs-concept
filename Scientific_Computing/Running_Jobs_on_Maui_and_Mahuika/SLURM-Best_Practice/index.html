@@ -1060,17 +1060,17 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Bash Header">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       Resources
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#wall-time" class="md-nav__link">
@@ -1090,7 +1090,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parallelism" class="md-nav__link">
     <span class="md-ellipsis">
       Parallelism
@@ -1098,8 +1103,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#fairshare" class="md-nav__link">
     <span class="md-ellipsis">
       Fairshare
@@ -1107,18 +1112,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#cross-machine-submission" class="md-nav__link">
     <span class="md-ellipsis">
       Cross machine submission
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1636,17 +1636,17 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Bash Header">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       Resources
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Resources">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#wall-time" class="md-nav__link">
@@ -1666,7 +1666,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parallelism" class="md-nav__link">
     <span class="md-ellipsis">
       Parallelism
@@ -1674,8 +1679,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#fairshare" class="md-nav__link">
     <span class="md-ellipsis">
       Fairshare
@@ -1683,18 +1688,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#cross-machine-submission" class="md-nav__link">
     <span class="md-ellipsis">
       Cross machine submission
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1724,52 +1724,46 @@
 
   <h1>SLURM: Best Practice</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="bash-header">Bash Header<a class="headerlink" href="#bash-header" title="Permanent link">&para;</a></h2>
 <p>We recommend using <code>#!/bin/bash -e</code> instead of plain <code>#!/bin/bash</code>, so
 that the failure of any command within the script will cause your job to
 stop immediately rather than attempting to continue on with an
 unexpected environment or erroneous intermediate data.  It also ensures
-that your failed jobs show a status of FAILED in <em>sacct</em> output.</p>
-<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+that your failed jobs show a status of FAILED in <code>sacct</code> output.</p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p>Don't request more resources (CPUs, memory, GPUs) than you will need. In
 addition to using your core hours faster, resources intensive jobs will
 take longer to queue. Use the information provided at the completion of
-your job (eg: via the <em>sacct</em> command) to better define resource
+your job (e.g: via the <code>sacct</code> command) to better define resource
 requirements.</p>
 <h3 id="wall-time">Wall-time<a class="headerlink" href="#wall-time" title="Permanent link">&para;</a></h3>
 <p>Long jobs will spend more time in the queue, as there are more
 opportunities for the scheduler to find a time slot to run shorter jobs.
 So consider using job check-pointing or, where possible, more
-parallelism, to get job durations down to a few hours, or at worst,
+parallelism, to get job duration down to a few hours, or at worst,
 days.</p>
 <p>Leave some headroom for safety and run-to-run variability on the system
 but try to be as accurate as possible.</p>
-<p>If you have very many jobs of less than 5 minutes then they should
+<p>If you have many jobs of less than 5 minutes then they should
 probably be combined into larger jobs using a simple loop in the batch
 script so as to amortise the overheads of each job (starting, accounting
 etc).</p>
 <h3 id="memory-ram">Memory (RAM)<a class="headerlink" href="#memory-ram" title="Permanent link">&para;</a></h3>
-<p>If you request more memory (RAM) than you need for your job, it <a href="../../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start/">will
-wait longer in the queue and will be more expensive when it
-runs</a>.
+<p>If you request more memory (RAM) than you need for your job, it
+<a href="../../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start/">will wait longer in the queue and will be more expensive when it runs</a>.
 On the other hand, if you don't request enough memory, the job may be
 killed for attempting to exceed its allocated memory limits.</p>
 <p>We recommend that you request a little more RAM, but not much more, than
 your program will need at peak memory usage.</p>
 <p>We also recommend using <code>--mem</code> instead of <code>--mem-per-cpu</code> in most
 cases. There are a few kinds of jobs for which <code>--mem-per-cpu</code> is more
-suitable. See <a href="../../../General/FAQs/How_do_I_request_memory/">our article on how to request
-memory</a> for more
-information.</p>
-<h3 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h3>
-<p>In general only MPI jobs should set <em>ntasks</em> greater than 1 or use
-<em>srun</em>.  If you don't know whether your program supports MPI, it
+suitable. See <a href="../../../General/FAQs/How_do_I_request_memory/">our article on how to request memory</a>
+for more information.</p>
+<h2 id="parallelism">Parallelism<a class="headerlink" href="#parallelism" title="Permanent link">&para;</a></h2>
+<p>In general only MPI jobs should set <code>--ntasks</code> greater than 1 or use
+<code>srun</code>.  If you don't know whether your program supports MPI, it
 probably doesn't.</p>
-<p>Only multithreaded jobs should set <em>cpus-per-task</em>.  If you don't know
+<p>Only multithreaded jobs should set <code>--cpus-per-task</code>.  If you don't know
 whether your program supports multithreading, try benchmarking with 2
 CPUs and with 4 CPUs and see if there is a 2-fold difference in elapsed
 job time.</p>
@@ -1778,11 +1772,11 @@ mechanism of managing a collection of batch jobs with identical resource
 requirements. Most Slurm commands can manage job arrays either as
 individual elements (tasks) or as a single entity (e.g. delete an entire
 job array in a single command)</p>
-<h3 id="fairshare">Fairshare<a class="headerlink" href="#fairshare" title="Permanent link">&para;</a></h3>
+<h2 id="fairshare">Fairshare<a class="headerlink" href="#fairshare" title="Permanent link">&para;</a></h2>
 <p>A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
 <a href="../Fair_Share/">here</a>.</p>
-<h3 id="cross-machine-submission">Cross machine submission<a class="headerlink" href="#cross-machine-submission" title="Permanent link">&para;</a></h3>
+<h2 id="cross-machine-submission">Cross machine submission<a class="headerlink" href="#cross-machine-submission" title="Permanent link">&para;</a></h2>
 <p>Jobs can be submitted from one machine to another by using the
 <code>--cluster</code> option. E.g. submitting a job from Māui_Ancil to Māui.</p>
 <p>By default the environment (modules and variables) will be inherited
@@ -1792,7 +1786,7 @@ slurm tools, etc., which could cause issues in this inheriting case. We
 suggest to use the environment variable <code>SBATCH_EXPORT=NONE</code> (do NOT us
 <code>--export=none</code> option) in the submitting shell. Therefore we suggest to
 submit a job, e.g. to Māui using:</p>
-<div class="highlight"><pre><span></span><code>SBATCH_EXPORT=NONE sbatch --cluster=maui job.sl
+<div class="highlight"><pre><span></span><code><span class="nv">SBATCH_EXPORT</span><span class="o">=</span>NONE<span class="w"> </span>sbatch<span class="w"> </span>--cluster<span class="o">=</span>maui<span class="w"> </span>job.sl
 </code></pre></div>
 <p>Please note: Above we only discussed the transition from your submitting
 environment to the job environment. The latter is the one your job
@@ -1826,7 +1820,7 @@ environment forwarding to the srun environment.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2023</span>
   </span>
 
     

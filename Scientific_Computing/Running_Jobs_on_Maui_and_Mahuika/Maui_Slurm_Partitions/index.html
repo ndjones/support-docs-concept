@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#definitions" class="md-skip">
+        <a href="#maui-xc50-slurm-partitions" class="md-skip">
           Skip to content
         </a>
       
@@ -1033,15 +1033,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definitions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#maui-xc50-slurm-partitions" class="md-nav__link">
     <span class="md-ellipsis">
       Māui (XC50) Slurm Partitions
@@ -1627,15 +1618,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definitions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#maui-xc50-slurm-partitions" class="md-nav__link">
     <span class="md-ellipsis">
       Māui (XC50) Slurm Partitions
@@ -1735,74 +1717,75 @@
 
   <h1>Māui Slurm Partitions</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite important">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>Partitions on these systems that may be used for NeSI workloads carry
- the prefix <strong>nesi_</strong>.</p>
+ the prefix <code>nesi_</code>.</p>
 </div>
-<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
-<p><strong>CPU</strong> - A logical core, also known as a hardware thread. Referred to
+<!-- ## Definitions
+
+**CPU** - A logical core, also known as a hardware thread. Referred to
 as a "CPU" in the Slurm documentation.  Since
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000568236/">Hyperthreading</a>
+[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236/)
 is enabled, there are two CPUs per physical core, and every task— and
-therefore every job — is allocated an even number of CPUs.</p>
-<p><strong>Job:</strong> A running batch script and any other processes which it might
-launch with <em>srun</em>.</p>
-<p><strong>Node: </strong>A single computer within the cluster with its own CPUs and RAM
+therefore every job — is allocated an even number of CPUs.
+
+**Job:** A running batch script and any other processes which it might
+launch with *srun*.
+
+**Node: **A single computer within the cluster with its own CPUs and RAM
 (memory), and sometimes also GPUs. A node is analogous to a workstation
-(desktop PC) or laptop.</p>
-<p><strong>Walltime: </strong>Real world time, as opposed to CPU time (walltime x CPUs).</p>
+(desktop PC) or laptop.
+
+**Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
+ -->
 <h2 id="maui-xc50-slurm-partitions">Māui (XC50) Slurm Partitions<a class="headerlink" href="#maui-xc50-slurm-partitions" title="Permanent link">&para;</a></h2>
 <p>Nodes are not shared between jobs on Māui, so the minimum charging unit
 is node-hours, where 1 node-hour is 40 core-hours, or 80 Slurm
 CPU-hours.</p>
 <p>There is only one partition available to NeSI jobs:</p>
-<table style="height: 135px; width: 850px;">
+<table >
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
 </colgroup>
 <tbody>
-<tr class="odd" style="height: 46px;">
+<tr >
 <td
-style="width: 148.15px; height: 46px"><p><strong> Name </strong></p></td>
+> Name </td>
 <td
-style="width: 79.7833px; height: 46px"><p><strong>Nodes</strong></p></td>
-<td style="width: 115.8px; height: 46px"><p><strong>Max
-Walltime</strong></p></td>
-<td style="width: 131.333px; height: 46px"><p><strong>Avail /
-Node</strong></p></td>
-<td style="width: 131.333px; height: 46px"><p><strong>Max /
-Account</strong></p></td>
+>Nodes</td>
+<td >Max
+Walltime</td>
+<td >Avail /
+Node</td>
+<td >Max /
+Account</td>
 <td
-style="width: 226.6px; height: 46px"><p><strong>Description</strong></p></td>
+>Description</td>
 </tr>
-<tr class="even" style="height: 89px;">
+<tr >
 <td
-style="width: 148.15px; vertical-align: top; height: 89px"><p>nesi_research</p></td>
+>nesi_research</td>
 <td
-style="width: 79.7833px; vertical-align: top; height: 89px"><p>316</p></td>
-<td style="width: 115.8px; vertical-align: top; height: 89px"><p>24
-hours</p></td>
-<td style="width: 131.333px; vertical-align: top; height: 89px"><p>80
-CPUs</p>
-<p>90 or 180 GB RAM</p></td>
-<td style="width: 131.333px; vertical-align: top; height: 89px"><p>240
-nodes</p>
-<p>1200 node-hours running</p></td>
+>316</td>
+<td >24
+hours</td>
+<td >80
+CPUs
+90 or 180 GB RAM</td>
+<td >240
+nodes
+1200 node-hours running</td>
 <td
-style="width: 226.6px; vertical-align: top; height: 89px"><p>Standard
+>Standard
 partition for all NeSI jobs.<br />
 <br />
-</p></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1816,19 +1799,13 @@ limit:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>nodes</th>
+<th>hours</th>
+<th>node-hours</th>
+<th>limits reached</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>nodes</strong></td>
-<td><strong>hours</strong></td>
-<td><strong>node-hours</strong></td>
-<td><strong>limits reached</strong></td>
-</tr>
 <tr>
 <td>1</td>
 <td>24</td>
@@ -1857,7 +1834,7 @@ limit:</p>
 <td>240</td>
 <td>1</td>
 <td>240</td>
-<td>240 nodes </td>
+<td>240 nodes</td>
 </tr>
 </tbody>
 </table>
@@ -1872,100 +1849,100 @@ higher-priority jobs can start reasonably quickly.</p>
 the <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000202535-Overview">allocation
 class</a>
 of its project. Specifying <code>--qos=debug</code> will override that and give the
-job very high priority, but is subject to strict limits: 15 minutes per
+job high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2
 nodes.</p>
 <h2 id="maui_ancil-cs500-slurm-partitions">Māui_Ancil (CS500) Slurm Partitions<a class="headerlink" href="#maui_ancil-cs500-slurm-partitions" title="Permanent link">&para;</a></h2>
-<table style="height: 242px; width: 850px;">
+<table >
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
 </colgroup>
 <tbody>
-<tr class="odd" style="height: 46px;">
+<tr >
 <td
-style="height: 49px; width: 104.55px"><p><strong>Name</strong></p></td>
+>Name</td>
 <td
-style="height: 49px; width: 64.35px"><p><strong>Nodes</strong></p></td>
-<td style="height: 49px; width: 110.567px"><p><strong>Max
-Walltime</strong></p></td>
-<td style="height: 49px; width: 110.567px"><p><strong>Avail /
-Node</strong></p></td>
-<td style="height: 49px; width: 111.583px"><p><strong>Max /
-Job</strong></p></td>
-<td style="height: 49px; width: 110.583px"><p><strong>Max /
-User</strong></p></td>
+>Nodes</td>
+<td >Max
+Walltime</td>
+<td >Avail /
+Node</td>
+<td >Max /
+Job</td>
+<td >Max /
+User</td>
 <td
-style="height: 49px; width: 159.8px"><p><strong>Description</strong></p></td>
+>Description</td>
 </tr>
-<tr class="even" style="height: 91px;">
+<tr >
 <td
-style="height: 36px; width: 104.55px; vertical-align: top"><p>nesi_prepost</p></td>
+>nesi_prepost</td>
 <td
-style="height: 36px; width: 64.35px; vertical-align: top"><p>4</p></td>
-<td style="height: 36px; width: 110.567px; vertical-align: top"><p>24
-hours</p></td>
-<td style="height: 36px; width: 110.567px; vertical-align: top"><p>80
-CPUs</p>
-<p>720 GB RAM</p></td>
-<td style="height: 36px; width: 111.583px; vertical-align: top"><p>20
-CPUs</p>
-<p>700 GB RAM</p></td>
-<td style="height: 36px; width: 110.583px; vertical-align: top"><p>80
-CPUs</p>
-<p>700 GB RAM</p></td>
-<td style="height: 36px; width: 159.8px; vertical-align: top"><p>Pre and
-post processing tasks.</p></td>
+>4</td>
+<td >24
+hours</td>
+<td >80
+CPUs
+720 GB RAM</td>
+<td >20
+CPUs
+700 GB RAM</td>
+<td >80
+CPUs
+700 GB RAM</td>
+<td >Pre and
+post processing tasks.</td>
 </tr>
-<tr class="odd" style="height: 103.2337646484375px;">
+<tr >
 <td
-style="height: 87px; width: 104.55px; vertical-align: top"><p>nesi_gpu</p></td>
-<td style="height: 87px; width: 64.35px; vertical-align: top"><p>4 to
-5</p></td>
-<td style="height: 87px; width: 110.567px; vertical-align: top"><p>72
-hours</p></td>
-<td style="height: 87px; width: 110.567px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU*</p></td>
-<td style="height: 87px; width: 111.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 87px; width: 110.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 87px; width: 159.8px; vertical-align: top"><p>GPU
-jobs and visualisation. </p></td>
+>nesi_gpu</td>
+<td >4 to
+5</td>
+<td >72
+hours</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU*</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >GPU
+jobs and visualisation. </td>
 </tr>
-<tr class="even" style="height: 70px;">
+<tr >
 <td
-style="height: 70px; width: 104.55px; vertical-align: top"><p>nesi_igpu</p></td>
-<td style="height: 70px; width: 64.35px; vertical-align: top"><p>0 to
-1</p></td>
-<td style="height: 70px; width: 110.567px; vertical-align: top"><p>2
-hours</p></td>
-<td style="height: 70px; width: 110.567px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU*</p></td>
-<td style="height: 70px; width: 111.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 70px; width: 110.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
+>nesi_igpu</td>
+<td >0 to
+1</td>
+<td >2
+hours</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU*</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
 <td
-style="height: 70px; width: 159.8px; vertical-align: top"><p>Interactive
-GPU access 7am - 8pm.</p></td>
+>Interactive
+GPU access 7am - 8pm.</td>
 </tr>
 </tbody>
 </table>
@@ -1980,8 +1957,7 @@ request it using:</p>
 <p>Note that you need to specify the name of the partition.  You also need
 to specify a number of CPUs and amount of memory small enough to fit on
 these nodes.</p>
-<p>See <a href="../GPU_use_on_NeSI/">GPU use on
-NeSI</a>
+<p>See <a href="../GPU_use_on_NeSI/">GPU use on NeSI</a>
 for more details about Slurm and CUDA settings.</p>
 
 
@@ -2005,7 +1981,7 @@ for more details about Slurm and CUDA settings.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2023</span>
   </span>
 
     

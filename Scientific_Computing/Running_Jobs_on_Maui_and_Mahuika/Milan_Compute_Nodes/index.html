@@ -1778,26 +1778,22 @@
 
   <h1>Milan Compute Nodes</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="how-to-access">How to access<a class="headerlink" href="#how-to-access" title="Permanent link">&para;</a></h2>
 <p>To use Mahuika's Milan nodes, you will need to explicitly specify the
 <code>milan</code> partition in your <code>sbatch</code> command line. Jobs are submitted from
 the same Mahuika login node that you currently use, and share the same
-file system as other cluster nodes. </p>
-<div class="highlight"><pre><span></span><code>sbatch -p milan ...
+file system as other cluster nodes.</p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>-p<span class="w"> </span>milan<span class="w"> </span>...
 </code></pre></div>
-<p>Alternatively, the same effect can be achieved by placing a pragma into
-the job description file:</p>
+<p>milan<br />
+Alternatively, the same effect can be achieved by specifying in a Slurm script:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --partition=milan
 </code></pre></div>
 <h2 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
 <p>Each node has two AMD Milan CPUs, each with 8 "chiplets" of 8 cores and
 one level 3 cache, so each node has a total of <strong>128 cores</strong> or 256
 hyperthreaded CPUs. This represents a significant increase of the number
-CPUs per node compared to the Broadwell nodes (36 cores). </p>
+CPUs per node compared to the Broadwell nodes (36 cores).</p>
 <p>The memory available to Slurm jobs is 512GB per node, so approximately
 2GB per CPU. There are 64 nodes available, 8 of which will have double
 the memory (1T).</p>
@@ -1809,12 +1805,12 @@ move from 7 to 8 is more significant than the move from Centos to Rocky.</p>
 <p>Many system libraries have changed version numbers between versions 7
 and 8, so <strong>some software compiled on Centos 7 will not run as-is on
 Rocky 8</strong>. This can result in the runtime error
-<code>error while loading shared libraries:... cannot open shared object file</code>, 
+<code>error while loading shared libraries:... cannot open shared object file</code>,
 which can be fixed by providing a copy of the old system library.  </p>
 <p>We have repaired several of our existing environment modules that way.
 For programs which you have compiled yourself, we have installed a new
 environment module that provides many of the Centos 7 libraries:</p>
-<div class="highlight"><pre><span></span><code>module load LegacySystemLibs/7
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>LegacySystemLibs/7
 </code></pre></div>
 <p>Please  <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>
 if that isn't sufficient to get your existing compiled code running on
@@ -1841,7 +1837,7 @@ MKL deliberately choose not to use the accelerated AVX instructions when
 not running on an Intel CPU.  </p>
 <p>In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do:</p>
-<div class="highlight"><pre><span></span><code>module load AlwaysIntelMKL
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>AlwaysIntelMKL
 </code></pre></div>
 <p>We have set that as the default for our most recent toolchain
 <em>gimkl/2022a</em>.</p>
@@ -1851,15 +1847,14 @@ MKL for your application. BLIS is expected to perform well as a BLAS
 alternative but not match MKL's LAPACK performance.  </p>
 <h3 id="do-i-need-to-recompile-my-code">Do I need to recompile my code?<a class="headerlink" href="#do-i-need-to-recompile-my-code" title="Permanent link">&para;</a></h3>
 <p>Except for possible missing shared libraries (see above), you should not
-need to recompile your code. Please [let us
-know <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> if you
+need to recompile your code. Please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> if you
 encounter any issues not listed above.</p>
 <h3 id="aocc-compiler-suite">AOCC compiler suite<a class="headerlink" href="#aocc-compiler-suite" title="Permanent link">&para;</a></h3>
 <p>AMD provides a compiler based on clang (C/C++) and flang (Fortran) which
 might perform better on their hardware. We have installed it but not
 integrated it into a high-level toolchain with MPI and BLAS. If you wish
 to try it:</p>
-<div class="highlight"><pre><span></span><code>module load AOCC
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>AOCC
 </code></pre></div>
 <p>For more information on AOCC compiler suite please, visit <a href="https://developer.amd.com/amd-aocc/">AMD
 Optimizing C/C++ and Fortran Compilers
@@ -1875,10 +1870,9 @@ Dask or PEST, will generally only work if you use the Infiniband address
 of the compute node, eg: <em>wmc012.ib.hpcf.nesi.org.nz</em>. This networking
 configuration is expected to be addressed in the future.</p>
 <h2 id="any-questions">Any questions?<a class="headerlink" href="#any-questions" title="Permanent link">&para;</a></h2>
-<p>Don't hesitate to contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a>. No question is
-too big or small. We are available for Zoom sessions or <a href="../../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online
-Office
-Hours</a>
+<p>Don't hesitate to <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>. No question is
+too big or small. We are available for Zoom sessions or
+<a href="../../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hours</a>
 if it's easier to discuss your question in a call rather than via email.</p>
 
 
@@ -1902,7 +1896,7 @@ if it's easier to discuss your question in a call rather than via email.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2023</span>
   </span>
 
     

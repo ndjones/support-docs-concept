@@ -1545,10 +1545,6 @@
 
   <h1>NetCDF / HDF5 file locking</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>NeSI provides libraries for creating and accessing files in the NetCDF
 and HDF5 formats on both Mahuika and Māui.</p>
 <p>On Māui, both libraries are part of the Cray Programming Environment and
@@ -1563,7 +1559,7 @@ supported</strong> by Cray's DVS. (DVS allows accessing the parallel file
 system GPFS on the XC50 compute nodes).</p>
 <p>Accordingly, NetCDF-4 and HDF5 applications that write data from Māui
 compute nodes need to disable file locking with:</p>
-<div class="highlight"><pre><span></span><code>export HDF5_USE_FILE_LOCKING=FALSE
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HDF5_USE_FILE_LOCKING</span><span class="o">=</span>FALSE
 </code></pre></div>
 <p>If file locking is enabled, HDF5/NetCDF4 applications may experience
 errors such as</p>
@@ -1590,15 +1586,16 @@ minor: Can&#39;t update object
 major: File accessibilty
 minor: Bad file ID accessed
 </code></pre></div>
-<p><strong>Important:</strong> As file locking has to be disabled on the XC50, care
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As file locking has to be disabled on the XC50, care
 should be taken to avoid concurrent reader/writer access in your
 application.</p>
+</div>
 <p>For more information see:</p>
 <ul>
-<li><a href="https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf">Design -File Locking under SWMR in
-    HDF5</a></li>
-<li><a href="https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt">release notes, where mechanism for disabling file locking was
-    introduced</a></li>
+<li><a href="https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf">Design -File Locking under SWMR in HDF5</a></li>
+<li><a href="https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt">release notes, where mechanism for disabling file locking was introduced</a></li>
 </ul>
 
 
@@ -1622,7 +1619,7 @@ application.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2023</span>
   </span>
 
     

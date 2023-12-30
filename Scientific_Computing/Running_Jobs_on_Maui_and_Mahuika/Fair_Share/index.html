@@ -1724,26 +1724,19 @@
 
   <h1>Fair Share</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>The fair-share system is designed to encourage users to balance their
 use of resources over their allocation period. Fair-share is the largest
 factor in determining priority, but not the only one. For more details
-see <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000201636/">Job
-Prioritisation</a>.</p>
+see <a href="../Job_prioritisation/">Job Prioritisation</a>.</p>
 <h2 id="fair-share-score">Fair Share Score<a class="headerlink" href="#fair-share-score" title="Permanent link">&para;</a></h2>
 <p>Your <em>Fair Share score</em> is a number between <strong>0</strong> and <strong>1</strong>. Projects
 with a <strong>larger</strong> Fair Share score receive a <strong>higher priority</strong> in the
 queue.</p>
-<p>A project is given an <a href="../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation/"><strong>allocation</strong> of compute
-units</a>
-over a given <strong>period</strong>. An institution also has a percentage <strong>Fair
-Share entitlement</strong> of each machine's deliverable capacity over that
-same period.</p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<p>A project is given an <a href="../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation/">allocation of compute units</a>
+over a given <strong>period</strong>. An institution also has a percentage <strong>Fair Share entitlement</strong>
+of each machine's deliverable capacity over that same period.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Although we use the term "Fair Share entitlement" in this article, it
  bears only a loose relationship to an institution's contractual
  entitlement to receive allocations from the NeSI HPC Compute &amp;
@@ -1775,7 +1768,7 @@ heavy user.</p>
     overuse, the more severe the likely drop.</li>
 <li>Using <strong>slower</strong> than your <strong>expected rate of usage</strong> will usually
     cause your Fair Share score to <strong>increase</strong>. The more extreme the
-    underuse, the greater the Fair Share bonus.</li>
+    under-use, the greater the Fair Share bonus.</li>
 <li>Using the cluster <strong>unevenly</strong> will cause your Fair Share score to
     <strong>decrease</strong>.</li>
 </ul>
@@ -1788,7 +1781,7 @@ capacity.</p>
 we set a project's expected rate of use based on that project's
 percentage share of all then-current allocations awarded to that
 project's institution on that cluster. This percentage share is in turn
-derived from the sizes (in compute units or nodes) and durations (in
+derived from the sizes (in compute units or nodes) and duration (in
 days) — and thus the expected rates of use of those same allocations.</p>
 <p>Therefore:</p>
 <ul>
@@ -1814,21 +1807,20 @@ days) — and thus the expected rates of use of those same allocations.</p>
 <p>On Mahuika and the Māui XC nodes, Fair Share is not designed to ensure
 that all project teams get the same share of the cluster.</p>
 <h3 id="fair-share-on-the-maui-ancillary-nodes">Fair Share on the Māui ancillary nodes<a class="headerlink" href="#fair-share-on-the-maui-ancillary-nodes" title="Permanent link">&para;</a></h3>
-<p><font color="#000000"> The part of the Māui ancillary nodes that is
-managed by NeSI and scheduled using Slurm forms a very small resource,
+<p>The part of the Māui ancillary nodes that is
+managed by NeSI and scheduled using Slurm forms a small resource,
 only four nodes of 40 CPU cores each. It is intended for pre- and
 post-processing work related to computational jobs carried out on the
 Māui XC nodes. Therefore, we do not make allocations of CPU core hours
 on these nodes. Instead, each project team that has a current allocation
 on the Māui XC nodes is entitled to an equal share of the time on these
-four Māui ancillary nodes. </font></p>
-<p><font color="#000000"> Because job priority on the Māui ancillary nodes
+four Māui ancillary nodes.</p>
+<p>Because job priority on the Māui ancillary nodes
 is still heavily influenced by Fair Share, project teams that have
 recently been doing a lot of work on the Māui ancillary nodes will find
 their jobs there deprioritised, so that other project teams can access
 the resource. However, even heavy users of the Māui ancillary nodes can
-still access resources there if those CPU cores would otherwise be idle.
-</font></p>
+still access resources there if those CPU cores would otherwise be idle.</p>
 <h2 id="how-does-fair-share-work">How does Fair Share work?<a class="headerlink" href="#how-does-fair-share-work" title="Permanent link">&para;</a></h2>
 <p>The starting point for a Fair Share calculation is a comparison of the
 project's actual share of use to the expected share of use. This share
@@ -1836,7 +1828,7 @@ of use is based on what all users of the cluster have actually used
 during the relevant period of time, not what the cluster was capable of
 delivering during that same period. Currently, each period is five
 minutes.</p>
-<p>Because five minutes is a very short time, Fair Share aggregates the
+<p>Because five minutes is a short time, Fair Share aggregates the
 ratio of actual share to expected share since records began on that
 cluster. But as the time gets further back from the present, each
 five-minute window has slightly less influence on fair share scores. Our
@@ -1844,9 +1836,9 @@ current configuration has it that after two weeks (that is, 4,032
 successive five-minute windows), the effect of the ratio for that
 five-minute slice is worth only half of what it was worth initially;
 after four weeks, it is worth a quarter; after six weeks, one eighth;
-and so on. The effect of this decay curve is that overuse or underuse in
+and so on. The effect of this decay curve is that over-use or under-use in
 the recent past has a greater effect on your project's fair share score
-than the same extent of overuse or underuse long ago.</p>
+than the same extent of overuse or under-use long ago.</p>
 <p>One important implication of Fair Share is that allocations are
 implicitly aged: you cannot bank core hours by refraining from
 submitting work. If, for example, you expect to have a lot of
@@ -1863,18 +1855,14 @@ project, and that we are most likely to be able to accommodate such a
 request for projects that expect to use the cluster heavily on average,
 can predict when they will need their heaviest use with a high degree of
 confidence, and give us plenty of notice.</p>
-<p>For full details on Slurm's Fair share mechanism, please see <a href="https://slurm.schedmd.com/priority_multifactor.html#fairshare">this
-page</a>
-(offsite).</p>
+<p>For full details on Slurm's Fair share mechanism, please see <a href="https://slurm.schedmd.com/priority_multifactor.html#fairshare">this page</a></p>
 <h2 id="how-do-i-check-my-projects-fair-share-score">How do I check my project's Fair Share score?<a class="headerlink" href="#how-do-i-check-my-projects-fair-share-score" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The command <code>nn_corehour_usage &lt;project_code&gt;</code>, on a Mahuika or Māui
+<p>-The command <code>nn_corehour_usage &lt;project_code&gt;</code>, on a Mahuika or Māui
     login node, will show, along with other information, the current
-    fair share score and ranking of the specified project.</li>
-<li>The <code>sshare</code> command, on a Mahuika login node, will show the fair
+    fair share score and ranking of the specified project.
+-The <code>sshare</code> command, on a Mahuika login node, will show the fair
     share tree. A related command, <code>nn_sshare_sorted</code>, will show
-    projects in order from the highest fair share score to the lowest.</li>
-</ul>
+    projects in order from the highest fair share score to the lowest.</p>
 <p>In our current configuration, Fair Share scores are attached to
 projects, not to individual users.</p>
 <h2 id="my-projects-fair-share-score-is-too-low-how-can-i-improve-it">My project's Fair Share score is too low. How can I improve it?<a class="headerlink" href="#my-projects-fair-share-score-is-too-low-how-can-i-improve-it" title="Permanent link">&para;</a></h2>
@@ -1882,15 +1870,12 @@ projects, not to individual users.</p>
 share score will naturally be lowered for a while, and should come back
 to normal after a few days.</p>
 <p>If, on the other hand, you have more work to do than expected, please
-[contact us to apply for a larger
-allocation <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>. Project
+<a href="mailto:support@nesi.org.nz">Contact our Support Team</a> to apply for a larger allocation. Project
 teams may request a larger allocation on Mahuika or on the Māui XC
 cluster, though not on the Māui ancillary nodes.</p>
 <p>If you believe your project's fair share score has become corrupted, or
 your ability to get work done is affected by a low Fair Share
-entitlement for your institution on that cluster, please [get in touch
-with our support
-team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
+entitlement for your institution on that cluster, please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 
 
 
@@ -1913,7 +1898,7 @@ team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2023</span>
   </span>
 
     
