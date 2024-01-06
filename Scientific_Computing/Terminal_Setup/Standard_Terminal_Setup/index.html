@@ -1513,23 +1513,14 @@
 
   <h1>Standard Terminal Setup</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
-<li>Have an <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects">active account and
-     project.</a></li>
-<li>Set up your <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password/">Linux
-     Password.</a></li>
-<li>Set up Second <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication/">Factor
-     Authentication.</a></li>
-<li>Using standard Linux/Mac terminal <em>or</em> <a href="../Windows_Subsystem_for_Linux_WSL/">Windows Subsystem for
-     Linux</a>
-     with <a href="../Ubuntu_LTS_terminal_Windows/">Ubuntu
-     terminal</a>.</li>
+<li>Have an <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects">active account and project.</a></li>
+<li>Set up your <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password/">Linux Password.</a></li>
+<li>Set up Second <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication/">Factor Authentication.</a></li>
+<li>Using standard Linux/Mac terminal <em>or</em> <a href="../Windows_Subsystem_for_Linux_WSL/">Windows Subsystem for Linux</a>
+     with <a href="../Ubuntu_LTS_terminal_Windows/">Ubuntu terminal</a>.</li>
 </ul>
 </div>
 <h2 id="first-time-setup">First time setup<a class="headerlink" href="#first-time-setup" title="Permanent link">&para;</a></h2>
@@ -1544,36 +1535,36 @@ configurations.</p>
 <li>
 <p>Open your ssh config file with  <code>nano ~/.ssh/config</code> and add the
     following (replacing <strong><code>username</code></strong> with your username):</p>
-<div class="highlight"><pre><span></span><code>Host mahuika
-   User username
-   Hostname login.mahuika.nesi.org.nz
-   ProxyCommand ssh -W %h:%p lander
-   ForwardX11 yes
-   ForwardX11Trusted yes
-   ServerAliveInterval 300
-   ServerAliveCountMax 2
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>mahuika
+<span class="w">   </span>User<span class="w"> </span>username
+<span class="w">   </span>Hostname<span class="w"> </span>login.mahuika.nesi.org.nz
+<span class="w">   </span>ProxyCommand<span class="w"> </span>ssh<span class="w"> </span>-W<span class="w"> </span>%h:%p<span class="w"> </span>lander
+<span class="w">   </span>ForwardX11<span class="w"> </span>yes
+<span class="w">   </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">   </span>ServerAliveInterval<span class="w"> </span><span class="m">300</span>
+<span class="w">   </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
 
-Host maui
-   User username
-   Hostname login.maui.nesi.org.nz
-   ProxyCommand ssh -W %h:%p lander
-   ForwardX11 yes
-   ForwardX11Trusted yes
-   ServerAliveInterval 300
-   ServerAliveCountMax 2
+Host<span class="w"> </span>maui
+<span class="w">   </span>User<span class="w"> </span>username
+<span class="w">   </span>Hostname<span class="w"> </span>login.maui.nesi.org.nz
+<span class="w">   </span>ProxyCommand<span class="w"> </span>ssh<span class="w"> </span>-W<span class="w"> </span>%h:%p<span class="w"> </span>lander
+<span class="w">   </span>ForwardX11<span class="w"> </span>yes
+<span class="w">   </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">   </span>ServerAliveInterval<span class="w"> </span><span class="m">300</span>
+<span class="w">   </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
 
-Host lander
-   User username
-   HostName lander.nesi.org.nz
-   ForwardX11 yes
-   ForwardX11Trusted yes
-   ServerAliveInterval 300
-   ServerAliveCountMax 2
+Host<span class="w"> </span>lander
+<span class="w">   </span>User<span class="w"> </span>username
+<span class="w">   </span>HostName<span class="w"> </span>lander.nesi.org.nz
+<span class="w">   </span>ForwardX11<span class="w"> </span>yes
+<span class="w">   </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">   </span>ServerAliveInterval<span class="w"> </span><span class="m">300</span>
+<span class="w">   </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
 
-Host *
-    ControlMaster auto
-    ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-    ControlPersist 1
+Host<span class="w"> </span>*
+<span class="w">    </span>ControlMaster<span class="w"> </span>auto
+<span class="w">    </span>ControlPath<span class="w"> </span>~/.ssh/sockets/ssh_mux_%h_%p_%r
+<span class="w">    </span>ControlPersist<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p>Close and save with ctrl x, y, Enter</p>
 </li>
@@ -1585,22 +1576,23 @@ Host *
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;</p>
-<div class="highlight"><pre><span></span><code>ssh mahuika
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>mahuika
 </code></pre></div>
 <p>or</p>
-<div class="highlight"><pre><span></span><code>ssh maui
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>maui
 </code></pre></div>
-<p>Subsequent local terminals opened will be able to scp files without
+<p>Subsequent local terminals opened will be able to <code>scp</code> files without
 having to re-enter authentication e.g.</p>
-<div class="highlight"><pre><span></span><code>scp &lt;path/filename&gt; mahuika:~/
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>&lt;path/filename&gt;<span class="w"> </span>mahuika:~/
 </code></pre></div>
-<p>(For more info visit <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP">data
-transfer</a>).
-!!! prerequisite What Next?
-     -   <a href="../../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/">Moving files to/from a
-         cluster.</a>
-     -   Setting up a
-         <a href="../X11_on_NeSI/">X-Server</a> (optional).</p>
+<p>(For more info visit <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP">data transfer</a>).</p>
+<div class="admonition prerequisite">
+<p class="admonition-title">What Next?</p>
+<ul>
+<li><a href="../../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/">Moving files to/from a cluster.</a></li>
+<li>Setting up an <a href="../X11_on_NeSI/">X-Server</a> (optional).</li>
+</ul>
+</div>
 
 
 
@@ -1623,7 +1615,7 @@ transfer</a>).
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
   </span>
 
     

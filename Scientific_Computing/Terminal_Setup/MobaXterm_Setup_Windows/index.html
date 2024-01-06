@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NeSI Support Documentation">
+        <meta name="description" content="How to set up cluster access using MobaXterm">
       
       
       
@@ -1532,6 +1532,23 @@
                 
 
                   
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">ssh</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">windows</span>
+    
+  
+</nav>
+
 
   
     <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md" title="Edit this page" class="md-content__button md-icon">
@@ -1544,19 +1561,12 @@
 
   <h1>MobaXterm Setup (Windows)</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
-<li>Have an <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects">active account and
-     project.</a></li>
-<li>Set up your <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password/">Linux
-     Password.</a></li>
-<li>Set up Second <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication/">Factor
-     Authentication.</a></li>
+<li>Have an <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects">active account and project.</a></li>
+<li>Set up your <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password/">Linux Password.</a></li>
+<li>Set up Second <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication/">Factor Authentication.</a></li>
 <li>Windows operating system.</li>
 </ul>
 </div>
@@ -1564,7 +1574,7 @@
 Cluster with less keyboard inputs as well as allow use of the file
 transfer GUI.</p>
 <ol>
-<li>Download MobaXTerm
+<li>Download MobaXterm
     <a href="https://mobaxterm.mobatek.net/download-home-edition.html">here</a><ul>
 <li>Use the Portable Edition if you don't have administrator rights
     on your machine. This is the recommended way for NIWA
@@ -1585,48 +1595,44 @@ transfer GUI.</p>
 <li>Optionally, tick the 'Follow SSH path' button.</li>
 </ul>
 </li>
-</ol>
-<!-- -->
-
-<ol>
-<li>In the “Network settings” tab:<ul>
+<li>
+<p>In the “Network settings” tab:</p>
+<ul>
 <li>Select "SSH gateway (jump host)" to open a popup window</li>
 <li>In this window enter <code>lander.nesi.org.nz</code> in the “Gateway host”
     field, as well as your NeSI username in the Username field for
     the gateway SSH server then select OK to close the window.</li>
 </ul>
-</li>
-</ol>
 <p><img alt="mceclip4.png" src="../../../assets/images/MobaXterm_Setup_Windows.png" /></p>
 <p><img alt="mceclip5.png" src="../../../assets/images/MobaXterm_Setup_Windows_0.png" /></p>
-<ol>
-<li>Click 'OK' on the open window, usually this will start a new session
-    immediately. <em>See usage below.</em></li>
+</li>
+<li>
+<p>Click 'OK' on the open window, usually this will start a new session
+    immediately. <em>See usage below.</em></p>
+</li>
 </ol>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
-<p>There is a bug which causes some users to be repeatedly prompted
- <code>&lt;username&gt;@lander.nesi.org.nz's password:</code><br />
- This can be resolved by clicking "OK" each time you are prompted then
- logging in as normal once you are prompted for your <code>First Factor:</code> or
- <code>Password:</code>.<br />
- See <a href="../../../General/FAQs/Login_Troubleshooting/">Login
- Troubleshooting</a> for more
- details</p>
-</div>
+<p>!!!  bug
+     There is a bug which causes some users to be repeatedly prompted
+     <code>&lt;username&gt;@lander.nesi.org.nz's password:</code><br />
+     This can be resolved by clicking "OK" each time you are prompted then
+     logging in as normal once you are prompted for your <code>First Factor:</code> or
+     <code>Password:</code>.<br />
+     See <a href="../../../General/FAQs/Login_Troubleshooting/">Login
+     Troubleshooting</a> for more
+     details</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.</p>
 <p><img alt="mceclip6.png" src="../../../assets/images/MobaXterm_Setup_Windows_1.png" /></p>
 <p>You will be prompted by dialogue box.</p>
-<div class="highlight"><pre><span></span><code>Login Password (First Factor):
+<div class="highlight"><pre><span></span><code>Login<span class="w"> </span>Password<span class="w"> </span><span class="o">(</span>First<span class="w"> </span>Factor<span class="o">)</span>:
 </code></pre></div>
 <p>Enter your password.</p>
-<div class="highlight"><pre><span></span><code>Authenticator Code (Second Factor):
+<div class="highlight"><pre><span></span><code>Authenticator<span class="w"> </span>Code<span class="w"> </span><span class="o">(</span>Second<span class="w"> </span>Factor<span class="o">)</span>:
 </code></pre></div>
 <p>Enter your second factor six digit number (no space).</p>
 <p>Then Mahuika users may be prompted again:</p>
-<div class="highlight"><pre><span></span><code>Login Password:
+<div class="highlight"><pre><span></span><code>Login<span class="w"> </span>Password:
 </code></pre></div>
 <p>Enter your password again</p>
 <p>Māui users will instead be prompted with:</p>
@@ -1635,8 +1641,8 @@ Double click to start.</p>
 <p>Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second
 factor is "123456" then you must enter "Password123456".</p>
-<div class="admonition prerequisite tip">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>If you choose to save your password, the process will be the same
  minus the prompts for First Factor.</p>
 </div>
@@ -1664,10 +1670,13 @@ management system for saved session.</p>
 </ul>
 <p>Then setup a new session <a href="./">according to the support doc
 instructions</a>
-as before.
-!!! prerequisite What Next?
-     -   <a href="../../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/">Moving files to/from a
-         cluster.</a></p>
+as before.</p>
+<div class="admonition prerequisite">
+<p class="admonition-title">What Next?</p>
+<ul>
+<li><a href="../../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/">Moving files to/from a cluster.</a></li>
+</ul>
+</div>
 
 
 
@@ -1690,7 +1699,7 @@ as before.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
   </span>
 
     

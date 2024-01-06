@@ -1646,16 +1646,12 @@
 
   <h1>X11 on NeSI</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite requirements">
+<div class="admonition prerequisite">
 <p class="admonition-title">Prerequisite</p>
 <ul>
 <li>Have working
-     <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000189696">terminal</a>
-     set up.</li>
+<a href="https://support.nesi.org.nz/hc/en-gb/sections/360000189696">terminal</a>
+set up.</li>
 </ul>
 </div>
 <p>X-11 is a protocol for rendering graphical user interfaces (GUIs) that
@@ -1668,8 +1664,8 @@ GUI to be rendered.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Operating System</th>
+<th>Download</th>
 </tr>
 </thead>
 <tbody>
@@ -1688,24 +1684,22 @@ GUI to be rendered.</p>
 </tbody>
 </table>
 <p>Make sure you have launched the server and it is running in the
-background, look for
-this <img alt="mceclip0.png" src="../../../assets/images/X11_on_NeSI.png" /> symbol in your
-taskbar </p>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+background, look for this <img alt="mceclip0.png" src="../../../assets/images/X11_on_NeSI.png" /> symbol in your taskbar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>MobaXterm has a build in X server, no setup required. By default the
  server is started alongside MobaXterm. You can check it's status in
  the top left hand corner
- (<img alt="xon.png" src="../../../assets/images/X11_on_NeSI_0.png" />=on, <img alt="off.png" src="../../../assets/images/X11_on_NeSI_1.png" />=off). </p>
+ (<img alt="xon.png" src="../../../assets/images/X11_on_NeSI_0.png" />=on, <img alt="off.png" src="../../../assets/images/X11_on_NeSI_1.png" />=off).</p>
 </div>
 <h2 id="x-forwarding">X-Forwarding<a class="headerlink" href="#x-forwarding" title="Permanent link">&para;</a></h2>
 <p>Finally your ssh tunnel must be set up to 'forward' along X-11
-connections. </p>
+connections.</p>
 <h3 id="openssh-terminal">OpenSSH (terminal)<a class="headerlink" href="#openssh-terminal" title="Permanent link">&para;</a></h3>
 <p>Make sure the <code>-Y</code> or <code>-X</code> flag is included</p>
-<div class="highlight"><pre><span></span><code>ssh -Y user@lander.nesi.org.nz
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-Y<span class="w"> </span>user@lander.nesi.org.nz
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>ssh -Y login.nesi.org.nz
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-Y<span class="w"> </span>login.nesi.org.nz
 </code></pre></div>
 <h3 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h3>
 <p>Under 'session settings' for your connection make sure the X-11
@@ -1714,19 +1708,19 @@ forwarding box is checked.</p>
 <p>If the <img alt="mceclip0.png" src="../../../assets/images/X11_on_NeSI_3.png" /> button in
 the top right corner of your window is coloured, the X-server should be
 running.</p>
-<h2 id="x-forwarding-with-tmux">X-Forwarding with <em>tmux</em><a class="headerlink" href="#x-forwarding-with-tmux" title="Permanent link">&para;</a></h2>
+<h2 id="x-forwarding-with-tmux">X-Forwarding with <code>tmux</code><a class="headerlink" href="#x-forwarding-with-tmux" title="Permanent link">&para;</a></h2>
 <p>In order to connect X11 into a tmux session you make the following
 change to your config file.</p>
-<div class="highlight"><pre><span></span><code>tmux show -g | sed &#39;s/DISPLAY //&#39; &gt; ~/.tmux.conf
+<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>show<span class="w"> </span>-g<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/DISPLAY //&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.tmux.conf
 </code></pre></div>
 <h2 id="interactive-slurm-jobs">Interactive Slurm jobs<a class="headerlink" href="#interactive-slurm-jobs" title="Permanent link">&para;</a></h2>
 <p>In order to make use of X11 in an interactive Slurm job:</p>
-<h3 id="srun">srun<a class="headerlink" href="#srun" title="Permanent link">&para;</a></h3>
+<h3 id="srun"><code>srun</code><a class="headerlink" href="#srun" title="Permanent link">&para;</a></h3>
 <p>Add the flag <code>--x11</code></p>
-<div class="highlight"><pre><span></span><code>srun --ntasks 36 --mem-per-cpu 1500 --time 01:00:00 --x11 --pty bash
+<div class="highlight"><pre><span></span><code>srun<span class="w"> </span>--ntasks<span class="w"> </span><span class="m">36</span><span class="w"> </span>--mem-per-cpu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>--time<span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>--x11<span class="w"> </span>--pty<span class="w"> </span>bash
 </code></pre></div>
-<h3 id="salloc">salloc<a class="headerlink" href="#salloc" title="Permanent link">&para;</a></h3>
-<p>add the flag -Y when sshing to the node.</p>
+<h3 id="salloc"><code>salloc</code><a class="headerlink" href="#salloc" title="Permanent link">&para;</a></h3>
+<p>add the flag -Y when <code>ssh</code>-ing to the node.</p>
 <div class="highlight"><pre><span></span><code>ssh -Y wbn001
 </code></pre></div>
 <h2 id="xvfb">XVFB<a class="headerlink" href="#xvfb" title="Permanent link">&para;</a></h2>
@@ -1736,7 +1730,7 @@ required to in order to run visual applications on the compute nodes.
 Prepending any command with <code>xfvb-run</code> will provide a dummy X11 server
 for the application to render to.<br />
 e.g.</p>
-<div class="highlight"><pre><span></span><code>xvfb-run xterm
+<div class="highlight"><pre><span></span><code>xvfb-run<span class="w"> </span>xterm
 </code></pre></div>
 
 
@@ -1760,7 +1754,7 @@ e.g.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
   </span>
 
     
