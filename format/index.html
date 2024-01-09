@@ -764,6 +764,7 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.</
 <div class="highlight"><pre><span></span><code>!!! warning
     A warning.
 </code></pre></div>
+<h4 id="admonation-titles">Admonation Titles<a class="headerlink" href="#admonation-titles" title="Permanent link">&para;</a></h4>
 <div class="admonition info">
 <p class="admonition-title">Optional title</p>
 <p>Admonation with optional title.</p>
@@ -771,215 +772,225 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.</
 <div class="highlight"><pre><span></span><code>!!! info &quot;Optional title&quot;
     Admonation with optional title.
 </code></pre></div>
+<p>Adding titles helps users find key information, however if you can't be bothered thinking of a good title,
+refrain from using something unnecessary or non descriptive (e.g. <code>!!! info "More Information"</code>), better to leave titleless.</p>
+<p>Don't use a title if another admonation already exists for that purpose (e.g. <code>!!! info "Watch out!"</code>).</p>
+<h4 id="collapsable-admonations">Collapsable Admonations<a class="headerlink" href="#collapsable-admonations" title="Permanent link">&para;</a></h4>
 <p>Any admonation can be made collapsable by replacing the <code>!!!</code> with <code>???</code> (closed), or <code>???+</code> (open)</p>
-<p><em>Note for future, once decided which of these we will use, remove the others. And give description of when to use.</em></p>
-<p>There are lots of different flavors.</p>
-<hr />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a test admonation.</p>
+<p>Consider making a admonation collapsable-open (<code>???+</code>) if it is particularly long.
+An admonation <strong>shouldn't be made collapsable-closed</strong> (<code>???</code>) unless it has been given an <strong>optional title explaining it's contents</strong>. </p>
+<h4 id="admonation-flavours">Admonation Flavours<a class="headerlink" href="#admonation-flavours" title="Permanent link">&para;</a></h4>
+<p>There are various flavors.</p>
+<div class="admonition prerequisite">
+<p class="admonition-title">Prerequisite</p>
+<ul>
+<li><a href="./">link to page a user should read in order to follow</a></li>
+<li>some thing other requirement user must have to follow this page</li>
+<li>usually you will want this to be a list format.</li>
+<li>Should be right at the top of the page.</li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is a test admonation.</p>
+<p>For tangential actionable advice.<br />
+<em><code>x</code> other command may be useful here.</em></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>This is a test admonation.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>This is a test admonation.</p>
+<p>Use this to provide (optional) additional context or make an in depth explaination.
+<em>A little bit of info that isn't required for understanding the next paragraph.</em></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a test admonation.</p>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>This is a test admonation.</p>
+<p>Use this to draw readers attention to possible rare or edge case failures they may encounter.
+<em>If your filesystem is full you might get an error message.</em></p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>This is a test admonation.</p>
+<p>Use this to draw attention to information that may lead to serious harm if ignored.
+<em>If your filesystem is full your job might be killed.</em></p>
 </div>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>This is a test admonation.</p>
+<p>Mention possible bugs users may encounter (and tell them what to do if they encounter it).
+<em>Nearline doesn't work</em></p>
+</div>
+<details class="warning">
+<summary>Extra Admonations you probably won't need</summary>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <code>info</code> instead of this.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Havn't seen a reason to use this yet.</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>Havn't seen a reason to use this yet.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>This is a test admonation.</p>
+<p>Havn't seen a reason to use this yet.</p>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>This is a test admonation.</p>
-</div>
-<div class="admonition prerequisite">
-<p class="admonition-title">Prerequisite</p>
-<p>This is a test admonation.</p>
+<p>Havn't seen a reason to use this yet.</p>
 </div>
 <div class="admonition pied-piper">
 <p class="admonition-title">Pied-piper</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition desktop-download-24">
 <p class="admonition-title">Desktop-download-24</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition magnifying-glass">
 <p class="admonition-title">Magnifying-glass</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition microscope">
 <p class="admonition-title">Microscope</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition vial-virus">
 <p class="admonition-title">Vial-virus</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition database">
 <p class="admonition-title">Database</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition folder-open">
 <p class="admonition-title">Folder-open</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition backward">
 <p class="admonition-title">Backward</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition jupyter">
 <p class="admonition-title">Jupyter</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition terminal">
 <p class="admonition-title">Terminal</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition r-project">
 <p class="admonition-title">R-project</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition calendar-days">
 <p class="admonition-title">Calendar-days</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition bell">
 <p class="admonition-title">Bell</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition comment-dots">
 <p class="admonition-title">Comment-dots</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition check-to-slot">
 <p class="admonition-title">Check-to-slot</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition square-xmark">
 <p class="admonition-title">Square-xmark</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition rectangle-list">
 <p class="admonition-title">Rectangle-list</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition screwdriver-wrench">
 <p class="admonition-title">Screwdriver-wrench</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition linux">
 <p class="admonition-title">Linux</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition code-compare">
 <p class="admonition-title">Code-compare</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition heading">
 <p class="admonition-title">Heading</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition space-awesome">
 <p class="admonition-title">Space-awesome</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition stethoscope">
 <p class="admonition-title">Stethoscope</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition key">
 <p class="admonition-title">Key</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition users-line">
 <p class="admonition-title">Users-line</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition file-code">
 <p class="admonition-title">File-code</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition hand-holding-dollar">
 <p class="admonition-title">Hand-holding-dollar</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition circle-question">
 <p class="admonition-title">Circle-question</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition microphone">
 <p class="admonition-title">Microphone</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition tower-observation">
 <p class="admonition-title">Tower-observation</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition circle-info">
 <p class="admonition-title">Circle-info</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition icon--python">
 <p class="admonition-title">Icon--python</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition quote-right">
 <p class="admonition-title">Quote-right</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition image">
 <p class="admonition-title">Image</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition table">
 <p class="admonition-title">Table</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition glass-chart">
 <p class="admonition-title">Glass-chart</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
 <div class="admonition file-export">
 <p class="admonition-title">File-export</p>
-<p>this is a test admonation.</p>
+<p>don't use this (unless Dini).</p>
 </div>
+</details>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
-<p>Code blocks require a language lexxer in order to do syntax hilighting, e.g. <code>python</code> ,<code>slurm</code>, <code>cuda</code>, <code>json</code>, <code>md</code>.
-<a href="https://pygments.org/languages/">A full list of lexxers can be found in this list</a>.</p>
-<p>For plain code blocks, still good to use a class as descriptor (e.g. <code>txt</code>, <code>stdout</code>, <code>stderr</code>).
-May want to add formatting to this later.</p>
-<pre><code><span>```stdout</span>
-<span>some code</span>
-<span>```</span>
-</code></pre>
-
-<div class="highlight"><pre><span></span><code>some code 
-</code></pre></div>
 <h4 id="block">Block<a class="headerlink" href="#block" title="Permanent link">&para;</a></h4>
+<p>Code blocks require a language lexxer in order to do syntax hilighting, e.g. <code>python</code> ,<code>slurm</code>, <code>cuda</code>, <code>json</code>, <code>markdown</code>, <code>bash</code>
+(most of these have short codes too, <code>py</code>,<code>sl</code>,<code>cd</code>,<code>md</code>,<code>sh</code>).
+<a href="https://pygments.org/languages/">A full list of lexxers can be found in this list</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">somepackage</span>
 
 <span class="n">formatting</span> <span class="o">=</span> <span class="kc">True</span>
@@ -995,10 +1006,22 @@ May want to add formatting to this later.</p>
 <span>```</span>
 </code></pre>
 
+<p>For plain text code blocks, still good to use a class as descriptor (e.g. <code>txt</code>, <code>stdout</code>, <code>stderr</code>).
+May want to add formatting to this later.</p>
+<pre><code><span>```stdout</span>
+<span>some code</span>
+<span>```</span>
+</code></pre>
+
+<div class="highlight"><pre><span></span><code>some code 
+</code></pre></div>
+<p>DON'T prefix a command with <code>$</code> (e.g. <code>$ ls</code> if this is something we want it should be added through formatting, not text.</p>
 <h4 id="inline">Inline<a class="headerlink" href="#inline" title="Permanent link">&para;</a></h4>
 <p>This is some <code>echo "Inline Code"</code>.</p>
 <pre><code><span>This is some `echo "Inline Code"`.</span></code></pre>
 
+<p>Inline code does not have syntax highlighting.
+Code should be used for any text that you want the user to copy exactly.</p>
 <h4 id="keyboard">Keyboard<a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h4>
 <p>Keyboard keys can be added using the <code>&lt;kbd&gt;</code> tag.</p>
 <p>Press <code>&lt;kbd&gt;</code>ctrl<code>&lt;/kbd&gt;</code> + <code>&lt;kbd&gt;</code>c<code>&lt;/kbd&gt;</code> to copy text from terminal.</p>
@@ -1153,7 +1176,7 @@ Leading and trailing <code>|</code> are optional.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2024</span>
   </span>
 
     
