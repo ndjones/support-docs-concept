@@ -819,9 +819,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iobuf-caution" class="md-nav__link">
+  <a href="#iobuf" class="md-nav__link">
     <span class="md-ellipsis">
-      IOBUF - Caution
+      IOBUF
     </span>
   </a>
   
@@ -1054,9 +1054,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iobuf-caution" class="md-nav__link">
+  <a href="#iobuf" class="md-nav__link">
     <span class="md-ellipsis">
-      IOBUF - Caution
+      IOBUF
     </span>
   </a>
   
@@ -1094,6 +1094,18 @@
       <span class="md-tag">storage</span>
     
   
+    
+    
+    
+      <span class="md-tag">nobackup</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">project</span>
+    
+  
 </nav>
 
 
@@ -1108,22 +1120,17 @@
 
   <h1>I/O Performance Considerations</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>It is important to understand the different I/O performance
 characteristics of nodes that connect to storage using <em>native Spectrum
 Scale clients</em>, and those that employ <em>Cray’s DVS</em> <em>solution</em>.</p>
 <p>Applications that make heavy demands on metadata services and or have
 high levels of small I/O activity should generally not be run on
-<a href="https://support.nesi.org.nz/hc/articles/360000163695">Māui</a> (the Cray
+<a href="../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui/">Māui</a> (the Cray
 XC50).</p>
 <h2 id="nodes-which-access-storage-via-native-spectrum-scale-clients">Nodes which access storage via native Spectrum Scale Clients<a class="headerlink" href="#nodes-which-access-storage-via-native-spectrum-scale-clients" title="Permanent link">&para;</a></h2>
-<p>All <a href="https://support.nesi.org.nz/hc/articles/360000163575">Mauhika</a> HPC
-Cluster, <a href="https://support.nesi.org.nz/hc/articles/360000163595">Mahuika
-Ancillary</a>, <a href="https://support.nesi.org.nz/hc/articles/360000203776">Māui
-Ancillary</a> and
+<p>All <a href="../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika/">Mauhika</a>
+HPC Cluster, <a href="../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika/">Mahuika Ancillary</a>,
+<a href="../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary/">Māui Ancillary</a> and
 Māui login (aka build) nodes have native Spectrum Scale clients
 installed and provide high performance access to storage:</p>
 <ul>
@@ -1140,7 +1147,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).</p>
 <p><img alt="cray_xc50.jpg" src="../../../assets/images/I-O_Performance_Considerations.jpg" /></p>
-<p><font size="2">Figure 1: Cray XC50 DVS architecture.</font></p>
+<p>Figure 1: Cray XC50 DVS architecture.</p>
 <p>This <em>reduces the I/O performance of Māui for metadata and small (e.g.
 4KB) I/O operations</em>. It does not impact the total bandwidth available
 from the Māui (i.e. ~130 GB/s when writing to the filesystem).
@@ -1153,42 +1160,42 @@ compute nodes are:</p>
 <li>For 8MB transfer size, single stream I/O, is ~3.2GB/s for Write and
     ~3.2 GB/s for Read;</li>
 <li>For 4KB transfer size, single stream I/O, is ~2.3GB/s for Write and
-    ~2.5GB/s for Read (when using <font face="Courier New, serif">IOBUF
-    </font> – see Caution below). When
-    <font face="Courier New, serif">IOBUF</font> is not used Read and
-    Write performance is &lt;1GB/s.</li>
+    ~2.5GB/s for Read (when using IOBUF see Caution below).
+    When IOBUF is not used Read and Write performance is &lt;1GB/s.</li>
 </ul>
-<p>Unless Cray’s <font color="#0000ff"> <u><a href="#_IOBUF_-_Caution">IOBUF</a></u>
-</font> capability is suitable for an application, <u>users should avoid
-the use of single-stream I/O with small buffers on</u> Māui.</p>
-<h2 id="iobuf-caution">IOBUF - Caution<a class="headerlink" href="#iobuf-caution" title="Permanent link">&para;</a></h2>
-<p>Cray’s IOBUF ( <font face="Courier New, serif">man iobuf</font> ) is an
+<p>Unless Cray’s  <a href="#iobuf">IOBUF</a>
+ capability is suitable for an application, users should avoid
+the use of single-stream I/O with small buffers on Māui.</p>
+<h2 id="iobuf">IOBUF<a class="headerlink" href="#iobuf" title="Permanent link">&para;</a></h2>
+<p>Cray’s IOBUF ( <code>man iobuf</code> ) is an
 I/O buffering library that can reduce the I/O wait time for programs
 that read or write large (or small) files sequentially. IOBUF intercepts
 standard I/O calls such as read and open and replaces the
-<font face="Courier New, serif">stdio</font> (
-<font face="Courier New, serif">glibc, libio</font> ) layer of buffering
+stdio (
+glibc, libio ) layer of buffering
 with an additional layer of buffering, thus improving program
 performance by enabling asynchronous prefetching and caching of file
 data.</p>
-<p><strong>Caution</strong>: IOBUF is not suitable for all I/O styles. IOBUF does not
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>IOBUF is not suitable for all I/O styles. IOBUF does not
 maintain coherent buffering between processes which open the same file.
 For this reason, do not use IOBUF with shared file I/O, such as MPI-IO
-routines like
-<font face="Courier New, serif">MPI_File_write_all</font> . IOBUF is
-<u>not thread-safe</u>, so do not use it with multithreaded programs in
+routines like MPI_File_write_all .
+IOBUF is <em>not thread-safe</em>, so do not use it with multithreaded programs in
 which the threads perform buffered I/O. IOBUF can be linked into
 programs that use these I/O styles, but buffering should not be enabled
 on those files.</p>
+</div>
 <h2 id="data-compression">Data compression<a class="headerlink" href="#data-compression" title="Permanent link">&para;</a></h2>
 <p>The file system the NeSI platforms use allow for transparent compression
 of data, meaning you can reduce the storage footprint of your data
 without needing to add any extra steps in your workflow unless you want
 to decompress the data after use. However, testing has shown that there
 can be an impact on job performance due to I/O. You can find out more
-about tests and results with regards to jobs performance of transparent
-data compression on the NeSI platforms on our <a href="../Data_Compression/">Data Compression support
-page</a>.</p>
+about tests and results regarding performance of transparent
+data compression on the NeSI platforms on our
+<a href="../Data_Compression/">Data Compression support page</a>.</p>
 
 
 
@@ -1211,7 +1218,7 @@ page</a>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
   </span>
 
     

@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#file-system-specifications" class="md-skip">
           Skip to content
         </a>
       
@@ -738,15 +738,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#file-system-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       File System Specifications
@@ -1111,15 +1102,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#file-system-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       File System Specifications
@@ -1282,17 +1264,10 @@
 
   <h1>NeSI File Systems and Quotas</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<div class="admonition prerequisite new feature">
-<p class="admonition-title">Prerequisite</p>
-<p><a href="#h_01GZ2Q7PG53YQEKFDDWTWHHDVT">Transparent File Compression</a> - we
- have recently started rolling out compression of inactive data on the
- NeSI Project filesystem. Please see the <a href="#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z">documentation
- below</a> to learn more about how this
- works and what data will be compressed.</p>
+<div class="admonition tip">
+<p class="admonition-title">Transparent File Compression</p>
+<p>We have recently started rolling out compression of inactive data on the NeSI Project filesystem.
+Please see the <a href="#transparent-file-data-compression">documentation below</a> to learn more about how this works and what data will be compressed.</p>
 </div>
 <p><a href="https://support.nesi.org.nz/hc/articles/360000163695">Māui</a> and
 <a href="https://support.nesi.org.nz/hc/articles/360000163575">Mahuika</a>, along
@@ -1301,174 +1276,89 @@ file systems. Storage Scale was previously known as Spectrum Scale, and
 before that as GPFS, or General Parallel File System - we'll generally
 refer to it as "Scale" where the context is clear.</p>
 <p>You may query your actual usage and disk allocations using the following
-command: </p>
-<p><code>$ nn_storage_quota</code></p>
-<p>The values for 'nn_storage_quota' are updated approximately every hour
+command:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>nn_storage_quota
+</code></pre></div>
+<p>The values for <code>nn_storage_quota</code> are updated approximately every hour
 and cached between updates.</p>
-<h2 id="_1"><img alt="neSI_filetree.svg" src="../../../assets/images/NeSI_File_Systems_and_Quotas.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="neSI_filetree.svg" src="../../../assets/images/NeSI_File_Systems_and_Quotas.svg" /></p>
 <h2 id="file-system-specifications">File System Specifications<a class="headerlink" href="#file-system-specifications" title="Permanent link">&para;</a></h2>
-<table class="table table-bordered"
-style="tr td: first-child {    white-space:nowrap;">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
+<table>
+<thead>
+<tr>
+<th>Filesystem</th>
+<th><code>/home</code></th>
+<th><code>/nesi/project</code></th>
+<th><code>/nesi/nobackup</code></th>
+<th><code>/nesi/nearline</code></th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td
-style="width: 84.1875px"><span><strong>Filesystem</strong></span></td>
-<td style="width: 119px"><span><strong>/home</strong></span></td>
-<td
-style="width: 135px"><span><strong>/nesi/project</strong></span></td>
-<td
-style="width: 188px"><span><strong>/nesi/nobackup</strong></span></td>
-<td
-style="width: 116.09375px"><span><strong>/nesi/nearline</strong> </span></td>
+<tr>
+<td>Disk Quota</td>
+<td>20 GB</td>
+<td>100 [110] GB</td>
+<td>10 [12] TB</td>
+<td>-</td>
 </tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>Default disk space<br />
-</strong></span></td>
-<td style="width: 119px"> </td>
-<td style="width: 135px"> </td>
-<td style="width: 188px"> </td>
-<td rowspan="3" style="width: 116.09375px"><span>No default; allocations
-are based on eligibility and technical requirements</span><br />
-<span> </span><span> </span></td>
+<tr>
+<td>File Quota</td>
+<td>1 [1.1] M files</td>
+<td>100 [110] K files</td>
+<td>1 [1.1] M files</td>
+<td>-</td>
 </tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>    - soft
-quota</strong></span></td>
-<td style="width: 119px"><span>20 GB</span></td>
-<td style="width: 135px"><span>100 GB<br />
-</span></td>
-<td style="width: 188px">10 TB</td>
+<tr>
+<td>Usage</td>
+<td>User-specific files such as configuration files, environment setup, source code, etc.</td>
+<td>Persistent project-related data, software, etc.</td>
+<td>Data created or used by compute jobs that is intended to be temporary</td>
+<td>Medium- to long-term storage of research data, (past, present or planned projects)</td>
 </tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>    - hard
-quota</strong></span></td>
-<td style="width: 119px"> </td>
-<td style="width: 135px"><span>110 GB</span></td>
-<td style="width: 188px">12 TB</td>
+<tr>
+<td>Capacity</td>
+<td>175 TB</td>
+<td>1,590 TB</td>
+<td>4,400 TB</td>
+<td>-</td>
 </tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>Default file count
-(inode)<br />
-</strong></span></td>
-<td style="width: 119px"> </td>
-<td style="width: 135px"> </td>
-<td style="width: 188px"> </td>
-<td rowspan="3" style="width: 116.09375px"><span>No default; allocations
-are based on eligibility and technical requirements</span><br />
-<span> </span><span> </span></td>
+<tr>
+<td>Data retention</td>
+<td>180 days after the user ceases to be a member of any active project</td>
+<td>90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression.</td>
+<td>Untouched for 120 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information.</td>
+<td>180 days after the end of the project's last nearline storage allocation</td>
 </tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>    - soft
-quota</strong></span></td>
-<td style="width: 119px"><span>1,000,000 files</span></td>
-<td style="width: 135px"><span>100,000 files</span></td>
-<td style="width: 188px"><span>1,000,000 files</span></td>
+<tr>
+<td>Data backup</td>
+<td>Daily<br>last 10 versions<br>up to 90 days.</td>
+<td>Daily<br>Last 10 versions<br>up to 90 days.</td>
+<td>-</td>
+<td>under development</td>
 </tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>    - hard
-quota</strong></span></td>
-<td style="width: 119px"><span>1,100,000 files</span></td>
-<td style="width: 135px"><span>110,000 files</span></td>
-<td style="width: 188px"><span>1,100,000 files</span></td>
+<tr>
+<td>Snapshots</td>
+<td>Daily<br>7 days</td>
+<td>Daily<br>7 days</td>
+<td>-</td>
+<td>-</td>
 </tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>Intended
-use</strong></span></td>
-<td style="width: 119px"><span>User-specific files such as configuration
-files, environment setup, source code, etc.</span></td>
-<td style="width: 135px"><span>Persistent project-related data,
-project-related software, etc.</span></td>
-<td style="width: 188px"><span>Data created or used by compute jobs that
-is intended to be temporary</span></td>
-<td style="width: 116.09375px"><span>Medium- to long-term storage of
-research data associated with past, present or planned compute
-projects</span></td>
+<tr>
+<td>Speed</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Fast</td>
+<td>Slow</td>
 </tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>Total
-capacity</strong></span></td>
-<td style="width: 119px"><span>175 TB</span></td>
-<td style="width: 135px"><span>1,590 TB</span></td>
-<td style="width: 188px"><span>4,400 TB</span></td>
-<td style="width: 116.09375px"><span>Will grow as tapes are
-purchased</span></td>
-</tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>Data retention
-time</strong></span></td>
-<td style="width: 119px"><span>180 days after the user ceases to be a
-member of any active project</span></td>
-<td style="width: 135px"><span>90 days after the end of the project's
-last HPC Compute &amp; Analytics allocation. See also Transparent File
-Data Compression.</span></td>
-<td style="width: 188px"><span>With certain exceptions, individual files
-will be deleted after being untouched for 120 days. See <a
-href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md">Automatic
-cleaning of nobackup file system</a> for more information.
-</span><span>90 days after the end of the project's last HPC Compute
-&amp; Analytics allocation, all remaining data is subject to
-deletion.</span></td>
-<td style="width: 116.09375px"><span>180 days after the end of the
-project's last nearline storage allocation</span></td>
-</tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>Data backup schedule<br />
-(Excluding snapsots)</strong></span></td>
-<td style="width: 119px"><span>Daily, last 10 versions of any given file
-retained for up to 90 days.</span></td>
-<td style="width: 135px"><span>Daily, last 10 versions of any given file
-retained for up to 90 days.</span></td>
-<td style="width: 188px"><span>None</span></td>
-<td style="width: 116.09375px"><span>Replication  between Wellington and
-Auckland tape libraries (under development)</span></td>
-</tr>
-<tr class="even">
-<td
-style="width: 84.1875px"><span><strong>Snapshots</strong></span></td>
-<td style="width: 119px"><span>Daily (retention period 7
-days)</span></td>
-<td style="width: 135px"><span>Daily (retention period 7
-days)</span></td>
-<td style="width: 188px"><span>None</span></td>
-<td style="width: 116.09375px"><span>None</span></td>
-</tr>
-<tr class="odd">
-<td style="width: 84.1875px"><span><strong>Access
-speed</strong></span></td>
-<td style="width: 119px"><span>Moderate</span></td>
-<td style="width: 135px"><span>Moderate</span></td>
-<td style="width: 188px"><span>Fast</span></td>
-<td style="width: 116.09375px"><span>Slow</span></td>
-</tr>
-<tr class="even">
-<td style="width: 84.1875px"><span><strong>Access
-interfaces</strong></span></td>
-<td style="width: 119px"><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-<li><span>Globus data transfer</span></li>
-</ul></td>
-<td style="width: 135px"><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-</ul></td>
-<td style="width: 188px"><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-<li><span>Globus data transfer</span></li>
-</ul></td>
-<td style="width: 116.09375px"><span>Nearline commands</span></td>
+<tr>
+<td>Interfaces</td>
+<td><ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul></td>
+<td><ul><li>Native mounts</li><li>SCP</li></ul></td>
+<td><ul><li>Native Mounts</li><li>SCP</li><li>Globus</li></td>
+<td><ul><li>Nearline commands</li></ul></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="soft-versus-hard-quotas"><strong>Soft versus hard quotas</strong><a class="headerlink" href="#soft-versus-hard-quotas" title="Permanent link">&para;</a></h3>
 <p>We use Scale soft and hard quotas for both disk space and inodes.</p>
 <ul>
@@ -1514,7 +1404,7 @@ but will prevent creation of new data or files.</p>
 Users should <strong>not</strong> run jobs from this filesystem. All home directories
 are backed up daily, both via the Spectrum Protect backup system, which
 retains the last 10 versions of all files for up to 90 days, and via
-<a href="https://support.nesi.org.nz/hc/articles/360000207315">Scale snapshots</a>.
+<a href="../../Data_Recovery/File_Recovery/">Scale snapshots</a>.
 No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.</p>
@@ -1525,9 +1415,8 @@ system, which retains the last 10 versions of all files for 90 days. No
 cleaning policy is applied.</p>
 <p>It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
-<a href="https://support.nesi.org.nz/hc/articles/360000205435">potentially by other
-projects</a>. Read
-and write performance increases using larger files, therefore you should
+<a href="../File_permissions_and_groups/">potentially by other projects</a>.
+Read and write performance increases using larger files, therefore you should
 consider archiving small files with the <code>nn_archive_files</code> utility, or a
 similar archiving package such as <code>tar</code> .</p>
 <p>Each NeSI project receives quota allocations for
@@ -1538,7 +1427,7 @@ covering disk space and number of files.</p>
 <h3 id="nesinobackup">/nesi/nobackup<a class="headerlink" href="#nesinobackup" title="Permanent link">&para;</a></h3>
 <p>The <code>/nesi/nobackup</code> file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
-disk. It provides access to a very large (4.4 PB) resource for
+disk. It provides access to a large (4.4 PB) resource for
 short-term project usage.</p>
 <p>To prevent project teams from inadvertently bringing the file system
 down for everyone by writing unexpectedly large amounts of data, we
@@ -1546,27 +1435,24 @@ apply per-project quotas to both disk space and number of files on this
 file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
-requirements with us during <a href="../../../General/NeSI_Policies/How_we_review_applications/">the project application
-process</a>, or
- <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>
-at any time.</p>
+requirements with us during <a href="../../../General/NeSI_Policies/How_we_review_applications/">the project application process</a>,
+or <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> at any time.</p>
 <p>To ensure this file system remains fit-for-purpose, we have a regular
-cleaning policy as described in <a href="../Automatic_cleaning_of_nobackup_file_system/">Automatic cleaning of nobackup
-filesystem</a>.</p>
+cleaning policy as described in
+<a href="../Automatic_cleaning_of_nobackup_file_system/">Automatic cleaning of nobackup filesystem</a>.</p>
 <p>Do not use the <code>touch</code> command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
 the community of a shared resource.</p>
 <p>The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.</p>
 <h3 id="nesinearline">/nesi/nearline<a class="headerlink" href="#nesinearline" title="Permanent link">&para;</a></h3>
-<div class="admonition prerequisite note">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The nearline service, including its associated file systems, is in an
  Early Access phase, and allocations are by invitation. We appreciate
  your patience as we develop, test and deploy this service. If you
  would like to participate in the Early Access Programme, please
- [contact our support
- team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
+ <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 </div>
 <p>The <code>/nesi/nearline</code> filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -1574,16 +1460,13 @@ files between high performance disk storage and magnetic tape storage in
 an Automatic Tape Library (ATL). Files will remain on <code>/nesi/nearline</code>
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.</p>
-<p>See <a href="../../Nearline_long_term_storage/Nearline_Long_Term_Storage_Service/">this
-page</a>
-for more information about the nearline service.</p>
+<p>See <a href="../../Nearline_long_term_storage/Nearline_Long_Term_Storage_Service/">more information about the nearline service</a>.</p>
 <h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h2>
 <p>If you have accidentally deleted data you can recover it from
 a <a href="https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406">snapshot</a>.
 Snapshots are taken daily of <code>home/</code> and <code>project</code> directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
-emailing <a href="mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File">NeSI
-Support</a>.</p>
+<a href="mailto:support@nesi.org.nz">Contact our Support Team</a></p>
 <h2 id="contributions-of-small-files-towards-quotas">Contributions of Small Files Towards Quotas<a class="headerlink" href="#contributions-of-small-files-towards-quotas" title="Permanent link">&para;</a></h2>
 <p>The Scale file system makes use of a feature called <em>data-in-inode</em>.
 This feature will ensure that, once all of a (non-encrypted) file's
@@ -1599,12 +1482,11 @@ nearest 256 KiB. Users or projects requiring many small files may find
 themselves using large amounts of disk space. Use of <em>data-in-inode</em>
 mitigates the effect of a large block size on such people and project
 teams.</p>
-<p>However, very small files, as well as zero-size entities such as
+<p>However, small files, as well as zero-size entities such as
 directories and symbolic links, still count towards the relevant
 fileset's inode quota. If therefore you expect you will need to store
-large numbers of very small files in your home directory or in a
-project's persistent storage, please [contact our support
-team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> to discuss your
+large numbers of small files in your home directory or in a
+project's persistent storage, please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> to discuss your
 storage needs.</p>
 <h2 id="transparent-file-data-compression">Transparent File Data Compression<a class="headerlink" href="#transparent-file-data-compression" title="Permanent link">&para;</a></h2>
 <p>The Scale file system has the ability to transparently compress file
@@ -1616,9 +1498,8 @@ in-line decompression may have a small IO performance/latency impact,
 though this is mitigated by space and bandwidth savings.</p>
 <p>Transparent file data compression can be controlled and applied by users
 via file attributes, you can find out more about using this method on
-our <a href="../Data_Compression/">Data Compression support
-page</a>. File
-data compression can also be automatically applied by administrators
+our <a href="../Data_Compression/">Data Compression support page</a>.
+File data compression can also be automatically applied by administrators
 through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the <code>/nesi/project</code>
 file system.</p>
@@ -1655,7 +1536,7 @@ the compression space saving is &gt;=10%.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
   </span>
 
     

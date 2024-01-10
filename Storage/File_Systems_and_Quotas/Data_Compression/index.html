@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NeSI Support Documentation">
+        <meta name="description" content="NeSI automatically compresses data to free storage capacity.">
       
       
       
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#background" class="md-skip">
+        <a href="#compression-methods" class="md-skip">
           Skip to content
         </a>
       
@@ -717,15 +717,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#compression-methods" class="md-nav__link">
     <span class="md-ellipsis">
       Compression Methods
@@ -1084,15 +1075,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#compression-methods" class="md-nav__link">
     <span class="md-ellipsis">
       Compression Methods
@@ -1193,12 +1175,6 @@
     
     
     
-      <span class="md-tag">data_compression</span>
-    
-  
-    
-    
-    
       <span class="md-tag">lz4</span>
     
   
@@ -1220,12 +1196,6 @@
       <span class="md-tag">z library</span>
     
   
-    
-    
-    
-      <span class="md-tag">z-library</span>
-    
-  
 </nav>
 
 
@@ -1240,11 +1210,6 @@
 
   <h1>Data Compression</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
-<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
 change metadata (file creation and modification dates, etc). This means
@@ -1269,14 +1234,17 @@ requested.</p>
 <p>There are two methods for compressing and decompressing data:
 <strong>on-demand</strong> and <strong>deferred</strong>:</p>
 <h3 id="on-demand-synchronous">On-Demand (synchronous)<a class="headerlink" href="#on-demand-synchronous" title="Permanent link">&para;</a></h3>
-<p><strong>note:</strong> <em>as at 2 May 2023, the `mm` commands are not available by
-default, contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a> for assistance</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As at 2 May 2023, the <code>mm</code> commands are not available by
+default, <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> for assistance.</p>
+</div>
 <p>This method (using the <code>mmchattr</code> command) acts similar to
 <code>gzip</code>/<code>gunzip</code> commands where the file being targeted is compressed or
 decompressed on command invocation. If the command fails halfway through
-the file or is cancelled, the file will be marked as "illcompressed" .
+the file or is cancelled, the file will be marked as <code>illcompressed</code>.
 This state means that the file is only partially compressed.</p>
-<p><code>ls</code> command will show files with their original sizes. However,  <code>du</code>
+<p><code>ls</code> command will show files with their original sizes. However, <code>du</code><br />
 commands will calculate the approximate usage of the file system as
 opposed to the uncompressed usage. This will be the total counting
 against quotas as well. Therefore, if files are compressed, quota usage
@@ -1284,6 +1252,32 @@ will decrease. And vice versa, if files are decompressed, fully or
 partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed</p>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>41M FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="nb">time</span><span class="w"> </span>mmchattr<span class="w"> </span>--compression<span class="w"> </span>yes<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>real 0m1.343s
+user 0m0.002s
+sys 0m0.000s
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>8.0M FileA.txt
+</code></pre></div>
 <h3 id="deferred">Deferred<a class="headerlink" href="#deferred" title="Permanent link">&para;</a></h3>
 <p>This method (also using the <code>mmchattr</code> command) does not decompress or
 compress data immediately but, instead marks them for
@@ -1294,19 +1288,47 @@ compression/decompression. This tagging process is quick and can be done
 by using the same command as above with one extra flag (<code>-I defer</code>).
 During this process, there is no change in space occupancy for any of
 the files involved.</p>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>41M FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="nb">time</span><span class="w"> </span>mmchattr<span class="w"> </span>-I<span class="w"> </span>defer<span class="w"> </span>--compression<span class="w"> </span>yes<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>real 0m0.002s
+user 0m0.002s
+sys 0m0.000s
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>41M FileA.txt
+</code></pre></div>
 <h4 id="how-to-process-deferred-tagged-files">How to process deferred tagged files<a class="headerlink" href="#how-to-process-deferred-tagged-files" title="Permanent link">&para;</a></h4>
 <p>Users can process compression/decompression on the tagged files via the
 <code>mmrestripefile</code> command (using <code>-z</code> flag).</p>
-<div class="highlight"><pre><span></span><code>$ mmrestripefile -z FileA.txt
-Scanning FileA.txt
+<div class="highlight"><pre><span></span><code>mmrestripefile<span class="w"> </span>-z<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Scanning FileA.txt
 Scan completed successfully.
 </code></pre></div>
 <h2 id="states-of-a-compressed-file">States of a compressed file<a class="headerlink" href="#states-of-a-compressed-file" title="Permanent link">&para;</a></h2>
 <p>Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
 compression. We can check those attributes with the <code>mmlsattr</code> command:</p>
-<div class="highlight"><pre><span></span><code>$ mmlsattr -L FileA.txt
-file name: FileA.txt
+<div class="highlight"><pre><span></span><code>mmlsattr<span class="w"> </span>-L<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>file name: FileA.txt
 metadata replication: 1 max 2
 data replication: 1 max 2
 immutable: no
@@ -1331,32 +1353,77 @@ re-compressed using the <code>mmchattr --compression yes</code> command or the
 <h3 id="the-different-states">The different states<a class="headerlink" href="#the-different-states" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><strong>Uncompressed</strong> and <strong>untagged</strong> for compression (default) - as
+<p><code>Uncompressed</code> and <code>untagged</code> for compression (default) - as
     shown for the file <code>FileA.txt</code> above.</p>
 </li>
 <li>
-<p><strong>Partially compressed</strong> and <strong>tagged</strong> for compression - When file
+<p><code>Partially compressed</code> and <code>tagged</code> for compression - When file
     is partially compressed (either because it was decompressed for
     access or the full compression didn’t finish). It is still marked
     for compression as the <code>COMPRESSION</code> misc attribute suggests, but
     because it's not fully compressed the <code>illcompressed</code> flag will be
     shown.</p>
+<div class="highlight"><pre><span></span><code>mmlsattr<span class="w"> </span>-L<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>file name: FileA.txt
+metadata replication: 1 max 2
+data replication: 1 max 2
+immutable: no
+appendOnly: no
+flags: illcompressed
+storage pool name: data
+fileset name: home_user001
+snapshot name:
+creation time: Wed Jul 6 00:54:27 2022
+Misc attributes: ARCHIVE COMPRESSION (library z)
+Encrypted: no
+</code></pre></div>
 </li>
 <li>
-<p><strong>Fully compressed</strong> and <strong>tagged</strong> for compression - The file is
+<p><code>Fully compressed</code> and <code>tagged</code> for compression - The file is
     fully compressed to its maximum possible state and because the file
     is tagged for compression, only the misc attribute <code>COMPRESSION</code>
     will be shown.</p>
+<div class="highlight"><pre><span></span><code>mmlsattr<span class="w"> </span>-L<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>file name: FileA.txt
+metadata replication: 1 max 2
+data replication: 1 max 2
+immutable: no
+appendOnly: no
+flags:
+storage pool name: data
+fileset name: home_user001
+snapshot name:
+creation time: Wed Jul 6 00:54:27 2022
+Misc attributes: ARCHIVE COMPRESSION (library z)
+Encrypted: no
+</code></pre></div>
 </li>
 <li>
-<p><strong>Full or partially compressed</strong> and <strong>untagged</strong> for compression -
+<p><code>Full or partially compressed</code> and <code>untagged</code> for compression -
     The file might be fully or partially compressed and in this case
     because the misc attribute <code>COMPRESSION</code> is not shown, it means the
-    file is untagged for being compressed (meaning it's tagged to be in
-    the uncompressed state). When a fully compressed file is untagged,
+    file is <code>untagged</code> for being compressed (meaning it's tagged to be in
+    the uncompressed state). When a fully compressed file is <code>untagged</code>,
     the flag <code>illcompressed</code> will be shown. After full decompression is
-    complete the file will become uncompressed and untagged for
+    complete the file will become uncompressed and <code>untagged</code> for
     compression.</p>
+<div class="highlight"><pre><span></span><code>mmlsattr<span class="w"> </span>-L<span class="w"> </span>FileA.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>file name: FileA.txt
+metadata replication: 1 max 2
+data replication: 1 max 2
+immutable: no
+appendOnly: no
+flags: illcompressed
+storage pool name: data
+fileset name: home_user001
+snapshot name:
+creation time: Wed Jul 6 00:54:27 2022
+Misc attributes: ARCHIVE
+Encrypted: no
+</code></pre></div>
 </li>
 </ul>
 <h2 id="using-different-compression-algorithms">Using different compression algorithms<a class="headerlink" href="#using-different-compression-algorithms" title="Permanent link">&para;</a></h2>
@@ -1380,12 +1447,11 @@ depends on the magnitude of I/O operations on the affected files.  I/O
 intensive workloads may experience a significant performance drop.  </p>
 <p>If compression has a significant impact on your software performance,
 please confirm it first by running a test job with and without
-compression and then contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a>. We will help
+compression and then <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>. We will help
 you minimise the impact of compression on your workflow or find other
 ways to help you manage your project storage.</p>
-<p>If you are interested in learning more about this type of data
-compression <a href="https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression">you can find further details on the IBM
-website</a>.</p>
+<p>If you are interested in learning more about this type of data compression
+<a href="https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression">you can find further details on the IBM website</a>.</p>
 
 
 
@@ -1408,7 +1474,7 @@ website</a>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
   </span>
 
     

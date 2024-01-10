@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NeSI Support Documentation">
+        <meta name="description" content="Description of NeSI's automatic deletion of old data.">
       
       
       
@@ -1103,6 +1103,23 @@
                 
 
                   
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">nobackup</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">cleaning</span>
+    
+  
+</nav>
+
 
   
     <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md" title="Edit this page" class="md-content__button md-icon">
@@ -1115,13 +1132,9 @@
 
   <h1>Automatic cleaning of nobackup file system</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>The automatic cleaning feature is a programme of regular deletion of
-selected files from project directories in our nobackup file system. We
-do this to optimise the availability of this file system for active
+selected files from project directories in our nobackup file system.
+We do this to optimise the availability of this file system for active
 research computing workloads and to ensure NeSI can reliably support
 large-scale compute and analytics workflows.</p>
 <p>Files are deleted if they meet <strong>all</strong> of the following criteria:</p>
@@ -1133,23 +1146,14 @@ large-scale compute and analytics workflows.</p>
     previously, and as such is listed in a the project's
     nobackup <code>.policy</code> directory.</li>
 </ul>
-<div class="admonition prerequisite tip">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>You can get a list of files marked for deletion with the command
- <code>nn_doomed_list</code>.
- Usage: nn_doomed_list [-h] [--project [PROJECTS]]
- [--unlimited] [--limit LENGTHLIMIT]
- optional arguments:
- -h, --help show this help message and exit<br />
- --project [PROJECTS], -p [PROJECTS]<br />
- Comma-separated list of projects to process. If not given, process all
- projects of which the user is a member<br />
- --unlimited, -u Do not limit the length of the output file<br />
- --limit LENGTHLIMIT, -l LENGTHLIMIT<br />
- Maximum length of the output file (lines)
- If no arguments are given, nn_doomed_list checks and displays all
- project directories the user is a member of. 
- Default limit of the output file is 40 lines. </p>
+ <code>nn_doomed_list</code>.</p>
+<p>Maximum length of the output file (lines)
+If no arguments are given, <code>nn_doomed_list</code> checks and displays all
+project directories the user is a member of. 
+Default limit of the output file is 40 lines. </p>
 </div>
 <p>The general process will follow a schedule as follows:</p>
 <ul>
@@ -1168,8 +1172,8 @@ large-scale compute and analytics workflows.</p>
     deletion taking place.</p>
 </li>
 </ul>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Due to the nature of email, we cannot guarantee that any
  particular email message will be successfully delivered and
  received, for instance our emails could be blocked by your mail
@@ -1180,23 +1184,23 @@ large-scale compute and analytics workflows.</p>
 </div>
 <ul>
 <li>Immediately after deletion is complete, a new set of candidate files
-    will be identified for expiry during the next automated cleanup.
-    These candidate files are all files within the project's nobackup
-    that have not been created, accessed or modified within the last 106
-    days.</li>
+  will be identified for expiry during the next automated cleanup.
+  These candidate files are all files within the project's nobackup
+  that have not been created, accessed or modified within the last 106
+  days.</li>
 </ul>
 <p>A file containing the list of candidates for deletion during the next
 cleanup, along with the date of the next cleanup, will be created in a
 directory called <code>.policy/to_delete</code> inside the project's nobackup
-directory. For example, the candidates for future deletion from the
+directory. For example, the candidates for future deletion  from the
 directory <code>/nesi/nobackup/nesi12345</code> are recorded in
 <code>/nesi/nobackup/nesi12345/.policy/to_delete/&lt;date&gt;.filelist.gz</code>. Project
 team members are able to view the contents of <code>.policy</code> (but not delete
-or modify those contents). The gzip compressed filelist can be viewed
+or modify those contents). The <code>gzip</code> compressed file-list can be viewed
 and searched with the <code>zless</code> and <code>zgrep</code> commands respectively, e.g.,
 <code>zless /nesi/nobackup/nesi12345/.policy/to_delete/&lt;date&gt;.filelist.gz</code>.</p>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Objects other than files, such as directories and symbolic links, are
  not deleted under this policy, even if at deletion time they are
  empty, broken, or otherwise redundant. These entities typically take
@@ -1216,8 +1220,8 @@ keep beyond the scheduled expiry date, you have four options:</p>
     space, more inodes, or both, in your persistent project directory
     before you can do this. <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>. We
     assess such requests on a case-by-case basis.  Note:  You can save
-    space by compressing data.  Standard tools such as `gzip`
-    `bzip2` etc are available.</p>
+    space by compressing data.  Standard tools such as <code>gzip</code>
+    <code>bzip2</code> etc are available.</p>
 </li>
 <li>
 <p>Move or copy the file to a storage system outside NeSI, for example
@@ -1232,34 +1236,29 @@ keep beyond the scheduled expiry date, you have four options:</p>
     data again within the next month.</p>
 </li>
 <li>
-<p>Note: Accessing (Open/Close and Open/Save) or Moving (`mv`) does
-    not update the timestamp of the file. Copying (`cp`) does create a
-    new timestamped file.  </p>
+<p>Note: Accessing (Open/Close and Open/Save) or Moving (<code>mv</code>) does
+    not update the timestamp of the file. Copying (<code>cp</code>) does create a
+    new timestamped file.</p>
 </li>
 </ul>
-<div class="admonition prerequisite warning">
-<p class="admonition-title">Prerequisite</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Doing this for large numbers of files, or for files that together
  take up a large amount of disk space, in your project's nobackup
  directory, without regard for your project's computational
- activity, constitutes a breach of <a href="https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy">NeSI's acceptable use
- policy</a>.</p>
+ activity, constitutes a breach of
+ <a href="https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy">NeSI's acceptable use policy</a>.</p>
 </div>
 <h2 id="where-should-i-put-my-data">Where should I put my data?<a class="headerlink" href="#where-should-i-put-my-data" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
+<th>How often will my team's HPC jobs be accessing the data?</th>
+<th>How often will my team's HPC jobs be modifying the data?</th>
+<th>Recommended option</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>How often will my team's HPC jobs be accessing the data?</strong></td>
-<td>**How often will my team's HPC jobs be modifying the data? **</td>
-<td>**Recommended option **</td>
-</tr>
 <tr>
 <td>Often</td>
 <td>Often (at least once every two months)</td>
@@ -1286,42 +1285,41 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems.</p>
 <h2 id="if-i-need-a-file-that-was-deleted-from-nobackup-what-should-i-do">If I need a file that was deleted from nobackup, what should I do?<a class="headerlink" href="#if-i-need-a-file-that-was-deleted-from-nobackup-what-should-i-do" title="Permanent link">&para;</a></h2>
-<p>Please [contact our support
-team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> as soon as
-possible after you find that the file is missing. To reduce the risk of
-this outcome again in future, please [contact us in
-advance <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> so that we
+<p>Please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> as soon as
+possible after you find that the file is missing.
+To reduce the risk of this outcome again in future,
+please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> so that we
 can discuss your data storage options with you.</p>
 <h2 id="i-have-research-data-on-nobackup-that-i-cant-store-in-my-project-directory-or-at-my-institution-right-now-what-should-i-do">I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?<a class="headerlink" href="#i-have-research-data-on-nobackup-that-i-cant-store-in-my-project-directory-or-at-my-institution-right-now-what-should-i-do" title="Permanent link">&para;</a></h2>
-<p>Please [contact our support
-team <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> without delay
+<p>Please <a href="mailto:support@nesi.org.nz">Contact our Support Team</a> without delay
 so we can discuss your short- and medium-term data storage needs. Our
 intention is to work with you to move your valuable data to an
 appropriate combination of:</p>
 <ul>
-<li>persistent project storage on NeSI,</li>
-<li>high performance /nobackup storage (temporary scratch space) on
-    NeSI,</li>
-<li>slow nearline storage (not released yet, on our roadmap), and </li>
-<li>institutional storage infrastructure.</li>
+<li>Persistent project storage on NeSI,</li>
+<li>High performance /nobackup storage (temporary scratch space) on NeSI,</li>
+<li>Slow nearline storage (not released yet, on our road-map).</li>
+<li>Institutional storage infrastructure.</li>
 </ul>
 <h2 id="user-webinars">User Webinars<a class="headerlink" href="#user-webinars" title="Permanent link">&para;</a></h2>
 <p>On 14 and 26 November 2019, we hosted webinars to explain these upcoming
 changes and answer user questions. If you missed these sessions, the
 archived materials are available at the links below:</p>
 <ul>
-<li><strong><em>Video recordings: </em></strong><br />
-    14 November 2019 - <a href="https://youtu.be/KPNNSwDJU7A">https://youtu.be/KPNNSwDJU7A</a> <br />
-    26 November 2019 <em>(repeat of 14 Nov session)</em>
-    - <a href="https://youtu.be/iVTdlsiBTB4">https://youtu.be/iVTdlsiBTB4</a></li>
-<li><strong><em>Slides: </em></strong><br />
-<em>(same slides were used for both presentations)</em><br />
-<a href="https://drive.google.com/file/d/1kLwghsj9es8oMqdWj-VhUvaklW6JkrwO/view?usp=sharing">https://drive.google.com/file/d/1kLwghsj9es8oMqdWj-VhUvaklW6JkrwO/view?usp=sharing</a>  </li>
-<li><strong><em>Q&amp;A transcriptions: </em></strong><br />
-    14 November 2019
-    - <a href="https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing">https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing</a> <br />
-    26 November 2019
-    - <a href="https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing">https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing</a></li>
+<li>Video recordings:  <ul>
+<li><a href="https://youtu.be/KPNNSwDJU7A">14 November 2019</a></li>
+<li><a href="https://youtu.be/iVTdlsiBTB4">26 November 2019 repeat of 14 Nov session</a></li>
+</ul>
+</li>
+<li>Slides:  <ul>
+<li><a href="https://drive.google.com/file/d/1kLwghsj9es8oMqdWj-VhUvaklW6JkrwO/view?usp=sharing">same slides were used for both presentations</a></li>
+</ul>
+</li>
+<li>Q&amp;A transcriptions:  <ul>
+<li><a href="https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing">14 November 2019</a></li>
+<li><a href="https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing">26 November 2019</a></li>
+</ul>
+</li>
 </ul>
 
 
@@ -1345,7 +1343,7 @@ archived materials are available at the links below:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
   </span>
 
     
