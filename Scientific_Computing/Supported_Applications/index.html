@@ -2313,12 +2313,27 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-engineeringlist-group-item-application-mahuikalist-group-item-application-maui">
+    list-group-item-application-engineeringlist-group-item-application-mahuikalist-group-item-application-gpulist-group-item-application-mpilist-group-item-application-omplist-group-item-application-fealist-group-item-application-mahuikalist-group-item-application-maui">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-abaqus" aria-expanded="true">
         <h4 class="app-list-header">ABAQUS</h4>
         <span onclick="addDomainFilter('engineering')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-engineering">Engineering</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
+            </span>
+        <span onclick="addDomainFilter('gpu')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-gpu">Gpu</span>
+            </span>
+        <span onclick="addDomainFilter('mpi')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mpi">Mpi</span>
+            </span>
+        <span onclick="addDomainFilter('omp')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-omp">Omp</span>
+            </span>
+        <span onclick="addDomainFilter('fea')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-fea">Fea</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -2388,6 +2403,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.simulia.com/products/abaqus_fea.html">
                     ABAQUS Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ABAQUS">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -2415,13 +2431,13 @@
         <td rowspan=3>University of Auckland</td>
         <td rowspan=3>Faculty of Engineering</td>
         <!-- <td>gpgpu</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>gpgpu@uoa_foe:1</code></pre></td></tr>
         <tr>
         <!-- <td>parallel_teaching</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>parallel_teaching@uoa_foe:1</code></pre></td></tr>
         <tr>
         <!-- <td>abaqus</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>abaqus@uoa_foe:({cpu}**0.422)*5</code></pre></td></tr>
          
         <tr>
         
@@ -2946,7 +2962,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-engineeringlist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-mauilist-group-item-application-maui_ancil">
+    list-group-item-application-engineeringlist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-applicationlist-group-item-application-mahuikalist-group-item-application-mauilist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-ansys" aria-expanded="true">
         <h4 class="app-list-header">ANSYS</h4>
@@ -2955,6 +2971,12 @@
             </span>
         <span onclick="addDomainFilter('visualisation')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-visualisation">Visualisation</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
+            </span>
+        <span onclick="addDomainFilter('application')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-application">Application</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -3048,6 +3070,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.ansys.com">
                     ANSYS Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ANSYS">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -3079,29 +3102,20 @@
         
         <td rowspan=1>Orbis Diagnostics</td>
         <td rowspan=1></td>
+        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>cfd_solve_level2</td><td>0</td><td></td> -->
+        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+         
+        <tr>
+        
+        
+        <td rowspan=1>Auckland University of Technology</td>
+        <td rowspan=1>Faculty of Engineering</td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
         
         
-        <td rowspan=2>Auckland University of Technology</td>
-        <td rowspan=2>Faculty of Engineering</td>
-        <!-- <td>cfd_base</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
-        <tr>
-        <!-- <td>anshpc</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
-         
-        <tr>
-        
-        
-        <td rowspan=2>University of Waikato</td>
-        <td rowspan=2></td>
-        <!-- <td>cfd_base</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
-        <tr>
-        <!-- <td>anshpc</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
-         
-        <tr>
+        <td rowspan=1>University of Waikato</td>
+        <td rowspan=1></td>
+        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
         
         
         <td rowspan=1>University of Canterbury</td>
@@ -3112,10 +3126,10 @@
         <td rowspan=2>University of Otago</td>
         <td rowspan=2></td>
         <!-- <td>aa_mcad</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>aa_mcad@uoo:{cpu} - 16</code></pre></td></tr>
         <tr>
         <!-- <td>aa_r_cfd</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>aa_mcad@uoo:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -4047,6 +4061,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://github.com/deepmind/alphafold">
                     AlphaFold Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/AlphaFold">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -5224,12 +5239,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-biologylist-group-item-application-mahuika">
+    list-group-item-application-biologylist-group-item-application-mahuikalist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-blast" aria-expanded="true">
         <h4 class="app-list-header">BLAST</h4>
         <span onclick="addDomainFilter('biology')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-biology">Biology</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -5279,6 +5297,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://blast.ncbi.nlm.nih.gov/">
                     BLAST Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BLAST">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -5318,10 +5337,11 @@
                     <a id="mod_blastdb_mahuika_2023-01" onclick="changeVersion('blastdb', 'mahuika','2023-01')" class="md-tag-ver md-tag">2023-01</a>
                     <a id="mod_blastdb_mahuika_2023-04" onclick="changeVersion('blastdb', 'mahuika','2023-04')" class="md-tag-ver md-tag">2023-04</a>
                     <a id="mod_blastdb_mahuika_2023-07" onclick="changeVersion('blastdb', 'mahuika','2023-07')" class="md-tag-ver md-tag">2023-07</a>
-                    <a id="mod_blastdb_mahuika_2023-10" onclick="changeVersion('blastdb', 'mahuika','2023-10')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">2023-10</a>
+                    <a id="mod_blastdb_mahuika_2023-10" onclick="changeVersion('blastdb', 'mahuika','2023-10')" class="md-tag-ver md-tag">2023-10</a>
+                    <a id="mod_blastdb_mahuika_2024-01" onclick="changeVersion('blastdb', 'mahuika','2024-01')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">2024-01</a>
                            
             </nav></p>
-            <pre><code>module load BLASTDB/<span id="mod_blastdb_mahuika">2023-10</span></code></pre>
+            <pre><code>module load BLASTDB/<span id="mod_blastdb_mahuika">2024-01</span></code></pre>
         </div>
     </div>
     <div class="tabbed-control tabbed-control--prev" hidden="">
@@ -5568,6 +5588,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://github.com/Gaius-Augustus/BRAKER">
                     BRAKER Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BRAKER">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -7569,7 +7590,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-chemistrylist-group-item-application-engineeringlist-group-item-application-physicslist-group-item-application-mahuika">
+    list-group-item-application-chemistrylist-group-item-application-engineeringlist-group-item-application-physicslist-group-item-application-COMSOLlist-group-item-application-caelist-group-item-application-multiphysicslist-group-item-application-cfdlist-group-item-application-fealist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-comsol" aria-expanded="true">
         <h4 class="app-list-header">COMSOL</h4>
@@ -7581,6 +7602,21 @@
             </span>
         <span onclick="addDomainFilter('physics')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-physics">Physics</span>
+            </span>
+        <span onclick="addDomainFilter('COMSOL')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-COMSOL">Comsol</span>
+            </span>
+        <span onclick="addDomainFilter('cae')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-cae">Cae</span>
+            </span>
+        <span onclick="addDomainFilter('multiphysics')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-multiphysics">Multiphysics</span>
+            </span>
+        <span onclick="addDomainFilter('cfd')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-cfd">Cfd</span>
+            </span>
+        <span onclick="addDomainFilter('fea')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-fea">Fea</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -7631,6 +7667,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://www.comsol.com/">
                     COMSOL Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/COMSOL">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -7658,7 +7695,7 @@
         <td rowspan=1>University of Auckland</td>
         <td rowspan=1>Physics</td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td>By booking only.</td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoa_physics:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -7666,7 +7703,7 @@
         <td rowspan=1>Auckland Bioengineering Institute</td>
         <td rowspan=1>Implantable devices group</td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoa_idg:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -7674,7 +7711,7 @@
         <td rowspan=1>University of Auckland</td>
         <td rowspan=1>Faculty of Engineering</td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoa_foe:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -7682,7 +7719,7 @@
         <td rowspan=1>University of Auckland</td>
         <td rowspan=1>Deptartment of Engineering Science</td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoa_foes:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -7690,10 +7727,10 @@
         <td rowspan=2>University of Auckland</td>
         <td rowspan=2>Deptartment of Engineering Science</td>
         <!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoa_foe_des_rc:1</code></pre></td></tr>
         <tr>
         <!-- <td>comsoluser</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsoluser@uoa_foe_des_rc:1</code></pre></td></tr>
          
         <tr>
         
@@ -7701,7 +7738,7 @@
         <td rowspan=1>University of Otago</td>
         <td rowspan=1></td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uoo:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -7709,7 +7746,7 @@
         <td rowspan=1>University of Canterbury</td>
         <td rowspan=1></td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>comsol</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>comsol@uc:{node}</code></pre></td></tr>
          
         </tbody>
 </table>
@@ -8839,6 +8876,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://github.com/HKU-BAL/Clair3">
                     Clair3 Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Clair3">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -10334,10 +10372,13 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-mahuika">
+    list-group-item-application-hydrodynamicslist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-delft3d" aria-expanded="true">
         <h4 class="app-list-header">Delft3D</h4>
+        <span onclick="addDomainFilter('hydrodynamics')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-hydrodynamics">Hydrodynamics</span>
+            </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
             <span class="badge badge-cluster badge-cluster-mahuika">Mahuika</span>
@@ -10381,6 +10422,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://oss.deltares.nl/web/delft3d">
                     Delft3D Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Delft3D">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -10562,6 +10604,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://nanoporetech.com/products/minit">
                     Dorado Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Dorado">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -11921,7 +11964,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-engineeringlist-group-item-application-physicslist-group-item-application-mahuikalist-group-item-application-maui">
+    list-group-item-application-engineeringlist-group-item-application-physicslist-group-item-application-mahuikalist-group-item-application-mahuikalist-group-item-application-maui">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-fds" aria-expanded="true">
         <h4 class="app-list-header">FDS</h4>
@@ -11930,6 +11973,9 @@
             </span>
         <span onclick="addDomainFilter('physics')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-physics">Physics</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -11990,6 +12036,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://pages.nist.gov/fds-smv/">
                     FDS Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/FDS">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -13371,6 +13418,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.broadinstitute.org/gatk/">
                     GATK Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GATK">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -14561,6 +14609,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.gromacs.org">
                     GROMACS Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GROMACS">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -15035,12 +15084,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-chemistrylist-group-item-application-mahuika">
+    list-group-item-application-chemistrylist-group-item-application-mahuikalist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-gaussian" aria-expanded="true">
         <h4 class="app-list-header">Gaussian</h4>
         <span onclick="addDomainFilter('chemistry')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-chemistry">Chemistry</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -15084,6 +15136,7 @@
                 <div class="flex-card">
                     <h5>Links</h5>
                     <ul class="docLinks-list">
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Gaussian">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -17681,12 +17734,18 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-languagelist-group-item-application-mahuikalist-group-item-application-maui_ancil">
+    list-group-item-application-languagelist-group-item-application-mahuikalist-group-item-application-generallist-group-item-application-mahuikalist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-java" aria-expanded="true">
         <h4 class="app-list-header">Java</h4>
         <span onclick="addDomainFilter('language')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-language">Language</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
+            </span>
+        <span onclick="addDomainFilter('general')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-general">General</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -17748,6 +17807,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://java.com/">
                     Java Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Java">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -17949,6 +18009,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://julialang.org/">
                     Julia Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Julia">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -18016,6 +18077,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://pypi.org/project/jupyterlab/">
                     JupyterLab Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/JupyterLab">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -20010,6 +20072,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.yandell-lab.org/software/maker.html">
                     MAKER Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MAKER">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -20077,7 +20140,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-engineeringlist-group-item-application-mathematicslist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-maui_ancil">
+    list-group-item-application-engineeringlist-group-item-application-mathematicslist-group-item-application-visualisationlist-group-item-application-mllist-group-item-application-mahuikalist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-matlab" aria-expanded="true">
         <h4 class="app-list-header">MATLAB</h4>
@@ -20089,6 +20152,9 @@
             </span>
         <span onclick="addDomainFilter('visualisation')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-visualisation">Visualisation</span>
+            </span>
+        <span onclick="addDomainFilter('ml')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-ml">Ml</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -20165,6 +20231,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.mathworks.com/products/matlab">
                     MATLAB Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -20202,7 +20269,7 @@
         <td rowspan=1>Institute of Geological and Nuclear Sciences</td>
         <td rowspan=1></td>
         <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>matlab</td><td>0</td><td></td> -->
-        <td><span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span></td></tr>
+        <td><pre><code>matlab@gns:{node}</code></pre></td></tr>
          
         <tr>
         
@@ -22280,6 +22347,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://www.continuum.io/anaconda-overview">
                     Miniconda3 Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Miniconda3">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -24858,12 +24926,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-chemistrylist-group-item-application-mahuika">
+    list-group-item-application-chemistrylist-group-item-application-mahuikalist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-orca" aria-expanded="true">
         <h4 class="app-list-header">ORCA</h4>
         <span onclick="addDomainFilter('chemistry')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-chemistry">Chemistry</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -24911,6 +24982,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://orcaforum.kofo.mpg.de">
                     ORCA Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ORCA">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -25482,7 +25554,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-chemistrylist-group-item-application-engineeringlist-group-item-application-mahuika">
+    list-group-item-application-chemistrylist-group-item-application-engineeringlist-group-item-application-cfdlist-group-item-application-caelist-group-item-application-fealist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-openfoam" aria-expanded="true">
         <h4 class="app-list-header">OpenFOAM</h4>
@@ -25491,6 +25563,15 @@
             </span>
         <span onclick="addDomainFilter('engineering')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-engineering">Engineering</span>
+            </span>
+        <span onclick="addDomainFilter('cfd')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-cfd">Cfd</span>
+            </span>
+        <span onclick="addDomainFilter('cae')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-cae">Cae</span>
+            </span>
+        <span onclick="addDomainFilter('fea')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-fea">Fea</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -25546,6 +25627,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://www.openfoam.org/">
                     OpenFOAM Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenFOAM">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -25751,7 +25833,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-earth_sciencelist-group-item-application-engineeringlist-group-item-application-mahuika">
+    list-group-item-application-earth_sciencelist-group-item-application-engineeringlist-group-item-application-geolist-group-item-application-earthquakelist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-opensees" aria-expanded="true">
         <h4 class="app-list-header">OpenSees</h4>
@@ -25760,6 +25842,12 @@
             </span>
         <span onclick="addDomainFilter('engineering')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-engineering">Engineering</span>
+            </span>
+        <span onclick="addDomainFilter('geo')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-geo">Geo</span>
+            </span>
+        <span onclick="addDomainFilter('earthquake')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-earthquake">Earthquake</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -25806,6 +25894,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://opensees.berkeley.edu">
                     OpenSees Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenSees">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -27217,6 +27306,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.paraview.org">
                     ParaView Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ParaView">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -28254,7 +28344,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-data_analyticslist-group-item-application-languagelist-group-item-application-machine_learninglist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-mauilist-group-item-application-maui_ancil">
+    list-group-item-application-data_analyticslist-group-item-application-languagelist-group-item-application-machine_learninglist-group-item-application-visualisationlist-group-item-application-mllist-group-item-application-mahuikalist-group-item-application-mauilist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-python" aria-expanded="true">
         <h4 class="app-list-header">Python</h4>
@@ -28269,6 +28359,9 @@
             </span>
         <span onclick="addDomainFilter('visualisation')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-visualisation">Visualisation</span>
+            </span>
+        <span onclick="addDomainFilter('ml')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-ml">Ml</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -28351,6 +28444,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://python.org/">
                     Python Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Python">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -28812,7 +28906,7 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-data_analyticslist-group-item-application-languagelist-group-item-application-machine_learninglist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-maui_ancil">
+    list-group-item-application-data_analyticslist-group-item-application-languagelist-group-item-application-machine_learninglist-group-item-application-visualisationlist-group-item-application-mahuikalist-group-item-application-Rlist-group-item-application-mahuikalist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-r" aria-expanded="true">
         <h4 class="app-list-header">R</h4>
@@ -28827,6 +28921,12 @@
             </span>
         <span onclick="addDomainFilter('visualisation')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-visualisation">Visualisation</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
+            </span>
+        <span onclick="addDomainFilter('R')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-R">R</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -28895,6 +28995,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.r-project.org/">
                     R Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/R">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -29095,12 +29196,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-biologylist-group-item-application-mahuika">
+    list-group-item-application-biologylist-group-item-application-mahuikalist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-raxml" aria-expanded="true">
         <h4 class="app-list-header">RAxML</h4>
         <span onclick="addDomainFilter('biology')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-biology">Biology</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -29146,6 +29250,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://github.com/stamatak/standard-RAxML">
                     RAxML Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/RAxML">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -30134,12 +30239,24 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-biologylist-group-item-application-mahuika">
+    list-group-item-application-biologylist-group-item-application-no_toclist-group-item-application-no_liclist-group-item-application-no_desclist-group-item-application-no_verlist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-relion" aria-expanded="true">
         <h4 class="app-list-header">Relion</h4>
         <span onclick="addDomainFilter('biology')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-biology">Biology</span>
+            </span>
+        <span onclick="addDomainFilter('no_toc')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-no_toc">No_toc</span>
+            </span>
+        <span onclick="addDomainFilter('no_lic')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-no_lic">No_lic</span>
+            </span>
+        <span onclick="addDomainFilter('no_desc')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-no_desc">No_desc</span>
+            </span>
+        <span onclick="addDomainFilter('no_ver')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-no_ver">No_ver</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -30185,6 +30302,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page">
                     Relion Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Relion">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -32920,10 +33038,19 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-mahuikalist-group-item-application-maui_ancil">
+    list-group-item-application-containerslist-group-item-application-singularitylist-group-item-application-dockerlist-group-item-application-mahuikalist-group-item-application-maui_ancil">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-singularity" aria-expanded="true">
         <h4 class="app-list-header">Singularity</h4>
+        <span onclick="addDomainFilter('containers')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-containers">Containers</span>
+            </span>
+        <span onclick="addDomainFilter('singularity')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-singularity">Singularity</span>
+            </span>
+        <span onclick="addDomainFilter('docker')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-docker">Docker</span>
+            </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
             <span class="badge badge-cluster badge-cluster-mahuika">Mahuika</span>
@@ -32995,6 +33122,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://www.sylabs.io/docs/">
                     Singularity Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Singularity">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -33795,12 +33923,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-biologylist-group-item-application-mahuika">
+    list-group-item-application-biologylist-group-item-application-mahuikalist-group-item-application-mahuika">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-supernova" aria-expanded="true">
         <h4 class="app-list-header">Supernova</h4>
         <span onclick="addDomainFilter('biology')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-biology">Biology</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -33844,6 +33975,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://support.10xgenomics.com/de-novo-assembly/software/overview/latest/welcome">
                     Supernova Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Supernova">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -34980,6 +35112,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://trinityrnaseq.github.io">
                     Trinity Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Trinity">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -35214,6 +35347,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://www.turbovnc.org">
                     TurboVNC Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/TurboVNC">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -35545,12 +35679,15 @@
                         
                         
                         <details class="software list-group-item-action list-group-item list-group-item-application 
-    list-group-item-application-chemistrylist-group-item-application-mahuikalist-group-item-application-maui">
+    list-group-item-application-chemistrylist-group-item-application-mahuikalist-group-item-application-mahuikalist-group-item-application-maui">
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-vasp" aria-expanded="true">
         <h4 class="app-list-header">VASP</h4>
         <span onclick="addDomainFilter('chemistry')" class="badge-largeinator">
                 <span class="badge badge-domain badge-domain-chemistry">Chemistry</span>
+            </span>
+        <span onclick="addDomainFilter('mahuika')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-mahuika">Mahuika</span>
             </span>
         <span onclick="addDomainFilter('mahuika')" style="float:right;"
             title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
@@ -35624,6 +35761,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="http://www.vasp.at">
                     VASP Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VASP">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -36176,6 +36314,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://software.intel.com/en-us/vtune">
                     VTune Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VTune">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -36662,6 +36801,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://github.com/jiarong/VirSorter2">
                     VirSorter Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VirSorter">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -39502,10 +39642,11 @@
     <div class="tabbed-content">
     <div class="tabbed-block">
             <p><nav class="md-tags md-tags-ver-compleasm-mahuika">
-                    <a id="mod_compleasm_mahuika_0.2.2-gimkl-2022a" onclick="changeVersion('compleasm', 'mahuika','0.2.2-gimkl-2022a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">0.2.2-gimkl-2022a</a>
+                    <a id="mod_compleasm_mahuika_0.2.2-gimkl-2022a" onclick="changeVersion('compleasm', 'mahuika','0.2.2-gimkl-2022a')" class="md-tag-ver md-tag">0.2.2-gimkl-2022a</a>
+                    <a id="mod_compleasm_mahuika_0.2.5-gimkl-2022a" onclick="changeVersion('compleasm', 'mahuika','0.2.5-gimkl-2022a')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">0.2.5-gimkl-2022a</a>
                            
             </nav></p>
-            <pre><code>module load compleasm/<span id="mod_compleasm_mahuika">0.2.2-gimkl-2022a</span></code></pre>
+            <pre><code>module load compleasm/<span id="mod_compleasm_mahuika">0.2.5-gimkl-2022a</span></code></pre>
         </div>
     </div>
     <div class="tabbed-control tabbed-control--prev" hidden="">
@@ -44784,6 +44925,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://ipyrad.readthedocs.io">
                     ipyrad Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ipyrad">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -50784,6 +50926,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://nanoporetech.com/products/minit">
                     ont-guppy-gpu Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ont-guppy-gpu">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
@@ -54223,10 +54366,11 @@
                     <a id="mod_snakemake_mahuika_7.30.1-gimkl-2022a-Python-3.11.3" onclick="changeVersion('snakemake', 'mahuika','7.30.1-gimkl-2022a-Python-3.11.3')" class="md-tag-ver md-tag">7.30.1-gimkl-2022a-Python-3.11.3</a>
                     <a id="mod_snakemake_mahuika_7.32.0-gimkl-2022a-Python-3.11.3" onclick="changeVersion('snakemake', 'mahuika','7.32.0-gimkl-2022a-Python-3.11.3')" class="md-tag-ver md-tag">7.32.0-gimkl-2022a-Python-3.11.3</a>
                     <a id="mod_snakemake_mahuika_7.32.3-foss-2023a-Python-3.11.6" onclick="changeVersion('snakemake', 'mahuika','7.32.3-foss-2023a-Python-3.11.6')" class="md-tag-ver md-tag">7.32.3-foss-2023a-Python-3.11.6</a>
-                    <a id="mod_snakemake_mahuika_7.32.3-gimkl-2022a-Python-3.11.3" onclick="changeVersion('snakemake', 'mahuika','7.32.3-gimkl-2022a-Python-3.11.3')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">7.32.3-gimkl-2022a-Python-3.11.3</a>
+                    <a id="mod_snakemake_mahuika_7.32.3-gimkl-2022a-Python-3.11.3" onclick="changeVersion('snakemake', 'mahuika','7.32.3-gimkl-2022a-Python-3.11.3')" class="md-tag-ver md-tag">7.32.3-gimkl-2022a-Python-3.11.3</a>
+                    <a id="mod_snakemake_mahuika_8.1.0-gimkl-2022a-Python-3.11.3" onclick="changeVersion('snakemake', 'mahuika','8.1.0-gimkl-2022a-Python-3.11.3')" class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" class="md-tag-ver md-tag">8.1.0-gimkl-2022a-Python-3.11.3</a>
                            
             </nav></p>
-            <pre><code>module load snakemake/<span id="mod_snakemake_mahuika">7.32.3-gimkl-2022a-Python-3.11.3</span></code></pre>
+            <pre><code>module load snakemake/<span id="mod_snakemake_mahuika">8.1.0-gimkl-2022a-Python-3.11.3</span></code></pre>
         </div>
     </div>
     <div class="tabbed-control tabbed-control--prev" hidden="">
@@ -54488,6 +54632,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg></span>
                     <a href="https://pcingola.github.io/SnpEff/">
                     snpEff Homepage</a></li>
+                    <li class="support">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <a href="https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/snpEff">NeSI Documentation</a></li>
                     </ul>
                 </div>
             
