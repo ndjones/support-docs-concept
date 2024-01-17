@@ -2683,72 +2683,63 @@
 
 <h2 id="licences">Licences<a class="headerlink" href="#licences" title="Permanent link">&para;</a></h2>
 <!-- Uncomment this if we make a good page on modues --><p>The following network licence servers can be accessed from the NeSI cluster.</p>
+
 <table>
     <thead>
     <tr>
     <th>Institution</th>
-    <th>Faculty</th>
-    <!-- <th>Feature</th>
-    <th>Total</th> 
-    <th>Conditions</th>-->
-    <th>Token</th>
-    </tr>
+<th>Feature</th>
+    <!-- <th style="min-width:1rem"></th> -->
+<th>Token <span class="twemoji" title="Include this in your Slurm script to prevent your job starting without a licence."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path></svg></span></th>
+</tr>
     </thead>
     <tbody>
     <tr>
-
-
         <td rowspan=1>University of Waikato</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>National Institute of Water and Atmospheric Research</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>Institute of Geological and Nuclear Sciences</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><!-- <td>matlab</td><td>0</td><td></td> -->
-        <td><pre><code>matlab@gns:{node}</code></pre></td></tr>
+        <td><em title="0 total licences">matlab</em></td>
+                <td>
+                        <pre><code>#SBATCH -L=matlab@gns:{node}</code></pre>
+                        </td>
+                </tr>
 
-        <tr>
-
-
+            <tr>
         <td rowspan=1>Massey University</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>University of Auckland</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>University of Otago</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>Victoria University of Wellington</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>Auckland University of Technology</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>University of Canterbury</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr><tr>
 
-
+                </tr>
+            <tr>
         <td rowspan=1>Plant & Food Research</td>
-        <td rowspan=1></td>
-        <td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr></tbody>
+
+                </tr>
+            </tbody>
+
 </table>
 <p>If you do not have access, or want a server connected <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 
