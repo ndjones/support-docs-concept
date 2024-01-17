@@ -686,6 +686,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Run_an_executable_under_Apptainer_in_parallel/</loc>
+         <lastmod>2024-01-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Software_Version_Management/</loc>
          <lastmod>2024-01-17</lastmod>
          <changefreq>daily</changefreq>
