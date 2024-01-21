@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://github.com/nesi/support-docs-concept/Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node/">
       
       
-        <link rel="prev" href="../../../General/Release_Notes/About_the_Release_Notes_section/">
+        <link rel="prev" href="../../Profiling_and_Debugging/Slurm_Native_Profiling/">
       
       
-        <link rel="next" href="../Compiling_software_on_Maui/">
+        <link rel="next" href="../Compiling_software_on_Mahuika/">
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
@@ -321,7 +321,7 @@
     
   
   
-    <a href="../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password/" class="md-nav__link">
+    <a href="../../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -460,8 +460,6 @@
                 
   
   
-    
-  
   
   
     
@@ -473,491 +471,32 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    HPC Software Environment
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            HPC Software Environment
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
+      
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Build an Apptainer container on a Milan compute node
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Build an Apptainer container on a Milan compute node
-  </span>
-  
-
-      </a>
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
       
-        <li class="md-nav__item">
-  <a href="#building-container-via-slurm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building container via Slurm
-    </span>
-  </a>
   
-</li>
+  <span class="md-ellipsis">
+    Training
+  </span>
+  
+
       
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Known limitations
-    </span>
-  </a>
-  
-</li>
+        <span class="md-nav__icon md-icon"></span>
       
-    </ul>
-  
-</nav>
-      
-    </li>
+    </a>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Compiling_software_on_Maui/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Compiling software on Māui
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Per_job_temporary_directories/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Per job temporary directories
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Run_an_executable_under_Apptainer_in_parallel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Run an executable under Apptainer in parallel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenMP_settings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OpenMP settings
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Offloading_to_GPU_with_OpenMP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenMP 
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Offloading_to_GPU_with_OpenACC/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Offloading to GPU with OpenACC
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NVIDIA_GPU_Containers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NVIDIA GPU Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Configuring_Dask_MPI_jobs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuring Dask-MPI jobs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Software_Version_Management/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Software Version Management
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Thread_Placement_and_Thread_Affinity/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Thread Placement and Thread Affinity
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NICE_DCV_Setup/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NICE DCV Setup
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--deprecated"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Visualisation_software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Visualisation software
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--deprecated"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Finding_Software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Finding Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Installing_Third_Party_applications/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installing (Third Party) applications
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Compiling_software_on_Mahuika/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Compiling software on Mahuika
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Programming_environment_differences_between_Maui_and_Mahuika/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Programming environment differences between Maui and Mahuika
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1032,51 +571,6 @@
       
         
       
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../Manuals_and_User_Guides/Troubleshooting_on_NeSI/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Manuals and User Guides
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
         
       
         
@@ -1093,149 +587,11 @@
         
   
   
-    <a href="../../Profiling_and_Debugging/Debugging/" class="md-nav__link">
+    <a href="../../The_NeSI_High_Performance_Computers/Overview/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Profiling and Debugging
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Release Notes jupyter nesi org nz
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Running Jobs on Maui and Mahuika
+    The NeSI High Performance Computers
   </span>
   
 
@@ -1411,6 +767,630 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Running Jobs on Māui and Mahuika
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Profiling_and_Debugging/Debugging/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Profiling and Debugging
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HPC Software Environment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            HPC Software Environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Build an Apptainer container on a Milan compute node
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Build an Apptainer container on a Milan compute node
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-container-via-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building container via Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known limitations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Compiling_software_on_Mahuika/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiling software on Mahuika
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Compiling_software_on_Maui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiling software on Māui
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuring_Dask_MPI_jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Dask-MPI jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finding_Software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finding Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installing_Third_Party_applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing (Third Party) applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NICE_DCV_Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NICE DCV Setup
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NVIDIA_GPU_Containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NVIDIA GPU Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Offloading_to_GPU_with_OpenACC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offloading to GPU with OpenACC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Offloading_to_GPU_with_OpenMP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offloading to GPU with OpenMP 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenMP_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMP settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Per_job_temporary_directories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Per job temporary directories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Programming_environment_differences_between_Maui_and_Mahuika/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming environment differences between Maui and Mahuika
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Run_an_executable_under_Apptainer_in_parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run an executable under Apptainer in parallel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software_Version_Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Version Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Thread_Placement_and_Thread_Affinity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thread Placement and Thread Affinity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Visualisation_software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualisation software
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1458,10 +1438,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1474,11 +1450,11 @@
         
   
   
-    <a href="../../The_NeSI_High_Performance_Computers/Overview/" class="md-nav__link">
+    <a href="../../Manuals_and_User_Guides/Manuals/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    The NeSI High Performance Computers
+    Manuals and User Guides
   </span>
   
 
@@ -1509,6 +1485,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1521,11 +1521,11 @@
         
   
   
-    <a href="../../Training/Introduction_to_computing_on_the_NeSI_HPC/" class="md-nav__link">
+    <a href="../../Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-02-2023/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Training
+    Release Notes jupyter.nesi.org.nz
   </span>
   
 
@@ -1582,62 +1582,11 @@
     
   
   
-    <a href="../../../Storage/Data_Recovery/File_Recovery/" class="md-nav__link">
+    <a href="../../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
     Storage
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    
-  
-  
-    <a href="../../../NeSI_Service_Subscriptions/Contracts_and_billing_processes/Types_of_contracts/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    NeSI Service Subscriptions
   </span>
   
 
@@ -1833,7 +1782,7 @@ this case, try an older image version or a different base image.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2024</span>
   </span>
 
     
