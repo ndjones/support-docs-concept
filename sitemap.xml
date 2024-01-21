@@ -6,22 +6,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/CONTRIBUTING/</loc>
+         <lastmod>2024-01-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/nesi/support-docs-concept/FORMAT/</loc>
+         <lastmod>2024-01-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/Glossary/</loc>
          <lastmod>2024-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/format/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/MACROS/</loc>
          <lastmod>2024-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/nesi/support-docs-concept/macros/</loc>
-         <lastmod>2024-01-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/nesi/support-docs-concept/specification/</loc>
+         <loc>https://github.com/nesi/support-docs-concept/NEWPAGE/</loc>
          <lastmod>2024-01-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

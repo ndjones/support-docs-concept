@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/specification/">
+        <link rel="canonical" href="https://github.com/nesi/support-docs-concept/CONTRIBUTING/">
       
       
-        <link rel="prev" href="../macros/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/">
+        <link rel="next" href="../FORMAT/">
       
       
       <link rel="icon" href="../assets/icons/favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Specification - NeSI Support Center</title>
+        <title>Contributing - NeSI Support Center</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#specification" class="md-skip">
+        <a href="#minor-edits-through-github" class="md-skip">
           Skip to content
         </a>
       
@@ -146,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Specification
+              Contributing
             
           </span>
         </div>
@@ -532,8 +532,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -542,46 +540,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#minor-edits-through-github" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure
+      Minor edits through GitHub
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Development Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Development Environment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#article-namelocation" class="md-nav__link">
+  <a href="#first-time-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Article Name/Location
+      First Time Setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#article-order" class="md-nav__link">
+  <a href="#make-development-branch" class="md-nav__link">
     <span class="md-ellipsis">
-      Article Order
+      Make Development Branch
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#title" class="md-nav__link">
+  <a href="#build-and-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Title
+      Build and deploy
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sub-headers" class="md-nav__link">
+  <a href="#ide" class="md-nav__link">
     <span class="md-ellipsis">
-      Sub Headers
+      IDE
     </span>
   </a>
   
@@ -593,135 +600,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#meta" class="md-nav__link">
+  <a href="#making-a-merge-request" class="md-nav__link">
     <span class="md-ellipsis">
-      Meta
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Meta">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mkdocs Parameters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#material-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material Parameters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom Parameters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zendesk-imported" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zendesk Imported
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Templates
+      Making a Merge Request
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#macros" class="md-nav__link">
+  <a href="#reviewing-a-merge-request" class="md-nav__link">
     <span class="md-ellipsis">
-      Macros
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Macros">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Includes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Style Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-blocks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code blocks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    <span class="md-ellipsis">
-      Links
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessability-standards" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accessability standards
+      Reviewing A Merge Request
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mkdocsyml" class="md-nav__link">
+  <a href="#adding-words-to-dictionary" class="md-nav__link">
     <span class="md-ellipsis">
-      mkdocs.yml
+      Adding Words to Dictionary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raise-an-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raise an issue
     </span>
   </a>
   
@@ -743,7 +651,7 @@
                   
 
   
-    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/specification.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nesi/support-docs-concept/edit/main/docs/CONTRIBUTING.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -751,264 +659,79 @@
   
 
 
-<p><strong class="hidden"><a href="https://nesi.github.io/support-docs-concept/format/">CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS</a></strong></p>
-<h1 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h1>
-<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
-<p>Public facing articles are found in the <code>docs</code> folder. Any markdown files inside will be rendered, any directory will be subcategories.
-Pages can be excluded from being shown in the nav by adding them to <code>mkdocs.yml: not_in_nav</code>, as in the case of <code>includes</code>.</p>
-<p>By default, all categories are a group only (e.g. they have nothing rendered, only children),
-However, if the folder contains an <code>index.md</code> file, it will be rendered instead.</p>
-<h3 id="article-namelocation">Article Name/Location<a class="headerlink" href="#article-namelocation" title="Permanent link">&para;</a></h3>
-<p>An articles location is determined by its location in the <code>docs</code> directory.
-Article file can be nested up to two folders deep, and use the title name, in snake_case.</p>
-<h3 id="article-order">Article Order<a class="headerlink" href="#article-order" title="Permanent link">&para;</a></h3>
-<p>By default articles will be ordered alphabetically.
-Article order can be m set using the <code>weight</code> property in the articles front matter, or by using the <code>nav</code> property of <code>mkdocs.yml</code>.
-Lower weight values will be first in the nav.</p>
-<p>As <code>weight</code> was inherited from Zendesk, all articles have a weight value post migration.
-If ordering is not required remove the <code>weight</code> property from the front matter to allow default alphabetical ordering.</p>
-<h3 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h3>
-<p>Headers should have a blank line before and after.</p>
-<h4 id="succession">Succession<a class="headerlink" href="#succession" title="Permanent link">&para;</a></h4>
-<p>Article title has the follong succession,</p>
-<ul>
-<li>A title defined in the 'title' meta-data.</li>
-<li>A level 1 Markdown header on the first line of the document body.</li>
-<li>The filename of a document.</li>
-</ul>
-<p>Our preference is the opposite (filename &gt; H1 &gt; meta).</p>
-<h4 id="filename-rendering">Filename Rendering<a class="headerlink" href="#filename-rendering" title="Permanent link">&para;</a></h4>
-<p>When converting a filename for the nav/title the <code>.md</code> will be dropped and 'snake_case' and 'kebab-case' will both be rendered with spaces, e.g. 'Snake case' and 'Kebab case' respectively.</p>
-<p>The first letter of the filename will be capitalised, but not any subsiquent words.</p>
-<p>(Note: Choose only one for naming convention)</p>
-<h3 id="sub-headers">Sub Headers<a class="headerlink" href="#sub-headers" title="Permanent link">&para;</a></h3>
-<p>Unless setting a title, the first 'real' header will be an H2.
-It's fine to have text before the first header if it is relevent to the entire page.</p>
-<p>No skipping levels, e.g.</p>
-<div class="highlight"><pre><span></span><code>H2
-H3
-H4
-</code></pre></div>
-<p>never</p>
-<div class="highlight"><pre><span></span><code>H2
-H4
-</code></pre></div>
-<p>Try to avoid only-child headers (e.g shares a parent with at least one other header)</p>
-<h2 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
-<p>Article metadata (or 'front-matter') is yaml format at the top of the page between two <code>---</code>.
-Content is not rendered.</p>
-<h3 id="mkdocs-parameters">Mkdocs Parameters<a class="headerlink" href="#mkdocs-parameters" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>template</code> : which <a href="#templates">template</a> to use.</li>
-<li><code>title</code>    : <a href="#title">title</a>.</li>
-<li><code>weight</code>   : Used to set page order. Lower comes first. Migrated from Zendesk <code>position</code>.
-               See <a href="#article-order">page order</a></li>
-</ul>
-<h3 id="material-parameters">Material Parameters<a class="headerlink" href="#material-parameters" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>description</code> : used for site meta.           : <code>string</code></li>
-<li><code>icon</code>        : page icon.                    : <code>path</code></li>
-<li><code>status</code>      : Will dsiplay a symbol on nav  : <code>new</code>, <code>deprecated</code>.</li>
-<li><code>hide</code>        : Used to turn off features.    : <code>tags</code></li>
-</ul>
-<h3 id="custom-parameters">Custom Parameters<a class="headerlink" href="#custom-parameters" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>prereq</code>      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.</li>
-<li><code>postreq</code>     : List of what next. Formatted in markdown. Will be rendered inside a admonation.</li>
-<li><code>suggested</code>   : Page similar pages to link to. (Not implimented).</li>
-</ul>
-<h3 id="zendesk-imported">Zendesk Imported<a class="headerlink" href="#zendesk-imported" title="Permanent link">&para;</a></h3>
-<p>Not used for anything currently. Info imported from Zendesk Page.</p>
-<ul>
-<li><code>created_at</code>:</li>
-<li><code>hidden</code>:</li>
-<li><code>label_names</code>: []</li>
-<li><code>vote_count</code>:</li>
-<li><code>vote_sum</code>:</li>
-<li><code>zendesk_article_id</code>:</li>
-<li><code>zendesk_section_id</code>:</li>
-</ul>
-<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h2>
-<p>Template can be set in article meta.</p>
-<ul>
-<li><code>main.html</code>                : Used for regular pages (default).</li>
-<li><code>application.html</code>         : Used for 'application' pages, will include software details header (and be linked in supported apps page).</li>
-<li><code>supportedApplication.html</code>: For supported applications page.</li>
-<li><code>home.html</code>                : Homepage.</li>
-</ul>
-<p>By default, the <code>main</code> theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.</p>
-<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
-<p>Macros allow use of Jinja filter syntax <em>inside the mardown files</em> allowing for much more flexable templating.
-Details <a href="https://mkdocs-macros-plugin.readthedocs.io/">here</a></p>
-<p><code>module load ANSYS/2023R2</code></p>
-<div class="highlight"><pre><span></span><code><span class="sb">`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`</span>
-</code></pre></div>
-<details>
-<summary>Fancy Example</summary>
-<p>Our Python modules come prebuilt with the following packages:</p>
-<p><table>
-<tr><th>Package</th></tr></p>
-<p><tr><td>altair-4.1.0</td></tr></p>
-<p><tr><td>ase-3.19.0</td></tr></p>
-<p><tr><td>biom-format-2.1.7</td></tr></p>
-<p><tr><td>biopython-1.76</td></tr></p>
-<p><tr><td>Bottleneck-1.3.1</td></tr></p>
-<p><tr><td>CacheControl-0.12.6</td></tr></p>
-<p><tr><td>click-7.0</td></tr></p>
-<p><tr><td>click-plugins-1.1.1</td></tr></p>
-<p><tr><td>Cython-0.29.15</td></tr></p>
-<p><tr><td>dask-2.10.1</td></tr></p>
-<p><tr><td>dask-jobqueue-0.7.1</td></tr></p>
-<p><tr><td>datashader-0.10.0</td></tr></p>
-<p><tr><td>deap-1.3.0</td></tr></p>
-<p><tr><td>decorator-4.4.1</td></tr></p>
-<p><tr><td>DendroPy-4.4.0</td></tr></p>
-<p><tr><td>docopt-0.6.2</td></tr></p>
-<p><tr><td>emcee-3.0.2</td></tr></p>
-<p><tr><td>future-0.18.2</td></tr></p>
-<p><tr><td>h5py-2.10.0</td></tr></p>
-<p><tr><td>holoviews-1.12.7</td></tr></p>
-<p><tr><td>HTSeq-0.11.2</td></tr></p>
-<p><tr><td>ipython-7.12.0</td></tr></p>
-<p><tr><td>ipywidgets-7.5.1</td></tr></p>
-<p><tr><td>jdcal-1.4.1</td></tr></p>
-<p><tr><td>Jinja2-2.11.1</td></tr></p>
-<p><tr><td>joblib-0.14.1</td></tr></p>
-<p><tr><td>liac-arff-2.4.0</td></tr></p>
-<p><tr><td>line_profiler-3.0.2</td></tr></p>
-<p><tr><td>lockfile-0.12.2</td></tr></p>
-<p><tr><td>lxml-4.5.0</td></tr></p>
-<p><tr><td>Mako-1.1.0</td></tr></p>
-<p><tr><td>matplotlib-3.1.3</td></tr></p>
-<p><tr><td>mpi4py-3.0.3</td></tr></p>
-<p><tr><td>mpmath-1.1.0</td></tr></p>
-<p><tr><td>natsort-7.0.1</td></tr></p>
-<p><tr><td>netCDF4-1.5.3</td></tr></p>
-<p><tr><td>networkx-2.4</td></tr></p>
-<p><tr><td>nose-1.3.7</td></tr></p>
-<p><tr><td>notebook-6.0.3</td></tr></p>
-<p><tr><td>numba-0.48.0</td></tr></p>
-<p><tr><td>numexpr-2.7.1</td></tr></p>
-<p><tr><td>numpy-1.18.1</td></tr></p>
-<p><tr><td>obspy-1.2.0</td></tr></p>
-<p><tr><td>openpyxl-3.0.3</td></tr></p>
-<p><tr><td>pandas-1.0.1</td></tr></p>
-<p><tr><td>param-1.9.2</td></tr></p>
-<p><tr><td>patsy-0.5.1</td></tr></p>
-<p><tr><td>paycheck-1.0.2</td></tr></p>
-<p><tr><td>Pillow-7.0.0</td></tr></p>
-<p><tr><td>pip-20.0.2</td></tr></p>
-<p><tr><td>plotly-4.10.0</td></tr></p>
-<p><tr><td>PrettyTable-0.7.2</td></tr></p>
-<p><tr><td>psycopg2-2.8.4</td></tr></p>
-<p><tr><td>pudb-2019.2</td></tr></p>
-<p><tr><td>Py6S-1.7.2</td></tr></p>
-<p><tr><td>pybedtools-0.8.1</td></tr></p>
-<p><tr><td>pybind11-2.4.3</td></tr></p>
-<p><tr><td>pyct-0.4.6</td></tr></p>
-<p><tr><td>pyparsing-2.4.6</td></tr></p>
-<p><tr><td>pysam-0.15.4</td></tr></p>
-<p><tr><td>Pysolar-0.8</td></tr></p>
-<p><tr><td>pystan-2.19.1.1</td></tr></p>
-<p><tr><td>pytest-5.3.5</td></tr></p>
-<p><tr><td>python-dateutil-2.8.1</td></tr></p>
-<p><tr><td>pytz-2019.3</td></tr></p>
-<p><tr><td>PyYAML-5.3</td></tr></p>
-<p><tr><td>qutip-4.5.0</td></tr></p>
-<p><tr><td>reportlab-3.5.32</td></tr></p>
-<p><tr><td>requests-2.22.0</td></tr></p>
-<p><tr><td>scikit-build-0.10.0</td></tr></p>
-<p><tr><td>scikit-image-0.16.2</td></tr></p>
-<p><tr><td>scikit-umfpack-0.3.2</td></tr></p>
-<p><tr><td>scipy-1.4.1</td></tr></p>
-<p><tr><td>seaborn-0.11.0</td></tr></p>
-<p><tr><td>setuptools-45.2.0</td></tr></p>
-<p><tr><td>six-1.14.0</td></tr></p>
-<p><tr><td>SQLAlchemy-1.3.13</td></tr></p>
-<p><tr><td>statsmodels-0.11.0</td></tr></p>
-<p><tr><td>sympy-1.5.1</td></tr></p>
-<p><tr><td>tabulate-0.8.6</td></tr></p>
-<p><tr><td>toolz-0.10.0</td></tr></p>
-<p><tr><td>tzlocal-2.0.0</td></tr></p>
-<p><tr><td>ujson-1.35</td></tr></p>
-<p><tr><td>xlrd-1.2.0</td></tr></p>
-</table>
-<div class="highlight"><pre><span></span><code>Our Python modules come prebuilt with the following packages: 
-{% set pyexts=applications.Python.extensions.split(&#39;, &#39;) %}
-&lt;table&gt;
-&lt;tr&gt;&lt;th&gt;Package&lt;/th&gt;&lt;/tr&gt;
-{% for pyext in pyexts %}
-&lt;tr&gt;&lt;td&gt;{{ pyext }}&lt;/td&gt;&lt;/tr&gt;
-{% endfor %}
+  <h1>Contributing</h1>
 
-&lt;/table&gt;
-</code></pre></div>
-</details>
-<h3 id="includes">Includes<a class="headerlink" href="#includes" title="Permanent link">&para;</a></h3>
-<p>The macro plugin also allows the use of 'includes',</p>
-<div class="highlight"><pre><span></span><code>{% include &#39;snippet.md&#39; %}
-</code></pre></div>
-<p>There are a few includes you may want to use.</p>
-<table>
-<thead>
-<tr>
-<th>Path</th>
-<th>content</th>
-<th>usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>{% include "partials/support_request.html" %}</code></td>
-<td><code>&lt;a href="mailto:support@nesi.org.nz"&gt;Contact our Support Team&lt;/a&gt;</code></td>
-<td>Anywhere the user is told to contact support.</td>
-</tr>
-<tr>
-<td><code>{% include "partials/appHeader.html" %}</code></td>
-<td>Info block</td>
-<td>At the top of documents about particular software (TODO: elaborate)</td>
-</tr>
-<tr>
-<td><code>{% include "partials/app/app_network_licence.html" %}</code></td>
-<td>List of network licences</td>
-<td>When dynamic licence info is required (used in <code>appHeader.html</code>)</td>
-</tr>
-<tr>
-<td><code>{% include "partials/app/app_version.html" %}</code></td>
-<td>List of versions and a 'module load' codeblock.</td>
-<td>When dynamic version info is required</td>
-</tr>
-</tbody>
-</table>
-<h2 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h2>
-<h3 id="code-blocks">Code blocks<a class="headerlink" href="#code-blocks" title="Permanent link">&para;</a></h3>
-<p>Don't include prompt or</p>
-<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
-<p>Try to avoid putting links on ambiguous words, e.g.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Bad</label><label for="__tabbed_1_2">Better</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>View the software homepage <a href="https://www.example.com">here</a>.</p>
-<div class="highlight"><pre><span></span><code>View the homepage [<span class="nt">here</span>](<span class="na">https://www.example.com</span>).
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>View the <a href="https://www.example.com">software homepage</a>.</p>
-<div class="highlight"><pre><span></span><code>View the [<span class="nt">software homepage</span>](<span class="na">https://www.example.com</span>).
-</code></pre></div>
-</div>
-</div>
-</div>
-<h2 id="accessability-standards">Accessability standards<a class="headerlink" href="#accessability-standards" title="Permanent link">&para;</a></h2>
+<p><strong class="hidden"><a href="https://nesi.github.io/support-docs-concept/contributing/">CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS</a></strong></p>
+<div class="admonition prerequisite">
+<p class="admonition-title">See also</p>
 <ul>
-<li><a href="https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/">nz spec</a></li>
-<li><a href="https://www.w3.org/TR/WCAG21/">WCAG spec</a></li>
+<li>For examples of markdown use, <a href="../FORMAT/">see FORMAT</a>.</li>
+<li>For information about page creation, <a href="../NEWPAGE/">see NEWPAGE</a>.</li>
 </ul>
-<h2 id="mkdocsyml">mkdocs.yml<a class="headerlink" href="#mkdocsyml" title="Permanent link">&para;</a></h2>
-<p>When setting a parameter in the YAML, you can use the following syntax.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">some-param </span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TEST_ENV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
+</div>
+<p>Any changes made should be merged via a pull request.</p>
+<h2 id="minor-edits-through-github">Minor edits through GitHub<a class="headerlink" href="#minor-edits-through-github" title="Permanent link">&para;</a></h2>
+<p>Press <code>.</code>, will open up Visual Studio Code in browser.</p>
+<h2 id="local-development-environment">Local Development Environment<a class="headerlink" href="#local-development-environment" title="Permanent link">&para;</a></h2>
+<p>A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.</p>
+<h3 id="first-time-setup">First Time Setup<a class="headerlink" href="#first-time-setup" title="Permanent link">&para;</a></h3>
+<p>You will need to have Python <strong>3.10</strong> or later installed on your computer.</p>
+<p>Clone this repository and create a Python virtual environment using:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nesi/support-docs-concept.git
+<span class="nb">cd</span><span class="w"> </span>support-docs-concept
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
-<p>This will use the value of the env variable <code>TEST_ENV</code>, or if unset, false.</p>
+<h3 id="make-development-branch">Make Development Branch<a class="headerlink" href="#make-development-branch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>my_development_branch
+</code></pre></div>
+<h3 id="build-and-deploy">Build and deploy<a class="headerlink" href="#build-and-deploy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+mkdocs<span class="w"> </span>serve<span class="w"> </span>-c
+</code></pre></div>
+<p>Take note of any warnings or errors.</p>
+<p>A link to the deployment will be printed once served.</p>
+<h3 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h3>
+<p>You can use any IDE you want, but various tools have been configured for use with VS Code.</p>
+<h4 id="recommended-extensions">Recommended Extensions<a class="headerlink" href="#recommended-extensions" title="Permanent link">&para;</a></h4>
+<p>When opening the workspace for the first time, you should be prompted to install the <a href="../.vscode/extensions.json">Recommended VS Code Plugins</a>.</p>
+<h4 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h4>
+<p><code>ctrl</code> + <code>space</code> can be used to aid by auto-completing.</p>
+<p>e.g. starting to type an image include <code>![my image](</code> then pressing <code>ctrl</code> + <code>space</code> will show all the valid paths.</p>
+<p>Custom snippets can be added in <a href="../.vscode/includes.code-snippets"><code>../.vscode/includes.code-snippets</code></a></p>
+<h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h4>
+<p>Some of the same checks run during the GitHub CI, can also be run in VS Code.</p>
+<p>This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.</p>
+<p>Tasks allow continuous checks to be run in the background, these can be defined in <a href="../.vscode/tasks.json"><code>../.vscode/tasks.json</code></a>, also include in <a href="../.vscode/settings.json"><code>../.vscode/settings.json</code></a> in order to trigger on save.</p>
+<h2 id="making-a-merge-request">Making a Merge Request<a class="headerlink" href="#making-a-merge-request" title="Permanent link">&para;</a></h2>
+<p>The <code>main</code> branch is protected, changes can be made via a pull request.</p>
+<p>Make a pull request for your development branch into <code>main</code>.</p>
+<p>If you are using a local development environment,</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;branchname&gt;
+</code></pre></div>
+<p>When you are done with your changes</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;branchname&gt;
+</code></pre></div>
+<p>CI checks will run on your branch, you can check them under 'Actions'
+Might be worth having a quick look at these before making a pull request.</p>
+<p>Make a pull <a href="https://github.com/nesi/support-docs-concept/pulls">request</a></p>
+<p>Assign a reviewer if you wish.</p>
+<p>Pull will merge automatically if all checks passed. (add timer too maybe?)</p>
+<h2 id="reviewing-a-merge-request">Reviewing A Merge Request<a class="headerlink" href="#reviewing-a-merge-request" title="Permanent link">&para;</a></h2>
+<p>Under the 'pull requests' tab, open one of the pending requests.</p>
+<p>Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.</p>
+<p>If some of the CI checks failed (make sure they are not important ones), you will have to click the  <code>Merge without waiting for requirements to be met (bypass branch protections)</code> button before proceeding with the merge.</p>
+<p>Feel free to raise an issue, make a proposal or <a href="#adding-words-to-dictionary">add words to the dictionary</a> if you feel you are being unfairly targeted by the CI checks.</p>
+<h2 id="adding-words-to-dictionary">Adding Words to Dictionary<a class="headerlink" href="#adding-words-to-dictionary" title="Permanent link">&para;</a></h2>
+<p>If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.</p>
+<ol>
+<li>Visit the <a href="https://github.com/nesi/nesi-wordlist">NeSI Word List</a>, follow the instructions there on adding words.</li>
+<li>Once changes to the word list have been merged, you can fetch the new assets by running the <a href="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml"><img alt="Fetch Remote Assets" src="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&amp;event=workflow_run" /></a> workflow in this repo.</li>
+<li>A branch <code>new-assets</code> will be created, which can be merged into main (you should see your new words are added).</li>
+</ol>
+<h2 id="raise-an-issue">Raise an issue<a class="headerlink" href="#raise-an-issue" title="Permanent link">&para;</a></h2>
+<p><em>Not documented at the moment (TODO)</em></p>
 
 
 
@@ -1031,7 +754,7 @@ Details <a href="https://mkdocs-macros-plugin.readthedocs.io/">here</a></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2024</span>
   </span>
 
     
@@ -1041,7 +764,7 @@ Details <a href="https://mkdocs-macros-plugin.readthedocs.io/">here</a></p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2023</span>
   </span>
 
     
