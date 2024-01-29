@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
@@ -1020,7 +1020,7 @@
       
   
   <span class="md-ellipsis">
-    Nearline_long-term_storage
+    Nearline long-term storage
   </span>
   
 
@@ -1182,10 +1182,6 @@
 
   <h1>Download and share CMIP6 data (for NIWA researchers)</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <p>The <a href="https://www.wcrp-climate.org/wgcm-cmip">Coupled Model Intercomparison
 Project</a>, which began in 1995
 under the auspices of the <a href="https://www.wcrp-climate.org/about-wcrp/wcrp-overview">World Climate Research Programme
@@ -1199,48 +1195,50 @@ how to download the data once you have figured out what you need. The
 data will be downloaded asynchronously - no need to stare at a screen
 for hours.  The downloaded data will reside in a shared directory and
 hence will also be accessible to your collaborators.</p>
-<p>The instructions are geared towards members of the niwa02916 group -
-send a message to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#110;&#101;&#115;&#105;&#46;&#111;&#114;&#103;&#46;&#110;&#122;</a> if you are a NIWA employee and
+<p>The instructions are geared towards members of the <code>niwa02916</code> group -
+<a href="mailto:support@nesi.org.nz">Contact our Support Team</a> if you are a NIWA employee and
 want to become part of this group. Other NeSI users may want to
 read <a href="../../../Scientific_Computing/Supported_Applications/Synda/">this</a>,
-which explains how to install the synda tool. Once installed, you can
+which explains how to install the Synda tool. Once installed, you can
 then type similar commands to the ones below to test your configuration.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<p>On mahuika or w-mauivlab01.maui.nesi.org.nz:</p>
-<div class="highlight"><pre><span></span><code>source /nesi/project/niwa02916/synda_env.sh
+<p>On <code>mahuika</code> or <code>w-mauivlab01.maui.nesi.org.nz</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/nesi/project/niwa02916/synda_env.sh
 </code></pre></div>
-<p>This will load the Anaconda3 environment and set the ST_HOME variable.
+<p>This will load the Anaconda3 environment and set the <code>ST_HOME</code> variable.
 You should also now be able to invoke
-<a href="../../../Scientific_Computing/Supported_Applications/Synda/">synda</a>
+<a href="../../../Scientific_Computing/Supported_Applications/Synda/">Synda</a>
 commands, a tool that can be used to synchronise CMIP data with Earth
 System Grid Federation archives. A full list of options can be obtained
 with</p>
-<div class="highlight"><pre><span></span><code>synda -h
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>-h
 </code></pre></div>
-<p>Below we demonstrate how synda might be used.</p>
+<p>Below we demonstrate how Synda might be used.</p>
 <h2 id="find-some-datasets">Find some datasets<a class="headerlink" href="#find-some-datasets" title="Permanent link">&para;</a></h2>
 <p>CMIP6 datasets are organised by institution_id, experiment_id,
 variable etc. A full list can be glanced
 from <a href="https://esgf-node.llnl.gov/search/cmip6/">https://esgf-node.llnl.gov/search/cmip6/</a>. A possible search might
 involve</p>
-<div class="highlight"><pre><span></span><code>synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>search<span class="w"> </span><span class="nv">institution_id</span><span class="o">=</span>NCAR<span class="w"> </span><span class="nv">experiment_id</span><span class="o">=</span>1pctCO2<span class="w"> </span><span class="nv">variable</span><span class="o">=</span>ta
 </code></pre></div>
 <p>which returns</p>
-<p>new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425</p>
-<p>new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425</p>
-<p>...</p>
-<p>as well as some other datasets. </p>
+<div class="highlight"><pre><span></span><code>new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+
+new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425
+...
+</code></pre></div>
+<p>as well as some other datasets.</p>
 <h2 id="find-out-how-big-the-datasets-are">Find out how big the datasets are<a class="headerlink" href="#find-out-how-big-the-datasets-are" title="Permanent link">&para;</a></h2>
 <p>Once you know what you want to download, it's a good idea to check the
 size of the dataset:</p>
-<div class="highlight"><pre><span></span><code>synda stat CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>stat<span class="w"> </span>CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 </code></pre></div>
 <p>This prints "Total files count: 16, New files count: 16, Total size:
 48.7 GB, New files size: 48.7 GB". The "New" indicates that the files
 have not yet been downloaded. You can see that there are 16 files to
 download, taking nearly 50GB of disk space.</p>
 <h2 id="downloadinstall-the-dataset">Download/install the dataset<a class="headerlink" href="#downloadinstall-the-dataset" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>install<span class="w"> </span>CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 </code></pre></div>
 <p>The first time you may get a message requesting you to start a daemon,
 if so do</p>
@@ -1250,17 +1248,20 @@ if so do</p>
 background process so you can close your terminal if you want and come
 back later to check progress.</p>
 <p>The data will end up
-under $ST_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425
-in this case. </p>
+under <code>$ST_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425</code>
+in this case.</p>
 <p>You can type</p>
-<div class="highlight"><pre><span></span><code>synda queue
+<div class="highlight"><pre><span></span><code>synda<span class="w"> </span>queue
 </code></pre></div>
 <p>to see progress.</p>
 <p>Note that if another researcher (or you) decide execute the same synda
 install command then synda will recognise the files to be already
 installed and will print the message</p>
-<p>INFO: Nothing to install (matching files are already installed or
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Nothing to install (matching files are already installed or
 waiting in the download queue)</p>
+</div>
 
 
 
@@ -1283,7 +1284,7 @@ waiting in the download queue)</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2024</span>
   </span>
 
     
@@ -1354,7 +1355,7 @@ waiting in the download queue)</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit", "navigation.path"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
         <script src="../../../assets/javascripts/general.js"></script>
       

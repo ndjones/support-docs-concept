@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
     
     
       
@@ -802,7 +802,7 @@
           <li class="md-nav__item">
   <a href="#on-nesis-mauimahuika-clusters-this-means" class="md-nav__link">
     <span class="md-ellipsis">
-      On NeSI's Māui/Mahuika clusters this means:
+      On NeSI's Māui/Mahuika clusters this means
     </span>
   </a>
   
@@ -1032,7 +1032,7 @@
       
   
   <span class="md-ellipsis">
-    Nearline_long-term_storage
+    Nearline long-term storage
   </span>
   
 
@@ -1145,7 +1145,7 @@
           <li class="md-nav__item">
   <a href="#on-nesis-mauimahuika-clusters-this-means" class="md-nav__link">
     <span class="md-ellipsis">
-      On NeSI's Māui/Mahuika clusters this means:
+      On NeSI's Māui/Mahuika clusters this means
     </span>
   </a>
   
@@ -1206,16 +1206,12 @@
 
   <h1>Globus V5 Paths, Permissions, Storage_Allocation</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page has been automatically migrated and may contain formatting errors.</p>
-</div>
 <h2 id="globus-default-directory">Globus default directory<a class="headerlink" href="#globus-default-directory" title="Permanent link">&para;</a></h2>
 <p>If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '<code>/home/&lt;username&gt;</code>'.</p>
 <p><img alt="mceclip0.png" src="../../../assets/images/Globus_V5_Paths-Permissions-Storage_Allocation.png" /></p>
-<h3 id="on-nesis-mauimahuika-clusters-this-means">On NeSI's Māui/Mahuika clusters this means:<a class="headerlink" href="#on-nesis-mauimahuika-clusters-this-means" title="Permanent link">&para;</a></h3>
+<h3 id="on-nesis-mauimahuika-clusters-this-means">On NeSI's Māui/Mahuika clusters this means<a class="headerlink" href="#on-nesis-mauimahuika-clusters-this-means" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1251,7 +1247,7 @@ path directory, displayed as '<code>/home/&lt;username&gt;</code>'.</p>
 </tbody>
 </table>
 <p>For more information about NeSI filesystem, check
-<a href="../../File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/">here</a>.</p>
+<a href="../../File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/">NeSI_File_Systems_and_Quotas</a>.</p>
 <h2 id="performing-globus-transfers-tofrom-mauimahuika">Performing Globus transfers to/from Māui/Mahuika<a class="headerlink" href="#performing-globus-transfers-tofrom-mauimahuika" title="Permanent link">&para;</a></h2>
 <ul>
 <li>If transferring files off the cluster, move/copy files onto
@@ -1273,17 +1269,17 @@ path directory, displayed as '<code>/home/&lt;username&gt;</code>'.</p>
 <em>nobackup</em> directories to enable easy moving of files to and from.<br />
 To create a symbolic link from a first to a second directory and
 vice-versa (using <em>full</em> paths for &lt;first&gt; and &lt;second&gt;):</p>
-<div class="highlight"><pre><span></span><code>$ cd &lt;first&gt;
-$ ln -s &lt;full_path_to_second&gt; &lt;alias_to_second&gt;
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;first&gt;
+ln<span class="w"> </span>-s<span class="w"> </span>&lt;full_path_to_second&gt;<span class="w"> </span>&lt;alias_to_second&gt;
 
-$ cd &lt;second&gt;
-$ ln -s &lt;full_path_to_first&gt;  &lt;alias_to_first&gt;
+<span class="nb">cd</span><span class="w"> </span>&lt;second&gt;
+ln<span class="w"> </span>-s<span class="w"> </span>&lt;full_path_to_first&gt;<span class="w">  </span>&lt;alias_to_first&gt;
 </code></pre></div>
-<p>Alias can be any value which is convenient to you. .i.e. easy to
-identify<br />
+<p>Alias can be any value which is convenient to you, i.e. easy to
+identify.
 After you do this, there will be an alias listed in each directory that
-points to the other directory. You can see this with the <strong>ls</strong> command,
-and <strong>cd</strong> from each to the other using its alias.</p>
+points to the other directory. You can see this with the <code>ls</code> command,
+and <code>cd</code> from each to the other using its alias.</p>
 
 
 
@@ -1306,7 +1302,7 @@ and <strong>cd</strong> from each to the other using its alias.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2024</span>
   </span>
 
     
@@ -1377,7 +1373,7 @@ and <strong>cd</strong> from each to the other using its alias.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.top", "navigation.prune", "content.code.copy", "content.action.edit", "navigation.path"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
       
         <script src="../../../assets/javascripts/general.js"></script>
       
