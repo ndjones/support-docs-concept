@@ -31,6 +31,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/nesi/support-docs-concept/Test_article/</loc>
+         <lastmod>2024-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/nesi/support-docs-concept/General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/</loc>
          <lastmod>2024-01-29</lastmod>
          <changefreq>daily</changefreq>
