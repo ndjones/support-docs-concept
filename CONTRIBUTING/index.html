@@ -645,6 +645,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#contributing-to-the-supported-apps-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing to the 'Supported Apps' Page
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing to the 'Supported Apps' Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addingfixing-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding/Fixing Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everything Else
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -742,6 +775,27 @@ Might be worth having a quick look at these before making a pull request.</p>
 </ol>
 <h2 id="raise-an-issue">Raise an issue<a class="headerlink" href="#raise-an-issue" title="Permanent link">&para;</a></h2>
 <p><em>Not documented at the moment (TODO)</em></p>
+<h2 id="contributing-to-the-supported-apps-page">Contributing to the 'Supported Apps' Page<a class="headerlink" href="#contributing-to-the-supported-apps-page" title="Permanent link">&para;</a></h2>
+<p>Quite a lot of data-sources come together to make this page:</p>
+<ul>
+<li>mkdocs article titles</li>
+<li>lmod info scraped from all clusters</li>
+<li>licence counts from promethius instance</li>
+<li>licence details from config file </li>
+<li>Manual overwrites in the <a href="https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml">modules list repo</a>.</li>
+</ul>
+<p>Most of these are collected together in the <a href="https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml">modules list repo</a></p>
+<h3 id="addingfixing-information">Adding/Fixing Information<a class="headerlink" href="#addingfixing-information" title="Permanent link">&para;</a></h3>
+<h4 id="description-homepage-packages-clusters">Description, Homepage, Packages, Clusters<a class="headerlink" href="#description-homepage-packages-clusters" title="Permanent link">&para;</a></h4>
+<p>Fix the information in the module file.</p>
+<h4 id="nesi-documentation-link">NeSI Documentation Link<a class="headerlink" href="#nesi-documentation-link" title="Permanent link">&para;</a></h4>
+<p>Is there a child page with the same title as the module? (case sensitive).</p>
+<h4 id="domain-licence-type">Domain, Licence Type<a class="headerlink" href="#domain-licence-type" title="Permanent link">&para;</a></h4>
+<p>Can be added in <a href="https://github.com/nesi/modules-list/blob/main/tags/domains.yml">modules list</a></p>
+<h4 id="network-licence-details">Network Licence Details<a class="headerlink" href="#network-licence-details" title="Permanent link">&para;</a></h4>
+<p>Ask cal, or read the readme at <code>/opt/nesi/nesi-apps-admin/LicConfig/</code></p>
+<h3 id="everything-else">Everything Else<a class="headerlink" href="#everything-else" title="Permanent link">&para;</a></h3>
+<p>Can be added in the manual <a href="https://github.com/nesi/modules-list/blob/main/overwrites.yml">overwrite file</a>.</p>
 
 
 
@@ -764,7 +818,7 @@ Might be worth having a quick look at these before making a pull request.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     
