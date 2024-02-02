@@ -628,6 +628,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#update-remote-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Remote Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-words-to-dictionary" class="md-nav__link">
     <span class="md-ellipsis">
       Adding Words to Dictionary
@@ -668,6 +677,15 @@
   <a href="#everything-else" class="md-nav__link">
     <span class="md-ellipsis">
       Everything Else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating
     </span>
   </a>
   
@@ -766,12 +784,18 @@ Might be worth having a quick look at these before making a pull request.</p>
 <p>Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.</p>
 <p>If some of the CI checks failed (make sure they are not important ones), you will have to click the  <code>Merge without waiting for requirements to be met (bypass branch protections)</code> button before proceeding with the merge.</p>
 <p>Feel free to raise an issue, make a proposal or <a href="#adding-words-to-dictionary">add words to the dictionary</a> if you feel you are being unfairly targeted by the CI checks.</p>
+<h2 id="update-remote-assets">Update Remote Assets<a class="headerlink" href="#update-remote-assets" title="Permanent link">&para;</a></h2>
+<p>Certain files need to be fetched from other repos for up to date info. This will be automated, but for not the proccess is manual.</p>
+<ol>
+<li>Run the <a href="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml"><img alt="Fetch Remote Assets" src="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&amp;event=workflow_run" /></a> workflow in this repo.</li>
+<li>A branch <code>new-assets</code> will be created, which can be merged into main.</li>
+</ol>
 <h2 id="adding-words-to-dictionary">Adding Words to Dictionary<a class="headerlink" href="#adding-words-to-dictionary" title="Permanent link">&para;</a></h2>
 <p>If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.</p>
 <ol>
 <li>Visit the <a href="https://github.com/nesi/nesi-wordlist">NeSI Word List</a>, follow the instructions there on adding words.</li>
-<li>Once changes to the word list have been merged, you can fetch the new assets by running the <a href="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml"><img alt="Fetch Remote Assets" src="https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&amp;event=workflow_run" /></a> workflow in this repo.</li>
-<li>A branch <code>new-assets</code> will be created, which can be merged into main (you should see your new words are added).</li>
+<li>Once changes to the word list have been merged, return to this repo and run <a href="#update-remote-assets">update remote assets</a>.</li>
+<li>You should see your new words in the <a href="assets/Glossary/dictionary.txt">Dictionary</a> if your words included a definition, they will also be in the <a href="../assets/glossary/Glossary/">Glossary</a>.</li>
 </ol>
 <h2 id="raise-an-issue">Raise an issue<a class="headerlink" href="#raise-an-issue" title="Permanent link">&para;</a></h2>
 <p><em>Not documented at the moment (TODO)</em></p>
@@ -796,6 +820,8 @@ Might be worth having a quick look at these before making a pull request.</p>
 <p>Ask cal, or read the readme at <code>/opt/nesi/nesi-apps-admin/LicConfig/</code></p>
 <h3 id="everything-else">Everything Else<a class="headerlink" href="#everything-else" title="Permanent link">&para;</a></h3>
 <p>Can be added in the manual <a href="https://github.com/nesi/modules-list/blob/main/overwrites.yml">overwrite file</a>.</p>
+<h3 id="updating">Updating<a class="headerlink" href="#updating" title="Permanent link">&para;</a></h3>
+<p>Any of these changes will require an <a href="#update-remote-assets">update of remote assets</a>.</p>
 
 
 
