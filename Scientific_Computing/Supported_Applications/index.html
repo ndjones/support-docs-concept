@@ -2317,24 +2317,78 @@ A list of available software can be obtained with the <code>module avail</code> 
                 
                     <p>Access to a valid licence token is required to run ABAQUS.
                     
+
+
 <table>
     <thead>
     <tr>
     <th>Institution</th>
-<th>Faculty</th>
+
+    <th>Faculty</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Faculty of Engineering</td>
+    
+        
+        <tr id="abaqus_uoa_foe_summary" onclick="toggle('abaqus_uoa_foe_details')" title="Click for token information">   
+            <td>University of Auckland</td>
+            <td>Faculty of Engineering</td>
+            <td>98%</td>
         </tr>
-    <tr>
-        <td>University of Waikato</td>
-        <td></td>
-        </tr>
-    </tbody>
+        
+        <tr class="hidden" id="abaqus_uoa_foe_details">
+                <td colspan=3>
+                    
 
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gpgpu</td>
+            <td title="Average 98% free.">1</td>
+            <td>
+                <pre><code>#SBATCH -L=gpgpu@uoa_foe:1</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>parallel_teaching</td>
+            <td title="Average 98% free.">4</td>
+            <td>
+                <pre><code>#SBATCH -L=parallel_teaching@uoa_foe:1</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>abaqus</td>
+            <td title="Average 98% free.">75</td>
+            <td>
+                <pre><code>#SBATCH -L=abaqus@uoa_foe:({cpu}**0.422)*5</code></pre>
+                </td>
+            </tr>
+        </tbody>
+</table></td>
+            </tr>
+        
+        
+        <tr id="abaqus_uow_summary" >   
+            <td>University of Waikato</td>
+            <td></td>
+            <td>99%</td>
+        </tr>
+        
+        </tbody>
 </table>
                 </div>
             
@@ -2955,40 +3009,103 @@ A list of available software can be obtained with the <code>module avail</code> 
                 
                     <p>Access to a valid licence token is required to run ANSYS.
                     
+
+
 <table>
     <thead>
     <tr>
     <th>Institution</th>
-<th>Faculty</th>
+
+    <th>Faculty</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Faculty of Engineering</td>
+    
+        
+        <tr id="ansys_uoa_foe_summary" >   
+            <td>University of Auckland</td>
+            <td>Faculty of Engineering</td>
+            <td>72%</td>
         </tr>
-    <tr>
-        <td>Orbis Diagnostics</td>
-        <td></td>
+        
+        
+        
+        <tr id="ansys_orbis_summary" >   
+            <td>Orbis Diagnostics</td>
+            <td></td>
+            <td>100%</td>
         </tr>
-    <tr>
-        <td>Auckland University of Technology</td>
-        <td>Faculty of Engineering</td>
+        
+        
+        
+        <tr id="ansys_aut_foe_summary" >   
+            <td>Auckland University of Technology</td>
+            <td>Faculty of Engineering</td>
+            <td>72%</td>
         </tr>
-    <tr>
-        <td>University of Waikato</td>
-        <td></td>
+        
+        
+        
+        <tr id="ansys_uow_summary" >   
+            <td>University of Waikato</td>
+            <td></td>
+            <td>72%</td>
         </tr>
-    <tr>
-        <td>University of Canterbury</td>
-        <td></td>
+        
+        
+        
+        <tr id="ansys_uc_summary" >   
+            <td>University of Canterbury</td>
+            <td></td>
+            <td>99%</td>
         </tr>
-    <tr>
-        <td>University of Otago</td>
-        <td></td>
+        
+        
+        
+        <tr id="ansys_uoo_summary" onclick="toggle('ansys_uoo_details')" title="Click for token information">   
+            <td>University of Otago</td>
+            <td></td>
+            <td>99%</td>
         </tr>
-    </tbody>
+        
+        <tr class="hidden" id="ansys_uoo_details">
+                <td colspan=3>
+                    
 
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>aa_mcad</td>
+            <td title="Average 99% free.">0</td>
+            <td>
+                <pre><code>#SBATCH -L=aa_mcad@uoo:{cpu} - 16</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>aa_r_cfd</td>
+            <td title="Average 99% free.">0</td>
+            <td>
+                <pre><code>#SBATCH -L=aa_mcad@uoo:{node}</code></pre>
+                </td>
+            </tr>
+        </tbody>
+</table></td>
+            </tr>
+        </tbody>
 </table>
                 </div>
             
@@ -7450,44 +7567,111 @@ A list of available software can be obtained with the <code>module avail</code> 
                 
                     <p>Access to a valid licence token is required to run COMSOL.
                     
+
+
 <table>
     <thead>
     <tr>
     <th>Institution</th>
-<th>Faculty</th>
+
+    <th>Faculty</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Physics</td>
+    
+        
+        <tr id="comsol_uoa_physics_summary" >   
+            <td>University of Auckland</td>
+            <td>Physics</td>
+            <td>87%</td>
         </tr>
-    <tr>
-        <td>Auckland Bioengineering Institute</td>
-        <td>Implantable devices group</td>
+        
+        
+        
+        <tr id="comsol_uoa_idg_summary" >   
+            <td>Auckland Bioengineering Institute</td>
+            <td>Implantable devices group</td>
+            <td>98%</td>
         </tr>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Faculty of Engineering</td>
+        
+        
+        
+        <tr id="comsol_uoa_foe_summary" >   
+            <td>University of Auckland</td>
+            <td>Faculty of Engineering</td>
+            <td>98%</td>
         </tr>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Deptartment of Engineering Science</td>
+        
+        
+        
+        <tr id="comsol_uoa_foes_summary" >   
+            <td>University of Auckland</td>
+            <td>Deptartment of Engineering Science</td>
+            <td>98%</td>
         </tr>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Deptartment of Engineering Science</td>
+        
+        
+        
+        <tr id="comsol_uoa_foe_des_rc_summary" onclick="toggle('comsol_uoa_foe_des_rc_details')" title="Click for token information">   
+            <td>University of Auckland</td>
+            <td>Deptartment of Engineering Science</td>
+            <td>98%</td>
         </tr>
-    <tr>
-        <td>University of Otago</td>
-        <td></td>
-        </tr>
-    <tr>
-        <td>University of Canterbury</td>
-        <td></td>
-        </tr>
-    </tbody>
+        
+        <tr class="hidden" id="comsol_uoa_foe_des_rc_details">
+                <td colspan=3>
+                    
 
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>comsol</td>
+            <td title="Average 98% free.">1</td>
+            <td>
+                <pre><code>#SBATCH -L=comsol@uoa_foe_des_rc:1</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>comsoluser</td>
+            <td title="Average 98% free.">1</td>
+            <td>
+                <pre><code>#SBATCH -L=comsoluser@uoa_foe_des_rc:1</code></pre>
+                </td>
+            </tr>
+        </tbody>
+</table></td>
+            </tr>
+        
+        
+        <tr id="comsol_uoo_summary" >   
+            <td>University of Otago</td>
+            <td></td>
+            <td>99%</td>
+        </tr>
+        
+        
+        
+        <tr id="comsol_uc_summary" >   
+            <td>University of Canterbury</td>
+            <td></td>
+            <td>100%</td>
+        </tr>
+        
+        </tbody>
 </table>
                 </div>
             
@@ -19618,45 +19802,87 @@ A list of available software can be obtained with the <code>module avail</code> 
                 
                     <p>Access to a valid licence token is required to run MATLAB.
                     
+
+
 <table>
     <thead>
     <tr>
     <th>Institution</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Waikato</td>
+    
+        
+        <tr id="matlab_uow_summary" >   
+            <td>University of Waikato</td>
+            <td>99%</td>
         </tr>
-    <tr>
-        <td>National Institute of Water and Atmospheric Research</td>
+        
+        
+        
+        <tr id="matlab_niwa_summary" >   
+            <td>National Institute of Water and Atmospheric Research</td>
+            <td>0%</td>
         </tr>
-    <tr>
-        <td>Institute of Geological and Nuclear Sciences</td>
+        
+        
+        
+        <tr id="matlab_gns_summary" >   
+            <td>Institute of Geological and Nuclear Sciences</td>
+            <td>99%</td>
         </tr>
-    <tr>
-        <td>Massey University</td>
+        
+        
+        
+        <tr id="matlab_massey_summary" >   
+            <td>Massey University</td>
+            <td>55%</td>
         </tr>
-    <tr>
-        <td>University of Auckland</td>
+        
+        
+        
+        <tr id="matlab_uoa_summary" >   
+            <td>University of Auckland</td>
+            <td>99%</td>
         </tr>
-    <tr>
-        <td>University of Otago</td>
+        
+        
+        
+        <tr id="matlab_uoo_summary" >   
+            <td>University of Otago</td>
+            <td>100%</td>
         </tr>
-    <tr>
-        <td>Victoria University of Wellington</td>
+        
+        
+        
+        <tr id="matlab_vuw_summary" >   
+            <td>Victoria University of Wellington</td>
+            <td>100%</td>
         </tr>
-    <tr>
-        <td>Auckland University of Technology</td>
+        
+        
+        
+        <tr id="matlab_aut_summary" >   
+            <td>Auckland University of Technology</td>
+            <td>53%</td>
         </tr>
-    <tr>
-        <td>University of Canterbury</td>
+        
+        
+        
+        <tr id="matlab_uc_summary" >   
+            <td>University of Canterbury</td>
+            <td>53%</td>
         </tr>
-    <tr>
-        <td>Plant & Food Research</td>
+        
+        
+        
+        <tr id="matlab_pfr_summary" >   
+            <td>Plant & Food Research</td>
+            <td>49%</td>
         </tr>
-    </tbody>
-
+        
+        </tbody>
 </table>
                 </div>
             

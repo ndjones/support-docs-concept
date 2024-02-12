@@ -2910,36 +2910,97 @@
     <thead>
     <tr>
     <th>Institution</th>
-<th>Faculty</th>
+
+    <th>Faculty</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Faculty of Engineering</td>
-        </tr>
-    <tr>
-        <td>Orbis Diagnostics</td>
-        <td></td>
-        </tr>
-    <tr>
-        <td>Auckland University of Technology</td>
-        <td>Faculty of Engineering</td>
-        </tr>
-    <tr>
-        <td>University of Waikato</td>
-        <td></td>
-        </tr>
-    <tr>
-        <td>University of Canterbury</td>
-        <td></td>
-        </tr>
-    <tr>
-        <td>University of Otago</td>
-        <td></td>
-        </tr>
-    </tbody>
 
+
+        <tr id="ansys_uoa_foe_summary" >   
+            <td>University of Auckland</td>
+            <td>Faculty of Engineering</td>
+            <td>72%</td>
+        </tr>
+
+
+
+        <tr id="ansys_orbis_summary" >   
+            <td>Orbis Diagnostics</td>
+            <td></td>
+            <td>100%</td>
+        </tr>
+
+
+
+        <tr id="ansys_aut_foe_summary" >   
+            <td>Auckland University of Technology</td>
+            <td>Faculty of Engineering</td>
+            <td>72%</td>
+        </tr>
+
+
+
+        <tr id="ansys_uow_summary" >   
+            <td>University of Waikato</td>
+            <td></td>
+            <td>72%</td>
+        </tr>
+
+
+
+        <tr id="ansys_uc_summary" >   
+            <td>University of Canterbury</td>
+            <td></td>
+            <td>99%</td>
+        </tr>
+
+
+
+        <tr id="ansys_uoo_summary" onclick="toggle('ansys_uoo_details')" title="Click for token information">   
+            <td>University of Otago</td>
+            <td></td>
+            <td>99%</td>
+        </tr>
+
+        <tr class="hidden" id="ansys_uoo_details">
+                <td colspan=3>
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>aa_mcad</td>
+            <td title="Average 99% free.">0</td>
+            <td>
+                <pre><code>#SBATCH -L=aa_mcad@uoo:{cpu} - 16</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>aa_r_cfd</td>
+            <td title="Average 99% free.">0</td>
+            <td>
+                <pre><code>#SBATCH -L=aa_mcad@uoo:{node}</code></pre>
+                </td>
+            </tr>
+        </tbody>
+</table></td>
+            </tr>
+        </tbody>
 </table>
 <p>If you do not have access, or want a server connected <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 <h3 id="license-types">License Types<a class="headerlink" href="#license-types" title="Permanent link">&para;</a></h3>

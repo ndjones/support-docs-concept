@@ -2477,20 +2477,72 @@
     <thead>
     <tr>
     <th>Institution</th>
-<th>Faculty</th>
+
+    <th>Faculty</th>
+<th>Uptime</th>
 </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>University of Auckland</td>
-        <td>Faculty of Engineering</td>
-        </tr>
-    <tr>
-        <td>University of Waikato</td>
-        <td></td>
-        </tr>
-    </tbody>
 
+
+        <tr id="abaqus_uoa_foe_summary" onclick="toggle('abaqus_uoa_foe_details')" title="Click for token information">   
+            <td>University of Auckland</td>
+            <td>Faculty of Engineering</td>
+            <td>98%</td>
+        </tr>
+
+        <tr class="hidden" id="abaqus_uoa_foe_details">
+                <td colspan=3>
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gpgpu</td>
+            <td title="Average 98% free.">1</td>
+            <td>
+                <pre><code>#SBATCH -L=gpgpu@uoa_foe:1</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>parallel_teaching</td>
+            <td title="Average 98% free.">4</td>
+            <td>
+                <pre><code>#SBATCH -L=parallel_teaching@uoa_foe:1</code></pre>
+                </td>
+            </tr>
+        <tr>
+            <td>abaqus</td>
+            <td title="Average 98% free.">75</td>
+            <td>
+                <pre><code>#SBATCH -L=abaqus@uoa_foe:({cpu}**0.422)*5</code></pre>
+                </td>
+            </tr>
+        </tbody>
+</table></td>
+            </tr>
+
+
+        <tr id="abaqus_uow_summary" >   
+            <td>University of Waikato</td>
+            <td></td>
+            <td>99%</td>
+        </tr>
+
+        </tbody>
 </table>
 <p>If you do not have access, or want a server connected <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 <p>You can force ABAQUS to use a specific licence type by setting the
