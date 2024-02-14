@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="NeSI Support Documentation">
+        <meta name="description" content="Running COMSOL multiphysics on the NeSI cluster.">
       
       
       
@@ -828,20 +828,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Interactive Use">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#livelink" class="md-nav__link">
     <span class="md-ellipsis">
       LiveLink
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2286,20 +2280,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Interactive Use">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#livelink" class="md-nav__link">
     <span class="md-ellipsis">
       LiveLink
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2333,12 +2321,6 @@
     
     
       <span class="md-tag">engineering</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">COMSOL</span>
     
   
     
@@ -2525,19 +2507,15 @@
 </table>
 <p>If you do not have access, or want a server connected <a href="mailto:support@nesi.org.nz">Contact our Support Team</a>.</p>
 
-<div class="highlight"><pre><span></span><code>comsol --help
+<div class="highlight"><pre><span></span><code>comsol<span class="w"> </span>--help
 </code></pre></div>
 <p>Will display a list of COMSOL batch commands.</p>
 <div class="admonition tip">
 <p class="admonition-title">Useful Links</p>
 <ul>
-<li><a href="https://www.comsol.com/support/knowledgebase/1001/">Running COMSOL in parallel on
-     clusters.</a></li>
-<li><a href="https://www.comsol.com/support/knowledgebase/1250/">Running parametric sweeps, batch sweeps, and cluster sweeps from
-     the command
-     line.</a></li>
-<li><a href="https://www.comsol.com/support/knowledgebase/1096/">COMSOL and
-     Multithreading.</a></li>
+<li><a href="https://www.comsol.com/support/knowledgebase/1001/">Running COMSOL in parallel on clusters.</a></li>
+<li><a href="https://www.comsol.com/support/knowledgebase/1250/">Running parametric sweeps, batch sweeps, and cluster sweeps from the command line.</a></li>
+<li><a href="https://www.comsol.com/support/knowledgebase/1096/">COMSOL and Multithreading.</a></li>
 </ul>
 </div>
 <h2 id="batch-submission">Batch Submission<a class="headerlink" href="#batch-submission" title="Permanent link">&para;</a></h2>
@@ -2557,7 +2535,7 @@ distribution.</p>
 </tr>
 <tr>
 <td><code>-np &lt;cpus&gt;</code></td>
-<td>Number of CPUs to use in each task. Equivalent to slurm input <code>--cpus-per-task</code> or environment variable <code>${SLURM_CPUS_PER_TASK}</code></td>
+<td>Number of CPUs to use in each task. Equivalent to Slurm input <code>--cpus-per-task</code> or environment variable <code>${SLURM_CPUS_PER_TASK}</code></td>
 </tr>
 <tr>
 <td><code>-nn &lt;tasks&gt;</code></td>
@@ -2569,22 +2547,17 @@ distribution.</p>
 </tr>
 <tr>
 <td><code>-f &lt;path to hostlist&gt;</code></td>
-<td>Host file. You wont't need to set this in most circumstances.</td>
+<td>Host file. You won't need to set this in most circumstances.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="example-scripts">Example Scripts<a class="headerlink" href="#example-scripts" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serial Job</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Serial Job</label><label for="__tabbed_1_2">Shared Memory Job</label><label for="__tabbed_1_3">Distributed Memory Job</label><label for="__tabbed_1_4">Hybrid Job</label><label for="__tabbed_1_5">LiveLink</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Single <em>process</em> with a single <em>thread</em>
-Usually submitted as part of an array, as in the case of parameter</p>
-</div>
-</div>
-</div>
-<p>sweeps.</p>
-<div class="highlight"><pre><span></span><code>```
-#!/bin/bash -e
+Usually submitted as part of an array, as in the case of parameter sweeps.</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
 #SBATCH --job-name      COMSOL-serial
 #SBATCH --licenses      comsol@uoa_foe
@@ -2593,10 +2566,8 @@ Usually submitted as part of an array, as in the case of parameter</p>
 
 module load COMSOL/6.1
 comsol batch -inputfile my_input.mph
-```
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Shared Memory Job</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #SBATCH --job-name      COMSOL-shared
@@ -2608,11 +2579,8 @@ module load COMSOL/6.1
 comsol batch -mpibootstrap slurm -inputfile my_input.mph 
 </code></pre></div>
 </div>
-</div>
-</div>
-<p>=== Distributed Memory Job</p>
-<div class="highlight"><pre><span></span><code>```
-#!/bin/bash -e
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>#!/bin/bash -e
 
 #SBATCH --job-name      COMSOL-distributed
 #SBATCH --licenses      comsol@uoa_foe
@@ -2622,10 +2590,8 @@ comsol batch -mpibootstrap slurm -inputfile my_input.mph
 
 module load COMSOL/6.1
 comsol batch -mpibootstrap slurm -inputfile my_input.mph
-```
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hybrid Job</label><label for="__tabbed_3_2">LiveLink</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>#!/bin/bash -e
 #SBATCH --job-name         COMSOL-hybrid
@@ -2664,25 +2630,24 @@ matlab -batch &quot;addpath(&#39;/opt/nesi/share/COMSOL/comsol154/multiphysics/m
  updated instead.</p>
 </div>
 <h2 id="interactive-use">Interactive Use<a class="headerlink" href="#interactive-use" title="Permanent link">&para;</a></h2>
-<p>Providing you have <a href="../../Terminal_Setup/X11_on_NeSI/">set up
-X11</a>, you can
+<p>Providing you have <a href="../../Terminal_Setup/X11_on_NeSI/">set up X11</a>, you can
 open the COMSOL GUI by running the command <code>comsol</code>.</p>
 <p>Large jobs should not be run on the login node.</p>
-<h3 id="livelink">LiveLink<a class="headerlink" href="#livelink" title="Permanent link">&para;</a></h3>
+<h2 id="livelink">LiveLink<a class="headerlink" href="#livelink" title="Permanent link">&para;</a></h2>
 <p>If you are using COMSOL LiveLink, you will need to load a MATLAB module (in addition to the COMSOL module), e.g.</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>MATLAB/2021b
 </code></pre></div>
 <p>Then</p>
 <div class="highlight"><pre><span></span><code>comsol<span class="w"> </span>matlab<span class="w"> </span>-mlroot<span class="w"> </span>&lt;path&gt;
 </code></pre></div>
-<p>Where <code>&lt;mlpath&gt;`` is the root directory of the MATLAB version you are using (</code>dirname $(dirname $(which matlab))`).</p>
+<p>Where <code>&lt;mlpath&gt;</code> is the root directory of the MATLAB version you are using (<code>dirname $(dirname $(which matlab))</code>).</p>
 <h2 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">&para;</a></h2>
 <p>COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use <code>--cpus-per-task</code> over <code>--ntasks</code></p>
 <p>Memory requirements depend on job type, but will scale up with number of CPUs ≈ linearly.</p>
 <p>Multithreading will benefit jobs using less than
 8 CPUs, but is not recommended on larger jobs.</p>
-<p><em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em>
+<p><em>Performance is highly depended on the model used. The above should only be used as a rough guide.</em>
 <img alt="Speedup" src="../../../assets/images/speedup_smoothed.png" /></p>
 
 
@@ -2706,7 +2671,7 @@ preferable to use <code>--cpus-per-task</code> over <code>--ntasks</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
   </span>
 
     
